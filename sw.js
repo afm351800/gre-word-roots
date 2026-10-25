@@ -1,5 +1,5 @@
 // Offline cache. Network first for the app files so updates arrive; cache as fallback.
-const CACHE = "gre-roots-v6";
+const CACHE = "gre-roots-v7";
 const CORE = ["./", "index.html", "app.css", "app.js", "words.js", "manifest.webmanifest", "icons/icon-192.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(self.clients.claim()); });

@@ -44,17 +44,19 @@
     "2026-10-25": { q: "Prep Swift, Arithmetic: take Tickbox Quiz #1 and #2 first. If you pass (Quiz #1: 26 of 28), skip that column and only rewatch what you missed. If not, watch the column, then retake.", v: "GregMat: TC & SE Strategy Session 1 and its homework. Pick ONE series (original, 2024 or 2024 with ETS material) and stay with it." },
     "2026-10-26": { q: "Prep Swift: Arithmetic column 3 (Tickbox #3) and Algebra column 1 (Tickbox #4). Quiz first, videos only if needed.", v: "TC & SE Session 2 and its homework." },
     "2026-10-27": { q: "Prep Swift: Algebra columns 2 and 3 (Tickbox #5 and #6).", v: "TC & SE Session 3 and its homework." },
-    "2026-10-28": { q: "Prep Swift: Coordinate Geometry, all three columns (Tickbox #7, #8, #9). Only 31 short videos in total.", v: "TC & SE Session 4 and its homework.", e: "Watch “Writing the GRE Issue Essay Step by Step” and one “Feedback on Issue Essays” video on GregMat. No writing yet." },
+    "2026-10-28": { q: "Prep Swift: Coordinate Geometry, all three columns (Tickbox #7, #8, #9). Only 31 short videos in total.", v: "TC & SE Session 4 and its homework.", e: "Watch the Issue essay lessons: Classes → Recorded Classes → the “GRE Writing” series (start with the Issue essay step-by-step video, then one feedback video). No writing yet." },
     "2026-10-29": { q: "Prep Swift: Geometry columns 1 and 2 (Tickbox #10 and #11).", v: "TC & SE Session 5 and its homework." },
     "2026-10-30": { q: "Prep Swift: Geometry column 3 (Tickbox #12) and Data Analysis column 1 (Tickbox #13).", v: "TC & SE Session 6 and its homework." },
     "2026-10-31": { q: "Prep Swift: Data Analysis columns 2 and 3 (Tickbox #14 and #15).", v: "Diagnostic: ETS PowerPrep 1, Verbal and Quant only, timed, skip the essay (about 1½ h). Then review every mistake and list your weak topics." },
-    "2026-11-01": { q: "Prep Swift: Quantitative Strategy column 1 (Making Deductions to Piece by Piece, about 1 h 20 at normal speed).", v: "GregMat: Reading Strategy Sessions 1 and 2 and their homework.", e: "Essay #1: GregMat Write Essay, 30 minutes, timed. Send it to me for a score and feedback." },
+    "2026-11-01": { q: "Prep Swift: Quantitative Strategy column 1 (Making Deductions to Piece by Piece, about 1 h 20 at normal speed).", v: "GregMat: Reading Strategy Sessions 1 and 2 and their homework.", e: "Essay #1: Practice → Write Essay → Random Prompt (30:00 timer is built in). Use the structure from the GRE Writing video. Save it, paste it to me for a score and feedback." },
     "2026-11-02": { q: "Prep Swift: Quantitative Strategy column 2 (Simplifying QC to Calculating Extremes II).", v: "Reading Strategy Sessions 3 and 4 and their homework." },
     "2026-11-03": { q: "Prep Swift: Quantitative Strategy column 3 (Have a System to Sufficient Information Problems).", v: "Reading Strategy Sessions 5 and 6 and their homework.", e: "Essay #2, 30 minutes, timed. Apply the feedback from #1." },
     "2026-11-04": { q: "Full timed ETS PowerPrep 2, Verbal and Quant (about 1½ h). It replaces the two timed Verbal sections of today’s sweep. Review every mistake.", v: "" },
     "2026-11-05": { q: "Redo only the quant topics you missed in PowerPrep 2 (the Tickbox quiz or videos for them). 45 minutes max.", v: "", e: "Essay #3, 30 minutes, timed." },
     "2026-11-06": { q: "20 minutes: reread your list of quant mistakes and formulas. Nothing new.", v: "", e: "Reread your best essay’s outline. No new writing." },
   };
+  const QSTD = " THEN, every day: about 50 practice problems (Practice → Quant Problems, filter on today’s topic, mix easy and hard) and 4 timed quizzes (Quizzes → Mock Quant Tests). Write every mistake in a list.";
+  const QDATES = ["2026-10-25","2026-10-26","2026-10-27","2026-10-28","2026-10-29","2026-10-30","2026-11-01","2026-11-02","2026-11-03"];
   const XKEYS = [["q", "Quant"], ["v", "Verbal skills"], ["e", "Essay"]];
 
   /* ---------- daily timetable ---------- */
@@ -78,8 +80,8 @@
     const theme = APPS[date] || "Statement and recommenders: the next concrete step.";
     const apps = ["Applications", theme];
     const mock = date === "2026-10-31" ? "ETS PowerPrep 1" : date === "2026-11-04" ? "ETS PowerPrep 2" : "";
-    const quant = mock ? ["Mock: " + mock, "Do it at the time of day of your booked test slot, with the real breaks. Shift the other blocks around it. Review every mistake afterwards."] : ["Quant", "Prep Swift, see “Also today” below."];
-    const verbal = ["Verbal skills + essay", "GregMat session and homework, essay work. See “Also today” below."];
+    const quant = mock ? ["Mock: " + mock, "Do it at the time of day of your booked test slot, with the real breaks. Shift the other blocks around it. Review every mistake afterwards."] : ["Quant", "Prep Swift only for topics you fail, then 50 problems and 4 timed quizzes. See “Also today” below."];
+    const verbal = ["Verbal skills + essay", "GregMat session video and its homework, essay work. See “Also today” below and “Where things are”."];
     if (p.kind === "test") return { name: "Test day", rows: [["Breakfast", "Warm-up", "Your 30 hardest words, once. Then close the app."], ["", "Test", "Passport, early arrival, water, trust the roots."]] };
     if (p.kind === "taper") return { name: "Taper day", rows: [
       ["09:00–09:45", "Hard & Flag words", "Once through, then stop."], ["10:30–11:15", "Easy bike or walk", "Move, no gym effort."],
@@ -93,13 +95,26 @@
       row("18:30–19:30", apps), row("19:30–20:00", ["Dinner", ""]), row("20:00–20:30", reviewRow)] };
     if (A) return { name: "Day A", rows: [
       row("08:00–10:00", ["Gym", "Cardio and stretches. 15 min there, 1 h, 15 min back, 30 min shower."]),
-      row("10:00–12:30", learnRow), row("12:30–13:30", ["Lunch", "Away from the screen."]), row("13:30–15:30", quant),
-      row("15:30–16:15", ["Bike", "30–40 minutes."]), row("16:15–18:00", verbal), row("18:00–18:15", ["Break", ""]),
-      row("18:15–" + (wk1 ? "19:15" : "19:45"), apps), row("20:00–20:30", reviewRow)] };
+      row("10:00–12:30", learnRow), row("12:30–13:30", ["Lunch", "Away from the screen."]), row("13:30–16:00", quant),
+      row("16:00–16:45", ["Bike", "30–40 minutes."]), row("16:45–18:15", verbal), row("18:15–18:30", ["Break", ""]),
+      row("18:30–" + (wk1 ? "19:30" : "20:00"), apps), row("20:00–20:30", reviewRow)] };
     return { name: "Day B", rows: [
-      row("08:30–11:00", learnRow), row("11:15–13:00", quant), row("13:00–14:00", ["Lunch", "Away from the screen."]),
-      row("14:00–14:30", reviewRow), row("14:30–16:15", verbal), row("16:15–17:00", ["Bike", "30–40 minutes."]),
-      row("17:00–" + (wk1 ? "18:00" : "18:30"), apps), row("18:30–20:30", ["Gym", "Strength. 15 min there, 1 h, 15 min back, 30 min shower."])] };
+      row("08:30–11:00", learnRow), row("11:15–13:45", quant), row("13:45–14:45", ["Lunch", "Away from the screen."]),
+      row("14:45–15:15", reviewRow), row("15:15–16:45", verbal), row("16:45–17:30", ["Bike", "30–40 minutes."]),
+      row("17:30–18:30", apps), row("18:30–20:30", ["Gym", "Strength. 15 min there, 1 h, 15 min back, 30 min shower."])] };
+  }
+
+  function whereHTML() {
+    return `<details class="card sched"><summary><h3>Where things are on GregMat</h3></summary>
+      <ol class="srows">
+        <li><span class="st">Sessions</span><div><b>Verbal skills session</b><div class="sd">Top menu Study Plans → 1 Month Study Plan V2.0 → Week 1 → “Week 1 – Day N” → What to Watch → VERBAL. Pick ONE of the three TC and SE series and stay with it. Session N of the plan = Day N there.</div></div></li>
+        <li><span class="st">Homework</span><div><b>Verbal homework</b><div class="sd">Open the session video. The homework problems load right below the video (“Homework due before Session N+1”). Only do the homework of the series you chose.</div></div></li>
+        <li><span class="st">Later sessions</span><div><b>Reading and other strategy</b><div class="sd">Classes → Recorded Classes → “Verbal Strategy” series. Quant strategy: “Quantitative Strategy” series.</div></div></li>
+        <li><span class="st">Essay lessons</span><div><b>How to write it</b><div class="sd">Classes → Recorded Classes → “GRE Writing” series (Issue and Argument essays).</div></div></li>
+        <li><span class="st">Essay practice</span><div><b>Write it</b><div class="sd">Practice → Write Essay. Random Prompt, 30:00 timer built in, your essays go to “My Saved Essays”.</div></div></li>
+        <li><span class="st">Quant</span><div><b>Problems and quizzes</b><div class="sd">Practice → Quant Problems (603). Quizzes → Mock Quant Tests (timed sections). Quizzes → Mock Verbal Tests. Practice → Verbal Problems.</div></div></li>
+        <li><span class="st">Prep Swift</span><div><b>Quant videos and tickbox quizzes</b><div class="sd">Switch to PrepSwift with the tab at the top left of the site.</div></div></li>
+      </ol></details>`;
   }
   function schedHTML(date, p, open) {
     const s = scheduleFor(date, p);
@@ -302,6 +317,7 @@
         </div>
         ${EXTRA[p.date] ? skillsHTML(p.date) : ""}
         ${p.date === TODAY ? schedHTML(p.date, p, true) : ""}
+        ${whereHTML()}
         ${p.kind && p.kind.startsWith("sweep") ? `<p class="hint"><b>Final stretch, the most intense days:</b> catch up first if anything is left, then the sweep. Go fast: if you know it in 2 seconds, Got it. Anything you hesitate on becomes Shaky or Hard. Then do two timed Verbal sections (about 1 h), or the full PowerPrep 2 on Wed 4. About 3–3½ hours in total.</p>` : ""}
         ${p.kind === "taper" ? `<p class="hint"><b>Taper:</b> 45 minutes max, then stop. Being fresh tomorrow is worth more than 50 extra words.</p>` : ""}
         ${!p.kind ? `<p class="hint"><b>How:</b> do Learn in the morning: hide what you already know, read the root and the French for the rest. Then drill the same decks in your flashcard app. Do Review in the evening. Learn + Review take about 2½–3 hours; the Quant / Verbal skills / Essay block adds about 3 hours. The timetable below shows where each block goes.</p>` : ""}
@@ -382,7 +398,7 @@
     document.getElementById("import").addEventListener("change", importBackup);
   }
   function skillsHTML(date) {
-    const ex = EXTRA[date]; const done = (store.days[date] && store.days[date].x) || {};
+    const ex = Object.assign({}, EXTRA[date]); if (QDATES.includes(date) && ex.q) ex.q += QSTD; const done = (store.days[date] && store.days[date].x) || {};
     const rows = XKEYS.filter(([k]) => ex[k]).map(([k, label]) => `
       <div class="xrow"><button type="button" class="xtick" data-date="${date}" data-k="${k}" aria-pressed="${!!done[k]}" aria-label="Mark ${label} done"><span>${icon.check}</span></button>
       <div><div class="xlbl">${label}</div><div class="xtxt">${esc(ex[k])}</div></div></div>`).join("");
