@@ -39,6 +39,24 @@
   const LEARN_DAY = { "common-words-i": 0 };
   PLAN.forEach((p, i) => p.learn.forEach(s => { LEARN_DAY[s] = i + 1; }));
 
+  /* Quant, verbal-skills and essay work for each day (GregMat / Prep Swift / ETS), shown under Learn + Review. */
+  const EXTRA = {
+    "2026-10-25": { q: "Prep Swift, Arithmetic: take Tickbox Quiz #1 and #2 first. If you pass (Quiz #1: 26 of 28), skip that column and only rewatch what you missed. If not, watch the column, then retake.", v: "GregMat: TC & SE Strategy Session 1 and its homework. Pick ONE series (original, 2024 or 2024 with ETS material) and stay with it." },
+    "2026-10-26": { q: "Prep Swift: Arithmetic column 3 (Tickbox #3) and Algebra column 1 (Tickbox #4). Quiz first, videos only if needed.", v: "TC & SE Session 2 and its homework." },
+    "2026-10-27": { q: "Prep Swift: Algebra columns 2 and 3 (Tickbox #5 and #6).", v: "TC & SE Session 3 and its homework." },
+    "2026-10-28": { q: "Prep Swift: Coordinate Geometry, all three columns (Tickbox #7, #8, #9). Only 31 short videos in total.", v: "TC & SE Session 4 and its homework.", e: "Watch “Writing the GRE Issue Essay Step by Step” and one “Feedback on Issue Essays” video on GregMat. No writing yet." },
+    "2026-10-29": { q: "Prep Swift: Geometry columns 1 and 2 (Tickbox #10 and #11).", v: "TC & SE Session 5 and its homework." },
+    "2026-10-30": { q: "Prep Swift: Geometry column 3 (Tickbox #12) and Data Analysis column 1 (Tickbox #13).", v: "TC & SE Session 6 and its homework." },
+    "2026-10-31": { q: "Prep Swift: Data Analysis columns 2 and 3 (Tickbox #14 and #15).", v: "Diagnostic: ETS PowerPrep 1, Verbal and Quant only, timed, skip the essay (about 1½ h). Then review every mistake and list your weak topics." },
+    "2026-11-01": { q: "Prep Swift: Quantitative Strategy column 1 (Making Deductions to Piece by Piece, about 1 h 20 at normal speed).", v: "GregMat: Reading Strategy Sessions 1 and 2 and their homework.", e: "Essay #1: GregMat Write Essay, 30 minutes, timed. Send it to me for a score and feedback." },
+    "2026-11-02": { q: "Prep Swift: Quantitative Strategy column 2 (Simplifying QC to Calculating Extremes II).", v: "Reading Strategy Sessions 3 and 4 and their homework." },
+    "2026-11-03": { q: "Prep Swift: Quantitative Strategy column 3 (Have a System to Sufficient Information Problems).", v: "Reading Strategy Sessions 5 and 6 and their homework.", e: "Essay #2, 30 minutes, timed. Apply the feedback from #1." },
+    "2026-11-04": { q: "Full timed ETS PowerPrep 2, Verbal and Quant (about 1½ h). It replaces the two timed Verbal sections of today’s sweep. Review every mistake.", v: "" },
+    "2026-11-05": { q: "Redo only the quant topics you missed in PowerPrep 2 (the Tickbox quiz or videos for them). 45 minutes max.", v: "", e: "Essay #3, 30 minutes, timed." },
+    "2026-11-06": { q: "20 minutes: reread your list of quant mistakes and formulas. Nothing new.", v: "", e: "Reread your best essay’s outline. No new writing." },
+  };
+  const XKEYS = [["q", "Quant"], ["v", "Verbal skills"], ["e", "Essay"]];
+
   /* ---------- storage ---------- */
   const KEY = "gre-roots-v1";
   let store = { marks: {}, notes: {}, hidden: {}, rev: {}, days: {}, ts: {} };
@@ -231,9 +249,10 @@
               p.kind ? `${esc(finals[p.kind])} · ${mins(rq.length * (p.kind.startsWith("sweep") ? 0.15 : 0.3))}` : day === 1 ? `Quick check of Common Words I and the Common II words you’ve done. · ${mins(rq.length * 0.3)}` : `Words from ${dueText(day)} that aren’t Known yet, plus all Hard & Flag. · ${mins(rq.length * 0.3)}`}</div>
           </a>
         </div>
-        ${p.kind && p.kind.startsWith("sweep") ? `<p class="hint"><b>Final stretch, the most intense days:</b> catch up first if anything is left, then the sweep. Go fast: if you know it in 2 seconds, Got it. Anything you hesitate on becomes Shaky or Hard. Then do two timed Verbal sections (about 1 h). About 3 hours in total.</p>` : ""}
+        ${EXTRA[p.date] ? skillsHTML(p.date) : ""}
+        ${p.kind && p.kind.startsWith("sweep") ? `<p class="hint"><b>Final stretch, the most intense days:</b> catch up first if anything is left, then the sweep. Go fast: if you know it in 2 seconds, Got it. Anything you hesitate on becomes Shaky or Hard. Then do two timed Verbal sections (about 1 h), or the full PowerPrep 2 on Wed 4. About 3–3½ hours in total.</p>` : ""}
         ${p.kind === "taper" ? `<p class="hint"><b>Taper:</b> 45 minutes max, then stop. Being fresh tomorrow is worth more than 50 extra words.</p>` : ""}
-        ${!p.kind ? `<p class="hint"><b>How:</b> do Learn in the morning: hide what you already know, read the root and the French for the rest. Then drill the same decks in your flashcard app. Do Review in the evening. Aim for about 2–2½ hours in total.</p>` : ""}
+        ${!p.kind ? `<p class="hint"><b>How:</b> do Learn in the morning: hide what you already know, read the root and the French for the rest. Then drill the same decks in your flashcard app. Do Review in the evening. Learn + Review take about 2–2½ hours; the Quant / Verbal skills / Essay block below adds about 1½–2 hours.</p>` : ""}
       </section>`;
     }
 
@@ -264,7 +283,7 @@
       <section class="card finals" aria-label="Last two days">
         <h3>The final stretch</h3>
         <p class="muted small" style="margin:0">Two hard days, then ease off. You go through every word one last time, then rest so it all sticks.</p>
-        <div class="final"><div class="fd">Wed 4 Nov</div><div><b>Sweep 1 · about 3 h.</b> Catch up on anything you haven’t sorted, then a fast pass through every Common and Basic word you haven’t hidden, Known ones included. Hesitate, and it goes back to Shaky. Then two timed Verbal sections.</div></div>
+        <div class="final"><div class="fd">Wed 4 Nov</div><div><b>Sweep 1 · about 3 h.</b> Catch up on anything you haven’t sorted, then a fast pass through every Common and Basic word you haven’t hidden, Known ones included. Hesitate, and it goes back to Shaky. Then the full timed ETS PowerPrep 2 (Verbal + Quant).</div></div>
         <div class="final"><div class="fd">Thu 5 Nov</div><div><b>Sweep 2 · about 3 h.</b> Every Advanced word you haven’t hidden, plus all Hard and Flag words and every trap word (faux ami, 2nd meaning, look-alike). Then two more timed Verbal sections. In bed on time.</div></div>
         <div class="final"><div class="fd">Fri 6 Nov</div><div><b>Taper · 45 min max, morning.</b> Hard and Flag words only, once. No new words. Afternoon: check your test centre, route and arrival time, and put the valid passport you registered with in your bag. Something relaxing in the evening.</div></div>
         <div class="final"><div class="fd">Sat 7 Nov</div><div><b>Test day · 15 min.</b> Your 30 hardest words over breakfast, once. Eat properly, arrive early, and trust the roots: when you don’t know a word, take it apart.</div></div>
@@ -306,6 +325,23 @@
     document.getElementById("export").addEventListener("click", exportBackup);
     document.getElementById("import").addEventListener("change", importBackup);
   }
+  function skillsHTML(date) {
+    const ex = EXTRA[date]; const done = (store.days[date] && store.days[date].x) || {};
+    const rows = XKEYS.filter(([k]) => ex[k]).map(([k, label]) => `
+      <div class="xrow"><button type="button" class="xtick" data-date="${date}" data-k="${k}" aria-pressed="${!!done[k]}" aria-label="Mark ${label} done"><span>${icon.check}</span></button>
+      <div><div class="xlbl">${label}</div><div class="xtxt">${esc(ex[k])}</div></div></div>`).join("");
+    return `<div class="card xcard"><h3>Also today</h3>${rows}<p class="muted small" style="margin:0">Tick each one when it’s done.</p></div>`;
+  }
+  function onXTick(e) {
+    const b = e.target.closest(".xtick"); if (!b) return;
+    const d = b.dataset.date, k = b.dataset.k;
+    const cur = store.days[d] || {}; const x = Object.assign({}, cur.x || {});
+    if (x[k]) delete x[k]; else x[k] = 1;
+    store.days[d] = Object.assign({}, cur, { x }); save();
+    b.setAttribute("aria-pressed", String(!!x[k]));
+  }
+  document.addEventListener("click", onXTick);
+
   function dueText(day) {
     const names = DECKS.filter(d => [day - 1, day - 3, day - 7].includes(LEARN_DAY[d.slug])).map(d => d.name);
     if (!names.length) return "earlier decks";
@@ -649,7 +685,8 @@
     Object.keys(r.days || {}).forEach(d => {
       const a = store.days[d] || {}, b = r.days[d] || {};
       const m = { learn: !!(a.learn || b.learn), review: !!(a.review || b.review) };
-      if (m.learn !== !!a.learn || m.review !== !!a.review) { store.days[d] = m; changed = true; }
+      const x = Object.assign({}, b.x || {}, a.x || {}); if (Object.keys(x).length) m.x = x;
+      if (canon(m) !== canon({ learn: !!a.learn, review: !!a.review, x: a.x && Object.keys(a.x).length ? a.x : undefined })) { store.days[d] = m; changed = true; }
     });
     return changed;
   }
