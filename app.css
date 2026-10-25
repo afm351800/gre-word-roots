@@ -298,3 +298,6 @@ kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;bor
 .srows li { display: grid; grid-template-columns: 96px 1fr; gap: 10px; align-items: baseline; }
 .srows .st { font-variant-numeric: tabular-nums; font-size: .85rem; color: var(--muted, #888); }
 .srows .sd { font-size: .88rem; color: var(--muted, #888); margin-top: 1px; }
+
+.hkbtn { margin-left: 8px; font: inherit; font-size: .78rem; text-transform: none; letter-spacing: 0; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--line, rgba(128,128,128,.4)); background: transparent; color: inherit; cursor: pointer; }
+.hkbtn span { opacity: .6; margin-left: 4px; }

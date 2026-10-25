@@ -216,6 +216,24 @@
     return c;
   }
 
+  /* ---------- memory hooks: the original plus alternates, cycled with a button ---------- */
+  const HK = "gre-roots-hk";
+  const hkLoad = () => { try { return JSON.parse(localStorage.getItem(HK)) || {}; } catch (e) { return {}; } };
+  const hkSave = o => { try { localStorage.setItem(HK, JSON.stringify(o)); } catch (e) {} };
+  const hooksOf = x => [x.t].concat(x.h || []);
+  function hookBlock(x) {
+    const hs = hooksOf(x); const i = (hkLoad()[x.w] || 0) % hs.length;
+    return `<div class="block hkblock" data-w="${esc(x.w)}"><div class="lbl">Memory hook${hs.length > 1 ? ` <button type="button" class="hkbtn" aria-label="Show another memory hook">↻ Another <span>${i + 1}/${hs.length}</span></button>` : ""}</div><div class="txt">${hs[i]}</div></div>`;
+  }
+  document.addEventListener("click", e => {
+    const b = e.target.closest(".hkbtn"); if (!b) return;
+    e.stopPropagation();
+    const blk = b.closest(".hkblock"); const w = blk.dataset.w; const x = LOOKUP.get(w); if (!x) return;
+    const hs = hooksOf(x); const st = hkLoad(); const i = ((st[w] || 0) + 1) % hs.length;
+    st[w] = i; hkSave(st);
+    blk.querySelector(".txt").innerHTML = hs[i]; b.querySelector("span").textContent = (i + 1) + "/" + hs.length;
+  }, true);
+
   /* ---------- helpers ---------- */
   const app = document.getElementById("app");
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -528,7 +546,7 @@
         <div class="def"><span class="pos">${esc(x.p)}</span><p>${x.m}</p>${x.x ? `<span class="flag">${esc(x.x)}</span>` : ""}</div>
         <div class="block"><div class="lbl">Etymology</div><div class="txt">${x.e}</div></div>
         <div class="block"><div class="lbl">French</div><div class="txt fr">${x.f}</div></div>
-        <div class="block"><div class="lbl">Memory hook</div><div class="txt">${x.t}</div></div>
+        ${hookBlock(x)}
         ${store.notes[w] ? `<div class="block"><div class="lbl">My notes</div><div class="txt">${esc(store.notes[w])}</div></div>` : ""}
       </div>` : `<p class="flash-hint">${s.mode === "learn" ? "Do you already know this word for sure?" : "Say the meaning out loud, then reveal."}</p>`;
     const actions = !s.revealed
@@ -651,7 +669,7 @@
       <div class="def"><span class="pos">${esc(x.p)}</span><p>${x.m}</p>${x.x ? `<span class="flag">${esc(x.x)}</span>` : ""}</div>
       <div class="block"><div class="lbl">Etymology</div><div class="txt">${x.e}</div></div>
       <div class="block"><div class="lbl">French</div><div class="txt fr">${x.f}</div></div>
-      <div class="block"><div class="lbl">Memory hook</div><div class="txt">${x.t}</div></div>
+      ${hookBlock(x)}
       <div class="block"><div class="lbl">Colour</div><div class="txt marks">
         ${MARKS.map(m => `<button type="button" class="mk" data-mark="${m.id}" aria-pressed="${!hid && mark === m.id}"><i class="c-${m.id}"></i>${m.label}</button>`).join("")}
         <button type="button" class="mk" data-mark="hidden" aria-pressed="${hid}"><i class="c-hidden"></i>${hid ? "Hidden" : "Hide"}</button>

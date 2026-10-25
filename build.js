@@ -24,6 +24,13 @@ for (const [series, numerals] of DECKS) {
       if (seen.has(w.w)) console.warn(`duplicate ${w.w} in ${name} and ${seen.get(w.w)}`);
       seen.set(w.w, name);
     }
+    const hf = path.join(__dirname, "data", "hooks", slug + ".json");
+    const hooks = fs.existsSync(hf) ? JSON.parse(fs.readFileSync(hf, "utf8")) : {};
+    for (const w of words) {
+      const h = hooks[w.w];
+      if (h) { if (!Array.isArray(h) || h.length < 2 || h.some(t => !t || typeof t !== "string")) throw new Error(`${name}: bad hooks for ${w.w}`); w.h = h; }
+      else console.warn(`no alternate hooks: ${w.w} (${name})`);
+    }
     words.sort((a, b) => a.w.localeCompare(b.w, "en", { sensitivity: "base" }));
     out.push({ name, slug, series, words });
   }
