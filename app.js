@@ -30,9 +30,9 @@
     { date: "2026-11-01", learn: ["advanced-iv", "advanced-v"], title: "Advanced IV–V" },
     { date: "2026-11-02", learn: ["advanced-vi", "advanced-vii"], title: "Advanced VI–VII" },
     { date: "2026-11-03", learn: ["advanced-viii", "advanced-ix"], title: "Advanced VIII–IX" },
-    { date: "2026-11-04", learn: [], kind: "catchup", title: "Catch-up + big review" },
-    { date: "2026-11-05", learn: [], kind: "final1", title: "Final review 1" },
-    { date: "2026-11-06", learn: [], kind: "final2", title: "Final review 2 (light)" },
+    { date: "2026-11-04", learn: [], kind: "sweep1", title: "Final stretch · Sweep Common + Basic" },
+    { date: "2026-11-05", learn: [], kind: "sweep2", title: "Final stretch · Sweep Advanced + traps" },
+    { date: "2026-11-06", learn: [], kind: "taper", title: "Taper · light review only" },
     { date: TEST_DATE, learn: [], kind: "test", title: "Test day" },
   ];
   // Day each deck is first learned (index into PLAN, 1-based); Common Words I was mastered before the plan.
@@ -91,9 +91,11 @@
     const live = x => !isHidden(x.w);
     const learned = x => LEARN_DAY[x.slug] !== undefined && LEARN_DAY[x.slug] < day && isSorted(x.w);
     let pool;
-    if (kind === "catchup") pool = ALL.filter(x => live(x) && ["red", "amber", "blue"].includes(markOf(x.w)));
-    else if (kind === "final1") pool = ALL.filter(x => live(x) && (["red", "blue"].includes(markOf(x.w)) || (x.x && markOf(x.w) !== "green")));
-    else if (kind === "final2") pool = ALL.filter(x => live(x) && ["red", "blue"].includes(markOf(x.w)));
+    const weak = x => ["red", "amber", "blue"].includes(markOf(x.w));
+    const isAdv = x => x.slug.startsWith("advanced");
+    if (kind === "sweep1") pool = ALL.filter(x => live(x) && isSorted(x.w) && (!isAdv(x) || weak(x)));
+    else if (kind === "sweep2") pool = ALL.filter(x => live(x) && isSorted(x.w) && (isAdv(x) || ["red", "blue"].includes(markOf(x.w)) || x.x));
+    else if (kind === "taper") pool = ALL.filter(x => live(x) && ["red", "blue"].includes(markOf(x.w)));
     else if (kind === "test") pool = ALL.filter(x => live(x) && markOf(x.w) === "red").slice(0, 30);
     else if (day === 1) pool = ALL.filter(x => live(x) && (x.slug === "common-words-i" || (x.slug === "common-words-ii" && markOf(x.w))));
     else {
@@ -176,9 +178,9 @@
     const catchUp = p.learn.length ? lq.filter(w => LEARN_DAY[LOOKUP.get(w).slug] < day).length : lq.length;
     const learnDecks = p.learn.map(s => BY_SLUG[s].name);
     const finals = {
-      catchup: "Finish anything you didn’t get to, then go through every word you marked Hard, Shaky or Flag.",
-      final1: "Every Hard and Flag word, plus every “faux ami”, “2nd meaning” and “look-alike” word you haven’t marked Known. These are the GRE traps.",
-      final2: "Hard and Flag words only, once, in the morning. No new words. Stop by lunchtime.",
+      sweep1: "Every Common and Basic word you haven’t hidden, Known ones included, at speed, plus every weak word from Advanced.",
+      sweep2: "Every Advanced word you haven’t hidden, plus all Hard and Flag words and every trap word (faux ami, 2nd meaning, look-alike).",
+      taper: "Hard and Flag words only, once, in the morning. No new words. Stop by lunchtime.",
       test: "Over breakfast: your 30 hardest words, once. Then close the app.",
     };
 
@@ -194,7 +196,7 @@
           <h2>${esc(p.title)}</h2></div>
         </div>
         <div class="sessions">
-          ${p.kind === "test" || p.kind === "final1" || p.kind === "final2" || (p.kind === "catchup" && learnDone) ? "" : `
+          ${p.kind === "test" || p.kind === "taper" || (p.kind && learnDone) ? "" : `
           <a class="sess ${learnDone ? "done" : ""}" href="#/session/learn" ${learnDone ? 'aria-disabled="true"' : ""}>
             <div class="sess-top"><span class="num">1</span><span class="sess-name">Learn</span>${learnDone ? `<span class="tick">${icon.check}</span>` : ""}</div>
             <div class="sess-big">${learnDone ? "Done" : `${lq.length} <small>words to sort</small>`}</div>
@@ -202,13 +204,14 @@
               `${learnDecks.length ? esc(p.title) : "Words you didn’t get to"}${catchUp && p.learn.length ? ` + ${catchUp} catch-up` : ""} · ${mins(lq.length * 0.5)}`}</div>
           </a>`}
           <a class="sess ${reviewDone ? "done" : ""}" href="#/session/review" ${reviewDone ? 'aria-disabled="true"' : ""}>
-            <div class="sess-top"><span class="num">${["test", "final1", "final2"].includes(p.kind) || (p.kind === "catchup" && learnDone) ? "1" : "2"}</span><span class="sess-name">${p.kind === "test" ? "Warm-up" : "Review"}</span>${reviewDone && rpool.length ? `<span class="tick">${icon.check}</span>` : ""}</div>
+            <div class="sess-top"><span class="num">${p.kind && (p.kind === "test" || p.kind === "taper" || learnDone) ? "1" : "2"}</span><span class="sess-name">${p.kind === "test" ? "Warm-up" : p.kind && p.kind.startsWith("sweep") ? "Sweep" : "Review"}</span>${reviewDone && rpool.length ? `<span class="tick">${icon.check}</span>` : ""}</div>
             <div class="sess-big">${reviewDone ? (rpool.length ? "Done" : "—") : `${rq.length} <small>words</small>`}</div>
             <div class="sess-sub">${reviewDone && !rpool.length ? "Nothing due today." :
-              p.kind ? `${esc(finals[p.kind])} · ${mins(rq.length * 0.3)}` : day === 1 ? `Quick check of Common Words I and the Common II words you’ve done. · ${mins(rq.length * 0.3)}` : `Words from ${dueText(day)} that aren’t Known yet, plus all Hard & Flag. · ${mins(rq.length * 0.3)}`}</div>
+              p.kind ? `${esc(finals[p.kind])} · ${mins(rq.length * (p.kind.startsWith("sweep") ? 0.15 : 0.3))}` : day === 1 ? `Quick check of Common Words I and the Common II words you’ve done. · ${mins(rq.length * 0.3)}` : `Words from ${dueText(day)} that aren’t Known yet, plus all Hard & Flag. · ${mins(rq.length * 0.3)}`}</div>
           </a>
         </div>
-        ${p.kind && p.kind !== "test" && p.kind !== "catchup" ? `<p class="hint">${esc(finals[p.kind])}</p>` : ""}
+        ${p.kind && p.kind.startsWith("sweep") ? `<p class="hint"><b>Final stretch, the most intense days:</b> catch up first if anything is left, then the sweep. Go fast: if you know it in 2 seconds, Got it. Anything you hesitate on becomes Shaky or Hard. Then do two timed Verbal sections (about 1 h). About 3 hours in total.</p>` : ""}
+        ${p.kind === "taper" ? `<p class="hint"><b>Taper:</b> 45 minutes max, then stop. Being fresh tomorrow is worth more than 50 extra words.</p>` : ""}
         ${!p.kind ? `<p class="hint"><b>How:</b> do Learn in the morning: hide what you already know, read the root and the French for the rest. Then drill the same decks in your flashcard app. Do Review in the evening. Aim for about 2–2½ hours in total.</p>` : ""}
       </section>`;
     }
@@ -249,7 +252,7 @@
               <div class="tl-date"><b>${fmt(q.date, { day: "numeric" })}</b><span>${fmt(q.date, { month: "short" })}</span><span>${fmt(q.date, { weekday: "short" })}</span></div>
               <div class="tl-body">
                 <div class="tl-title">${esc(q.title)}${isToday ? ' <span class="pill">Today</span>' : ""}${behind ? ` <span class="pill warn">${deckLeft} left</span>` : ""}</div>
-                <div class="tl-sub">${q.learn.length ? `${lw} new words · then review` : q.kind === "test" ? "Warm-up, ID, go" : "Review only"}</div>
+                <div class="tl-sub">${q.learn.length ? `${lw} new words · then review` : q.kind === "test" ? "15-min warm-up, ID, go" : q.kind === "taper" ? "Light · 45 min max" : "Most intense day · ≈ 3 h"}</div>
               </div>
               <div class="tl-marks">${q.kind === "test" ? "" : `<span class="dot ${!q.learn.length ? "na" : deckLeft === 0 ? "ok" : ""}" title="Learn">L</span>`}<span class="dot ${st.review ? "ok" : ""}" title="Review">R</span></div>
             </li>`;
@@ -257,9 +260,11 @@
         </ol>
       </section>
       <section class="card finals" aria-label="Last two days">
-        <h3>The last two days</h3>
-        <div class="final"><div class="fd">Thu 5 Nov</div><div><b>Final review 1 · about 2 h.</b> Every Hard and Flag word, plus every trap word (“faux ami”, “2nd meaning”, “look-alike”). Then one timed Verbal section to practise using words in context. In bed on time.</div></div>
-        <div class="final"><div class="fd">Fri 6 Nov</div><div><b>Final review 2 · 45 min max, morning.</b> Hard and Flag words only, once. No new words. Afternoon: check your test centre, route and arrival time, and put the valid passport you registered with in your bag. Something relaxing in the evening.</div></div>
+        <h3>The final stretch</h3>
+        <p class="muted small" style="margin:0">Two hard days, then ease off. You go through every word one last time, then rest so it all sticks.</p>
+        <div class="final"><div class="fd">Wed 4 Nov</div><div><b>Sweep 1 · about 3 h.</b> Catch up on anything you haven’t sorted, then a fast pass through every Common and Basic word you haven’t hidden, Known ones included. Hesitate, and it goes back to Shaky. Then two timed Verbal sections.</div></div>
+        <div class="final"><div class="fd">Thu 5 Nov</div><div><b>Sweep 2 · about 3 h.</b> Every Advanced word you haven’t hidden, plus all Hard and Flag words and every trap word (faux ami, 2nd meaning, look-alike). Then two more timed Verbal sections. In bed on time.</div></div>
+        <div class="final"><div class="fd">Fri 6 Nov</div><div><b>Taper · 45 min max, morning.</b> Hard and Flag words only, once. No new words. Afternoon: check your test centre, route and arrival time, and put the valid passport you registered with in your bag. Something relaxing in the evening.</div></div>
         <div class="final"><div class="fd">Sat 7 Nov</div><div><b>Test day · 15 min.</b> Your 30 hardest words over breakfast, once. Eat properly, arrive early, and trust the roots: when you don’t know a word, take it apart.</div></div>
       </section>
       <section class="backup">

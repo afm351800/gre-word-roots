@@ -160,8 +160,10 @@ main.list{padding-block:6px 60px}
 .tl.past .tl-title,.tl.past .tl-date b{color:var(--muted)}
 .tl.now{background:var(--accent-bg);border-radius:10px;border-top-color:transparent}
 .tl.now + .tl{border-top-color:transparent}
-.tl.k-final1 .tl-title,.tl.k-final2 .tl-title,.tl.k-catchup .tl-title{color:var(--accent)}
-.tl.k-test .tl-title{color:var(--red)}
+.tl.k-sweep1 .tl-title,.tl.k-sweep2 .tl-title{color:var(--red)}
+.tl.k-taper .tl-title{color:var(--accent)}
+.tl.k-test .tl-title{color:var(--ink)}
+.tl.k-sweep1,.tl.k-sweep2{box-shadow:inset 3px 0 0 var(--red)}
 .pill{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;background:var(--ink);color:var(--paper);border-radius:5px;padding:1px 6px;vertical-align:2px}
 .pill.warn{background:var(--amber-bg);color:var(--amber)}
 .tl-marks{display:flex;gap:4px}
