@@ -1,0 +1,553 @@
+[
+ {
+  "w": "recapitulate",
+  "p": "v.",
+  "m": "To summarize and state again the main points.",
+  "e": "Latin <i>recapitulare</i>, from <i>capitulum</i> (little head, chapter).",
+  "f": "récapituler",
+  "t": "Same as « récapituler »."
+ },
+ {
+  "w": "beholden",
+  "p": "adj.",
+  "m": "Owing thanks or having a duty to someone.",
+  "e": "Old English <i>behealdan</i> (to hold, observe); past participle of <i>behold</i>.",
+  "f": "redevable",
+  "t": "« Redevable » to someone. Beholden to donors."
+ },
+ {
+  "w": "cluster",
+  "p": "n.",
+  "m": "A group of similar things close together.",
+  "e": "Old English <i>clyster</i>. Germanic.",
+  "f": "grappe, groupe",
+  "t": "Un « amas ». A cluster of stars."
+ },
+ {
+  "w": "coherent",
+  "p": "adj.",
+  "m": "Logical and consistent; clear.",
+  "e": "Latin <i>cohaerere</i> (to stick together).",
+  "f": "cohérent",
+  "t": "Same as « cohérent »."
+ },
+ {
+  "w": "contemplate",
+  "p": "v.",
+  "m": "To think deeply; to consider as a possibility.",
+  "e": "Latin <i>contemplari</i> (to observe), <i>templum</i> (a space for observing).",
+  "f": "contempler; envisager",
+  "x": "2nd meaning",
+  "t": "« Contempler » a view, but also envisager: contemplate resigning."
+ },
+ {
+  "w": "crafty",
+  "p": "adj.",
+  "m": "Clever at achieving aims by deceit.",
+  "e": "Old English <i>cræftig</i>, from <i>cræft</i> (skill).",
+  "f": "rusé, astucieux",
+  "t": "Craft = skill, and slyness. A crafty fox."
+ },
+ {
+  "w": "dismantle",
+  "p": "v.",
+  "m": "To take apart; to abolish gradually.",
+  "e": "Old French <i>desmanteler</i> (to strip off a cloak).",
+  "f": "démanteler, démonter",
+  "t": "Same as « démanteler »: take off the mantle."
+ },
+ {
+  "w": "forgo",
+  "p": "v.",
+  "m": "To go without; to give up.",
+  "e": "Old English <i>forgān</i> (to pass over). Germanic.",
+  "f": "renoncer à, se passer de",
+  "x": "Look-alike",
+  "t": "Not « forego » (to precede). Forgo dessert = renoncer au dessert."
+ },
+ {
+  "w": "impenetrable",
+  "p": "adj.",
+  "m": "Impossible to pass through or understand.",
+  "e": "Latin <i>impenetrabilis</i>.",
+  "f": "impénétrable",
+  "t": "Same as « impénétrable »."
+ },
+ {
+  "w": "inalienable",
+  "p": "adj.",
+  "m": "Unable to be taken away from or given away.",
+  "e": "<i>in-</i> + <i>alien</i>, Latin <i>alienare</i>.",
+  "f": "inaliénable",
+  "t": "Same as « inaliénable »: les droits inaliénables."
+ },
+ {
+  "w": "inept",
+  "p": "adj.",
+  "m": "Having no skill; clumsy.",
+  "e": "Latin <i>ineptus</i>: <i>in-</i> + <i>aptus</i> (suitable).",
+  "f": "inapte, incompétent",
+  "t": "Opposite of apt. An inept manager = « incapable »."
+ },
+ {
+  "w": "narcissism",
+  "p": "n.",
+  "m": "Excessive interest in oneself.",
+  "e": "Greek <i>Narkissos</i>, mythical youth in love with his reflection.",
+  "f": "narcissisme",
+  "t": "Same as « narcissisme »."
+ },
+ {
+  "w": "objurgation",
+  "p": "n.",
+  "m": "A harsh rebuke.",
+  "e": "Latin <i>objurgare</i> (to scold): <i>ob-</i> + <i>jurgare</i> (to quarrel).",
+  "f": "réprimande, objurgation",
+  "t": "Cousin of « objurguer » (rare in French). Think « injure »: a severe scolding."
+ },
+ {
+  "w": "passable",
+  "p": "adj.",
+  "m": "Acceptable but not outstanding; (of a road) able to be travelled.",
+  "e": "Old French <i>passer</i> (to pass).",
+  "f": "passable, acceptable",
+  "t": "Same as « passable » (just OK). A passable meal."
+ },
+ {
+  "w": "penetrating",
+  "p": "adj.",
+  "m": "Able to pass through; showing keen insight.",
+  "e": "Latin <i>penetrare</i>.",
+  "f": "pénétrant, perspicace",
+  "t": "Same as « pénétrant »: a penetrating question."
+ },
+ {
+  "w": "picturesque",
+  "p": "adj.",
+  "m": "Visually attractive, as in a painting.",
+  "e": "French <i>pittoresque</i>, Italian <i>pittoresco</i>.",
+  "f": "pittoresque",
+  "t": "Same as « pittoresque »."
+ },
+ {
+  "w": "reflect",
+  "p": "v.",
+  "m": "To throw back light; to think carefully.",
+  "e": "Latin <i>reflectere</i> (to bend back).",
+  "f": "refléter; réfléchir",
+  "t": "Same as « réfléchir »: both meanings (mirror, thought)."
+ },
+ {
+  "w": "resourceful",
+  "p": "adj.",
+  "m": "Having the ability to find quick and clever ways to overcome difficulties.",
+  "e": "<i>resource</i> (French <i>ressource</i>) + <i>-ful</i>.",
+  "f": "ingénieux, débrouillard",
+  "t": "« Débrouillard »."
+ },
+ {
+  "w": "retrench",
+  "p": "v.",
+  "m": "To reduce costs or spending.",
+  "e": "Old French <i>retrenchier</i> (to cut back).",
+  "f": "réduire ses dépenses, se restreindre",
+  "t": "Cut back: « retrancher ». Retrenchment = austérité."
+ },
+ {
+  "w": "self-indulgent",
+  "p": "adj.",
+  "m": "Allowing oneself to enjoy pleasures or luxuries.",
+  "e": "<i>self</i> + Latin <i>indulgere</i> (to be kind).",
+  "f": "complaisant envers soi-même",
+  "t": "Indulgence: you pardon yourself everything. « Laxiste envers soi »."
+ },
+ {
+  "w": "speculate",
+  "p": "v.",
+  "m": "To form a theory without firm evidence; to invest at risk.",
+  "e": "Latin <i>speculari</i> (to observe).",
+  "f": "spéculer, conjecturer",
+  "t": "Same as « spéculer »."
+ },
+ {
+  "w": "suppress",
+  "p": "v.",
+  "m": "To forcibly put an end to; to prevent from being seen.",
+  "e": "Latin <i>supprimere</i>: <i>sub-</i> + <i>premere</i> (to press).",
+  "f": "réprimer, étouffer, supprimer",
+  "t": "Same as « supprimer / réprimer »."
+ },
+ {
+  "w": "vestigial",
+  "p": "adj.",
+  "m": "Forming a remnant of something that once existed.",
+  "e": "Latin <i>vestigium</i> (footprint).",
+  "f": "vestigial, résiduel",
+  "t": "Same as « vestige »: a vestigial organ."
+ },
+ {
+  "w": "accord",
+  "p": "v.",
+  "m": "To give or grant; to be consistent with.",
+  "e": "Old French <i>acorder</i>, Latin <i>ad cor</i> (to the heart).",
+  "f": "accorder; concorder",
+  "t": "Same as « accorder / être en accord »."
+ },
+ {
+  "w": "ad hoc",
+  "p": "adj.",
+  "m": "Created for a particular purpose only.",
+  "e": "Latin <i>ad hoc</i> (for this).",
+  "f": "ad hoc, improvisé",
+  "t": "Same as « ad hoc »."
+ },
+ {
+  "w": "all-ecompassing",
+  "p": "adj.",
+  "m": "Including everything; comprehensive. (Standard spelling: all-encompassing.)",
+  "e": "<i>all</i> + <i>encompass</i> (<i>en-</i> + <i>compass</i>, Latin <i>compassare</i>).",
+  "f": "global, exhaustif",
+  "x": "Spelling",
+  "t": "GregMat’s spelling has a typo: the correct form is all-encompassing. « Qui englobe tout »."
+ },
+ {
+  "w": "benchmark",
+  "p": "n.",
+  "m": "A standard against which things can be measured.",
+  "e": "From a surveyor’s <i>bench mark</i> cut in stone.",
+  "f": "référence, étalon",
+  "t": "Same in French business jargon: « un benchmark »."
+ },
+ {
+  "w": "blighted",
+  "p": "adj.",
+  "m": "Spoiled or ruined; stricken by disease (plants).",
+  "e": "<i>blight</i> (plant disease), origin unknown.",
+  "f": "gâché, ravagé",
+  "t": "A blight: la rouille. Blighted hopes."
+ },
+ {
+  "w": "content",
+  "p": "adj.",
+  "m": "In a state of peaceful happiness; satisfied. (Stress: conTENT.)",
+  "e": "Latin <i>contentus</i> (satisfied), from <i>continere</i>.",
+  "f": "content, satisfait",
+  "x": "2nd meaning",
+  "t": "Same as « content ». Two words: CONtent (the substance) vs conTENT (satisfied)."
+ },
+ {
+  "w": "disconcerting",
+  "p": "adj.",
+  "m": "Causing unease or confusion.",
+  "e": "French <i>disconcerter</i>.",
+  "f": "déconcertant",
+  "t": "Same as « déconcertant »."
+ },
+ {
+  "w": "facility",
+  "p": "n.",
+  "m": "A natural ease; a place or equipment for an activity.",
+  "e": "Latin <i>facilitas</i>, from <i>facilis</i> (easy).",
+  "f": "aisance, facilité; installation",
+  "x": "2nd meaning",
+  "t": "Facility for languages = facilité. But a research facility = une installation."
+ },
+ {
+  "w": "fitful",
+  "p": "adj.",
+  "m": "Active only in short bursts; irregular.",
+  "e": "<i>fit</i> (a sudden attack), Old English <i>fitt</i> + <i>-ful</i>.",
+  "f": "intermittent, irrégulier",
+  "t": "Fits and starts: fitful sleep = sommeil agité."
+ },
+ {
+  "w": "incite",
+  "p": "v.",
+  "m": "To encourage or stir up (violence or hatred).",
+  "e": "Latin <i>incitare</i> (to urge on).",
+  "f": "inciter, provoquer",
+  "t": "Same as « inciter »."
+ },
+ {
+  "w": "induce",
+  "p": "v.",
+  "m": "To persuade; to bring about.",
+  "e": "Latin <i>inducere</i> (to lead in).",
+  "f": "inciter, provoquer, induire",
+  "t": "Same as « induire » (en erreur). Induce sleep = provoquer le sommeil."
+ },
+ {
+  "w": "infelicity",
+  "p": "n.",
+  "m": "An inappropriate remark or expression; unhappiness.",
+  "e": "Latin <i>infelicitas</i>: <i>in-</i> + <i>felix</i> (happy).",
+  "f": "impropriété, maladresse",
+  "t": "Opposite of felicity. An infelicity of style = formule malheureuse."
+ },
+ {
+  "w": "intelligible",
+  "p": "adj.",
+  "m": "Able to be understood.",
+  "e": "Latin <i>intelligibilis</i>, from <i>intellegere</i>.",
+  "f": "intelligible",
+  "t": "Same as « intelligible »."
+ },
+ {
+  "w": "onetime",
+  "p": "adj.",
+  "m": "Former.",
+  "e": "<i>one</i> + <i>time</i>. Germanic.",
+  "f": "ancien, d'autrefois",
+  "t": "A onetime champion = ancien champion."
+ },
+ {
+  "w": "opportunistic",
+  "p": "adj.",
+  "m": "Exploiting circumstances for immediate advantage.",
+  "e": "Latin <i>opportunus</i> (favourable).",
+  "f": "opportuniste",
+  "t": "Same as « opportuniste »."
+ },
+ {
+  "w": "plausible",
+  "p": "adj.",
+  "m": "Seeming reasonable or probable.",
+  "e": "Latin <i>plausibilis</i> (deserving applause).",
+  "f": "plausible, vraisemblable",
+  "t": "Same as « plausible »."
+ },
+ {
+  "w": "posturing",
+  "p": "n.",
+  "m": "Behaviour intended to impress or mislead.",
+  "e": "Latin <i>positura</i> (position).",
+  "f": "pose, affectation, grands airs",
+  "t": "Une « posture » (not neutral): political posturing = jeu de rôle."
+ },
+ {
+  "w": "potent",
+  "p": "adj.",
+  "m": "Having great power or strong effect.",
+  "e": "Latin <i>potens</i>, from <i>posse</i> (to be able).",
+  "f": "puissant, efficace",
+  "t": "Same as « potentiel / puissant ». A potent drug."
+ },
+ {
+  "w": "redundant",
+  "p": "adj.",
+  "m": "Not needed; superfluous.",
+  "e": "Latin <i>redundare</i> (to overflow).",
+  "f": "redondant, superflu",
+  "t": "Same as « redondant »; also “laid off” in British English."
+ },
+ {
+  "w": "sacrosanct",
+  "p": "adj.",
+  "m": "Too important to be changed.",
+  "e": "Latin <i>sacrosanctus</i>: <i>sacro</i> (by a sacred rite) + <i>sanctus</i> (made holy).",
+  "f": "sacro-saint",
+  "t": "Same as « sacro-saint »."
+ },
+ {
+  "w": "shrewd",
+  "p": "adj.",
+  "m": "Having sharp judgement, especially in business.",
+  "e": "Middle English <i>shrewe</i> (wicked person), later 'sharp'.",
+  "f": "astucieux, perspicace",
+  "t": "A shrewd negotiator = fin négociateur."
+ },
+ {
+  "w": "unadorned",
+  "p": "adj.",
+  "m": "Plain; without decoration.",
+  "e": "<i>un-</i> + Latin <i>adornare</i>.",
+  "f": "sans fard, dépouillé",
+  "t": "« Sans fard »: the unadorned truth."
+ },
+ {
+  "w": "valedictory",
+  "p": "adj.",
+  "m": "Serving as a farewell.",
+  "e": "Latin <i>vale dicere</i> (to say farewell).",
+  "f": "d'adieu",
+  "t": "Vale! Valedictorian gives the farewell speech."
+ },
+ {
+  "w": "warranted",
+  "p": "adj.",
+  "m": "Justified or necessary.",
+  "e": "Old French <i>warant</i>, Germanic. Cf. « garantir ».",
+  "f": "justifié, fondé",
+  "t": "Warrant ~ garantir: warranted = guaranteed to be justified."
+ },
+ {
+  "w": "wistful",
+  "p": "adj.",
+  "m": "Having a feeling of vague longing.",
+  "e": "Probably from <i>wistly</i> (intently), influenced by <i>wishful</i>.",
+  "f": "mélancolique, nostalgique",
+  "t": "Wishful, melancholy: « nostalgique »."
+ },
+ {
+  "w": "attribute",
+  "p": "v.",
+  "m": "To regard something as belonging to or caused by.",
+  "e": "Latin <i>attribuere</i> (to assign).",
+  "f": "attribuer",
+  "t": "Same as « attribuer »."
+ },
+ {
+  "w": "calamitous",
+  "p": "adj.",
+  "m": "Causing great damage.",
+  "e": "Latin <i>calamitas</i> (disaster).",
+  "f": "désastreux, calamiteux",
+  "t": "Same as « calamiteux »."
+ },
+ {
+  "w": "dexterous",
+  "p": "adj.",
+  "m": "Showing skill with hands or mind.",
+  "e": "Latin <i>dexter</i> (right-handed, skilful).",
+  "f": "adroit, habile",
+  "t": "Dexter = right. Cousin of « dextérité »."
+ },
+ {
+  "w": "dictum",
+  "p": "n.",
+  "m": "A formal pronouncement; a short statement of principle.",
+  "e": "Latin <i>dictum</i> (something said).",
+  "f": "maxime, sentence",
+  "t": "Same as « dicton ». Dictum = a said thing."
+ },
+ {
+  "w": "dutiful",
+  "p": "adj.",
+  "m": "Conscientiously obedient.",
+  "e": "<i>duty</i> + <i>-ful</i>.",
+  "f": "respectueux, obéissant",
+  "t": "Full of duty (devoir): a dutiful son."
+ },
+ {
+  "w": "ensue",
+  "p": "v.",
+  "m": "To happen afterwards, as a result.",
+  "e": "Old French <i>ensuivre</i>: <i>en-</i> + <i>suivre</i> (to follow).",
+  "f": "s'ensuivre, résulter",
+  "t": "Same as « s'ensuivre »."
+ },
+ {
+  "w": "fathom",
+  "p": "v.",
+  "m": "To understand after much thought.",
+  "e": "Old English <i>fæthm</i> (outstretched arms), a unit of depth.",
+  "f": "comprendre, sonder",
+  "t": "Sound the depth: « sonder ». I can’t fathom it."
+ },
+ {
+  "w": "frank",
+  "p": "adj.",
+  "m": "Open, honest and direct.",
+  "e": "Old French <i>franc</i> (free), from Frankish.",
+  "f": "franc",
+  "t": "Same as « franc »: Franc de port."
+ },
+ {
+  "w": "grumble",
+  "p": "v.",
+  "m": "To complain in a bad-tempered way.",
+  "e": "Dutch <i>grommelen</i>. Germanic.",
+  "f": "grogner, ronchonner",
+  "t": "Grommeler. Grumble about taxes."
+ },
+ {
+  "w": "hidebound",
+  "p": "adj.",
+  "m": "Unwilling to accept new ideas; rigidly conventional.",
+  "e": "<i>hide</i> (skin) + <i>bound</i>: cattle with tight skin.",
+  "f": "étroit d'esprit, borné",
+  "t": "Skin too tight: un esprit « borné »."
+ },
+ {
+  "w": "hypocrite",
+  "p": "n.",
+  "m": "A person who pretends to have virtues they do not possess.",
+  "e": "Greek <i>hypokritēs</i> (actor).",
+  "f": "hypocrite",
+  "t": "Same as « hypocrite »: an actor playing a role."
+ },
+ {
+  "w": "impolitic",
+  "p": "adj.",
+  "m": "Unwise; failing to take account of consequences.",
+  "e": "<i>im-</i> + <i>politic</i> (wise), Greek <i>politikos</i>.",
+  "f": "peu judicieux, malavisé",
+  "t": "Not rude: politic = prudent. An impolitic remark = une maladresse."
+ },
+ {
+  "w": "intermediary",
+  "p": "n.",
+  "m": "A person who acts as a link between parties.",
+  "e": "Latin <i>intermedius</i>.",
+  "f": "intermédiaire",
+  "t": "Same as « intermédiaire »."
+ },
+ {
+  "w": "passive",
+  "p": "adj.",
+  "m": "Accepting what happens without active response.",
+  "e": "Latin <i>passivus</i>, from <i>pati</i> (to suffer).",
+  "f": "passif",
+  "t": "Same as « passif »."
+ },
+ {
+  "w": "ramble",
+  "p": "v.",
+  "m": "To walk for pleasure; to talk at length confusedly.",
+  "e": "Middle Dutch <i>rammelen</i> (to roam in sexual excitement).",
+  "f": "flâner; divaguer",
+  "x": "2nd meaning",
+  "t": "A rambling speech = discours décousu. Walkers ramble too."
+ },
+ {
+  "w": "resent",
+  "p": "v.",
+  "m": "To feel bitter indignation at.",
+  "e": "French <i>ressentir</i> (to feel again).",
+  "f": "en vouloir à, ne pas supporter",
+  "x": "Faux ami",
+  "t": "Ressentir ≠ resent: English = bitter. « Il m'en veut » = he resents me."
+ },
+ {
+  "w": "residual",
+  "p": "adj.",
+  "m": "Remaining after the main part has gone.",
+  "e": "Latin <i>residuum</i>, from <i>residere</i> (to remain).",
+  "f": "résiduel",
+  "t": "Same as « résiduel »."
+ },
+ {
+  "w": "surrogate",
+  "p": "n.",
+  "m": "A substitute, especially a person acting for another.",
+  "e": "Latin <i>surrogare</i> (to substitute).",
+  "f": "substitut, remplaçant",
+  "t": "Same as « substitut »: surrogate mother = mère porteuse."
+ },
+ {
+  "w": "willful",
+  "p": "adj.",
+  "m": "Stubbornly determined; intentional.",
+  "e": "<i>will</i> + <i>-ful</i>. Germanic.",
+  "f": "entêté; délibéré",
+  "t": "Willful neglect = négligence volontaire; a willful child = têtu."
+ },
+ {
+  "w": "phony",
+  "p": "adj.",
+  "m": "Not genuine; fake.",
+  "e": "American slang, early 20th century, possibly from <i>fawney</i> (a gilt brass ring used in scams).",
+  "f": "faux, bidon",
+  "t": "Holden Caulfield: phoney. « Bidon »."
+ }
+]

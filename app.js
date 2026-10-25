@@ -22,16 +22,16 @@
   const PLAN = [
     { date: "2026-10-25", learn: ["common-words-ii", "common-words-iii", "common-words-iv"], title: "Finish Common II · Common III–IV" },
     { date: "2026-10-26", learn: ["common-words-v", "common-words-vi", "common-words-vii"], title: "Common V–VII" },
-    { date: "2026-10-27", learn: ["basic-i", "basic-ii"], title: "Basic I–II" },
-    { date: "2026-10-28", learn: ["basic-iii", "basic-iv", "basic-v"], title: "Basic III–V" },
-    { date: "2026-10-29", learn: ["basic-vi", "basic-vii"], title: "Basic VI–VII" },
-    { date: "2026-10-30", learn: ["basic-viii", "basic-ix"], title: "Basic VIII–IX" },
-    { date: "2026-10-31", learn: ["advanced-i", "advanced-ii", "advanced-iii"], title: "Advanced I–III" },
-    { date: "2026-11-01", learn: ["advanced-iv", "advanced-v"], title: "Advanced IV–V" },
-    { date: "2026-11-02", learn: ["advanced-vi", "advanced-vii"], title: "Advanced VI–VII" },
-    { date: "2026-11-03", learn: ["advanced-viii", "advanced-ix"], title: "Advanced VIII–IX" },
-    { date: "2026-11-04", learn: [], kind: "sweep1", title: "Final stretch · Sweep Common + Basic" },
-    { date: "2026-11-05", learn: [], kind: "sweep2", title: "Final stretch · Sweep Advanced + traps" },
+    { date: "2026-10-27", learn: ["basic-i", "basic-ii", "basic-iii", "gregmat-i"], title: "Basic I–III · GregMat I" },
+    { date: "2026-10-28", learn: ["basic-iv", "basic-v", "basic-vi", "gregmat-ii"], title: "Basic IV–VI · GregMat II" },
+    { date: "2026-10-29", learn: ["basic-vii", "basic-viii", "gregmat-iii"], title: "Basic VII–VIII · GregMat III" },
+    { date: "2026-10-30", learn: ["basic-ix", "advanced-i", "gregmat-iv"], title: "Basic IX · Advanced I · GregMat IV" },
+    { date: "2026-10-31", learn: ["advanced-ii", "advanced-iii", "gregmat-v"], title: "Advanced II–III · GregMat V" },
+    { date: "2026-11-01", learn: ["advanced-iv", "advanced-v", "gregmat-vi"], title: "Advanced IV–V · GregMat VI" },
+    { date: "2026-11-02", learn: ["advanced-vi", "advanced-vii", "gregmat-vii"], title: "Advanced VI–VII · GregMat VII" },
+    { date: "2026-11-03", learn: ["advanced-viii", "advanced-ix", "gregmat-viii"], title: "Advanced VIII–IX · GregMat VIII" },
+    { date: "2026-11-04", learn: [], kind: "sweep1", title: "Final stretch · Sweep Common + Basic + GregMat I–IV" },
+    { date: "2026-11-05", learn: [], kind: "sweep2", title: "Final stretch · Sweep Advanced + GregMat V–VIII + traps" },
     { date: "2026-11-06", learn: [], kind: "taper", title: "Taper · light review only" },
     { date: TEST_DATE, learn: [], kind: "test", title: "Test day" },
   ];
@@ -56,6 +56,57 @@
     "2026-11-06": { q: "20 minutes: reread your list of quant mistakes and formulas. Nothing new.", v: "", e: "Reread your best essay’s outline. No new writing." },
   };
   const XKEYS = [["q", "Quant"], ["v", "Verbal skills"], ["e", "Essay"]];
+
+  /* ---------- daily timetable ---------- */
+  const APPS = {
+    "2026-10-25": "Shortlist of schools and programmes. Open an account on each school’s application site.",
+    "2026-10-26": "Programme table: school, programme, deadline, GRE rule, recommenders needed, essays required.",
+    "2026-10-27": "Recommenders: write and send your request to each person (who, what, deadline, your CV and key points).",
+    "2026-10-28": "What a master’s statement needs: read 3–4 examples and what each programme asks for. Write the checklist.",
+    "2026-10-29": "The two Stanford stories (MS&E: why industry and systems; Bioengineering: why the bio side). One page each, rough.",
+    "2026-10-30": "The core story: the thread that links Bain, your studies and what you want next. Half a page, rough.",
+    "2026-10-31": "Mock day: skip applications, or 20 minutes of tidying only.",
+    "2026-11-01": "Drafting: first full draft of the statement, ignoring quality.",
+    "2026-11-02": "Drafting: second pass on the statement. Chase any recommender who has not answered.",
+    "2026-11-03": "Drafting: Stanford-specific version. Send me what you have for feedback.",
+    "2026-11-05": "30 minutes only: list what remains to do after the test. Then stop.",
+  };
+  function scheduleFor(date, p) {
+    const wd = new Date(date + "T12:00:00").getDay();
+    const A = [0, 1, 3, 5].includes(wd);
+    const wk1 = date <= "2026-10-31";
+    const theme = APPS[date] || "Statement and recommenders: the next concrete step.";
+    const apps = ["Applications", theme];
+    const mock = date === "2026-10-31" ? "ETS PowerPrep 1" : date === "2026-11-04" ? "ETS PowerPrep 2" : "";
+    const quant = mock ? ["Mock: " + mock, "Do it at the time of day of your booked test slot, with the real breaks. Shift the other blocks around it. Review every mistake afterwards."] : ["Quant", "Prep Swift, see “Also today” below."];
+    const verbal = ["Verbal skills + essay", "GregMat session and homework, essay work. See “Also today” below."];
+    if (p.kind === "test") return { name: "Test day", rows: [["Breakfast", "Warm-up", "Your 30 hardest words, once. Then close the app."], ["", "Test", "Passport, early arrival, water, trust the roots."]] };
+    if (p.kind === "taper") return { name: "Taper day", rows: [
+      ["09:00–09:45", "Hard & Flag words", "Once through, then stop."], ["10:30–11:15", "Easy bike or walk", "Move, no gym effort."],
+      ["14:00–14:20", "Quant", "Reread your list of mistakes and formulas."], ["15:00–15:15", "Essay", "Reread your best outline."],
+      ["16:00–17:00", "Logistics", "Test centre route and arrival time, passport in your bag."], ["Evening", "Relax", "Dinner, something light, bed early."]] };
+    const learnRow = p.kind === "sweep1" ? ["Sweep 1", "Catch up, then every Common, Basic and GregMat I–IV word at speed."] : p.kind === "sweep2" ? ["Sweep 2", "Advanced, GregMat V–VIII, Hard, Flag and trap words."] : ["Vocab · Learn", "Today’s decks in this app, then drill them in your flashcard app."];
+    const reviewRow = ["Vocab · Review", p.kind && p.kind.startsWith("sweep") ? "Hard and Flag words, last pass." : "Words from earlier days that aren’t Known yet."];
+    const row = (t, r) => [t].concat(r);
+    if (date === "2026-10-25") return { name: "Today", rows: [
+      row("13:00–15:30", learnRow), row("15:30–16:15", ["Bike", "30–40 minutes."]), row("16:15–17:15", quant), row("17:15–18:30", verbal),
+      row("18:30–19:30", apps), row("19:30–20:00", ["Dinner", ""]), row("20:00–20:30", reviewRow)] };
+    if (A) return { name: "Day A", rows: [
+      row("08:00–10:00", ["Gym", "Cardio and stretches. 15 min there, 1 h, 15 min back, 30 min shower."]),
+      row("10:00–12:30", learnRow), row("12:30–13:30", ["Lunch", "Away from the screen."]), row("13:30–15:30", quant),
+      row("15:30–16:15", ["Bike", "30–40 minutes."]), row("16:15–18:00", verbal), row("18:00–18:15", ["Break", ""]),
+      row("18:15–" + (wk1 ? "19:15" : "19:45"), apps), row("20:00–20:30", reviewRow)] };
+    return { name: "Day B", rows: [
+      row("08:30–11:00", learnRow), row("11:15–13:00", quant), row("13:00–14:00", ["Lunch", "Away from the screen."]),
+      row("14:00–14:30", reviewRow), row("14:30–16:15", verbal), row("16:15–17:00", ["Bike", "30–40 minutes."]),
+      row("17:00–" + (wk1 ? "18:00" : "18:30"), apps), row("18:30–20:30", ["Gym", "Strength. 15 min there, 1 h, 15 min back, 30 min shower."])] };
+  }
+  function schedHTML(date, p, open) {
+    const s = scheduleFor(date, p);
+    return `<details class="card sched" ${open ? "open" : ""}><summary><h3>Timetable · ${s.name}</h3></summary>
+      <ol class="srows">${s.rows.map(r => `<li><span class="st">${esc(r[0])}</span><div><b>${esc(r[1])}</b>${r[2] ? `<div class="sd">${esc(r[2])}</div>` : ""}</div></li>`).join("")}</ol>
+      <p class="muted small" style="margin:0">Gym alternates: Day A has it in the morning, Day B in the evening. Mon, Wed, Fri, Sun are Day A; Tue, Thu, Sat are Day B.</p></details>`;
+  }
 
   /* ---------- storage ---------- */
   const KEY = "gre-roots-v1";
@@ -130,7 +181,7 @@
     const learned = x => LEARN_DAY[x.slug] !== undefined && LEARN_DAY[x.slug] < day && isSorted(x.w);
     let pool;
     const weak = x => ["red", "amber", "blue"].includes(markOf(x.w));
-    const isAdv = x => x.slug.startsWith("advanced");
+    const isAdv = x => x.slug.startsWith("advanced") || /^gregmat-(v|vi|vii|viii)$/.test(x.slug);
     if (kind === "sweep1") pool = ALL.filter(x => live(x) && isSorted(x.w) && (!isAdv(x) || weak(x)));
     else if (kind === "sweep2") pool = ALL.filter(x => live(x) && isSorted(x.w) && (isAdv(x) || ["red", "blue"].includes(markOf(x.w)) || x.x));
     else if (kind === "taper") pool = ALL.filter(x => live(x) && ["red", "blue"].includes(markOf(x.w)));
@@ -217,8 +268,8 @@
     const catchUp = p.learn.length ? lq.filter(w => LEARN_DAY[LOOKUP.get(w).slug] < day).length : lq.length;
     const learnDecks = p.learn.map(s => BY_SLUG[s].name);
     const finals = {
-      sweep1: "Every Common and Basic word you haven’t hidden, Known ones included, at speed, plus every weak word from Advanced.",
-      sweep2: "Every Advanced word you haven’t hidden, plus all Hard and Flag words and every trap word (faux ami, 2nd meaning, look-alike).",
+      sweep1: "Every Common, Basic and GregMat I–IV word you haven’t hidden, Known ones included, at speed, plus every weak word from Advanced and GregMat V–VIII.",
+      sweep2: "Every Advanced and GregMat V–VIII word you haven’t hidden, plus all Hard and Flag words and every trap word (faux ami, 2nd meaning, look-alike).",
       taper: "Hard and Flag words only, once, in the morning. No new words. Stop by lunchtime.",
       test: "Over breakfast: your 30 hardest words, once. Then close the app.",
     };
@@ -250,9 +301,10 @@
           </a>
         </div>
         ${EXTRA[p.date] ? skillsHTML(p.date) : ""}
+        ${p.date === TODAY ? schedHTML(p.date, p, true) : ""}
         ${p.kind && p.kind.startsWith("sweep") ? `<p class="hint"><b>Final stretch, the most intense days:</b> catch up first if anything is left, then the sweep. Go fast: if you know it in 2 seconds, Got it. Anything you hesitate on becomes Shaky or Hard. Then do two timed Verbal sections (about 1 h), or the full PowerPrep 2 on Wed 4. About 3–3½ hours in total.</p>` : ""}
         ${p.kind === "taper" ? `<p class="hint"><b>Taper:</b> 45 minutes max, then stop. Being fresh tomorrow is worth more than 50 extra words.</p>` : ""}
-        ${!p.kind ? `<p class="hint"><b>How:</b> do Learn in the morning: hide what you already know, read the root and the French for the rest. Then drill the same decks in your flashcard app. Do Review in the evening. Learn + Review take about 2–2½ hours; the Quant / Verbal skills / Essay block below adds about 1½–2 hours.</p>` : ""}
+        ${!p.kind ? `<p class="hint"><b>How:</b> do Learn in the morning: hide what you already know, read the root and the French for the rest. Then drill the same decks in your flashcard app. Do Review in the evening. Learn + Review take about 2½–3 hours; the Quant / Verbal skills / Essay block adds about 3 hours. The timetable below shows where each block goes.</p>` : ""}
       </section>`;
     }
 
@@ -283,8 +335,8 @@
       <section class="card finals" aria-label="Last two days">
         <h3>The final stretch</h3>
         <p class="muted small" style="margin:0">Two hard days, then ease off. You go through every word one last time, then rest so it all sticks.</p>
-        <div class="final"><div class="fd">Wed 4 Nov</div><div><b>Sweep 1 · about 3 h.</b> Catch up on anything you haven’t sorted, then a fast pass through every Common and Basic word you haven’t hidden, Known ones included. Hesitate, and it goes back to Shaky. Then the full timed ETS PowerPrep 2 (Verbal + Quant).</div></div>
-        <div class="final"><div class="fd">Thu 5 Nov</div><div><b>Sweep 2 · about 3 h.</b> Every Advanced word you haven’t hidden, plus all Hard and Flag words and every trap word (faux ami, 2nd meaning, look-alike). Then two more timed Verbal sections. In bed on time.</div></div>
+        <div class="final"><div class="fd">Wed 4 Nov</div><div><b>Sweep 1 · about 3 h.</b> Catch up on anything you haven’t sorted, then a fast pass through every Common, Basic and GregMat I–IV word you haven’t hidden, Known ones included. Hesitate, and it goes back to Shaky. Then the full timed ETS PowerPrep 2 (Verbal + Quant).</div></div>
+        <div class="final"><div class="fd">Thu 5 Nov</div><div><b>Sweep 2 · about 3 h.</b> Every Advanced and GregMat V–VIII word you haven’t hidden, plus all Hard and Flag words and every trap word (faux ami, 2nd meaning, look-alike). Then two more timed Verbal sections. In bed on time.</div></div>
         <div class="final"><div class="fd">Fri 6 Nov</div><div><b>Taper · 45 min max, morning.</b> Hard and Flag words only, once. No new words. Afternoon: check your test centre, route and arrival time, and put the valid passport you registered with in your bag. Something relaxing in the evening.</div></div>
         <div class="final"><div class="fd">Sat 7 Nov</div><div><b>Test day · 15 min.</b> Your 30 hardest words over breakfast, once. Eat properly, arrive early, and trust the roots: when you don’t know a word, take it apart.</div></div>
       </section>
@@ -309,6 +361,10 @@
             </li>`;
           }).join("")}
         </ol>
+      </section>
+      <section class="card" aria-label="Typical days"><h3>Typical days</h3>
+        ${schedHTML("2026-11-02", PLAN[8], false).replace("Timetable · Day A","Day A").replace("<details class=\"card sched\"","<details class=\"sched inner\"")}
+        ${schedHTML("2026-11-03", PLAN[9], false).replace("Timetable · Day B","Day B").replace("<details class=\"card sched\"","<details class=\"sched inner\"")}
       </section>
       </div></div>
       <section class="backup">

@@ -1,0 +1,559 @@
+[
+ {
+  "w": "vivacious",
+  "p": "adj.",
+  "m": "Attractively lively and animated.",
+  "e": "Latin <i>vivax</i> (lively), from <i>vivere</i> (to live).",
+  "f": "vif, plein d'entrain",
+  "t": "Same family as « vivace / vivacité »."
+ },
+ {
+  "w": "allusive",
+  "p": "adj.",
+  "m": "Making indirect reference to something.",
+  "e": "Latin <i>alludere</i> (to play with): <i>ad-</i> + <i>ludere</i>.",
+  "f": "allusif",
+  "t": "Same as « allusif / allusion »."
+ },
+ {
+  "w": "astute",
+  "p": "adj.",
+  "m": "Having the ability to assess situations accurately; shrewd.",
+  "e": "Latin <i>astutus</i>, from <i>astus</i> (cunning).",
+  "f": "astucieux, perspicace",
+  "t": "Cousin of « astucieux »: an astute investor."
+ },
+ {
+  "w": "commence",
+  "p": "v.",
+  "m": "To begin.",
+  "e": "Old French <i>comencier</i>, Latin <i>cum-</i> + <i>initiare</i>.",
+  "f": "commencer",
+  "t": "Same as « commencer »."
+ },
+ {
+  "w": "convalescent",
+  "p": "adj.",
+  "m": "Recovering from illness.",
+  "e": "Latin <i>convalescere</i> (to grow strong).",
+  "f": "convalescent",
+  "t": "Same as « convalescent »."
+ },
+ {
+  "w": "curb",
+  "p": "v.",
+  "m": "To restrain or keep in check.",
+  "e": "Old French <i>courber</i> (to bend), Latin <i>curvus</i>.",
+  "f": "freiner, juguler",
+  "t": "Same family as « courber »: a curb on a horse is a strap. Curb inflation."
+ },
+ {
+  "w": "evoke",
+  "p": "v.",
+  "m": "To bring a feeling or memory to mind.",
+  "e": "Latin <i>evocare</i> (to call out): <i>e-</i> + <i>vocare</i>.",
+  "f": "évoquer",
+  "t": "Same as « évoquer »."
+ },
+ {
+  "w": "fret",
+  "p": "v.",
+  "m": "To be constantly or visibly anxious.",
+  "e": "Old English <i>fretan</i> (to devour). Germanic.",
+  "f": "se tracasser, s'inquiéter",
+  "t": "Worry eats at you. Don't fret = ne t'en fais pas."
+ },
+ {
+  "w": "headstrong",
+  "p": "adj.",
+  "m": "Wilful and obstinate.",
+  "e": "<i>head</i> + <i>strong</i>. Germanic.",
+  "f": "têtu, entêté",
+  "t": "Strong in the head: « têtu »."
+ },
+ {
+  "w": "ire",
+  "p": "n.",
+  "m": "Anger.",
+  "e": "Latin <i>ira</i> (anger).",
+  "f": "colère, courroux",
+  "t": "Cousin of « irascible »: ira = anger."
+ },
+ {
+  "w": "lull",
+  "p": "v.",
+  "m": "To calm or send to sleep; (n.) a pause.",
+  "e": "Imitative of lullaby sounds (<i>lulla</i>).",
+  "f": "bercer, apaiser; accalmie",
+  "t": "Lullaby: lull a baby; a lull in the storm = « accalmie »."
+ },
+ {
+  "w": "neutralize",
+  "p": "v.",
+  "m": "To render ineffective by countering.",
+  "e": "French <i>neutraliser</i>, Latin <i>neuter</i> (neither).",
+  "f": "neutraliser",
+  "t": "Same as « neutraliser »."
+ },
+ {
+  "w": "pretentious",
+  "p": "adj.",
+  "m": "Attempting to impress by affecting greater importance than is possessed.",
+  "e": "Latin <i>praetendere</i> (to put forward).",
+  "f": "prétentieux",
+  "t": "Same as « prétentieux »."
+ },
+ {
+  "w": "profound",
+  "p": "adj.",
+  "m": "Very great or intense; having great depth.",
+  "e": "Latin <i>profundus</i> (deep): <i>pro-</i> + <i>fundus</i> (bottom).",
+  "f": "profond",
+  "t": "Same as « profond »."
+ },
+ {
+  "w": "recourse",
+  "p": "n.",
+  "m": "A source of help in a difficult situation; resort.",
+  "e": "Latin <i>recursus</i> (a running back): <i>re-</i> + <i>currere</i>.",
+  "f": "recours",
+  "t": "Same as « recours »: avoir recours à. Without recourse = sans recours."
+ },
+ {
+  "w": "regress",
+  "p": "v.",
+  "m": "To return to a former, less developed state.",
+  "e": "Latin <i>regredi</i> (to step back): <i>re-</i> + <i>gradi</i>.",
+  "f": "régresser, rétrograder",
+  "t": "Opposite of progress: « régresser »."
+ },
+ {
+  "w": "repercussion",
+  "p": "n.",
+  "m": "An unintended consequence.",
+  "e": "Latin <i>repercussio</i> (rebound): <i>re-</i> + <i>percutere</i> (to strike).",
+  "f": "répercussion, conséquence",
+  "t": "Same as « répercussion ». Usually plural: repercussions."
+ },
+ {
+  "w": "replenish",
+  "p": "v.",
+  "m": "To fill up again.",
+  "e": "Old French <i>replenir</i>, Latin <i>plenus</i> (full).",
+  "f": "réapprovisionner, remplir à nouveau",
+  "t": "Re + plein: fill again. Cousin of « plénitude »."
+ },
+ {
+  "w": "vigilant",
+  "p": "adj.",
+  "m": "Keeping careful watch for danger.",
+  "e": "Latin <i>vigilare</i> (to stay awake).",
+  "f": "vigilant",
+  "t": "Same as « vigilant »."
+ },
+ {
+  "w": "benevolent",
+  "p": "adj.",
+  "m": "Well meaning and kindly.",
+  "e": "Latin <i>bene</i> (well) + <i>velle</i> (to wish).",
+  "f": "bienveillant",
+  "t": "Bene + volent = « bienveillant »: wishing well."
+ },
+ {
+  "w": "berate",
+  "p": "v.",
+  "m": "To scold or criticize angrily.",
+  "e": "<i>be-</i> + <i>rate</i> (to scold), perhaps Scandinavian.",
+  "f": "réprimander sévèrement, rabrouer",
+  "t": "Be-rate: dressing someone down. Not related to « rate » (tax)."
+ },
+ {
+  "w": "buoyant",
+  "p": "adj.",
+  "m": "Able to float; cheerful and optimistic.",
+  "e": "Spanish <i>boyante</i>, from <i>boya</i> (buoy).",
+  "f": "flottant; optimiste, allègre",
+  "x": "2nd meaning",
+  "t": "Une bouée floats: buoyant mood. Also a buoyant market is rising."
+ },
+ {
+  "w": "condone",
+  "p": "v.",
+  "m": "To accept or allow behaviour that is wrong.",
+  "e": "Latin <i>condonare</i> (to give away): <i>con-</i> + <i>donare</i>.",
+  "f": "cautionner, excuser, fermer les yeux sur",
+  "x": "Look-alike",
+  "t": "Donner: you give it a pass. Not 'approve': condone = tolerate wrong."
+ },
+ {
+  "w": "contravene",
+  "p": "v.",
+  "m": "To violate a law or rule.",
+  "e": "Latin <i>contravenire</i> (to come against): <i>contra</i> + <i>venire</i>.",
+  "f": "enfreindre, contrevenir à",
+  "t": "Same as « contrevenir »: contravene a law."
+ },
+ {
+  "w": "denounce",
+  "p": "v.",
+  "m": "To publicly declare to be wrong or evil.",
+  "e": "Latin <i>denuntiare</i> (to announce).",
+  "f": "dénoncer",
+  "t": "Same as « dénoncer »."
+ },
+ {
+  "w": "despotic",
+  "p": "adj.",
+  "m": "Exercising absolute power in a cruel way.",
+  "e": "Greek <i>despotēs</i> (master).",
+  "f": "despotique",
+  "t": "Same as « despotique »."
+ },
+ {
+  "w": "deviate",
+  "p": "v.",
+  "m": "To depart from an established course.",
+  "e": "Latin <i>deviare</i>: <i>de-</i> + <i>via</i> (road).",
+  "f": "dévier, s'écarter",
+  "t": "Same as « dévier »: off the road."
+ },
+ {
+  "w": "escalate",
+  "p": "v.",
+  "m": "To increase rapidly; to become more intense.",
+  "e": "From <i>escalator</i>, Latin <i>scala</i> (ladder).",
+  "f": "s'intensifier, monter en puissance",
+  "t": "Escalier: step up. A conflict escalates = « s'envenime »."
+ },
+ {
+  "w": "exorcise",
+  "p": "v.",
+  "m": "To drive out an evil spirit; to get rid of a painful memory.",
+  "e": "Greek <i>exorkizein</i> (to bind by oath).",
+  "f": "exorciser",
+  "t": "Same as « exorciser »."
+ },
+ {
+  "w": "finicky",
+  "p": "adj.",
+  "m": "Fussy about details; hard to please.",
+  "e": "From <i>finical</i>, probably from <i>fine</i>.",
+  "f": "tatillon, pointilleux, difficile",
+  "t": "Finicky about food: « difficile »; about details: « tatillon »."
+ },
+ {
+  "w": "foil",
+  "p": "v.",
+  "m": "To prevent from succeeding.",
+  "e": "Old French <i>fouler</i> (to trample), Latin <i>fullo</i> (fuller).",
+  "f": "déjouer, faire échouer",
+  "t": "Foil a plot = déjouer un complot. (Also n.: a contrasting character.)"
+ },
+ {
+  "w": "intertwined",
+  "p": "adj.",
+  "m": "Twisted together; closely connected.",
+  "e": "<i>inter-</i> + <i>twine</i>. Germanic.",
+  "f": "entrelacé, étroitement lié",
+  "t": "Entrelacés."
+ },
+ {
+  "w": "ironclad",
+  "p": "adj.",
+  "m": "Impossible to break or change.",
+  "e": "<i>iron</i> + <i>clad</i> (clothed). Germanic.",
+  "f": "inattaquable, en béton",
+  "t": "Clad in iron: an ironclad contract is airtight. « Blindé »."
+ },
+ {
+  "w": "jeopardize",
+  "p": "v.",
+  "m": "To put at risk of harm or failure.",
+  "e": "Old French <i>jeu parti</i> (divided game, even chances).",
+  "f": "mettre en danger, compromettre",
+  "t": "« Jeu parti »: a gamble with even odds. Jeopardy = péril."
+ },
+ {
+  "w": "oblivious",
+  "p": "adj.",
+  "m": "Not aware of or concerned about what is happening around.",
+  "e": "Latin <i>obliviosus</i>, from <i>oblivio</i> (forgetfulness).",
+  "f": "inconscient de, indifférent",
+  "t": "Same family as « oubli / oblivion »."
+ },
+ {
+  "w": "perpetrate",
+  "p": "v.",
+  "m": "To carry out a harmful or illegal act.",
+  "e": "Latin <i>perpetrare</i> (to accomplish).",
+  "f": "perpétrer, commettre",
+  "t": "Same as « perpétrer ». The perpetrator = auteur du crime."
+ },
+ {
+  "w": "plaintive",
+  "p": "adj.",
+  "m": "Sounding sad and mournful.",
+  "e": "Old French <i>plaintif</i>, from <i>plaindre</i>.",
+  "f": "plaintif",
+  "t": "Same as « plaintif »."
+ },
+ {
+  "w": "reiterate",
+  "p": "v.",
+  "m": "To say again for emphasis.",
+  "e": "Latin <i>reiterare</i>: <i>re-</i> + <i>iterum</i> (again).",
+  "f": "réitérer",
+  "t": "Same as « réitérer »."
+ },
+ {
+  "w": "surmount",
+  "p": "v.",
+  "m": "To overcome (a difficulty); to be on top of.",
+  "e": "Old French <i>surmonter</i>: <i>sur-</i> + <i>monter</i>.",
+  "f": "surmonter",
+  "t": "Same as « surmonter »."
+ },
+ {
+  "w": "adept",
+  "p": "adj.",
+  "m": "Very skilled; proficient.",
+  "e": "Latin <i>adeptus</i> (having attained).",
+  "f": "expert, habile",
+  "x": "Faux ami",
+  "t": "« Adepte » = follower. English: an adept = someone skilled at something."
+ },
+ {
+  "w": "adverse",
+  "p": "adj.",
+  "m": "Harmful or unfavourable.",
+  "e": "Latin <i>adversus</i> (turned against).",
+  "f": "défavorable, néfaste",
+  "x": "Look-alike",
+  "t": "Not « adverse » (opponent). Adverse effects, adverse weather = conditions défavorables. Not 'averse'."
+ },
+ {
+  "w": "archetype",
+  "p": "n.",
+  "m": "A very typical example; an original model.",
+  "e": "Greek <i>arkhetypon</i>: <i>arkhe-</i> (first) + <i>typos</i> (model).",
+  "f": "archétype",
+  "t": "Same as « archétype »."
+ },
+ {
+  "w": "conclusive",
+  "p": "adj.",
+  "m": "Decisive; ending all doubt.",
+  "e": "Latin <i>concludere</i> (to close).",
+  "f": "concluant, probant",
+  "t": "Un résultat concluant."
+ },
+ {
+  "w": "conspire",
+  "p": "v.",
+  "m": "To make secret plans jointly for an unlawful act.",
+  "e": "Latin <i>conspirare</i> (to breathe together).",
+  "f": "conspirer, comploter",
+  "t": "Same as « conspirer »: breathe together."
+ },
+ {
+  "w": "disentangle",
+  "p": "v.",
+  "m": "To free from entanglement; to untangle.",
+  "e": "<i>dis-</i> + <i>entangle</i>.",
+  "f": "démêler",
+  "t": "« Démêler ». Disentangle fact from fiction."
+ },
+ {
+  "w": "frailty",
+  "p": "n.",
+  "m": "Weakness; vulnerability.",
+  "e": "Old French <i>fraileté</i>, Latin <i>fragilis</i> (breakable).",
+  "f": "fragilité, faiblesse",
+  "t": "Frail = « frêle » = fragile."
+ },
+ {
+  "w": "grievance",
+  "p": "n.",
+  "m": "A real or imagined cause for complaint.",
+  "e": "Old French <i>grever</i> (to burden), Latin <i>gravare</i>.",
+  "f": "doléance, grief",
+  "t": "« Grief » (also in French legal speak): a heavy burden. Cousin of « grave »."
+ },
+ {
+  "w": "poise",
+  "p": "n.",
+  "m": "Graceful, self-assured balance in manner.",
+  "e": "Old French <i>peser</i> (to weigh), Latin <i>pensare</i>.",
+  "f": "aplomb, assurance",
+  "t": "Poids → balance: « avoir de l'aplomb »."
+ },
+ {
+  "w": "pomposity",
+  "p": "n.",
+  "m": "Self-importance; ostentatious speech.",
+  "e": "Latin <i>pomposus</i>, from <i>pompa</i> (procession).",
+  "f": "emphase, grandiloquence",
+  "t": "Same as « pompeux / pompe ». Pompous."
+ },
+ {
+  "w": "proxy",
+  "p": "n.",
+  "m": "The authority to represent someone else; a stand-in.",
+  "e": "Contraction of <i>procuracy</i>, Latin <i>procurare</i> (to take care of).",
+  "f": "procuration, mandataire",
+  "t": "Proxy = « procuration ». Use as a proxy for."
+ },
+ {
+  "w": "relent",
+  "p": "v.",
+  "m": "To yield after initially refusing.",
+  "e": "Latin <i>re-</i> + <i>lentus</i> (slow, soft).",
+  "f": "fléchir, se radoucir",
+  "t": "Cousin of « ralentir ». Soften your stance: « céder »."
+ },
+ {
+  "w": "rigor",
+  "p": "n.",
+  "m": "The quality of being extremely thorough and strict.",
+  "e": "Latin <i>rigor</i> (stiffness).",
+  "f": "rigueur",
+  "t": "Same as « rigueur »."
+ },
+ {
+  "w": "sparse",
+  "p": "adj.",
+  "m": "Thinly dispersed or scattered.",
+  "e": "Latin <i>sparsus</i> (scattered), from <i>spargere</i>.",
+  "f": "clairsemé, épars",
+  "t": "Same as « épars »: sparse vegetation."
+ },
+ {
+  "w": "suspect",
+  "p": "adj.",
+  "m": "Open to doubt; possibly dishonest.",
+  "e": "Latin <i>suspectus</i>, from <i>suspicere</i> (to look up at).",
+  "f": "suspect, douteux",
+  "t": "Same as « suspect »."
+ },
+ {
+  "w": "tedious",
+  "p": "adj.",
+  "m": "Too long, slow or dull.",
+  "e": "Latin <i>taedium</i> (weariness).",
+  "f": "fastidieux, ennuyeux",
+  "t": "Same as « fastidieux »; not « tédieux »."
+ },
+ {
+  "w": "vitality",
+  "p": "n.",
+  "m": "The state of being strong and active.",
+  "e": "Latin <i>vita</i> (life).",
+  "f": "vitalité",
+  "t": "Same as « vitalité »."
+ },
+ {
+  "w": "yield",
+  "p": "v.",
+  "m": "To produce; to give way.",
+  "e": "Old English <i>gieldan</i> (to pay). Germanic.",
+  "f": "produire, rapporter; céder",
+  "x": "2nd meaning",
+  "t": "Rendement (n.). Yield to pressure = céder. Yield returns = rapporter."
+ },
+ {
+  "w": "ardent",
+  "p": "adj.",
+  "m": "Enthusiastic or passionate.",
+  "e": "Latin <i>ardere</i> (to burn).",
+  "f": "ardent",
+  "t": "Same as « ardent »."
+ },
+ {
+  "w": "axiomatic",
+  "p": "adj.",
+  "m": "Self-evident or unquestionable.",
+  "e": "Greek <i>axiōma</i> (that which is thought worthy).",
+  "f": "axiomatique, évident",
+  "t": "Same as « axiome »: no proof needed."
+ },
+ {
+  "w": "cease",
+  "p": "v.",
+  "m": "To come or bring to an end.",
+  "e": "Old French <i>cesser</i>, Latin <i>cessare</i>.",
+  "f": "cesser",
+  "t": "Same as « cesser »."
+ },
+ {
+  "w": "corporeal",
+  "p": "adj.",
+  "m": "Relating to a person's body; tangible.",
+  "e": "Latin <i>corporeus</i>, from <i>corpus</i> (body).",
+  "f": "corporel",
+  "t": "Same as « corporel »."
+ },
+ {
+  "w": "doctrinaire",
+  "p": "adj.",
+  "m": "Seeking to impose a doctrine without regard to practical considerations.",
+  "e": "French <i>doctrinaire</i>, from <i>doctrine</i>.",
+  "f": "doctrinaire, dogmatique",
+  "t": "Same as « doctrinaire »."
+ },
+ {
+  "w": "figurative",
+  "p": "adj.",
+  "m": "Departing from literal meaning; metaphorical.",
+  "e": "Latin <i>figurativus</i>, from <i>figura</i> (shape).",
+  "f": "figuré",
+  "t": "Au sens figuré. Opposite: literal."
+ },
+ {
+  "w": "flustered",
+  "p": "adj.",
+  "m": "Agitated and confused.",
+  "e": "Scandinavian origin (cf. Icelandic <i>flaustr</i>, hurry).",
+  "f": "troublé, déboussolé",
+  "t": "A flustered speaker loses the thread: « décontenancé »."
+ },
+ {
+  "w": "idiosyncratic",
+  "p": "adj.",
+  "m": "Peculiar or individual to one person.",
+  "e": "Greek <i>idiosunkrasia</i>: <i>idios</i> (own) + <i>sunkrasis</i> (mixture).",
+  "f": "idiosyncrasique, particulier",
+  "t": "Same as « idiosyncrasie »: your own mix."
+ },
+ {
+  "w": "incidental",
+  "p": "adj.",
+  "m": "Happening as a minor accompaniment; secondary.",
+  "e": "Latin <i>incidens</i> (falling upon).",
+  "f": "accessoire, secondaire",
+  "t": "Related to « incident ». Incidental expenses = frais accessoires."
+ },
+ {
+  "w": "ramification",
+  "p": "n.",
+  "m": "A consequence of an action; a branching out.",
+  "e": "Latin <i>ramus</i> (branch).",
+  "f": "ramification, conséquence",
+  "t": "Same as « ramification »: ramus = branch. Ramifications are consequences that branch out."
+ },
+ {
+  "w": "transcend",
+  "p": "v.",
+  "m": "To go beyond the range or limits of.",
+  "e": "Latin <i>transcendere</i> (to climb over).",
+  "f": "transcender, dépasser",
+  "t": "Same as « transcender »."
+ },
+ {
+  "w": "treatise",
+  "p": "n.",
+  "m": "A formal written work dealing systematically with a subject.",
+  "e": "Old French <i>tretiz</i>, from Latin <i>tractare</i> (to handle).",
+  "f": "traité",
+  "t": "« Un traité » de philosophie."
+ }
+]

@@ -285,3 +285,16 @@ kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;bor
 .xtick{width:26px;height:26px;border-radius:8px;border:1.5px solid var(--line);background:var(--paper);color:transparent;display:grid;place-items:center;cursor:pointer;padding:0;margin-top:1px}
 .xtick[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
 .xtick svg{width:14px;height:14px}
+
+/* daily timetable */
+.sched summary { cursor: pointer; list-style: none; }
+.sched summary::-webkit-details-marker { display: none; }
+.sched summary h3 { margin: 0; display: inline; }
+.sched summary::after { content: "▾"; float: right; color: var(--muted, #888); }
+.sched[open] summary::after { content: "▴"; }
+.sched.inner { border-top: 1px solid var(--line, rgba(128,128,128,.25)); padding: 10px 0 2px; }
+.sched.inner:first-of-type { border-top: 0; }
+.srows { list-style: none; margin: 12px 0; padding: 0; display: grid; gap: 10px; }
+.srows li { display: grid; grid-template-columns: 96px 1fr; gap: 10px; align-items: baseline; }
+.srows .st { font-variant-numeric: tabular-nums; font-size: .85rem; color: var(--muted, #888); }
+.srows .sd { font-size: .88rem; color: var(--muted, #888); margin-top: 1px; }

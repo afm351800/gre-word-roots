@@ -1,0 +1,560 @@
+[
+ {
+  "w": "abound",
+  "p": "v.",
+  "m": "To exist in large numbers or amounts.",
+  "e": "Latin <i>abundare</i> (to overflow): <i>ab-</i> + <i>unda</i> (wave).",
+  "f": "abonder",
+  "t": "Same as « abonder »: waves (unda) overflowing."
+ },
+ {
+  "w": "congenial",
+  "p": "adj.",
+  "m": "Pleasant because of shared qualities or interests.",
+  "e": "Latin <i>con-</i> (together) + <i>genialis</i> (of one's guiding spirit, <i>genius</i>).",
+  "f": "sympathique, agréable",
+  "x": "Look-alike",
+  "t": "Not « congénital ». Congenial = « sympathique »: a congenial colleague is easy company."
+ },
+ {
+  "w": "cursory",
+  "p": "adj.",
+  "m": "Hasty and not thorough.",
+  "e": "Latin <i>cursorius</i> (of running), from <i>currere</i> (to run).",
+  "f": "superficiel, rapide",
+  "t": "Same root as « cursus » and « courir »: you run through it without stopping."
+ },
+ {
+  "w": "daunting",
+  "p": "adj.",
+  "m": "Seeming difficult to deal with; intimidating.",
+  "e": "Old French <i>danter</i>, from Latin <i>domitare</i> (to tame), <i>domare</i>.",
+  "f": "intimidant, décourageant",
+  "t": "Danter = dompter: a task so big it tames you. A daunting pile of work."
+ },
+ {
+  "w": "deify",
+  "p": "v.",
+  "m": "To treat as a god; to worship.",
+  "e": "Latin <i>deificare</i>: <i>deus</i> (god) + <i>facere</i> (to make).",
+  "f": "déifier, diviniser",
+  "t": "Same as « déifier »: make (fier) into a deus."
+ },
+ {
+  "w": "feasible",
+  "p": "adj.",
+  "m": "Possible and practical to do.",
+  "e": "Old French <i>faisable</i>, from <i>faire</i> (to do), Latin <i>facere</i>.",
+  "f": "faisable, réalisable",
+  "t": "Feasible = « faisable ». A feasibility study is an étude de faisabilité."
+ },
+ {
+  "w": "misanthropic",
+  "p": "adj.",
+  "m": "Disliking other people and avoiding society.",
+  "e": "Greek <i>misanthrōpos</i>: <i>misein</i> (to hate) + <i>anthrōpos</i> (human).",
+  "f": "misanthrope",
+  "t": "Molière’s « Le Misanthrope »: a man who hates mankind."
+ },
+ {
+  "w": "misnomer",
+  "p": "n.",
+  "m": "A wrong or inaccurate name or term.",
+  "e": "Old French <i>mesnommer</i> (to misname): <i>mes-</i> (wrongly) + <i>nommer</i> (to name).",
+  "f": "terme impropre, erreur de nom",
+  "t": "Mis + nom: a wrong name. « Un abus de langage »."
+ },
+ {
+  "w": "negligent",
+  "p": "adj.",
+  "m": "Failing to take proper care.",
+  "e": "Latin <i>negligens</i>, from <i>neglegere</i> (to disregard): <i>nec</i> + <i>legere</i>.",
+  "f": "négligent",
+  "t": "Same as « négligent »."
+ },
+ {
+  "w": "anachronistic",
+  "p": "adj.",
+  "m": "Belonging to a period other than the one in which it exists.",
+  "e": "Greek <i>anachronismos</i>: <i>ana-</i> (against) + <i>khronos</i> (time).",
+  "f": "anachronique",
+  "t": "Against time: a smartphone in a Molière play is an « anachronisme »."
+ },
+ {
+  "w": "covet",
+  "p": "v.",
+  "m": "To desire what belongs to someone else.",
+  "e": "Old French <i>coveitier</i>, from Latin <i>cupiditas</i> (desire).",
+  "f": "convoiter",
+  "t": "Same as « convoiter »."
+ },
+ {
+  "w": "deft",
+  "p": "adj.",
+  "m": "Neatly skilful and quick in movement.",
+  "e": "Middle English <i>defte</i>, variant of <i>daft</i> (gentle, fitting). Germanic.",
+  "f": "habile, adroit",
+  "t": "Think « déft »: dexterous fingers. A deft pickpocket, a deft negotiator."
+ },
+ {
+  "w": "incredulous",
+  "p": "adj.",
+  "m": "Unwilling or unable to believe something.",
+  "e": "Latin <i>incredulus</i>: <i>in-</i> (not) + <i>credere</i> (to believe).",
+  "f": "incrédule",
+  "t": "Same as « incrédule »."
+ },
+ {
+  "w": "cacophonous",
+  "p": "adj.",
+  "m": "Harsh-sounding; a mix of loud, unpleasant sounds.",
+  "e": "Greek <i>kakophōnia</i>: <i>kakos</i> (bad) + <i>phōnē</i> (sound).",
+  "f": "cacophonique",
+  "t": "Kakos (caca!) + phone: bad sound. The cacophony of a Paris traffic jam."
+ },
+ {
+  "w": "canonize",
+  "p": "v.",
+  "m": "To declare a person officially a saint; to regard as great.",
+  "e": "Medieval Latin <i>canonizare</i>, from <i>canon</i> (rule, list), Greek <i>kanōn</i>.",
+  "f": "canoniser",
+  "t": "Same as « canoniser »: added to the list of saints."
+ },
+ {
+  "w": "compelling",
+  "p": "adj.",
+  "m": "Evoking interest or admiration in a powerfully irresistible way; convincing.",
+  "e": "Latin <i>compellere</i> (to drive together): <i>com-</i> + <i>pellere</i> (to drive).",
+  "f": "convaincant, irrésistible",
+  "t": "A compelling argument drives you to agree (compel = contraindre)."
+ },
+ {
+  "w": "contend",
+  "p": "v.",
+  "m": "To struggle to overcome; to assert.",
+  "e": "Latin <i>contendere</i> (to stretch, strive): <i>con-</i> + <i>tendere</i> (to stretch).",
+  "f": "lutter; soutenir, prétendre",
+  "x": "2nd meaning",
+  "t": "Two meanings: compete (contender) and claim. « Il soutient que… » = he contends that…"
+ },
+ {
+  "w": "polarize",
+  "p": "v.",
+  "m": "To divide into two sharply contrasting groups.",
+  "e": "French <i>polariser</i>, from Latin <i>polus</i> (pole), Greek <i>polos</i>.",
+  "f": "polariser",
+  "t": "Same as « polariser »: a polarizing debate splits into two poles."
+ },
+ {
+  "w": "cherish",
+  "p": "v.",
+  "m": "To protect and care for lovingly; to hold dear.",
+  "e": "Old French <i>cherir</i>, from <i>cher</i> (dear), Latin <i>carus</i>.",
+  "f": "chérir",
+  "t": "Same as « chérir »: mon cher."
+ },
+ {
+  "w": "incendiary",
+  "p": "adj.",
+  "m": "Designed to start fires; tending to stir up conflict.",
+  "e": "Latin <i>incendiarius</i>, from <i>incendium</i> (fire), <i>incendere</i> (to set on fire).",
+  "f": "incendiaire",
+  "t": "Same as « incendiaire »: an incendiary remark sets the room on fire."
+ },
+ {
+  "w": "invigorate",
+  "p": "v.",
+  "m": "To give strength or energy to.",
+  "e": "Latin <i>in-</i> + <i>vigor</i> (strength), from <i>vigere</i> (to be lively).",
+  "f": "revigorer, donner de la vigueur",
+  "t": "In + vigueur: put vigour into someone. An invigorating morning run."
+ },
+ {
+  "w": "obsolete",
+  "p": "adj.",
+  "m": "No longer produced or used; out of date.",
+  "e": "Latin <i>obsolescere</i> (to fall into disuse).",
+  "f": "obsolète, désuet",
+  "t": "Same as « obsolète »."
+ },
+ {
+  "w": "paradigmatic",
+  "p": "adj.",
+  "m": "Serving as a typical example or model.",
+  "e": "Greek <i>paradeigma</i> (pattern, example): <i>para-</i> (beside) + <i>deiknynai</i> (to show).",
+  "f": "paradigmatique, exemplaire",
+  "t": "From « paradigme »: the perfect pattern. A paradigmatic case."
+ },
+ {
+  "w": "polemical",
+  "p": "adj.",
+  "m": "Relating to strongly critical or controversial argument.",
+  "e": "Greek <i>polemikos</i> (of war), from <i>polemos</i> (war).",
+  "f": "polémique",
+  "t": "Same as « polémique »: a war of words."
+ },
+ {
+  "w": "profundity",
+  "p": "n.",
+  "m": "Great depth of insight or knowledge.",
+  "e": "Latin <i>profunditas</i>, from <i>profundus</i> (deep): <i>pro-</i> + <i>fundus</i> (bottom).",
+  "f": "profondeur",
+  "t": "Profondeur: a deep thought, with a deep bottom (fundus)."
+ },
+ {
+  "w": "prophetic",
+  "p": "adj.",
+  "m": "Accurately predicting what will happen.",
+  "e": "Greek <i>prophētēs</i> (one who speaks before): <i>pro-</i> + <i>phēmi</i> (to speak).",
+  "f": "prophétique",
+  "t": "Same as « prophétique »."
+ },
+ {
+  "w": "tranquil",
+  "p": "adj.",
+  "m": "Free from disturbance; calm.",
+  "e": "Latin <i>tranquillus</i> (calm, still).",
+  "f": "tranquille",
+  "t": "Same as « tranquille »."
+ },
+ {
+  "w": "aloof",
+  "p": "adj.",
+  "m": "Not friendly; distant and cool.",
+  "e": "From Dutch sailing term <i>a</i> + <i>luff</i>: keeping the ship to windward, away from the lee shore.",
+  "f": "distant, froid, réservé",
+  "t": "Keeping your boat away from everyone else. An aloof manager stays apart."
+ },
+ {
+  "w": "clangor",
+  "p": "n.",
+  "m": "A continuous loud banging or ringing noise.",
+  "e": "Latin <i>clangor</i> (sound of a trumpet), imitative of the sound.",
+  "f": "fracas, vacarme",
+  "t": "Hear the clang of metal: « clangor » is a loud ringing din. Cousin of « clameur »."
+ },
+ {
+  "w": "conventional",
+  "p": "adj.",
+  "m": "Based on what is generally done; traditional.",
+  "e": "Latin <i>conventio</i> (agreement), from <i>convenire</i> (to come together).",
+  "f": "conventionnel, classique",
+  "t": "Same as « conventionnel »: following the usual agreement."
+ },
+ {
+  "w": "discernible",
+  "p": "adj.",
+  "m": "Able to be seen or noticed.",
+  "e": "Latin <i>discernere</i> (to separate): <i>dis-</i> + <i>cernere</i> (to sift).",
+  "f": "discernable, perceptible",
+  "t": "Same root as « discerner »: you can tell it apart."
+ },
+ {
+  "w": "enigmatic",
+  "p": "adj.",
+  "m": "Mysterious and difficult to understand.",
+  "e": "Greek <i>ainigma</i> (riddle).",
+  "f": "énigmatique",
+  "t": "Same as « énigmatique »: the Mona Lisa’s smile."
+ },
+ {
+  "w": "estranged",
+  "p": "adj.",
+  "m": "No longer close or affectionate; alienated.",
+  "e": "Old French <i>estranger</i>, from Latin <i>extraneus</i> (foreign).",
+  "f": "séparé, brouillé, éloigné",
+  "t": "Made « étranger » to someone: an estranged husband is a stranger now."
+ },
+ {
+  "w": "extravagant",
+  "p": "adj.",
+  "m": "Lacking restraint in spending or in behaviour.",
+  "e": "Medieval Latin <i>extravagari</i> (to wander outside): <i>extra</i> + <i>vagari</i>.",
+  "f": "extravagant, dépensier",
+  "t": "Same as « extravagant »: wandering outside the limits."
+ },
+ {
+  "w": "fanciful",
+  "p": "adj.",
+  "m": "Overly imaginative and unrealistic.",
+  "e": "From <i>fancy</i>, shortened from <i>fantasy</i>, Greek <i>phantasia</i>.",
+  "f": "fantaisiste, imaginaire",
+  "t": "Fancy = fantaisie. A fanciful plan lives only in the imagination."
+ },
+ {
+  "w": "invasive",
+  "p": "adj.",
+  "m": "Tending to intrude; spreading harmfully.",
+  "e": "Latin <i>invadere</i> (to go in): <i>in-</i> + <i>vadere</i> (to go).",
+  "f": "invasif, envahissant",
+  "t": "Same as « invasif »: invasive species, invasive surgery."
+ },
+ {
+  "w": "lax",
+  "p": "adj.",
+  "m": "Not strict or careful enough.",
+  "e": "Latin <i>laxus</i> (loose).",
+  "f": "relâché, laxiste",
+  "t": "Same as « laxiste »: loose rules, lax security."
+ },
+ {
+  "w": "marginalize",
+  "p": "v.",
+  "m": "To treat as insignificant or peripheral.",
+  "e": "Latin <i>margo</i> (edge).",
+  "f": "marginaliser",
+  "t": "Same as « marginaliser »: push to the margin of the page."
+ },
+ {
+  "w": "remedial",
+  "p": "adj.",
+  "m": "Intended to correct or improve something deficient.",
+  "e": "Latin <i>remedium</i> (cure): <i>re-</i> + <i>mederi</i> (to heal).",
+  "f": "de rattrapage, correctif",
+  "t": "A remedy: remedial classes are « cours de rattrapage »."
+ },
+ {
+  "w": "stigmatize",
+  "p": "v.",
+  "m": "To describe or regard as worthy of disgrace.",
+  "e": "Greek <i>stigma</i> (mark, brand burned on the skin).",
+  "f": "stigmatiser",
+  "t": "Same as « stigmatiser »: to brand someone."
+ },
+ {
+  "w": "utterly",
+  "p": "adv.",
+  "m": "Completely and absolutely.",
+  "e": "From <i>utter</i> (outer, extreme), Old English <i>ūtera</i>, from <i>ūt</i> (out). Germanic.",
+  "f": "complètement, tout à fait",
+  "t": "To the outermost limit: utterly ridiculous = tout à fait ridicule."
+ },
+ {
+  "w": "weary",
+  "p": "adj.",
+  "m": "Tired; also, cautious about something because of past experience.",
+  "e": "Old English <i>wērig</i> (tired). Germanic.",
+  "f": "las, fatigué",
+  "x": "Look-alike",
+  "t": "Not « wary » (prudent). Weary = las: weary of the job market."
+ },
+ {
+  "w": "chauvinistic",
+  "p": "adj.",
+  "m": "Excessively or aggressively patriotic; prejudiced in favour of one's own group.",
+  "e": "French <i>chauvin</i>, from Nicolas Chauvin, a legendary Napoleonic soldier of fanatical loyalty.",
+  "f": "chauvin",
+  "t": "A French word! Chauvin, the fanatical soldier of Napoleon. Same as « chauvin »."
+ },
+ {
+  "w": "dogged",
+  "p": "adj.",
+  "m": "Persistent and determined.",
+  "e": "From <i>dog</i>: with the stubborn grip of a dog. Germanic.",
+  "f": "tenace, obstiné",
+  "t": "Dogged like a dog on a bone: dogged determination = « une ténacité de bouledogue »."
+ },
+ {
+  "w": "entitled",
+  "p": "adj.",
+  "m": "Believing oneself inherently deserving of privileges; having a right to.",
+  "e": "From <i>entitle</i>, Old French <i>entiteler</i>, Latin <i>titulus</i> (title).",
+  "f": "qui se croit tout permis; ayant droit",
+  "x": "2nd meaning",
+  "t": "Two senses: having a right (entitled to a refund) or arrogant (an entitled brat)."
+ },
+ {
+  "w": "pertinacious",
+  "p": "adj.",
+  "m": "Holding firmly to an opinion or course of action; stubborn.",
+  "e": "Latin <i>pertinax</i> (very tenacious): <i>per-</i> (very) + <i>tenax</i> (holding).",
+  "f": "tenace, entêté, opiniâtre",
+  "t": "Per + tenace: very tenacious. Not « pertinent »."
+ },
+ {
+  "w": "subjective",
+  "p": "adj.",
+  "m": "Based on personal feelings rather than facts.",
+  "e": "Latin <i>subjectivus</i>, from <i>subjectus</i> (placed under).",
+  "f": "subjectif",
+  "t": "Same as « subjectif »: opinion, not fact."
+ },
+ {
+  "w": "subvert",
+  "p": "v.",
+  "m": "To undermine the power of an established system.",
+  "e": "Latin <i>subvertere</i> (to overturn): <i>sub-</i> + <i>vertere</i> (to turn).",
+  "f": "subvertir, renverser",
+  "t": "Same as « subversif »: turn it upside down from below."
+ },
+ {
+  "w": "venal",
+  "p": "adj.",
+  "m": "Willing to do dishonest things for money; corrupt.",
+  "e": "Latin <i>venalis</i> (for sale), from <i>venum</i> (sale).",
+  "f": "vénal, corrompu",
+  "t": "Same as « vénal »: someone whose loyalty is for sale."
+ },
+ {
+  "w": "clamorous",
+  "p": "adj.",
+  "m": "Making a loud and confused noise.",
+  "e": "Latin <i>clamare</i> (to cry out).",
+  "f": "bruyant, tapageur",
+  "t": "A clamour (clameur): a clamorous crowd shouts together."
+ },
+ {
+  "w": "explicable",
+  "p": "adj.",
+  "m": "Able to be explained.",
+  "e": "Latin <i>explicare</i> (to unfold, explain): <i>ex-</i> + <i>plicare</i> (to fold).",
+  "f": "explicable",
+  "t": "Same as « explicable ». Opposite: inexplicable."
+ },
+ {
+  "w": "irreverent",
+  "p": "adj.",
+  "m": "Showing a lack of respect for people or things usually taken seriously.",
+  "e": "Latin <i>irreverens</i>: <i>in-</i> (not) + <i>reverens</i> (respectful).",
+  "f": "irrévérencieux",
+  "t": "Same as « irrévérencieux »: no révérence."
+ },
+ {
+  "w": "loathe",
+  "p": "v.",
+  "m": "To feel intense dislike or disgust for.",
+  "e": "Old English <i>lāthian</i> (to be hateful), from <i>lāth</i> (hostile). Germanic.",
+  "f": "détester, avoir en horreur",
+  "t": "Loathe, hate. Not to be confused with « loath » (reluctant, no e)."
+ },
+ {
+  "w": "malign",
+  "p": "v.",
+  "m": "To speak harmful untruths about; (adj.) evil in nature.",
+  "e": "Latin <i>malignus</i> (ill-natured): <i>malus</i> (bad) + <i>gignere</i> (to beget).",
+  "f": "calomnier, dénigrer; malin",
+  "t": "Same as « malin » (as in tumeur maligne): malign = speak ill of."
+ },
+ {
+  "w": "stern",
+  "p": "adj.",
+  "m": "Serious and strict, especially in manner.",
+  "e": "Old English <i>styrne</i> (severe). Germanic.",
+  "f": "sévère, austère",
+  "x": "2nd meaning",
+  "t": "A stern teacher is strict. (Also the back of a ship: another meaning.)"
+ },
+ {
+  "w": "accentuate",
+  "p": "v.",
+  "m": "To make more noticeable; to emphasize.",
+  "e": "Latin <i>accentus</i> (accent, tone): <i>ad-</i> + <i>cantus</i> (song).",
+  "f": "accentuer, souligner",
+  "t": "Same as « accentuer »."
+ },
+ {
+  "w": "conjectural",
+  "p": "adj.",
+  "m": "Based on guesswork rather than proof.",
+  "e": "Latin <i>coniectura</i> (inference), from <i>conicere</i> (to throw together).",
+  "f": "conjectural, hypothétique",
+  "t": "Same as « conjecture » (une conjecture): a guess."
+ },
+ {
+  "w": "decadent",
+  "p": "adj.",
+  "m": "In a state of moral or cultural decline; luxuriously self-indulgent.",
+  "e": "French <i>décadent</i>, Latin <i>de-</i> + <i>cadere</i> (to fall).",
+  "f": "décadent",
+  "t": "Same as « décadent »: Rome in decline. A decadent chocolate cake."
+ },
+ {
+  "w": "flamboyant",
+  "p": "adj.",
+  "m": "Tending to attract attention because of exuberance or confidence.",
+  "e": "French <i>flamboyant</i> (flaming), from <i>flamber</i>.",
+  "f": "flamboyant, extravagant",
+  "t": "Straight from French: flaming. Le style gothique flamboyant."
+ },
+ {
+  "w": "indiscriminate",
+  "p": "adj.",
+  "m": "Done at random or without careful judgement.",
+  "e": "<i>in-</i> (not) + Latin <i>discriminare</i> (to distinguish).",
+  "f": "sans discernement, aveugle",
+  "t": "Not « discrimé »: no distinguishing. Indiscriminate bombing hits everything."
+ },
+ {
+  "w": "momentary",
+  "p": "adj.",
+  "m": "Lasting for a very short time.",
+  "e": "Latin <i>momentarius</i>, from <i>momentum</i> (movement, moment).",
+  "f": "momentané, passager",
+  "t": "Same as « momentané »."
+ },
+ {
+  "w": "nullify",
+  "p": "v.",
+  "m": "To make legally void; to cancel out the effect of.",
+  "e": "Latin <i>nullus</i> (none) + <i>facere</i> (to make).",
+  "f": "annuler, rendre nul",
+  "t": "Make nul: « rendre nul et non avenu »."
+ },
+ {
+  "w": "omnipresent",
+  "p": "adj.",
+  "m": "Present everywhere at the same time.",
+  "e": "Latin <i>omni-</i> (all) + <i>praesens</i> (present).",
+  "f": "omniprésent",
+  "t": "Same as « omniprésent »."
+ },
+ {
+  "w": "oust",
+  "p": "v.",
+  "m": "To drive out or expel from a position.",
+  "e": "Anglo-French <i>ouster</i>, Old French <i>oster</i> (to remove), Latin <i>obstare</i> (to stand in the way).",
+  "f": "évincer, chasser",
+  "t": "French « ôter »: to remove. A CEO ousted by the board."
+ },
+ {
+  "w": "palpable",
+  "p": "adj.",
+  "m": "So intense it seems almost touchable; easily perceived.",
+  "e": "Latin <i>palpabilis</i>, from <i>palpare</i> (to touch gently).",
+  "f": "palpable, tangible",
+  "t": "Same as « palpable »: you could touch it. Palpable tension."
+ },
+ {
+  "w": "skullduggery",
+  "p": "n.",
+  "m": "Underhand or unscrupulous behaviour.",
+  "e": "17th-century Scottish <i>sculduddery</i> (obscene behaviour), origin unknown.",
+  "f": "magouilles, manœuvres louches",
+  "t": "A skull and dagger! Shady skullduggery in the boardroom = « des magouilles »."
+ },
+ {
+  "w": "trivial",
+  "p": "adj.",
+  "m": "Of little value or importance.",
+  "e": "Latin <i>trivialis</i> (of the crossroads, common): <i>tri-</i> (three) + <i>via</i> (road).",
+  "f": "insignifiant, banal",
+  "x": "Faux ami",
+  "t": "French « trivial » means vulgar. English trivial = unimportant: « sans importance »."
+ },
+ {
+  "w": "vapid",
+  "p": "adj.",
+  "m": "Offering nothing that is stimulating or challenging; dull.",
+  "e": "Latin <i>vapidus</i> (flat, flavourless, like wine that has lost its spirit).",
+  "f": "insipide, fade",
+  "t": "Flat like a wine gone off: « fade ». A vapid conversation."
+ },
+ {
+  "w": "comity",
+  "p": "n.",
+  "m": "Courteous and considerate behaviour; mutual respect between states.",
+  "e": "Latin <i>comitas</i> (courtesy), from <i>comis</i> (friendly).",
+  "f": "courtoisie, bienveillance",
+  "t": "From « comité »? No: comity = friendly civility. « Comity of nations »: states respecting each other’s laws."
+ }
+]

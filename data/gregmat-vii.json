@@ -1,0 +1,558 @@
+[
+ {
+  "w": "coddle",
+  "p": "v.",
+  "m": "To treat in an indulgent or overprotective way.",
+  "e": "Possibly from <i>caudle</i>, a warm drink for invalids; Latin <i>calidus</i> (warm).",
+  "f": "dorloter, chouchouter",
+  "t": "« Dorloter »: coddle a child."
+ },
+ {
+  "w": "crescendo",
+  "p": "n.",
+  "m": "A gradual increase in loudness or intensity.",
+  "e": "Italian <i>crescendo</i>, from Latin <i>crescere</i> (to grow).",
+  "f": "crescendo",
+  "t": "Same as « crescendo »."
+ },
+ {
+  "w": "fringe",
+  "p": "n.",
+  "m": "The outer edge; a minority group beyond the mainstream.",
+  "e": "Old French <i>frenge</i>, Latin <i>fimbria</i> (fibre, fringe).",
+  "f": "frange, marge",
+  "t": "« Frange »: the fringe of society = en marge."
+ },
+ {
+  "w": "immaculate",
+  "p": "adj.",
+  "m": "Perfectly clean, neat or tidy; free from flaws.",
+  "e": "Latin <i>immaculatus</i>: <i>in-</i> + <i>macula</i> (spot).",
+  "f": "immaculé, impeccable",
+  "t": "« L'Immaculée Conception »: no spot."
+ },
+ {
+  "w": "recluse",
+  "p": "n.",
+  "m": "A person who lives alone and avoids society.",
+  "e": "Latin <i>recludere</i> (to shut away).",
+  "f": "reclus, ermite",
+  "t": "Same as « reclus »."
+ },
+ {
+  "w": "retaliate",
+  "p": "v.",
+  "m": "To make an attack in return for a similar attack.",
+  "e": "Latin <i>retaliare</i>, from <i>talio</i> (like for like).",
+  "f": "riposter, user de représailles",
+  "t": "« Loi du talion » (an eye for an eye): talio."
+ },
+ {
+  "w": "rhapsody",
+  "p": "n.",
+  "m": "An effusive expression of enthusiasm; a free musical work.",
+  "e": "Greek <i>rhapsōidia</i>: <i>rhaptein</i> (to stitch) + <i>ōidē</i> (song).",
+  "f": "rhapsodie",
+  "t": "Same as « rhapsodie »: Bohemian Rhapsody. Wax rhapsodic = s'extasier."
+ },
+ {
+  "w": "serendipitous",
+  "p": "adj.",
+  "m": "Occurring by happy chance.",
+  "e": "Coined by Horace Walpole from <i>The Three Princes of Serendip</i> (Sri Lanka).",
+  "f": "dû à un heureux hasard",
+  "t": "« Heureux hasard ». Penicillin was serendipitous."
+ },
+ {
+  "w": "shirk",
+  "p": "v.",
+  "m": "To avoid or neglect (a duty).",
+  "e": "Probably German <i>Schurke</i> (scoundrel).",
+  "f": "se dérober à, éviter",
+  "t": "« Se défiler ». Shirk responsibility."
+ },
+ {
+  "w": "sinuous",
+  "p": "adj.",
+  "m": "Having many curves and turns.",
+  "e": "Latin <i>sinuosus</i>, from <i>sinus</i> (curve).",
+  "f": "sinueux",
+  "t": "Same as « sinueux »."
+ },
+ {
+  "w": "stanch",
+  "p": "v.",
+  "m": "To stop or restrict a flow (especially of blood).",
+  "e": "Old French <i>estanchier</i> (to stop).",
+  "f": "étancher, arrêter",
+  "t": "Same as « étancher ». Stanch the bleeding."
+ },
+ {
+  "w": "ulterior",
+  "p": "adj.",
+  "m": "Existing beyond what is obvious; hidden (of motives).",
+  "e": "Latin <i>ulterior</i> (farther), from <i>ultra</i>.",
+  "f": "ultérieur; caché",
+  "x": "Faux ami",
+  "t": "« Ultérieur » = later in time. English ulterior = hidden: an ulterior motive = arrière-pensée."
+ },
+ {
+  "w": "auxiliary",
+  "p": "adj.",
+  "m": "Providing supplementary support.",
+  "e": "Latin <i>auxiliarius</i>, from <i>auxilium</i> (help).",
+  "f": "auxiliaire",
+  "t": "Same as « auxiliaire »."
+ },
+ {
+  "w": "caricature",
+  "p": "n.",
+  "m": "A grotesque exaggeration of a person's features.",
+  "e": "Italian <i>caricatura</i> (loading), from <i>caricare</i>.",
+  "f": "caricature",
+  "t": "Same as « caricature »."
+ },
+ {
+  "w": "depravity",
+  "p": "n.",
+  "m": "Moral corruption.",
+  "e": "Latin <i>depravare</i> (to make crooked).",
+  "f": "dépravation, perversion",
+  "t": "Same as « dépravation »."
+ },
+ {
+  "w": "encroach",
+  "p": "v.",
+  "m": "To intrude on a territory or right.",
+  "e": "Old French <i>encrochier</i> (to seize), from <i>croc</i> (hook).",
+  "f": "empiéter sur",
+  "t": "« Empiéter »: use a hook to grab. Encroach on one's rights."
+ },
+ {
+  "w": "endow",
+  "p": "v.",
+  "m": "To provide with a quality or a source of income.",
+  "e": "Old French <i>endouer</i>, Latin <i>dotare</i> (to give a dowry).",
+  "f": "doter",
+  "t": "Same as « doter »: un don, a dot. Endowed with talent = doté."
+ },
+ {
+  "w": "entreat",
+  "p": "v.",
+  "m": "To ask earnestly or anxiously.",
+  "e": "Old French <i>entraiter</i> (to treat), from <i>traiter</i>.",
+  "f": "supplier, implorer",
+  "t": "« Supplier ». Entreat him to stay."
+ },
+ {
+  "w": "indictment",
+  "p": "n.",
+  "m": "A formal charge; a sign that something is bad.",
+  "e": "Anglo-French <i>enditement</i>, Latin <i>indictare</i>.",
+  "f": "mise en accusation; réquisitoire",
+  "x": "2nd meaning",
+  "t": "Figurative: a damning indictment of the system = un réquisitoire."
+ },
+ {
+  "w": "inquisitive",
+  "p": "adj.",
+  "m": "Curious, prying, asking too many questions.",
+  "e": "Latin <i>inquirere</i> (to seek into).",
+  "f": "curieux, indiscret",
+  "t": "« Inquisitif » is rare: use « curieux »."
+ },
+ {
+  "w": "latitude",
+  "p": "n.",
+  "m": "Scope for freedom of action or thought.",
+  "e": "Latin <i>latitudo</i>, from <i>latus</i> (wide).",
+  "f": "latitude, liberté d'action",
+  "t": "Same as « latitude »: a wide berth. Latitude to decide."
+ },
+ {
+  "w": "mediate",
+  "p": "v.",
+  "m": "To intervene between disputing parties.",
+  "e": "Latin <i>mediare</i> (to be in the middle).",
+  "f": "servir de médiateur, arbitrer",
+  "t": "Same as « médiation »."
+ },
+ {
+  "w": "pacify",
+  "p": "v.",
+  "m": "To quell the anger of; to bring peace to.",
+  "e": "Latin <i>pacificare</i>: <i>pax</i> (peace) + <i>facere</i>.",
+  "f": "apaiser, pacifier",
+  "t": "Same as « pacifier »."
+ },
+ {
+  "w": "rampant",
+  "p": "adj.",
+  "m": "Flourishing or spreading unchecked.",
+  "e": "Old French <i>ramper</i> (to climb, rear up).",
+  "f": "endémique, déchaîné",
+  "t": "A lion rampant (heraldry) rears up. Rampant corruption spreads wildly."
+ },
+ {
+  "w": "remote",
+  "p": "adj.",
+  "m": "Far away; slight (of chances).",
+  "e": "Latin <i>remotus</i>, from <i>removere</i>.",
+  "f": "éloigné, lointain; faible",
+  "x": "2nd meaning",
+  "t": "Remote chance = faible chance. Distant too."
+ },
+ {
+  "w": "turbid",
+  "p": "adj.",
+  "m": "Cloudy, opaque or thick with suspended matter; confused.",
+  "e": "Latin <i>turbidus</i>, from <i>turba</i> (disturbance).",
+  "f": "trouble, boueux",
+  "t": "« Trouble » water: turbid. Turbid emotions."
+ },
+ {
+  "w": "allegorical",
+  "p": "adj.",
+  "m": "Having a hidden meaning, typically moral or political.",
+  "e": "Greek <i>allēgoria</i>: <i>allos</i> (other) + <i>agoreuein</i> (to speak).",
+  "f": "allégorique",
+  "t": "Same as « allégorique »: speaks of another thing."
+ },
+ {
+  "w": "allude",
+  "p": "v.",
+  "m": "To suggest or call attention to indirectly.",
+  "e": "Latin <i>alludere</i> (to play with).",
+  "f": "faire allusion à",
+  "t": "Same as « faire allusion »."
+ },
+ {
+  "w": "amplify",
+  "p": "v.",
+  "m": "To increase in volume or effect.",
+  "e": "Latin <i>amplificare</i>, from <i>amplus</i> (large).",
+  "f": "amplifier",
+  "t": "Same as « amplifier »."
+ },
+ {
+  "w": "catastrophic",
+  "p": "adj.",
+  "m": "Involving sudden great damage or suffering.",
+  "e": "Greek <i>katastrophē</i> (overturning).",
+  "f": "catastrophique",
+  "t": "Same as « catastrophique »."
+ },
+ {
+  "w": "contemporary",
+  "p": "adj.",
+  "m": "Living or occurring at the same time; modern.",
+  "e": "Latin <i>con-</i> + <i>tempus</i> (time).",
+  "f": "contemporain; actuel",
+  "t": "Same as « contemporain »."
+ },
+ {
+  "w": "defame",
+  "p": "v.",
+  "m": "To damage the good reputation of.",
+  "e": "Latin <i>diffamare</i> (to spread evil report): <i>dis-</i> + <i>fama</i>.",
+  "f": "diffamer",
+  "t": "Same as « diffamer »."
+ },
+ {
+  "w": "detract",
+  "p": "v.",
+  "m": "To diminish the value of.",
+  "e": "Latin <i>detrahere</i> (to draw away).",
+  "f": "enlever de la valeur, rabaisser",
+  "t": "Detractors drag you down. « Détracteur »."
+ },
+ {
+  "w": "devious",
+  "p": "adj.",
+  "m": "Showing a skilful use of underhand tactics; roundabout.",
+  "e": "Latin <i>devius</i> (off the road): <i>de-</i> + <i>via</i>.",
+  "f": "retors, tortueux",
+  "t": "Off the road: a « chemin détourné »."
+ },
+ {
+  "w": "dormant",
+  "p": "adj.",
+  "m": "Temporarily inactive; asleep.",
+  "e": "Latin <i>dormire</i> (to sleep).",
+  "f": "en sommeil, dormant",
+  "t": "Same as « dormant » (volcan dormant)."
+ },
+ {
+  "w": "draconian",
+  "p": "adj.",
+  "m": "Excessively harsh and severe (of laws).",
+  "e": "From <i>Draco</i>, Athenian lawgiver (7th c. BC).",
+  "f": "draconien",
+  "t": "Same as « draconien »."
+ },
+ {
+  "w": "erstwhile",
+  "p": "adj.",
+  "m": "Former.",
+  "e": "Old English <i>ǣrest</i> (earliest) + <i>while</i>. Germanic.",
+  "f": "ancien, d'autrefois",
+  "t": "« Jadis »: his erstwhile friend."
+ },
+ {
+  "w": "gloat",
+  "p": "v.",
+  "m": "To dwell on one's own success or another's misfortune with smugness.",
+  "e": "Possibly Scandinavian <i>glotta</i> (to grin).",
+  "f": "jubiler, se réjouir mesquinement",
+  "t": "« Jubiler » méchamment. Don't gloat."
+ },
+ {
+  "w": "harrowing",
+  "p": "adj.",
+  "m": "Acutely distressing.",
+  "e": "From <i>harrow</i> (a farm tool tearing up soil). Germanic.",
+  "f": "éprouvant, déchirant",
+  "t": "Like a rake tearing at the earth: « déchirant »."
+ },
+ {
+  "w": "indefinite",
+  "p": "adj.",
+  "m": "Lasting for an unspecified time; vague.",
+  "e": "Latin <i>indefinitus</i>: <i>in-</i> + <i>definire</i>.",
+  "f": "indéfini, indéterminé",
+  "t": "Same as « indéfini »: an indefinite strike (grève illimitée)."
+ },
+ {
+  "w": "ingenious",
+  "p": "adj.",
+  "m": "Clever, original and inventive.",
+  "e": "Latin <i>ingeniosus</i>, from <i>ingenium</i> (talent).",
+  "f": "ingénieux",
+  "t": "Same as « ingénieux »; not ingenuous (naïve)."
+ },
+ {
+  "w": "keen",
+  "p": "adj.",
+  "m": "Eager; sharp (of senses or edges).",
+  "e": "Old English <i>cēne</i> (bold, brave). Germanic.",
+  "f": "enthousiaste, vif, aiguisé",
+  "t": "Keen on = passionné par. Keen eyesight = vue perçante."
+ },
+ {
+  "w": "multifaceted",
+  "p": "adj.",
+  "m": "Having many aspects.",
+  "e": "<i>multi-</i> (many) + <i>facet</i>, French <i>facette</i>.",
+  "f": "à multiples facettes, complexe",
+  "t": "« Multi-facettes ». A multifaceted issue."
+ },
+ {
+  "w": "omniscient",
+  "p": "adj.",
+  "m": "Knowing everything.",
+  "e": "Latin <i>omnis</i> (all) + <i>scire</i> (to know).",
+  "f": "omniscient",
+  "t": "Same as « omniscient »."
+ },
+ {
+  "w": "remarkable",
+  "p": "adj.",
+  "m": "Worthy of attention; extraordinary.",
+  "e": "French <i>remarquable</i>, from <i>remarquer</i>.",
+  "f": "remarquable",
+  "t": "Same as « remarquable »."
+ },
+ {
+  "w": "sober",
+  "p": "adj.",
+  "m": "Not drunk; serious and sensible.",
+  "e": "Latin <i>sobrius</i> (not drunk).",
+  "f": "sobre; sérieux",
+  "t": "Same as « sobre »: a sober assessment = réaliste."
+ },
+ {
+  "w": "stem from",
+  "p": "phr.",
+  "m": "To originate in or be caused by.",
+  "e": "Old English <i>stefn</i> (stem, trunk). Germanic.",
+  "f": "découler de, provenir de",
+  "t": "A plant's stem: where it all comes from. Stem from = « découler de »."
+ },
+ {
+  "w": "subdued",
+  "p": "adj.",
+  "m": "Quiet and rather reflective; reduced in intensity.",
+  "e": "Latin <i>subdere</i> (to place under).",
+  "f": "discret, atténué, réprimé",
+  "t": "Subdued light = lumière tamisée. A subdued crowd is quiet."
+ },
+ {
+  "w": "token",
+  "p": "adj.",
+  "m": "Done for the sake of appearances; symbolic.",
+  "e": "Old English <i>tācen</i> (sign). Germanic.",
+  "f": "symbolique, de pure forme",
+  "x": "2nd meaning",
+  "t": "A token gesture = un geste symbolique, « pour la forme »."
+ },
+ {
+  "w": "unravel",
+  "p": "v.",
+  "m": "To undo twisted or knitted threads; to solve a mystery.",
+  "e": "<i>un-</i> + Dutch <i>ravelen</i> (to tangle).",
+  "f": "démêler, défaire, élucider",
+  "t": "Un-tangle: démêler. A plot unravels."
+ },
+ {
+  "w": "withstand",
+  "p": "v.",
+  "m": "To remain undamaged or unaffected by.",
+  "e": "Old English <i>withstandan</i> (stand against). Germanic.",
+  "f": "résister à, supporter",
+  "t": "With = against: stand against. Withstand pressure = résister."
+ },
+ {
+  "w": "abrasive",
+  "p": "adj.",
+  "m": "Harsh and rough in manner; capable of scraping.",
+  "e": "Latin <i>abradere</i> (to scrape away).",
+  "f": "abrasif, rugueux, cassant",
+  "t": "Same as « abrasif »: an abrasive personality grates."
+ },
+ {
+  "w": "brevity",
+  "p": "n.",
+  "m": "Concise and exact use of words.",
+  "e": "Latin <i>brevis</i> (short).",
+  "f": "brièveté",
+  "t": "Same as « brièveté »."
+ },
+ {
+  "w": "circumstantial",
+  "p": "adj.",
+  "m": "Pointing indirectly to a conclusion; based on circumstances.",
+  "e": "Latin <i>circumstare</i> (to stand around).",
+  "f": "circonstanciel; indirect",
+  "t": "Circumstantial evidence = preuves indirectes."
+ },
+ {
+  "w": "counterfeit",
+  "p": "adj.",
+  "m": "Made in exact imitation to deceive; forged.",
+  "e": "Old French <i>contrefait</i>.",
+  "f": "contrefait, faux",
+  "t": "Same as « contrefaçon » / « contrefait »: counterfeit money = fausse monnaie."
+ },
+ {
+  "w": "disciple",
+  "p": "n.",
+  "m": "A follower of a teacher, leader or philosophy.",
+  "e": "Latin <i>discipulus</i> (learner), from <i>discere</i>.",
+  "f": "disciple",
+  "t": "Same as « disciple »."
+ },
+ {
+  "w": "extol",
+  "p": "v.",
+  "m": "To praise enthusiastically.",
+  "e": "Latin <i>extollere</i> (to raise up).",
+  "f": "louer, exalter",
+  "t": "Raise up with praise. Cousin of « exalter »."
+ },
+ {
+  "w": "forebode",
+  "p": "v.",
+  "m": "To predict or have a presentiment of evil.",
+  "e": "<i>fore-</i> + <i>bode</i> (Old English <i>bodian</i>, announce). Germanic.",
+  "f": "présager, pressentir",
+  "t": "A bad omen: « pressentir » le pire. Foreboding."
+ },
+ {
+  "w": "ideologue",
+  "p": "n.",
+  "m": "An adherent of an ideology, especially a dogmatic one.",
+  "e": "French <i>idéologue</i>, from Greek <i>idea</i> + <i>-logos</i>.",
+  "f": "idéologue",
+  "t": "Same as « idéologue »."
+ },
+ {
+  "w": "impediment",
+  "p": "n.",
+  "m": "A hindrance or obstruction.",
+  "e": "Latin <i>impedimentum</i>, from <i>impedire</i> (to shackle the feet).",
+  "f": "obstacle, empêchement",
+  "t": "Feet bound (pes, pedis). Speech impediment = défaut d'élocution."
+ },
+ {
+  "w": "imperative",
+  "p": "adj.",
+  "m": "Of vital importance; compulsory.",
+  "e": "Latin <i>imperativus</i>, from <i>imperare</i> (to command).",
+  "f": "impératif, indispensable",
+  "t": "Same as « impératif »."
+ },
+ {
+  "w": "impulsive",
+  "p": "adj.",
+  "m": "Acting without forethought.",
+  "e": "Latin <i>impulsivus</i>, from <i>impellere</i> (to push).",
+  "f": "impulsif",
+  "t": "Same as « impulsif »."
+ },
+ {
+  "w": "interminable",
+  "p": "adj.",
+  "m": "Endless (often tediously).",
+  "e": "Latin <i>interminabilis</i>: <i>in-</i> + <i>terminare</i>.",
+  "f": "interminable",
+  "t": "Same as « interminable »."
+ },
+ {
+  "w": "intuitive",
+  "p": "adj.",
+  "m": "Using instinct rather than conscious reasoning.",
+  "e": "Latin <i>intueri</i> (to look at).",
+  "f": "intuitif",
+  "t": "Same as « intuitif »."
+ },
+ {
+  "w": "omit",
+  "p": "v.",
+  "m": "To leave out or exclude.",
+  "e": "Latin <i>omittere</i> (to let go).",
+  "f": "omettre",
+  "t": "Same as « omettre »."
+ },
+ {
+  "w": "paltry",
+  "p": "adj.",
+  "m": "Ridiculously small or unimportant.",
+  "e": "Dialect <i>palt</i> (rubbish), Low German <i>paltrig</i> (ragged).",
+  "f": "dérisoire, piètre",
+  "t": "A paltry sum = une somme dérisoire."
+ },
+ {
+  "w": "prefigure",
+  "p": "v.",
+  "m": "To be an early indication of.",
+  "e": "Latin <i>praefigurare</i>: <i>prae-</i> + <i>figurare</i>.",
+  "f": "préfigurer",
+  "t": "Same as « préfigurer »."
+ },
+ {
+  "w": "presage",
+  "p": "v.",
+  "m": "To be a sign or warning of a future event.",
+  "e": "Latin <i>praesagium</i>, from <i>praesagire</i> (to perceive beforehand).",
+  "f": "présager, annoncer",
+  "t": "Same as « présage / présager »."
+ },
+ {
+  "w": "prescribe",
+  "p": "v.",
+  "m": "To recommend with authority; to order a medicine.",
+  "e": "Latin <i>praescribere</i> (to write before).",
+  "f": "prescrire",
+  "t": "Same as « prescrire »."
+ }
+]

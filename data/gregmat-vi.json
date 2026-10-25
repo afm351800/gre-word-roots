@@ -1,0 +1,563 @@
+[
+ {
+  "w": "antagonize",
+  "p": "v.",
+  "m": "To provoke hostility in someone.",
+  "e": "Greek <i>antagōnizesthai</i>: <i>anti-</i> + <i>agōnizesthai</i> (to struggle).",
+  "f": "s'aliéner, provoquer l'hostilité de",
+  "t": "Cousin of « antagoniste ». Don't antagonize the client."
+ },
+ {
+  "w": "barren",
+  "p": "adj.",
+  "m": "Too poor to produce much or any vegetation; unproductive.",
+  "e": "Old French <i>baraigne</i> (sterile, of land or women).",
+  "f": "stérile, aride",
+  "t": "Think « bréhaigne » (old: sterile). Barren desert = désert aride."
+ },
+ {
+  "w": "cajole",
+  "p": "v.",
+  "m": "To persuade by sustained coaxing or flattery.",
+  "e": "French <i>cajoler</i> (to chatter like a jay), from <i>gaiole</i> (cage).",
+  "f": "cajoler, enjôler",
+  "t": "Same as « cajoler »: coax with sweet words."
+ },
+ {
+  "w": "dirge",
+  "p": "n.",
+  "m": "A lament for the dead; a mournful song.",
+  "e": "Latin <i>dirige</i> (direct!), the first word of the Office of the Dead.",
+  "f": "chant funèbre, complainte",
+  "t": "Latin dirige (“guide”): opening of a funeral prayer. A dirge = funeral song."
+ },
+ {
+  "w": "heady",
+  "p": "adj.",
+  "m": "Intoxicating; exhilarating.",
+  "e": "From <i>head</i>. Germanic.",
+  "f": "grisant, enivrant",
+  "t": "Goes to your head: « grisant ». Heady perfume, heady days."
+ },
+ {
+  "w": "lambaste",
+  "p": "v.",
+  "m": "To criticize harshly.",
+  "e": "<i>lam</i> (to beat) + <i>baste</i> (to thrash). Germanic.",
+  "f": "éreinter, fustiger",
+  "t": "Beat + beat: verbally. « Éreinter » a film."
+ },
+ {
+  "w": "peccadillo",
+  "p": "n.",
+  "m": "A small, minor sin or fault.",
+  "e": "Spanish <i>pecadillo</i>, diminutive of <i>pecado</i> (sin), Latin <i>peccare</i>.",
+  "f": "peccadille, faute vénielle",
+  "t": "Same as « peccadille »: a little pécher."
+ },
+ {
+  "w": "repugnant",
+  "p": "adj.",
+  "m": "Extremely distasteful; unacceptable.",
+  "e": "Latin <i>repugnare</i> (to fight against).",
+  "f": "répugnant, repoussant",
+  "t": "Same as « répugnant »."
+ },
+ {
+  "w": "swindle",
+  "p": "v.",
+  "m": "To use deception to deprive of money or possessions.",
+  "e": "German <i>schwindeln</i> (to be dizzy, to cheat).",
+  "f": "escroquer, arnaquer",
+  "t": "Swindler: « escroc »."
+ },
+ {
+  "w": "tangible",
+  "p": "adj.",
+  "m": "Perceptible by touch; real and concrete.",
+  "e": "Latin <i>tangere</i> (to touch).",
+  "f": "tangible, palpable",
+  "t": "Same as « tangible »."
+ },
+ {
+  "w": "unalloyed",
+  "p": "adj.",
+  "m": "Complete; not mixed with anything.",
+  "e": "<i>un-</i> + <i>alloy</i> (metal mix), Old French <i>aloyer</i>.",
+  "f": "pur, sans mélange",
+  "t": "« Alliage »: no alloy. Unalloyed joy = joie pure."
+ },
+ {
+  "w": "undercut",
+  "p": "v.",
+  "m": "To weaken; to offer lower prices than a competitor.",
+  "e": "<i>under</i> + <i>cut</i>. Germanic.",
+  "f": "saper, mettre à mal; casser les prix",
+  "t": "Cut from beneath: it « sape » the argument."
+ },
+ {
+  "w": "wheedle",
+  "p": "v.",
+  "m": "To persuade by flattery or coaxing.",
+  "e": "Possibly German <i>wedeln</i> (to wag the tail, fawn).",
+  "f": "enjôler, cajoler",
+  "t": "A dog wagging its tail: wheedle a treat out of you."
+ },
+ {
+  "w": "xenophobic",
+  "p": "adj.",
+  "m": "Having a fear or dislike of strangers or foreigners.",
+  "e": "Greek <i>xenos</i> (stranger) + <i>phobos</i> (fear).",
+  "f": "xénophobe",
+  "t": "Same as « xénophobe »."
+ },
+ {
+  "w": "abstract",
+  "p": "adj.",
+  "m": "Existing in thought rather than as a concrete thing.",
+  "e": "Latin <i>abstractus</i> (drawn away): <i>abs-</i> + <i>trahere</i>.",
+  "f": "abstrait",
+  "t": "Same as « abstrait »."
+ },
+ {
+  "w": "affront",
+  "p": "n.",
+  "m": "An action that causes offence.",
+  "e": "Old French <i>afronter</i> (to slap in the face), Latin <i>ad frontem</i>.",
+  "f": "affront, offense",
+  "t": "Same as « affront »: a slap in the front/face."
+ },
+ {
+  "w": "agitate",
+  "p": "v.",
+  "m": "To disturb or excite; to campaign.",
+  "e": "Latin <i>agitare</i> (to drive), from <i>agere</i>.",
+  "f": "agiter; faire campagne",
+  "t": "Same as « agiter »."
+ },
+ {
+  "w": "burnish",
+  "p": "v.",
+  "m": "To polish by rubbing.",
+  "e": "Old French <i>burnir</i> (to make brown, polish), from <i>brun</i>.",
+  "f": "polir, brunir",
+  "t": "« Brunir »: to polish metal until it shines. Burnish an image."
+ },
+ {
+  "w": "coy",
+  "p": "adj.",
+  "m": "Making a pretence of shyness; reluctant to give details.",
+  "e": "Old French <i>coi</i> (quiet), Latin <i>quietus</i>.",
+  "f": "faussement timide, évasif",
+  "t": "« Coi » (se tenir coi). Coy about the salary = évasif."
+ },
+ {
+  "w": "deprecate",
+  "p": "v.",
+  "m": "To express disapproval of; to belittle (self-deprecating).",
+  "e": "Latin <i>deprecari</i> (to pray against).",
+  "f": "désapprouver, minimiser",
+  "x": "Look-alike",
+  "t": "Not depreciate (lose value). Self-deprecating humour belittles oneself: « autodérision »."
+ },
+ {
+  "w": "disdain",
+  "p": "n.",
+  "m": "The feeling that someone is unworthy of respect.",
+  "e": "Old French <i>desdeignier</i>, Latin <i>dedignari</i> (to reject as unworthy).",
+  "f": "dédain",
+  "t": "Same as « dédain »."
+ },
+ {
+  "w": "disperse",
+  "p": "v.",
+  "m": "To go in different directions.",
+  "e": "Latin <i>dispergere</i>: <i>dis-</i> + <i>spargere</i> (to scatter).",
+  "f": "disperser, se disperser",
+  "t": "Same as « disperser »."
+ },
+ {
+  "w": "hysterical",
+  "p": "adj.",
+  "m": "Exhibiting wildly uncontrolled emotion; extremely funny.",
+  "e": "Greek <i>hystera</i> (womb), from old medical theory.",
+  "f": "hystérique; à mourir de rire",
+  "x": "2nd meaning",
+  "t": "Hysterical laughter = fou rire. A hysterical comedy is hilarious."
+ },
+ {
+  "w": "quarantine",
+  "p": "n.",
+  "m": "A period of isolation to prevent the spread of disease.",
+  "e": "Italian <i>quaranta giorni</i> (forty days).",
+  "f": "quarantaine",
+  "t": "Same as « quarantaine »: forty days (quarante)."
+ },
+ {
+  "w": "quash",
+  "p": "v.",
+  "m": "To reject as invalid; to put an end to.",
+  "e": "Old French <i>quasser</i> (to annul), Latin <i>quassare</i>.",
+  "f": "annuler, étouffer, réprimer",
+  "t": "Casser! Quash a verdict = casser un jugement; quash a rebellion."
+ },
+ {
+  "w": "quibble",
+  "p": "v.",
+  "m": "To argue about trivial matters.",
+  "e": "Probably from Latin <i>quibus</i> (to whom), legal jargon pun.",
+  "f": "chicaner, ergoter",
+  "t": "Quibble = ergoter. Don't quibble over details."
+ },
+ {
+  "w": "ravage",
+  "p": "v.",
+  "m": "To cause severe damage to.",
+  "e": "Old French <i>ravir</i> (to seize).",
+  "f": "ravager, dévaster",
+  "t": "Same as « ravager »."
+ },
+ {
+  "w": "shrill",
+  "p": "adj.",
+  "m": "High-pitched and piercing.",
+  "e": "Middle English <i>shrille</i>, imitative.",
+  "f": "strident, perçant",
+  "t": "Hear the shriek: « strident »."
+ },
+ {
+  "w": "sophistry",
+  "p": "n.",
+  "m": "The use of clever but misleading arguments.",
+  "e": "Greek <i>sophistēs</i> (a clever person).",
+  "f": "sophisme, argutie",
+  "t": "Same as « sophisme »: clever but misleading."
+ },
+ {
+  "w": "wily",
+  "p": "adj.",
+  "m": "Skilled at gaining an advantage by deceit.",
+  "e": "From <i>wile</i> (trick), Old French <i>guile</i>.",
+  "f": "rusé, malicieux",
+  "t": "Wile E. Coyote. « Rusé »."
+ },
+ {
+  "w": "aspersion",
+  "p": "n.",
+  "m": "An attack on someone's reputation (usually: cast aspersions).",
+  "e": "Latin <i>aspergere</i> (to sprinkle).",
+  "f": "calomnie, insinuation",
+  "t": "Sprinkle mud on someone's name: cast aspersions on."
+ },
+ {
+  "w": "bawdy",
+  "p": "adj.",
+  "m": "Humorously indecent.",
+  "e": "From <i>bawd</i> (brothel keeper), Old French <i>baud</i> (merry).",
+  "f": "grivois, salé",
+  "t": "Rabelais! A bawdy tale = histoire grivoise."
+ },
+ {
+  "w": "collude",
+  "p": "v.",
+  "m": "To cooperate secretly for illegal ends.",
+  "e": "Latin <i>colludere</i> (to play together).",
+  "f": "être de connivence, s'entendre",
+  "t": "Same as « collusion »."
+ },
+ {
+  "w": "commiserate",
+  "p": "v.",
+  "m": "To express sympathy or pity.",
+  "e": "Latin <i>commiserari</i>: <i>com-</i> + <i>miser</i> (wretched).",
+  "f": "compatir, plaindre",
+  "t": "Commisérer. Share someone's misery."
+ },
+ {
+  "w": "contretemps",
+  "p": "n.",
+  "m": "An unexpected and awkward occurrence.",
+  "e": "French <i>contretemps</i> (against the time).",
+  "f": "contretemps",
+  "t": "Straight from French « contretemps »."
+ },
+ {
+  "w": "conviction",
+  "p": "n.",
+  "m": "A firmly held belief; a formal declaration of guilt.",
+  "e": "Latin <i>convictio</i>, from <i>convincere</i> (to overcome).",
+  "f": "conviction; condamnation",
+  "x": "2nd meaning",
+  "t": "« Conviction » = belief. Also a criminal conviction = condamnation."
+ },
+ {
+  "w": "croon",
+  "p": "v.",
+  "m": "To sing softly in a low voice.",
+  "e": "Middle Dutch <i>kronen</i> (to lament).",
+  "f": "fredonner, chanter doucement",
+  "t": "Frank Sinatra, the crooner."
+ },
+ {
+  "w": "depose",
+  "p": "v.",
+  "m": "To remove from office; to testify under oath.",
+  "e": "Old French <i>deposer</i>, <i>de-</i> + <i>poser</i>.",
+  "f": "destituer; déposer",
+  "t": "Same as « déposer »: put down the ruler."
+ },
+ {
+  "w": "detente",
+  "p": "n.",
+  "m": "The easing of strained relations.",
+  "e": "French <i>détente</i> (relaxation).",
+  "f": "détente",
+  "t": "Straight from French « détente »."
+ },
+ {
+  "w": "dowdy",
+  "p": "adj.",
+  "m": "Unfashionable and drab.",
+  "e": "Middle English <i>doude</i> (slut/drab woman), origin unknown.",
+  "f": "sans élégance, mal fagoté",
+  "t": "Dull dress: « mal fagoté »."
+ },
+ {
+  "w": "echelon",
+  "p": "n.",
+  "m": "A level or rank in an organization.",
+  "e": "French <i>échelon</i> (rung of a ladder), from <i>échelle</i>.",
+  "f": "échelon, niveau",
+  "t": "Same as « échelon »: upper echelons of management."
+ },
+ {
+  "w": "ennui",
+  "p": "n.",
+  "m": "Listlessness arising from boredom.",
+  "e": "French <i>ennui</i>, Latin <i>in odio</i> (in hatred).",
+  "f": "ennui, lassitude",
+  "t": "Straight from French: « l'ennui » (stronger in English)."
+ },
+ {
+  "w": "expatiate",
+  "p": "v.",
+  "m": "To speak or write at length on a subject.",
+  "e": "Latin <i>exspatiari</i> (to wander): <i>ex-</i> + <i>spatium</i>.",
+  "f": "s'étendre sur, développer longuement",
+  "x": "Look-alike",
+  "t": "Not « expatriate » (live abroad). Expatiate = « s'étendre » on a subject."
+ },
+ {
+  "w": "fraught",
+  "p": "adj.",
+  "m": "Filled with (something undesirable); causing anxiety.",
+  "e": "Middle Dutch <i>vracht</i> (freight). Germanic.",
+  "f": "chargé de, tendu",
+  "t": "Freight: loaded with. A fraught meeting is « chargé de tension »."
+ },
+ {
+  "w": "fulcrum",
+  "p": "n.",
+  "m": "The point on which a lever rests; the pivot of an activity.",
+  "e": "Latin <i>fulcrum</i> (bedpost), from <i>fulcire</i> (to support).",
+  "f": "point d'appui, pivot",
+  "t": "Archimède: the pivot of a lever."
+ },
+ {
+  "w": "jocund",
+  "p": "adj.",
+  "m": "Cheerful and lighthearted.",
+  "e": "Latin <i>jocundus</i>, variant of <i>jucundus</i> (pleasant).",
+  "f": "jovial, enjoué",
+  "t": "Jocund = jovial; same joke (jocus) root as « jouer »."
+ },
+ {
+  "w": "nimble",
+  "p": "adj.",
+  "m": "Quick and light in movement.",
+  "e": "Old English <i>nǣmel</i> (quick to grasp). Germanic.",
+  "f": "agile, leste",
+  "t": "Nimble fingers: « agile »."
+ },
+ {
+  "w": "ominous",
+  "p": "adj.",
+  "m": "Giving the impression that something bad will happen.",
+  "e": "Latin <i>ominosus</i>, from <i>omen</i>.",
+  "f": "menaçant, de mauvais augure",
+  "t": "An omen: « de mauvais augure »."
+ },
+ {
+  "w": "outlandish",
+  "p": "adj.",
+  "m": "Looking or sounding bizarre or unfamiliar.",
+  "e": "Old English <i>ūtlendisc</i> (foreign): <i>ūt</i> + <i>land</i>. Germanic.",
+  "f": "extravagant, bizarre",
+  "t": "From outside the land: weird."
+ },
+ {
+  "w": "sadistic",
+  "p": "adj.",
+  "m": "Deriving pleasure from inflicting pain.",
+  "e": "From the Marquis de <i>Sade</i>.",
+  "f": "sadique",
+  "t": "Same as « sadique » — named for the French marquis."
+ },
+ {
+  "w": "abide",
+  "p": "v.",
+  "m": "To tolerate; to accept or follow (rules).",
+  "e": "Old English <i>ābīdan</i> (to wait). Germanic.",
+  "f": "supporter, tolérer; respecter",
+  "x": "2nd meaning",
+  "t": "Can't abide = ne supporte pas. Abide by the rules = respecter."
+ },
+ {
+  "w": "bravado",
+  "p": "n.",
+  "m": "A bold manner intended to impress; false courage.",
+  "e": "Spanish <i>bravada</i>, from <i>bravo</i>.",
+  "f": "bravade, fanfaronnade",
+  "t": "Same as « bravade »."
+ },
+ {
+  "w": "deportment",
+  "p": "n.",
+  "m": "Behaviour or manners; bearing.",
+  "e": "French <i>déportement</i>, Latin <i>deportare</i>.",
+  "f": "maintien, tenue",
+  "t": "Not « déportation »! Deportment = bearing, comportement."
+ },
+ {
+  "w": "extemporize",
+  "p": "v.",
+  "m": "To speak or perform without preparation.",
+  "e": "Latin <i>ex tempore</i> (out of the moment).",
+  "f": "improviser",
+  "t": "Ex tempore: out of the moment."
+ },
+ {
+  "w": "fallow",
+  "p": "adj.",
+  "m": "(Of land) ploughed but left unplanted; inactive.",
+  "e": "Old English <i>fealh</i> (ploughed land).",
+  "f": "en jachère, inactif",
+  "t": "Jachère. A fallow period for the mind."
+ },
+ {
+  "w": "feint",
+  "p": "n.",
+  "m": "A deceptive movement intended to distract.",
+  "e": "Old French <i>feinte</i>, from <i>feindre</i>.",
+  "f": "feinte",
+  "t": "Same as « feinte » in boxing and fencing."
+ },
+ {
+  "w": "flagrant",
+  "p": "adj.",
+  "m": "Conspicuously offensive; blatant.",
+  "e": "Latin <i>flagrare</i> (to blaze).",
+  "f": "flagrant",
+  "t": "« Flagrant délit »: caught in the act."
+ },
+ {
+  "w": "gratuitous",
+  "p": "adj.",
+  "m": "Uncalled for; lacking good reason.",
+  "e": "Latin <i>gratuitus</i> (free).",
+  "f": "gratuit, injustifié",
+  "x": "2nd meaning",
+  "t": "Not 'free of charge' here: gratuit = for no reason. Gratuitous violence = violence gratuite, injustifiée."
+ },
+ {
+  "w": "intrigue",
+  "p": "v.",
+  "m": "To arouse curiosity; to plot secretly.",
+  "e": "French <i>intriguer</i>, Latin <i>intricare</i> (to entangle).",
+  "f": "intriguer, comploter",
+  "t": "Same as « intriguer »."
+ },
+ {
+  "w": "nominal",
+  "p": "adj.",
+  "m": "Existing in name only; very small (of a fee).",
+  "e": "Latin <i>nominalis</i>, from <i>nomen</i> (name).",
+  "f": "nominal, symbolique",
+  "x": "2nd meaning",
+  "t": "For a nominal fee = une somme symbolique. Nominal leader: leader in name only."
+ },
+ {
+  "w": "odious",
+  "p": "adj.",
+  "m": "Extremely unpleasant; repulsive.",
+  "e": "Latin <i>odiosus</i>, from <i>odium</i> (hatred).",
+  "f": "odieux",
+  "t": "Same as « odieux »."
+ },
+ {
+  "w": "remuneration",
+  "p": "n.",
+  "m": "Payment for work done.",
+  "e": "Latin <i>remunerari</i> (to reward).",
+  "f": "rémunération",
+  "t": "Same as « rémunération »."
+ },
+ {
+  "w": "slovenly",
+  "p": "adj.",
+  "m": "Untidy and dirty; careless.",
+  "e": "Possibly Flemish <i>sloef</i> (dirty).",
+  "f": "négligé, débraillé",
+  "t": "Un « souillon ». A slovenly appearance."
+ },
+ {
+  "w": "soliloquy",
+  "p": "n.",
+  "m": "An act of speaking one's thoughts aloud when alone.",
+  "e": "Latin <i>solus</i> (alone) + <i>loqui</i> (to speak).",
+  "f": "monologue, soliloque",
+  "t": "Hamlet’s « To be or not to be »."
+ },
+ {
+  "w": "verve",
+  "p": "n.",
+  "m": "Vigour, spirit and style in writing or performance.",
+  "e": "French <i>verve</i> (enthusiasm).",
+  "f": "verve",
+  "t": "Same as « verve »."
+ },
+ {
+  "w": "aghast",
+  "p": "adj.",
+  "m": "Filled with horror or shock.",
+  "e": "Middle English <i>agasten</i> (to terrify), related to <i>ghost</i>.",
+  "f": "consterné, horrifié",
+  "t": "As if you've seen a ghost: « sidéré »."
+ },
+ {
+  "w": "apprise",
+  "p": "v.",
+  "m": "To inform or tell someone of something.",
+  "e": "French <i>apprendre</i> (to learn, to teach), past participle <i>appris</i>.",
+  "f": "informer, mettre au courant",
+  "x": "Look-alike",
+  "t": "Not « apprécier »! Apprise = « mettre au courant ». Apprise him of the facts."
+ },
+ {
+  "w": "beguile",
+  "p": "v.",
+  "m": "To charm or enchant; to deceive.",
+  "e": "<i>be-</i> + Old French <i>guile</i> (deceit).",
+  "f": "séduire, charmer; tromper",
+  "x": "2nd meaning",
+  "t": "Guile: ruse. Beguiled by a smile = séduit. Also beguile into = tromper."
+ },
+ {
+  "w": "callous",
+  "p": "adj.",
+  "m": "Showing insensitive disregard for others.",
+  "e": "Latin <i>callosus</i> (thick-skinned), from <i>callum</i> (hard skin).",
+  "f": "insensible, cruel",
+  "t": "Un cal(lus) on the heart: thick skin."
+ }
+]

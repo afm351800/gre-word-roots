@@ -1,0 +1,559 @@
+[
+ {
+  "w": "cordial",
+  "p": "adj.",
+  "m": "Warm and friendly.",
+  "e": "Medieval Latin <i>cordialis</i>, from Latin <i>cor, cordis</i> (heart).",
+  "f": "cordial, chaleureux",
+  "t": "Same as « cordial »: from the heart (cœur)."
+ },
+ {
+  "w": "edify",
+  "p": "v.",
+  "m": "To instruct or improve morally or intellectually.",
+  "e": "Latin <i>aedificare</i> (to build): <i>aedes</i> (building) + <i>facere</i>.",
+  "f": "édifier, instruire",
+  "t": "Same as « édifier »: build up the mind, like building an édifice."
+ },
+ {
+  "w": "feeble",
+  "p": "adj.",
+  "m": "Lacking physical strength; weak.",
+  "e": "Old French <i>feble</i>, Latin <i>flebilis</i> (lamentable).",
+  "f": "faible, débile",
+  "t": "Feeble = « faible » (feble → faible)."
+ },
+ {
+  "w": "felicitous",
+  "p": "adj.",
+  "m": "Well chosen or apt; pleasing.",
+  "e": "Latin <i>felicitas</i> (happiness), from <i>felix</i> (happy).",
+  "f": "heureux, bien choisi",
+  "t": "Une formule heureuse: a felicitous phrase fits perfectly. Cousin of « félicité »."
+ },
+ {
+  "w": "forbear",
+  "p": "v.",
+  "m": "To refrain from; to hold back.",
+  "e": "Old English <i>forberan</i>: <i>for-</i> (away) + <i>beran</i> (to bear).",
+  "f": "s'abstenir de, se retenir",
+  "x": "Look-alike",
+  "t": "Bear back your anger. Not to be confused with « forebear » (ancestor)."
+ },
+ {
+  "w": "mercenary",
+  "p": "adj.",
+  "m": "Motivated primarily by money.",
+  "e": "Latin <i>mercenarius</i> (hired), from <i>merces</i> (wages).",
+  "f": "mercenaire, intéressé",
+  "t": "Same as « mercenaire »: acting only for the pay."
+ },
+ {
+  "w": "quirky",
+  "p": "adj.",
+  "m": "Characterized by peculiar or unconventional traits.",
+  "e": "From <i>quirk</i> (odd twist), origin uncertain.",
+  "f": "excentrique, original",
+  "t": "A quirk is a petite manie: a quirky sense of humour."
+ },
+ {
+  "w": "turbulent",
+  "p": "adj.",
+  "m": "Characterized by conflict, disorder or confusion.",
+  "e": "Latin <i>turbulentus</i>, from <i>turba</i> (crowd, disorder).",
+  "f": "turbulent, agité",
+  "t": "Same as « turbulent »."
+ },
+ {
+  "w": "antithesis",
+  "p": "n.",
+  "m": "A direct opposite; a contrast of ideas.",
+  "e": "Greek <i>antithesis</i>: <i>anti-</i> (against) + <i>tithenai</i> (to place).",
+  "f": "antithèse, contraire",
+  "t": "Same as « antithèse »: placed against."
+ },
+ {
+  "w": "befuddled",
+  "p": "adj.",
+  "m": "Unable to think clearly; confused.",
+  "e": "From <i>be-</i> + <i>fuddle</i> (to confuse, probably drink-related), origin unclear.",
+  "f": "embrouillé, déboussolé",
+  "t": "Fuddled brain, as if drunk: « l'esprit brouillé »."
+ },
+ {
+  "w": "expedite",
+  "p": "v.",
+  "m": "To make an action or process happen sooner or be accomplished more quickly.",
+  "e": "Latin <i>expedire</i> (to free the feet): <i>ex-</i> + <i>pes, pedis</i> (foot).",
+  "f": "accélérer, expédier",
+  "t": "Free the feet and go: « expédier » une affaire. Opposite of impede."
+ },
+ {
+  "w": "feign",
+  "p": "v.",
+  "m": "To pretend to be affected by (a feeling or state).",
+  "e": "Old French <i>feindre</i>, Latin <i>fingere</i> (to shape, invent).",
+  "f": "feindre, simuler",
+  "t": "Same as « feindre »."
+ },
+ {
+  "w": "indispensable",
+  "p": "adj.",
+  "m": "Absolutely necessary.",
+  "e": "<i>in-</i> + <i>dispensable</i>, Latin <i>dispensare</i> (to weigh out).",
+  "f": "indispensable",
+  "t": "Same as « indispensable »."
+ },
+ {
+  "w": "partial",
+  "p": "adj.",
+  "m": "Existing only in part; biased, or fond of something.",
+  "e": "Medieval Latin <i>partialis</i>, from <i>pars</i> (part).",
+  "f": "partiel; partial, favorable à",
+  "x": "2nd meaning",
+  "t": "Three senses: incomplete (partiel), biased (partial), and « partial to » = fond of."
+ },
+ {
+  "w": "pensive",
+  "p": "adj.",
+  "m": "Engaged in deep or serious thought.",
+  "e": "Old French <i>pensif</i>, from <i>penser</i> (to think).",
+  "f": "pensif, songeur",
+  "t": "Same as « pensif »."
+ },
+ {
+  "w": "portend",
+  "p": "v.",
+  "m": "To be an omen or warning of.",
+  "e": "Latin <i>portendere</i> (to point out, foretell): <i>por-</i> + <i>tendere</i>.",
+  "f": "présager, annoncer",
+  "t": "Same family as « portent » (a bad sign): dark clouds portend a storm."
+ },
+ {
+  "w": "salutary",
+  "p": "adj.",
+  "m": "Beneficial, especially when unpleasant.",
+  "e": "Latin <i>salutaris</i>, from <i>salus</i> (health).",
+  "f": "salutaire",
+  "t": "Same as « salutaire »: a salutary lesson."
+ },
+ {
+  "w": "sever",
+  "p": "v.",
+  "m": "To cut off; to end a connection.",
+  "e": "Old French <i>sevrer</i> (to separate), Latin <i>separare</i>.",
+  "f": "couper, rompre; sevrer",
+  "t": "Related to « sevrer » and « séparer »: sever ties."
+ },
+ {
+  "w": "somnolent",
+  "p": "adj.",
+  "m": "Sleepy; inducing drowsiness.",
+  "e": "Latin <i>somnolentus</i>, from <i>somnus</i> (sleep).",
+  "f": "somnolent",
+  "t": "Same as « somnolent »: somnus = sleep."
+ },
+ {
+  "w": "stoic",
+  "p": "adj.",
+  "m": "Enduring pain or hardship without showing feelings.",
+  "e": "Greek <i>Stoikos</i>, from <i>stoa</i> (porch where Zeno taught).",
+  "f": "stoïque",
+  "t": "Same as « stoïque »."
+ },
+ {
+  "w": "wane",
+  "p": "v.",
+  "m": "To decrease gradually in size, strength or power.",
+  "e": "Old English <i>wanian</i> (to lessen). Germanic.",
+  "f": "décliner, décroître",
+  "t": "The moon wanes (« décroît »). Opposite: wax."
+ },
+ {
+  "w": "boisterous",
+  "p": "adj.",
+  "m": "Noisy, energetic and cheerful.",
+  "e": "Middle English <i>boistous</i> (rough, coarse), origin unknown.",
+  "f": "bruyant, turbulent",
+  "t": "Not « boisson ». A boisterous party is rowdy."
+ },
+ {
+  "w": "clandestine",
+  "p": "adj.",
+  "m": "Kept secret, especially because illicit.",
+  "e": "Latin <i>clandestinus</i>, from <i>clam</i> (secretly).",
+  "f": "clandestin",
+  "t": "Same as « clandestin »."
+ },
+ {
+  "w": "debilitating",
+  "p": "adj.",
+  "m": "Making someone weak and infirm.",
+  "e": "Latin <i>debilitare</i>, from <i>debilis</i> (weak).",
+  "f": "débilitant, affaiblissant",
+  "t": "From « débile » (weak), not stupid: a debilitating illness drains strength."
+ },
+ {
+  "w": "obeisance",
+  "p": "n.",
+  "m": "Deferential respect; a gesture of submission.",
+  "e": "Old French <i>obeissance</i>, from <i>obeir</i> (to obey).",
+  "f": "révérence, soumission",
+  "t": "Obéissance + « révérence »: a deep bow."
+ },
+ {
+  "w": "perilous",
+  "p": "adj.",
+  "m": "Full of danger or risk.",
+  "e": "Latin <i>periculosus</i>, from <i>periculum</i> (danger).",
+  "f": "périlleux",
+  "t": "Same as « périlleux »."
+ },
+ {
+  "w": "rapacious",
+  "p": "adj.",
+  "m": "Aggressively greedy or grasping.",
+  "e": "Latin <i>rapax</i>, from <i>rapere</i> (to seize).",
+  "f": "rapace, avide",
+  "t": "Same as « rapace »: a bird of prey. Rapacious landlords seize everything."
+ },
+ {
+  "w": "relish",
+  "p": "v.",
+  "m": "To enjoy greatly.",
+  "e": "Old French <i>relais</i> (something left behind, a savour), from <i>relaisser</i>.",
+  "f": "savourer, se délecter de",
+  "t": "Relish a meal = savourer. (Also n.: a condiment.)"
+ },
+ {
+  "w": "satirical",
+  "p": "adj.",
+  "m": "Using irony or mockery to expose folly.",
+  "e": "Latin <i>satira</i> (a medley, mixed dish).",
+  "f": "satirique",
+  "t": "Same as « satirique »: Charlie Hebdo."
+ },
+ {
+  "w": "sham",
+  "p": "n.",
+  "m": "Something fake presented as genuine.",
+  "e": "17th-century slang, perhaps a variant of <i>shame</i>.",
+  "f": "imposture, faux-semblant",
+  "t": "A sham marriage: a « mariage blanc ». A fake."
+ },
+ {
+  "w": "skirt",
+  "p": "v.",
+  "m": "To avoid dealing with; to go around the edge of.",
+  "e": "Old Norse <i>skyrta</i> (shirt). Germanic.",
+  "f": "contourner, éluder",
+  "t": "The skirt is the edge of the garment: you go around the edge. Skirt the issue = contourner."
+ },
+ {
+  "w": "sluggish",
+  "p": "adj.",
+  "m": "Slow-moving; lacking energy.",
+  "e": "From <i>slug</i>, Scandinavian <i>slugga</i> (to be slow).",
+  "f": "lent, apathique",
+  "t": "Like a slug (limace): a sluggish economy."
+ },
+ {
+  "w": "acrimonious",
+  "p": "adj.",
+  "m": "Angry and bitter.",
+  "e": "Latin <i>acrimonia</i>, from <i>acer</i> (sharp).",
+  "f": "acrimonieux, acerbe",
+  "t": "Same as « acrimonieux »: sharp (acre) words."
+ },
+ {
+  "w": "beneficent",
+  "p": "adj.",
+  "m": "Doing good; generous.",
+  "e": "Latin <i>beneficus</i>: <i>bene</i> (well) + <i>facere</i> (to do).",
+  "f": "bienfaisant",
+  "t": "Bene + facere = « bienfaisant »."
+ },
+ {
+  "w": "canny",
+  "p": "adj.",
+  "m": "Shrewd, especially in money matters.",
+  "e": "From Scots <i>can</i> (to know), Old English <i>cunnan</i>.",
+  "f": "astucieux, avisé",
+  "t": "Knows how to: a canny investor. Cousin of « cunning »."
+ },
+ {
+  "w": "distressed",
+  "p": "adj.",
+  "m": "Suffering anxiety or pain; (of goods) sold at a low price; (of furniture) aged on purpose.",
+  "e": "Old French <i>destresse</i>, Latin <i>districtus</i> (restrained).",
+  "f": "affligé, en détresse",
+  "x": "2nd meaning",
+  "t": "Détresse. But distressed jeans are artificially worn."
+ },
+ {
+  "w": "dwindling",
+  "p": "adj.",
+  "m": "Diminishing gradually.",
+  "e": "From <i>dwindle</i>, Old English <i>dwīnan</i> (to shrink). Germanic.",
+  "f": "qui diminue, décroissant",
+  "t": "Dwindling supplies are slowly vanishing: « s'amenuiser »."
+ },
+ {
+  "w": "eclipse",
+  "p": "v.",
+  "m": "To obscure or surpass in importance.",
+  "e": "Greek <i>ekleipsis</i>: <i>ek-</i> + <i>leipein</i> (to leave).",
+  "f": "éclipser",
+  "t": "Same as « éclipser »: a star outshines the others."
+ },
+ {
+  "w": "encyclopedic",
+  "p": "adj.",
+  "m": "Comprehensive in scope.",
+  "e": "Greek <i>enkyklios paideia</i> (general education).",
+  "f": "encyclopédique",
+  "t": "Same as « encyclopédique »: knowing everything."
+ },
+ {
+  "w": "exasperated",
+  "p": "adj.",
+  "m": "Intensely irritated.",
+  "e": "Latin <i>exasperare</i>: <i>ex-</i> + <i>asper</i> (rough).",
+  "f": "exaspéré",
+  "t": "Same as « exaspéré »."
+ },
+ {
+  "w": "fungible",
+  "p": "adj.",
+  "m": "Replaceable by another identical item; interchangeable.",
+  "e": "Medieval Latin <i>fungibilis</i>, from <i>fungi vice</i> (to perform in place of).",
+  "f": "fongible, interchangeable",
+  "t": "Fongible: a euro is fungible, a painting is not."
+ },
+ {
+  "w": "interchangeable",
+  "p": "adj.",
+  "m": "Able to be exchanged with each other.",
+  "e": "<i>inter-</i> + <i>change</i>, Old French <i>changier</i>.",
+  "f": "interchangeable",
+  "t": "Same as « interchangeable »."
+ },
+ {
+  "w": "lucrative",
+  "p": "adj.",
+  "m": "Producing a great deal of profit.",
+  "e": "Latin <i>lucrativus</i>, from <i>lucrum</i> (gain).",
+  "f": "lucratif",
+  "t": "Same as « lucratif »."
+ },
+ {
+  "w": "peripheral",
+  "p": "adj.",
+  "m": "Of secondary importance; on the edge.",
+  "e": "Greek <i>peripheria</i>: <i>peri-</i> (around) + <i>pherein</i> (to carry).",
+  "f": "périphérique, secondaire",
+  "t": "Périphérique (le boulevard!) = the ring around the middle."
+ },
+ {
+  "w": "provocative",
+  "p": "adj.",
+  "m": "Causing a strong reaction, especially anger or arousal.",
+  "e": "Latin <i>provocativus</i>, from <i>provocare</i> (to call forth).",
+  "f": "provocant, provocateur",
+  "t": "Same as « provocant »."
+ },
+ {
+  "w": "renounce",
+  "p": "v.",
+  "m": "To formally give up or reject.",
+  "e": "Latin <i>renuntiare</i> (to announce against): <i>re-</i> + <i>nuntiare</i>.",
+  "f": "renoncer à",
+  "t": "Same as « renoncer »."
+ },
+ {
+  "w": "tenable",
+  "p": "adj.",
+  "m": "Able to be defended against attack or objection.",
+  "e": "Old French <i>tenir</i> (to hold), Latin <i>tenere</i>.",
+  "f": "défendable, soutenable",
+  "t": "Tenable = « tenable »: a position you can hold. Untenable = indéfendable."
+ },
+ {
+  "w": "affinity",
+  "p": "n.",
+  "m": "A natural liking or attraction; similarity.",
+  "e": "Latin <i>affinitas</i> (relationship by marriage), from <i>affinis</i> (bordering).",
+  "f": "affinité",
+  "t": "Same as « affinité »: « avoir des affinités »."
+ },
+ {
+  "w": "altruistic",
+  "p": "adj.",
+  "m": "Showing selfless concern for others.",
+  "e": "French <i>altruisme</i>, from Latin <i>alter</i> (other).",
+  "f": "altruiste",
+  "t": "Same as « altruiste »."
+ },
+ {
+  "w": "baroque",
+  "p": "adj.",
+  "m": "Highly ornate and extravagant.",
+  "e": "French <i>baroque</i>, from Portuguese <i>barroco</i> (irregular pearl).",
+  "f": "baroque",
+  "t": "Same as « baroque »: complex and over-decorated."
+ },
+ {
+  "w": "compromise",
+  "p": "v.",
+  "m": "To weaken or damage; to settle by mutual concession.",
+  "e": "Latin <i>compromissum</i> (mutual promise): <i>com-</i> + <i>promittere</i>.",
+  "f": "compromettre; faire un compromis",
+  "x": "2nd meaning",
+  "t": "Two uses: reach a compromise, OR « compromettre » (compromise safety = endanger it)."
+ },
+ {
+  "w": "countenance",
+  "p": "v.",
+  "m": "To tolerate or approve; (n.) the face.",
+  "e": "Old French <i>contenance</i> (bearing), Latin <i>continere</i> (to hold together).",
+  "f": "tolérer, approuver; contenance, visage",
+  "x": "2nd meaning",
+  "t": "Contenance. As a verb: « ne pas cautionner ». I will not countenance such behaviour."
+ },
+ {
+  "w": "credible",
+  "p": "adj.",
+  "m": "Able to be believed; convincing.",
+  "e": "Latin <i>credibilis</i>, from <i>credere</i> (to believe).",
+  "f": "crédible",
+  "t": "Same as « crédible »."
+ },
+ {
+  "w": "diffuse",
+  "p": "adj.",
+  "m": "Spread over a wide area; not concise. (v. diffuse = to spread)",
+  "e": "Latin <i>diffundere</i>: <i>dis-</i> + <i>fundere</i> (to pour).",
+  "f": "diffus, prolixe",
+  "t": "Same as « diffus »: a diffuse writing style never gets to the point."
+ },
+ {
+  "w": "documentary",
+  "p": "adj.",
+  "m": "Consisting of documents; based on factual evidence.",
+  "e": "Latin <i>documentum</i> (lesson, proof), from <i>docere</i> (to teach).",
+  "f": "documentaire, sur documents",
+  "t": "Documentary evidence = « preuves documentaires »."
+ },
+ {
+  "w": "exhaustive",
+  "p": "adj.",
+  "m": "Examining or including all elements; thorough.",
+  "e": "Latin <i>exhaurire</i> (to drain out).",
+  "f": "exhaustif",
+  "t": "Same as « exhaustif »: leave nothing out. Not « exhausting »."
+ },
+ {
+  "w": "exhilarating",
+  "p": "adj.",
+  "m": "Making one feel very happy, animated or elated.",
+  "e": "Latin <i>exhilarare</i>: <i>ex-</i> + <i>hilaris</i> (cheerful).",
+  "f": "grisant, euphorisant",
+  "t": "Hilarious inside: hilaris. An exhilarating rollercoaster."
+ },
+ {
+  "w": "fervor",
+  "p": "n.",
+  "m": "Intense and passionate feeling.",
+  "e": "Latin <i>fervor</i> (boiling heat), from <i>fervere</i> (to boil).",
+  "f": "ferveur",
+  "t": "Same as « ferveur »."
+ },
+ {
+  "w": "illusory",
+  "p": "adj.",
+  "m": "Based on illusion; not real.",
+  "e": "Latin <i>illusorius</i>, from <i>illudere</i> (to mock).",
+  "f": "illusoire",
+  "t": "Same as « illusoire »."
+ },
+ {
+  "w": "metaphorical",
+  "p": "adj.",
+  "m": "Used in a figurative sense, not literal.",
+  "e": "Greek <i>metaphora</i>: <i>meta-</i> (across) + <i>pherein</i> (to carry).",
+  "f": "métaphorique",
+  "t": "Same as « métaphorique »."
+ },
+ {
+  "w": "mimic",
+  "p": "v.",
+  "m": "To imitate, especially to ridicule.",
+  "e": "Greek <i>mimos</i> (imitator).",
+  "f": "imiter, singer",
+  "t": "Mimic = « mime »: act like someone else."
+ },
+ {
+  "w": "numinous",
+  "p": "adj.",
+  "m": "Having a strong religious or spiritual quality; awe-inspiring.",
+  "e": "Latin <i>numen</i> (divine power).",
+  "f": "numineux, sacré",
+  "t": "Numen = divinity. Sensing a god in a cathedral."
+ },
+ {
+  "w": "rational",
+  "p": "adj.",
+  "m": "Based on reason or logic.",
+  "e": "Latin <i>rationalis</i>, from <i>ratio</i> (reckoning, reason).",
+  "f": "rationnel",
+  "t": "Same as « rationnel »."
+ },
+ {
+  "w": "scathing",
+  "p": "adj.",
+  "m": "Witheringly scornful; severely critical.",
+  "e": "Old Norse <i>skaða</i> (to harm). Germanic.",
+  "f": "cinglant, acerbe",
+  "t": "A scathing review leaves scars: « cinglant »."
+ },
+ {
+  "w": "subtle",
+  "p": "adj.",
+  "m": "So delicate as to be difficult to analyze; clever and indirect.",
+  "e": "Latin <i>subtilis</i> (finely woven): <i>sub-</i> + <i>tela</i> (web).",
+  "f": "subtil, délicat",
+  "t": "Same as « subtil »: finely woven."
+ },
+ {
+  "w": "superficial",
+  "p": "adj.",
+  "m": "Existing only on the surface; lacking depth.",
+  "e": "Latin <i>superficies</i>: <i>super-</i> + <i>facies</i> (face).",
+  "f": "superficiel",
+  "t": "Same as « superficiel »."
+ },
+ {
+  "w": "acquiesce",
+  "p": "v.",
+  "m": "To accept something reluctantly but without protest.",
+  "e": "Latin <i>acquiescere</i> (to rest): <i>ad-</i> + <i>quies</i> (rest).",
+  "f": "acquiescer, consentir",
+  "t": "Same as « acquiescer »: you rest your objections."
+ },
+ {
+  "w": "adroit",
+  "p": "adj.",
+  "m": "Clever or skilful, especially in handling difficult situations.",
+  "e": "French <i>à droit</i> (rightly), from <i>droit</i> (right).",
+  "f": "adroit",
+  "t": "Same as « adroit » — even the opposite is French: « maladroit » = inept."
+ },
+ {
+  "w": "amend",
+  "p": "v.",
+  "m": "To make minor changes to improve; to correct.",
+  "e": "Latin <i>emendare</i> (to free from fault), <i>e-</i> + <i>menda</i> (fault).",
+  "f": "amender, modifier",
+  "t": "Same as « amender »: un amendement to a law. Not « emend » (to correct a text)."
+ }
+]

@@ -1,0 +1,559 @@
+[
+ {
+  "w": "animus",
+  "p": "n.",
+  "m": "Hostility or ill feeling; a motivating spirit.",
+  "e": "Latin <i>animus</i> (mind, spirit, anger).",
+  "f": "animosité, hostilité",
+  "t": "Cousin of « animosité »: feeling of hostility. Animus toward a rival."
+ },
+ {
+  "w": "apologist",
+  "p": "n.",
+  "m": "A person who offers a formal defence of a controversial idea or institution.",
+  "e": "Greek <i>apologia</i> (a speech in defence): <i>apo-</i> + <i>logos</i>.",
+  "f": "apologiste, défenseur",
+  "x": "Look-alike",
+  "t": "Not someone who says sorry! A defender: « un apologiste » of a regime."
+ },
+ {
+  "w": "astringent",
+  "p": "adj.",
+  "m": "Sharp or severe in manner or style; causing tissues to contract.",
+  "e": "Latin <i>astringere</i> (to bind tight): <i>ad-</i> + <i>stringere</i>.",
+  "f": "astringent, âpre, mordant",
+  "t": "Same as « astringent »: tightens the skin; astringent wit is dry and cutting."
+ },
+ {
+  "w": "collaborate",
+  "p": "v.",
+  "m": "To work jointly on an activity.",
+  "e": "Latin <i>collaborare</i>: <i>com-</i> + <i>laborare</i> (to work).",
+  "f": "collaborer",
+  "t": "Same as « collaborer »."
+ },
+ {
+  "w": "competent",
+  "p": "adj.",
+  "m": "Having the necessary ability or skill.",
+  "e": "Latin <i>competere</i> (to be suitable).",
+  "f": "compétent",
+  "t": "Same as « compétent »."
+ },
+ {
+  "w": "correlate",
+  "p": "v.",
+  "m": "To have a mutual relationship or connection.",
+  "e": "Latin <i>com-</i> + <i>relatus</i> (related).",
+  "f": "être corrélé, mettre en corrélation",
+  "t": "Same as « corréler »."
+ },
+ {
+  "w": "dictate",
+  "p": "v.",
+  "m": "To lay down authoritatively; to say aloud for writing down.",
+  "e": "Latin <i>dictare</i> (to say often), from <i>dicere</i> (to say).",
+  "f": "dicter, imposer",
+  "t": "Same as « dicter »: dictate terms = imposer ses conditions."
+ },
+ {
+  "w": "divorced",
+  "p": "adj.",
+  "m": "Separated from; no longer connected (to).",
+  "e": "Latin <i>divortium</i>, from <i>divertere</i> (to turn aside).",
+  "f": "divorcé; coupé de, détaché de",
+  "x": "2nd meaning",
+  "t": "Figuratively: divorced from reality = « coupé de la réalité »."
+ },
+ {
+  "w": "elitist",
+  "p": "adj.",
+  "m": "Believing a select group deserves influence or privilege.",
+  "e": "French <i>élite</i>, from Latin <i>eligere</i> (to choose out).",
+  "f": "élitiste",
+  "t": "Same as « élitiste »."
+ },
+ {
+  "w": "flummoxed",
+  "p": "adj.",
+  "m": "Perplexed; bewildered.",
+  "e": "19th-century English slang, origin unknown.",
+  "f": "déconcerté, perplexe",
+  "t": "Sounds like a mess: a flummoxed student staring at a trick question."
+ },
+ {
+  "w": "fruitful",
+  "p": "adj.",
+  "m": "Producing good results; productive.",
+  "e": "<i>fruit</i> (Latin <i>fructus</i>) + <i>-ful</i>.",
+  "f": "fructueux, productif",
+  "t": "« Fructueux »: a fruitful meeting bears fruit."
+ },
+ {
+  "w": "inborn",
+  "p": "adj.",
+  "m": "Existing from birth; natural.",
+  "e": "<i>in-</i> + <i>born</i>. Germanic.",
+  "f": "inné",
+  "t": "Born in: « inné », not learned."
+ },
+ {
+  "w": "polymath",
+  "p": "n.",
+  "m": "A person of wide knowledge or learning.",
+  "e": "Greek <i>polymathēs</i>: <i>poly-</i> (many) + <i>manthanein</i> (to learn).",
+  "f": "polymathe, esprit universel",
+  "t": "Poly (many) + math (learning): Leonardo da Vinci."
+ },
+ {
+  "w": "subservient",
+  "p": "adj.",
+  "m": "Prepared to obey others unquestioningly.",
+  "e": "Latin <i>subservire</i>: <i>sub-</i> + <i>servire</i> (to serve).",
+  "f": "servile, soumis",
+  "t": "Sub + serve: serving from below. « Servile »."
+ },
+ {
+  "w": "tantalizing",
+  "p": "adj.",
+  "m": "Teasing with something desirable but out of reach.",
+  "e": "From <i>Tantalus</i>, Greek myth: punished with water and fruit just out of reach.",
+  "f": "tentant, aguichant",
+  "t": "Tantale in French! Le supplice de Tantale: see it, can't have it."
+ },
+ {
+  "w": "versatile",
+  "p": "adj.",
+  "m": "Able to adapt to many functions.",
+  "e": "Latin <i>versatilis</i>, from <i>versare</i> (to turn).",
+  "f": "polyvalent, souple",
+  "x": "Faux ami",
+  "t": "« Versatile » in French means fickle (changeable). English: flexible, many-skilled."
+ },
+ {
+  "w": "wayward",
+  "p": "adj.",
+  "m": "Difficult to control because of unpredictable behaviour.",
+  "e": "Middle English, short for <i>awayward</i> (turned away).",
+  "f": "capricieux, rebelle",
+  "t": "Turned away from the way: a wayward teenager."
+ },
+ {
+  "w": "alienate",
+  "p": "v.",
+  "m": "To make someone feel isolated or estranged.",
+  "e": "Latin <i>alienare</i>, from <i>alienus</i> (of another).",
+  "f": "aliéner, s'aliéner",
+  "t": "Same as « aliéner »: s'aliéner ses collègues."
+ },
+ {
+  "w": "apropos",
+  "p": "adj.",
+  "m": "Very appropriate to a particular situation.",
+  "e": "French <i>à propos</i> (to the purpose).",
+  "f": "à propos, pertinent",
+  "t": "Straight from French « à propos »."
+ },
+ {
+  "w": "apt",
+  "p": "adj.",
+  "m": "Appropriate or suitable; having a tendency to.",
+  "e": "Latin <i>aptus</i> (fitted).",
+  "f": "approprié; enclin à",
+  "x": "2nd meaning",
+  "t": "Apte = suitable. Also apt to (+ verb) = tends to."
+ },
+ {
+  "w": "cloak",
+  "p": "v.",
+  "m": "To cover or hide.",
+  "e": "Old French <i>cloque</i> (bell-shaped cape), Latin <i>clocca</i> (bell).",
+  "f": "dissimuler, masquer",
+  "t": "Cloche: a cloak hangs like a bell. Cloaked in secrecy."
+ },
+ {
+  "w": "consensus",
+  "p": "n.",
+  "m": "General agreement.",
+  "e": "Latin <i>consensus</i>, from <i>consentire</i> (to feel together).",
+  "f": "consensus",
+  "t": "Same as « consensus »."
+ },
+ {
+  "w": "distort",
+  "p": "v.",
+  "m": "To pull out of shape; to misrepresent.",
+  "e": "Latin <i>distorquere</i>: <i>dis-</i> + <i>torquere</i> (to twist).",
+  "f": "déformer, fausser",
+  "t": "Same as « distordre / distorsion »."
+ },
+ {
+  "w": "divergent",
+  "p": "adj.",
+  "m": "Tending to be different or develop in different directions.",
+  "e": "Latin <i>divergere</i>: <i>dis-</i> + <i>vergere</i> (to incline).",
+  "f": "divergent",
+  "t": "Same as « divergent »."
+ },
+ {
+  "w": "elated",
+  "p": "adj.",
+  "m": "Extremely happy and excited.",
+  "e": "Latin <i>elatus</i> (lifted up), from <i>efferre</i>.",
+  "f": "enthousiaste, ravi",
+  "t": "Lifted up by joy: « exalté »."
+ },
+ {
+  "w": "enchant",
+  "p": "v.",
+  "m": "To fill with great delight; to put under a spell.",
+  "e": "Latin <i>incantare</i> (to sing a spell over): <i>in-</i> + <i>cantare</i>.",
+  "f": "enchanter",
+  "t": "Same as « enchanter »: sing a spell."
+ },
+ {
+  "w": "exotic",
+  "p": "adj.",
+  "m": "Originating in a distant foreign country; striking.",
+  "e": "Greek <i>exōtikos</i> (from outside), <i>exō</i>.",
+  "f": "exotique",
+  "t": "Same as « exotique »."
+ },
+ {
+  "w": "exploitative",
+  "p": "adj.",
+  "m": "Making use of a situation or person unfairly for one's own advantage.",
+  "e": "French <i>exploiter</i>, Latin <i>explicare</i> (to unfold).",
+  "f": "abusif, d'exploitation",
+  "t": "Cognate « exploiter » in the negative sense (exploiter des travailleurs)."
+ },
+ {
+  "w": "foreseeable",
+  "p": "adj.",
+  "m": "Able to be anticipated.",
+  "e": "<i>fore-</i> (before) + <i>see</i> + <i>-able</i>. Germanic.",
+  "f": "prévisible",
+  "t": "See before: « prévisible ». In the foreseeable future = dans un avenir prévisible."
+ },
+ {
+  "w": "forsake",
+  "p": "v.",
+  "m": "To abandon; to give up.",
+  "e": "Old English <i>forsacan</i>: <i>for-</i> + <i>sacan</i> (to contend). Germanic.",
+  "f": "abandonner, délaisser",
+  "t": "For + sake: renounce. Forsaken = délaissé."
+ },
+ {
+  "w": "gratify",
+  "p": "v.",
+  "m": "To give pleasure or satisfaction to.",
+  "e": "Latin <i>gratificari</i>, from <i>gratus</i> (pleasing).",
+  "f": "satisfaire, gratifier",
+  "t": "Same as « gratifier »: gratify a desire."
+ },
+ {
+  "w": "heed",
+  "p": "v.",
+  "m": "To pay attention to.",
+  "e": "Old English <i>hēdan</i>. Germanic.",
+  "f": "tenir compte de, écouter",
+  "t": "Heed a warning = tenir compte d'un avertissement."
+ },
+ {
+  "w": "sensational",
+  "p": "adj.",
+  "m": "Causing great public interest; of outstanding quality.",
+  "e": "Latin <i>sensatio</i>, from <i>sensus</i> (feeling).",
+  "f": "sensationnel; à sensation",
+  "t": "Same as « sensationnel »: sensational journalism = journalisme à sensation."
+ },
+ {
+  "w": "sophisticated",
+  "p": "adj.",
+  "m": "Developed to a high degree of complexity; worldly and refined.",
+  "e": "Medieval Latin <i>sophisticare</i> (to adulterate), Greek <i>sophistēs</i>.",
+  "f": "sophistiqué, raffiné",
+  "t": "Same as « sophistiqué »."
+ },
+ {
+  "w": "strife",
+  "p": "n.",
+  "m": "Angry or bitter disagreement over fundamental issues.",
+  "e": "Old French <i>estrif</i> (quarrel).",
+  "f": "conflit, discorde",
+  "t": "Cousin of « s'efforcer » via 'strive'. Conflict."
+ },
+ {
+  "w": "understated",
+  "p": "adj.",
+  "m": "Presented in a subtle, restrained way.",
+  "e": "<i>under-</i> + <i>state</i>. Germanic.",
+  "f": "discret, sobre",
+  "t": "Stated under: « sobre ». An understated elegance."
+ },
+ {
+  "w": "comply",
+  "p": "v.",
+  "m": "To act in accordance with a wish or command.",
+  "e": "Latin <i>complere</i> (to fulfil), via Italian <i>complire</i>.",
+  "f": "se conformer à, obtempérer",
+  "t": "Comply with rules = « se conformer »."
+ },
+ {
+  "w": "curtail",
+  "p": "v.",
+  "m": "To reduce in extent or quantity; to cut short.",
+  "e": "Old French <i>courtault</i> (docked), from <i>court</i> (short).",
+  "f": "réduire, écourter",
+  "t": "« Court »: make it short. Curtail spending."
+ },
+ {
+  "w": "evade",
+  "p": "v.",
+  "m": "To escape or avoid, especially by cleverness or trickery.",
+  "e": "Latin <i>evadere</i> (to go out): <i>e-</i> + <i>vadere</i> (to go).",
+  "f": "éluder, échapper à",
+  "t": "Cousin of « s'évader » (escape). Evade taxes = fraude fiscale."
+ },
+ {
+  "w": "fester",
+  "p": "v.",
+  "m": "To become worse or more intense, especially through neglect.",
+  "e": "Old French <i>festre</i> (ulcer), Latin <i>fistula</i> (ulcer).",
+  "f": "suppurer, s'envenimer",
+  "t": "« S'envenimer »: a festering wound or dispute."
+ },
+ {
+  "w": "improvise",
+  "p": "v.",
+  "m": "To create and perform spontaneously, without preparation.",
+  "e": "Latin <i>improvisus</i> (unforeseen): <i>in-</i> + <i>pro-</i> + <i>videre</i>.",
+  "f": "improviser",
+  "t": "Same as « improviser »."
+ },
+ {
+  "w": "inhibit",
+  "p": "v.",
+  "m": "To hinder, restrain or prevent.",
+  "e": "Latin <i>inhibere</i> (to hold in).",
+  "f": "inhiber, entraver",
+  "t": "Same as « inhiber »."
+ },
+ {
+  "w": "monotonous",
+  "p": "adj.",
+  "m": "Dull, tedious and repetitious.",
+  "e": "Greek <i>monotonos</i>: <i>mono-</i> (one) + <i>tonos</i> (tone).",
+  "f": "monotone",
+  "t": "Mono + tone: one tone. Same as « monotone »."
+ },
+ {
+  "w": "peculiar",
+  "p": "adj.",
+  "m": "Strange or odd; characteristic of one.",
+  "e": "Latin <i>peculiaris</i> (of private property), from <i>pecu</i> (cattle).",
+  "f": "bizarre, particulier",
+  "t": "Cattle = private wealth: something belonging to you alone. « Particulier ». Peculiar to = propre à."
+ },
+ {
+  "w": "premeditate",
+  "p": "v.",
+  "m": "To think out or plan beforehand.",
+  "e": "Latin <i>praemeditari</i>: <i>prae-</i> + <i>meditari</i>.",
+  "f": "préméditer",
+  "t": "Same as « préméditer »."
+ },
+ {
+  "w": "refine",
+  "p": "v.",
+  "m": "To remove impurities; to improve by small changes.",
+  "e": "<i>re-</i> + <i>fine</i>, French <i>raffiner</i>.",
+  "f": "raffiner, affiner",
+  "t": "Same as « raffiner / affiner »."
+ },
+ {
+  "w": "relinquish",
+  "p": "v.",
+  "m": "To voluntarily cease to keep or claim.",
+  "e": "Latin <i>relinquere</i> (to leave behind).",
+  "f": "abandonner, renoncer à",
+  "t": "Cousin of « relique »: what is left behind. Relinquish power."
+ },
+ {
+  "w": "skittish",
+  "p": "adj.",
+  "m": "Nervous or excitable; easily scared.",
+  "e": "Middle English, probably Scandinavian <i>skyt-</i> (to shoot).",
+  "f": "nerveux, ombrageux, craintif",
+  "t": "A skittish horse jumps at shadows: « ombrageux »."
+ },
+ {
+  "w": "synoptic",
+  "p": "adj.",
+  "m": "Taking a comprehensive view; giving a general summary.",
+  "e": "Greek <i>synoptikos</i>: <i>syn-</i> (together) + <i>opsis</i> (view).",
+  "f": "synoptique",
+  "t": "Same as « synoptique »: seen together."
+ },
+ {
+  "w": "thorough",
+  "p": "adj.",
+  "m": "Complete with regard to every detail.",
+  "e": "Old English <i>thuruh</i>, a form of <i>through</i>. Germanic.",
+  "f": "minutieux, approfondi",
+  "t": "Through-and-through: « minutieux »."
+ },
+ {
+  "w": "visionary",
+  "p": "adj.",
+  "m": "Thinking about the future with imagination.",
+  "e": "Latin <i>visio</i> (sight), from <i>videre</i>.",
+  "f": "visionnaire",
+  "t": "Same as « visionnaire »."
+ },
+ {
+  "w": "acclaim",
+  "p": "v.",
+  "m": "To praise enthusiastically and publicly.",
+  "e": "Latin <i>acclamare</i>: <i>ad-</i> + <i>clamare</i> (to shout).",
+  "f": "acclamer, saluer",
+  "t": "Same as « acclamer »."
+ },
+ {
+  "w": "ascertain",
+  "p": "v.",
+  "m": "To find out for certain.",
+  "e": "Old French <i>acertener</i>, from <i>certain</i>.",
+  "f": "s'assurer de, établir",
+  "t": "A + certain: make certain. « S'assurer »."
+ },
+ {
+  "w": "assertive",
+  "p": "adj.",
+  "m": "Having or showing a confident and forceful personality.",
+  "e": "Latin <i>asserere</i> (to claim): <i>ad-</i> + <i>serere</i> (to join).",
+  "f": "affirmé, assuré",
+  "t": "« Assertif ». Cousin of « assertion »."
+ },
+ {
+  "w": "bogus",
+  "p": "adj.",
+  "m": "Not genuine; fake.",
+  "e": "19th-century American slang, origin uncertain.",
+  "f": "faux, bidon",
+  "t": "« Bidon »: a bogus claim."
+ },
+ {
+  "w": "cataclysmic",
+  "p": "adj.",
+  "m": "Relating to a violent upheaval or disaster.",
+  "e": "Greek <i>kataklysmos</i> (flood): <i>kata-</i> + <i>klyzein</i> (to wash).",
+  "f": "cataclysmique, catastrophique",
+  "t": "Same as « cataclysme »: a flood."
+ },
+ {
+  "w": "hinder",
+  "p": "v.",
+  "m": "To create difficulties for; to delay.",
+  "e": "Old English <i>hindrian</i> (to hold back). Germanic.",
+  "f": "entraver, gêner",
+  "t": "Stands behind you (hind): holds you back."
+ },
+ {
+  "w": "impair",
+  "p": "v.",
+  "m": "To weaken or damage, especially a faculty.",
+  "e": "Old French <i>empeirer</i>, Latin <i>pejorare</i> (to make worse).",
+  "f": "affaiblir, altérer",
+  "t": "Cousin of « empirer » and « pire »: make worse. Impaired vision."
+ },
+ {
+  "w": "inclined",
+  "p": "adj.",
+  "m": "Having a tendency; willing.",
+  "e": "Latin <i>inclinare</i>: <i>in-</i> + <i>clinare</i> (to lean).",
+  "f": "enclin, porté à",
+  "t": "Same as « incliné »: leaning toward."
+ },
+ {
+  "w": "miserly",
+  "p": "adj.",
+  "m": "Unwilling to spend; ungenerously small.",
+  "e": "Latin <i>miser</i> (wretched).",
+  "f": "avare, mesquin",
+  "t": "Not « misérable »! A miser: Harpagon in L'Avare."
+ },
+ {
+  "w": "pliant",
+  "p": "adj.",
+  "m": "Easily bent; easily influenced.",
+  "e": "Old French <i>plier</i> (to fold), Latin <i>plicare</i>.",
+  "f": "souple, docile",
+  "t": "Plier: foldable. A pliant mind obeys."
+ },
+ {
+  "w": "sound",
+  "p": "adj.",
+  "m": "In good condition; based on valid reasoning.",
+  "e": "Old English <i>gesund</i> (healthy). Germanic.",
+  "f": "sain, solide, valable",
+  "x": "2nd meaning",
+  "t": "« Sain »: a sound argument, sound judgement. Safe and sound."
+ },
+ {
+  "w": "tepid",
+  "p": "adj.",
+  "m": "Slightly warm; lacking enthusiasm.",
+  "e": "Latin <i>tepidus</i>, from <i>tepere</i> (to be warm).",
+  "f": "tiède",
+  "t": "Same as « tiède »: a tepid reception."
+ },
+ {
+  "w": "vexation",
+  "p": "n.",
+  "m": "The state of being annoyed or worried.",
+  "e": "Latin <i>vexatio</i>, from <i>vexare</i> (to harass).",
+  "f": "contrariété, irritation",
+  "t": "Same as « vexation » (but milder than in French)."
+ },
+ {
+  "w": "abet",
+  "p": "v.",
+  "m": "To encourage or assist, typically in wrongdoing.",
+  "e": "Old French <i>abeter</i> (to bait, incite).",
+  "f": "encourager, soutenir (un délit)",
+  "t": "Aid and abet = « être complice »."
+ },
+ {
+  "w": "accessible",
+  "p": "adj.",
+  "m": "Able to be reached or understood.",
+  "e": "Latin <i>accessibilis</i>, from <i>accedere</i> (to approach).",
+  "f": "accessible",
+  "t": "Same as « accessible »."
+ },
+ {
+  "w": "acquisitive",
+  "p": "adj.",
+  "m": "Excessively interested in acquiring money or material things.",
+  "e": "Latin <i>acquirere</i> (to get).",
+  "f": "cupide, avide de possession",
+  "t": "Same as « acquisitif »: always wanting to buy more."
+ },
+ {
+  "w": "aversion",
+  "p": "n.",
+  "m": "A strong dislike.",
+  "e": "Latin <i>aversio</i>, from <i>avertere</i> (to turn away).",
+  "f": "aversion, répugnance",
+  "t": "Same as « aversion »."
+ },
+ {
+  "w": "contempt",
+  "p": "n.",
+  "m": "The feeling that something is worthless.",
+  "e": "Latin <i>contemptus</i>, from <i>contemnere</i> (to despise).",
+  "f": "mépris",
+  "t": "Same as « contempt » root (contemptible). « Mépris »."
+ }
+]

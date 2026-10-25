@@ -1,0 +1,564 @@
+[
+ {
+  "w": "dawdle",
+  "p": "v.",
+  "m": "To waste time; to move slowly.",
+  "e": "17th-century English, possibly related to <i>daddle</i> (to walk unsteadily).",
+  "f": "traîner, lambiner",
+  "t": "Don't dawdle: « ne traîne pas »."
+ },
+ {
+  "w": "deflect",
+  "p": "v.",
+  "m": "To cause to change direction; to turn aside.",
+  "e": "Latin <i>deflectere</i>: <i>de-</i> + <i>flectere</i> (to bend).",
+  "f": "dévier, détourner",
+  "t": "Same as « défléchir / déflexion ». Deflect criticism = détourner."
+ },
+ {
+  "w": "discount",
+  "p": "v.",
+  "m": "To regard as unlikely or unworthy of consideration; to reduce the price of.",
+  "e": "Old French <i>desconter</i>: <i>des-</i> + <i>conter</i> (to count).",
+  "f": "ne pas tenir compte de; escompter",
+  "x": "2nd meaning",
+  "t": "Discount a rumour = ignore it. Beyond price cuts: « ne pas tenir compte »."
+ },
+ {
+  "w": "dissident",
+  "p": "n.",
+  "m": "One who opposes official policy.",
+  "e": "Latin <i>dissidere</i> (to sit apart): <i>dis-</i> + <i>sedere</i>.",
+  "f": "dissident",
+  "t": "Same as « dissident »: sits apart."
+ },
+ {
+  "w": "inform",
+  "p": "v.",
+  "m": "(inform on/against) To betray; (inform) to give shape or character to.",
+  "e": "Latin <i>informare</i> (to shape, give form).",
+  "f": "dénoncer; informer; imprégner",
+  "x": "2nd meaning",
+  "t": "inform on someone = « dénoncer ». Also: a decision informed by data."
+ },
+ {
+  "w": "irksome",
+  "p": "adj.",
+  "m": "Irritating; tedious.",
+  "e": "Middle English <i>irken</i> (to tire).",
+  "f": "agaçant, pénible",
+  "t": "It irks me: « ça m'agace ». An irksome chore."
+ },
+ {
+  "w": "manacle",
+  "p": "n.",
+  "m": "A metal chain for the hands; (v.) to restrain.",
+  "e": "Latin <i>manicula</i> (little hand), from <i>manus</i>.",
+  "f": "menotte, entrave",
+  "t": "Latin manus (hand): « menotte »."
+ },
+ {
+  "w": "modest",
+  "p": "adj.",
+  "m": "Unassuming; moderate or limited in size.",
+  "e": "Latin <i>modestus</i> (moderate), from <i>modus</i> (measure).",
+  "f": "modeste",
+  "t": "Same as « modeste »: a modest salary is of limited size."
+ },
+ {
+  "w": "noxious",
+  "p": "adj.",
+  "m": "Harmful, poisonous or very unpleasant.",
+  "e": "Latin <i>noxius</i>, from <i>noxa</i> (harm).",
+  "f": "nocif, nuisible",
+  "t": "Same family as « nocif ». Noxious fumes."
+ },
+ {
+  "w": "predicament",
+  "p": "n.",
+  "m": "A difficult, unpleasant situation.",
+  "e": "Late Latin <i>praedicamentum</i> (category), from <i>praedicare</i>.",
+  "f": "situation difficile, dilemme",
+  "t": "« Prédicament » is not French. Think « pétrin »: in a predicament."
+ },
+ {
+  "w": "proficient",
+  "p": "adj.",
+  "m": "Competent or skilled.",
+  "e": "Latin <i>proficere</i> (to make progress): <i>pro-</i> + <i>facere</i>.",
+  "f": "compétent, doué",
+  "t": "Pro + facere: progress as a pro. Proficient in French."
+ },
+ {
+  "w": "prolix",
+  "p": "adj.",
+  "m": "Using too many words; tediously lengthy.",
+  "e": "Latin <i>prolixus</i> (extended).",
+  "f": "prolixe, verbeux",
+  "t": "Same as « prolixe »: a verbose essay."
+ },
+ {
+  "w": "scorn",
+  "p": "n.",
+  "m": "Contempt or disdain.",
+  "e": "Old French <i>escarn</i>, Germanic origin.",
+  "f": "mépris, dédain",
+  "t": "Cousin of « escarnir »: to treat with scorn. « Mépriser » = to scorn."
+ },
+ {
+  "w": "subordinate",
+  "p": "adj.",
+  "m": "Lower in rank or importance.",
+  "e": "Latin <i>sub-</i> + <i>ordinare</i> (to order).",
+  "f": "subordonné",
+  "t": "Same as « subordonné »."
+ },
+ {
+  "w": "acolyte",
+  "p": "n.",
+  "m": "An assistant or follower.",
+  "e": "Greek <i>akolouthos</i> (follower), via Latin <i>acolythus</i>.",
+  "f": "acolyte",
+  "t": "Same as « acolyte » (in English with a mild negative tone)."
+ },
+ {
+  "w": "anoint",
+  "p": "v.",
+  "m": "To smear with oil, as a rite; to choose officially.",
+  "e": "Latin <i>inungere</i> (to smear on).",
+  "f": "oindre; désigner",
+  "t": "Same as « oindre ». An heir anointed as successor."
+ },
+ {
+  "w": "coercion",
+  "p": "n.",
+  "m": "Persuasion by force or threats.",
+  "e": "Latin <i>coercere</i> (to restrain).",
+  "f": "coercition, contrainte",
+  "t": "Same as « coercition »."
+ },
+ {
+  "w": "coin",
+  "p": "v.",
+  "m": "To invent a new word or phrase.",
+  "e": "Old French <i>coing</i> (wedge, stamp for minting money).",
+  "f": "inventer (un mot), forger",
+  "x": "Look-alike",
+  "t": "Not « coin » (corner)! Coin a term = forger. Money is struck with a coin die."
+ },
+ {
+  "w": "cunning",
+  "p": "adj.",
+  "m": "Skilled in deceit; clever in achieving one's ends.",
+  "e": "Old English <i>cunnan</i> (to know). Germanic.",
+  "f": "rusé, malin",
+  "t": "Fox-like: « rusé »."
+ },
+ {
+  "w": "discomfit",
+  "p": "v.",
+  "m": "To make uneasy or confused.",
+  "e": "Old French <i>desconfit</i> (defeated), Latin <i>deficere</i>.",
+  "f": "décontenancer, déconcerter",
+  "t": "Related to « déconfit »: defeated and embarrassed. Discomfit ≠ discomfort."
+ },
+ {
+  "w": "distill",
+  "p": "v.",
+  "m": "To purify a liquid; to extract the essential meaning of.",
+  "e": "Latin <i>destillare</i> (to drip down): <i>de-</i> + <i>stilla</i> (drop).",
+  "f": "distiller; extraire l'essentiel",
+  "t": "Same as « distiller »: drops. Distill a report into key points."
+ },
+ {
+  "w": "fallible",
+  "p": "adj.",
+  "m": "Capable of making mistakes.",
+  "e": "Latin <i>fallere</i> (to deceive).",
+  "f": "faillible",
+  "t": "Same as « faillible »: capable of faillir."
+ },
+ {
+  "w": "gawky",
+  "p": "adj.",
+  "m": "Nervously awkward and ungainly.",
+  "e": "17th-century English, from <i>gawk</i> (a fool), possibly Scandinavian.",
+  "f": "dégingandé, gauche",
+  "t": "Tall, gauche and clumsy: « dégingandé »."
+ },
+ {
+  "w": "noble",
+  "p": "adj.",
+  "m": "Having fine personal qualities or high social rank.",
+  "e": "Latin <i>nobilis</i> (well known, of high birth).",
+  "f": "noble",
+  "t": "Same as « noble »."
+ },
+ {
+  "w": "prime",
+  "p": "adj.",
+  "m": "Of first importance; main.",
+  "e": "Latin <i>primus</i> (first).",
+  "f": "principal, premier",
+  "t": "Prime minister: « Premier ministre »."
+ },
+ {
+  "w": "radical",
+  "p": "adj.",
+  "m": "Fundamental; far-reaching; extreme.",
+  "e": "Latin <i>radicalis</i>, from <i>radix</i> (root).",
+  "f": "radical, fondamental",
+  "t": "Same as « radical »: from the root. Radical reform."
+ },
+ {
+  "w": "temporal",
+  "p": "adj.",
+  "m": "Relating to time; worldly, not spiritual.",
+  "e": "Latin <i>temporalis</i>, from <i>tempus</i> (time).",
+  "f": "temporel",
+  "t": "Same as « temporel »: temporal power opposes spiritual power."
+ },
+ {
+  "w": "abreast",
+  "p": "adv.",
+  "m": "Up to date with; side by side.",
+  "e": "<i>a-</i> + <i>breast</i>. Germanic.",
+  "f": "au courant de; de front",
+  "t": "Keep abreast of the news = rester au courant."
+ },
+ {
+  "w": "digression",
+  "p": "n.",
+  "m": "A temporary departure from the main subject.",
+  "e": "Latin <i>digredi</i> (to step aside).",
+  "f": "digression",
+  "t": "Same as « digression »."
+ },
+ {
+  "w": "duplicitous",
+  "p": "adj.",
+  "m": "Deceitful; double-dealing.",
+  "e": "Latin <i>duplicitas</i>, from <i>duplex</i> (twofold).",
+  "f": "fourbe, hypocrite",
+  "t": "Duplex = two-faced. Duplicité in French has the same sense."
+ },
+ {
+  "w": "fabricate",
+  "p": "v.",
+  "m": "To invent (something false); to make or manufacture.",
+  "e": "Latin <i>fabricare</i>, from <i>fabrica</i> (workshop).",
+  "f": "fabriquer; inventer",
+  "x": "2nd meaning",
+  "t": "Fabriquer. A fabricated story is invented from scratch."
+ },
+ {
+  "w": "glum",
+  "p": "adj.",
+  "m": "Looking or feeling dejected.",
+  "e": "Probably from <i>gloom</i>. Germanic.",
+  "f": "morose, abattu",
+  "t": "Gloomy: « avoir le moral dans les chaussettes »."
+ },
+ {
+  "w": "harbinger",
+  "p": "n.",
+  "m": "A person or thing that announces the approach of something.",
+  "e": "Old French <i>herberger</i> (to lodge), an advance officer arranging lodging.",
+  "f": "signe avant-coureur, précurseur",
+  "t": "Originally the scout who finds you a bed (auberge). Swallows are a harbinger of spring."
+ },
+ {
+  "w": "largesse",
+  "p": "n.",
+  "m": "Generosity in bestowing gifts or money.",
+  "e": "Old French <i>largesse</i>, from <i>large</i> (generous).",
+  "f": "largesse, générosité",
+  "t": "Same as « largesse »."
+ },
+ {
+  "w": "libertine",
+  "p": "n.",
+  "m": "A person who behaves without moral restraint.",
+  "e": "Latin <i>libertinus</i> (freedman), from <i>liber</i> (free).",
+  "f": "libertin",
+  "t": "Same as « libertin »: Dom Juan."
+ },
+ {
+  "w": "manifest",
+  "p": "adj.",
+  "m": "Clear and obvious; (v.) to display.",
+  "e": "Latin <i>manifestus</i> (caught in the act, plain).",
+  "f": "manifeste, évident",
+  "t": "Same as « manifeste ». Manifest destiny."
+ },
+ {
+  "w": "minute",
+  "p": "adj.",
+  "m": "Extremely small; very precise (pronounced my-NYOOT).",
+  "e": "Latin <i>minutus</i> (made small).",
+  "f": "minuscule, minutieux",
+  "x": "2nd meaning",
+  "t": "Not the time unit: mi-NUTE = tiny, « minutieux ». Minute details."
+ },
+ {
+  "w": "prowess",
+  "p": "n.",
+  "m": "Skill or expertise; bravery in battle.",
+  "e": "Old French <i>proesce</i>, from <i>prou</i> (valiant).",
+  "f": "prouesse, talent",
+  "t": "Same as « prouesse »."
+ },
+ {
+  "w": "schism",
+  "p": "n.",
+  "m": "A split between strongly opposed groups.",
+  "e": "Greek <i>skhisma</i> (cleft), from <i>skhizein</i> (to split).",
+  "f": "schisme",
+  "t": "Same as « schisme »: schizo = split."
+ },
+ {
+  "w": "slander",
+  "p": "n.",
+  "m": "The making of a false spoken statement damaging to a person's reputation.",
+  "e": "Old French <i>esclandre</i>, Latin <i>scandalum</i> (scandal).",
+  "f": "calomnie, diffamation",
+  "t": "« Esclandre »: scandal → slander."
+ },
+ {
+  "w": "universal",
+  "p": "adj.",
+  "m": "Applicable to all cases; relating to everyone.",
+  "e": "Latin <i>universalis</i>, from <i>universus</i> (whole).",
+  "f": "universel",
+  "t": "Same as « universel »."
+ },
+ {
+  "w": "woeful",
+  "p": "adj.",
+  "m": "Very sad; deplorably bad.",
+  "e": "<i>woe</i> (Old English <i>wā</i>) + <i>-ful</i>.",
+  "f": "lamentable, déplorable",
+  "t": "Full of woe (malheur). Woeful performance = pitoyable."
+ },
+ {
+  "w": "abject",
+  "p": "adj.",
+  "m": "Extremely bad; showing hopelessness or humiliation.",
+  "e": "Latin <i>abjectus</i> (cast away): <i>ab-</i> + <i>jacere</i>.",
+  "f": "abject, misérable",
+  "t": "Same as « abject ». Abject poverty."
+ },
+ {
+  "w": "amicable",
+  "p": "adj.",
+  "m": "Characterized by friendliness; without ill feeling.",
+  "e": "Latin <i>amicabilis</i>, from <i>amicus</i> (friend).",
+  "f": "amical, à l'amiable",
+  "t": "« Amical ». An amicable divorce = divorce à l'amiable."
+ },
+ {
+  "w": "barrage",
+  "p": "n.",
+  "m": "A concentrated outpouring (of questions, criticism); heavy artillery fire.",
+  "e": "French <i>barrage</i> (barrier), from <i>barrer</i>.",
+  "f": "avalanche, déluge; tir de barrage",
+  "t": "Un barrage: like a dam bursting. A barrage of questions."
+ },
+ {
+  "w": "decipher",
+  "p": "v.",
+  "m": "To succeed in understanding or reading something unclear.",
+  "e": "<i>de-</i> + <i>cipher</i> (Arabic <i>ṣifr</i>, zero/code).",
+  "f": "déchiffrer",
+  "t": "Same as « déchiffrer »."
+ },
+ {
+  "w": "delusion",
+  "p": "n.",
+  "m": "A false belief held despite contrary evidence.",
+  "e": "Latin <i>deludere</i> (to mock): <i>de-</i> + <i>ludere</i> (to play).",
+  "f": "illusion, délire",
+  "t": "« Délire ». Delusions of grandeur = folie des grandeurs."
+ },
+ {
+  "w": "dispense",
+  "p": "v.",
+  "m": "To distribute; (dispense with) to do without.",
+  "e": "Latin <i>dispensare</i> (to weigh out).",
+  "f": "distribuer; se passer de",
+  "x": "2nd meaning",
+  "t": "Dispense with formalities = se passer des formalités. Dispenser = distributeur."
+ },
+ {
+  "w": "fortitude",
+  "p": "n.",
+  "m": "Courage in pain or adversity.",
+  "e": "Latin <i>fortitudo</i>, from <i>fortis</i> (strong).",
+  "f": "courage, force d'âme",
+  "t": "Same family as « fort »."
+ },
+ {
+  "w": "meritorious",
+  "p": "adj.",
+  "m": "Deserving reward or praise.",
+  "e": "Latin <i>meritorius</i>, from <i>merere</i> (to earn).",
+  "f": "méritoire",
+  "t": "Same as « méritoire »."
+ },
+ {
+  "w": "mutiny",
+  "p": "n.",
+  "m": "An open rebellion against authority, especially by sailors.",
+  "e": "Old French <i>mutin</i> (rebellious), Latin <i>movere</i> (to move).",
+  "f": "mutinerie",
+  "t": "Same as « mutinerie »."
+ },
+ {
+  "w": "perseverance",
+  "p": "n.",
+  "m": "Persistence in doing something despite difficulty.",
+  "e": "Latin <i>perseverare</i>: <i>per-</i> + <i>severus</i> (strict).",
+  "f": "persévérance",
+  "t": "Same as « persévérance »."
+ },
+ {
+  "w": "render",
+  "p": "v.",
+  "m": "To cause to be or become; to provide or give.",
+  "e": "Old French <i>rendre</i>, Latin <i>reddere</i>.",
+  "f": "rendre, rendre (un jugement)",
+  "t": "Same as « rendre »: render someone speechless."
+ },
+ {
+  "w": "repertoire",
+  "p": "n.",
+  "m": "The stock of skills or pieces a person is prepared to perform.",
+  "e": "Latin <i>repertorium</i> (inventory).",
+  "f": "répertoire",
+  "t": "Same as « répertoire »."
+ },
+ {
+  "w": "resilient",
+  "p": "adj.",
+  "m": "Able to recover quickly; flexible.",
+  "e": "Latin <i>resilire</i> (to leap back): <i>re-</i> + <i>salire</i>.",
+  "f": "résilient, qui a du ressort",
+  "t": "Same as « résilient »: bounces back."
+ },
+ {
+  "w": "resolute",
+  "p": "adj.",
+  "m": "Admirably purposeful and determined.",
+  "e": "Latin <i>resolutus</i> (loosened, settled), from <i>resolvere</i>.",
+  "f": "résolu, déterminé",
+  "t": "Same as « résolu »."
+ },
+ {
+  "w": "supple",
+  "p": "adj.",
+  "m": "Bending and moving easily and gracefully.",
+  "e": "Old French <i>souple</i>, Latin <i>supplex</i> (bending).",
+  "f": "souple",
+  "t": "« Souple » → supple."
+ },
+ {
+  "w": "valor",
+  "p": "n.",
+  "m": "Great courage in the face of danger.",
+  "e": "Latin <i>valor</i>, from <i>valere</i> (to be strong).",
+  "f": "bravoure, vaillance",
+  "t": "Same as « valeur » (in the old sense). « Valeureux »."
+ },
+ {
+  "w": "arresting",
+  "p": "adj.",
+  "m": "Striking; capturing the attention.",
+  "e": "Old French <i>arester</i> (to stop), Latin <i>arrestare</i>.",
+  "f": "saisissant, frappant",
+  "t": "It stops you in your tracks: an arresting photograph."
+ },
+ {
+  "w": "economy",
+  "p": "n.",
+  "m": "Careful management of resources; thrift.",
+  "e": "Greek <i>oikonomia</i>: <i>oikos</i> (house) + <i>nomos</i> (management).",
+  "f": "économie, parcimonie",
+  "x": "2nd meaning",
+  "t": "Beyond GDP: economy of words = brièveté, économie de moyens."
+ },
+ {
+  "w": "elementary",
+  "p": "adj.",
+  "m": "Relating to the basic, simplest parts.",
+  "e": "Latin <i>elementarius</i>, from <i>elementum</i>.",
+  "f": "élémentaire",
+  "t": "Same as « élémentaire »: « Élémentaire, mon cher Watson »."
+ },
+ {
+  "w": "euphoric",
+  "p": "adj.",
+  "m": "Characterized by intense excitement and happiness.",
+  "e": "Greek <i>euphoria</i>: <i>eu-</i> (well) + <i>pherein</i> (to bear).",
+  "f": "euphorique",
+  "t": "Same as « euphorique »."
+ },
+ {
+  "w": "falter",
+  "p": "v.",
+  "m": "To start to lose strength; to speak hesitatingly.",
+  "e": "Middle English, possibly Scandinavian.",
+  "f": "faiblir, vaciller, hésiter",
+  "t": "Falter = vaciller. His voice faltered."
+ },
+ {
+  "w": "fervent",
+  "p": "adj.",
+  "m": "Having or displaying passionate intensity.",
+  "e": "Latin <i>fervere</i> (to boil).",
+  "f": "fervent",
+  "t": "Same as « fervent »."
+ },
+ {
+  "w": "heterodox",
+  "p": "adj.",
+  "m": "Not conforming to accepted standards or beliefs.",
+  "e": "Greek <i>heterodoxos</i>: <i>heteros</i> (other) + <i>doxa</i> (opinion).",
+  "f": "hétérodoxe",
+  "t": "Same as « hétérodoxe »; opposite: orthodox."
+ },
+ {
+  "w": "liability",
+  "p": "n.",
+  "m": "A person or thing that causes problems; legal responsibility; a debt.",
+  "e": "From <i>liable</i>, French <i>lier</i> (to bind), Latin <i>ligare</i>.",
+  "f": "handicap, passif; responsabilité",
+  "x": "2nd meaning",
+  "t": "Opposite of an asset. Un handicap / « passif ». Product liability = responsabilité du fait des produits."
+ },
+ {
+  "w": "stinting",
+  "p": "adj.",
+  "m": "Restricting an allowance; frugal.",
+  "e": "Old English <i>styntan</i> (to blunt). Germanic.",
+  "f": "parcimonieux, chiche",
+  "t": "Not stinging! Stinting = skimping. Opposite of lavish: « sans lésiner » = unstinting."
+ },
+ {
+  "w": "temper",
+  "p": "v.",
+  "m": "To moderate or mitigate; (n.) disposition or anger.",
+  "e": "Latin <i>temperare</i> (to mix in due proportion).",
+  "f": "tempérer, modérer",
+  "x": "2nd meaning",
+  "t": "Same as « tempérer ». Temper enthusiasm with caution. Also a bad temper."
+ },
+ {
+  "w": "tentative",
+  "p": "adj.",
+  "m": "Not certain or fixed; hesitant.",
+  "e": "Latin <i>tentare</i> (to try).",
+  "f": "provisoire, hésitant",
+  "x": "Faux ami",
+  "t": "Not « tentative » (an attempt, a try). Tentative plans = provisoire, sous réserve."
+ }
+]

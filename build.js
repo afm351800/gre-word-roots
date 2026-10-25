@@ -7,6 +7,7 @@ const DECKS = [
   ["Common Words", ["I", "II", "III", "IV", "V", "VI", "VII"]],
   ["Basic", ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]],
   ["Advanced", ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]],
+  ["GregMat", ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"]],
 ];
 
 const out = [];
