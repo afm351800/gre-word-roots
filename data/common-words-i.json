@@ -1,0 +1,418 @@
+[
+ {
+  "w": "aberration",
+  "p": "n.",
+  "m": "A departure from what is normal or expected.",
+  "e": "Latin <i>aberrare</i>, “to wander away”: <i>ab-</i> (away) + <i>errare</i> (to wander, stray). The same <i>errare</i> gives French <i>errer</i> and English <i>err</i>, <i>error</i>.",
+  "f": "aberration",
+  "t": "Picture a knight-errant drifting off the road: ab + errer = wandering off the normal path. French already has the word with the same meaning."
+ },
+ {
+  "w": "acrimony",
+  "p": "n.",
+  "m": "Bitter, sharp ill-feeling, especially in words or a dispute.",
+  "e": "Latin <i>acrimonia</i>, “sharpness, pungency”, from <i>acer</i> (sharp, sour). Same root as French <i>âcre</i>, <i>aigre</i> and <i>vinaigre</i> (vin + aigre).",
+  "f": "acrimonie, aigreur",
+  "t": "Acer → aigre → vinaigre. An acrimonious divorce is a marriage that has turned to vinegar."
+ },
+ {
+  "w": "amalgam",
+  "p": "n.",
+  "m": "A mixture or blend of different elements.",
+  "e": "Medieval Latin <i>amalgama</i>, the alchemists’ word for an alloy of mercury with another metal, probably via Arabic from Greek <i>malagma</i> (a softening paste). Dentists’ silver fillings are still called amalgam.",
+  "f": "amalgame (« faire l’amalgame »)",
+  "t": "Same word as « faire l’amalgame », lumping things together. Think of the dentist’s filling: several metals fused into one."
+ },
+ {
+  "w": "ambiguous",
+  "p": "adj.",
+  "m": "Open to more than one interpretation; unclear.",
+  "e": "Latin <i>ambiguus</i>, “doubtful, shifting”, from <i>ambigere</i>, “to waver”: <i>ambi-</i> (both ways, around) + <i>agere</i> (to drive, lead).",
+  "f": "ambigu",
+  "t": "Ambi = both ways, as in ambidextrous. A sentence driving in two directions at once. Identical to French ambigu."
+ },
+ {
+  "w": "ambivalent",
+  "p": "adj.",
+  "m": "Having mixed or contradictory feelings about something.",
+  "e": "A modern coinage: the Swiss psychiatrist Eugen Bleuler built German <i>Ambivalenz</i> in 1910 from Latin <i>ambi-</i> (both) + <i>valentia</i> (strength, from <i>valere</i>, to be strong).",
+  "f": "ambivalent, partagé",
+  "t": "Ambi + valent = two feelings of equal strength pulling at once. Ambiguous describes a message; ambivalent describes how a person feels."
+ },
+ {
+  "w": "amenable",
+  "p": "adj.",
+  "m": "Willing to cooperate or be persuaded; open to.",
+  "e": "Anglo-French <i>amenable</i>, “able to be led”, from <i>amener</i> (à + <i>mener</i>), from Late Latin <i>minare</i>, “to drive animals by shouting”. First a legal word: answerable to a court.",
+  "f": "accommodant, réceptif, disposé à",
+  "t": "French amener: an amenable person is easy to « amener » to your view. You can lead them where you want."
+ },
+ {
+  "w": "amorphous",
+  "p": "adj.",
+  "m": "Without a clear shape, form or structure.",
+  "e": "Greek <i>amorphos</i>: <i>a-</i> (without) + <i>morphē</i> (shape, form). Same <i>morphē</i> as in metamorphosis and morphology.",
+  "f": "amorphe, informe",
+  "t": "A-morph = no shape, a metamorphosis that never finished. French « amorphe » often means listless; in English keep it about shape: an amorphous plan, an amorphous blob."
+ },
+ {
+  "w": "anomalous",
+  "p": "adj.",
+  "m": "Deviating from what is standard or expected.",
+  "e": "Greek <i>anōmalos</i>, “uneven, irregular”: <i>an-</i> (not) + <i>homalos</i> (even, level), related to <i>homos</i> (same).",
+  "f": "anormal, anomal (une anomalie)",
+  "t": "An-homalos = not level, not the same as the rest. The anomaly is the data point that sticks out of the even line."
+ },
+ {
+  "w": "artful",
+  "p": "adj.",
+  "m": "Cunning and sly (the usual GRE sense); also skilful.",
+  "e": "English <i>art</i> + <i>-ful</i>. <i>Art</i> came through Old French from Latin <i>ars, artis</i> (skill, craft), which also gave <i>artifice</i> and <i>artificial</i>. “Skilful” slid to “crafty” by the 1700s.",
+  "f": "rusé, astucieux, habile",
+  "t": "Think artifice, not art gallery. The Artful Dodger in Oliver Twist is a pickpocket full of tricks.",
+  "x": "2nd meaning"
+ },
+ {
+  "w": "auspicious",
+  "p": "adj.",
+  "m": "Showing signs of future success; favourable.",
+  "e": "Latin <i>auspicium</i>, “divination from birds”: <i>avis</i> (bird) + <i>specere</i> (to look). Roman augurs read the gods’ will in the flight of birds before any big decision.",
+  "f": "favorable, de bon augure (« sous de bons auspices »)",
+  "t": "« Sous de bons auspices »: picture the Roman priest watching the birds fly the right way. Auspicious = the birds say yes."
+ },
+ {
+  "w": "belie",
+  "p": "v.",
+  "m": "To give a false impression of; or to show something to be false.",
+  "e": "Old English <i>belēogan</i>, “to deceive by lying”: <i>be-</i> + <i>lēogan</i> (to lie). Purely Germanic. The surface “lies about” what is underneath.",
+  "f": "démentir, masquer, contredire",
+  "t": "Be + lie: the surface tells a lie. “Her calm smile belied her panic” = the smile lied about it."
+ },
+ {
+  "w": "betray",
+  "p": "v.",
+  "m": "To reveal unintentionally (the GRE sense); also to be disloyal.",
+  "e": "Germanic prefix <i>be-</i> + Middle English <i>trayen</i>, from Old French <i>trair</i> (now <i>trahir</i>), from Latin <i>tradere</i>, “to hand over”.",
+  "f": "trahir (« sa voix trahissait sa nervosité »)",
+  "t": "Exactly like French « trahir son émotion »: your face hands over (tradere) the secret without your permission.",
+  "x": "2nd meaning"
+ },
+ {
+  "w": "calumny",
+  "p": "n.",
+  "m": "A false statement made to damage someone’s reputation; slander.",
+  "e": "Latin <i>calumnia</i>, “trickery, false accusation”, from <i>calvi</i> (to deceive). Came into English through French <i>calomnie</i>.",
+  "f": "calomnie",
+  "t": "Same word as « calomnie », and the old saying: « Calomniez, calomniez, il en restera toujours quelque chose. »"
+ },
+ {
+  "w": "castigate",
+  "p": "v.",
+  "m": "To criticise or reprimand severely.",
+  "e": "Latin <i>castigare</i>, “to correct, punish”, literally “to make pure”: <i>castus</i> (pure, chaste) + <i>agere</i> (to drive). The same verb became Old French <i>chastier</i>, now <i>châtier</i>, which English borrowed again as chastise.",
+  "f": "fustiger, réprimander, châtier",
+  "t": "Castigate and chastise are twins, both from castigare → châtier. « Qui aime bien châtie bien. »"
+ },
+ {
+  "w": "censure",
+  "p": "n. / v.",
+  "m": "Formal, severe disapproval; to criticise officially.",
+  "e": "Latin <i>censura</i>, the office of the Roman <i>censor</i> (from <i>censere</i>, to assess). Censors ran the census and also judged citizens’ morals, publicly marking the disgraced.",
+  "f": "blâme, censure (« motion de censure »)",
+  "t": "Think « motion de censure » at the Assemblée: an official vote of disapproval. Censure = formal blame. Cutting out content is censor."
+ },
+ {
+  "w": "chastise",
+  "p": "v.",
+  "m": "To scold or punish severely.",
+  "e": "Middle English <i>chastisen</i>, from <i>chasten</i>, from Old French <i>chastier</i> (modern <i>châtier</i>), from Latin <i>castigare</i>, “to make pure”.",
+  "f": "châtier, réprimander",
+  "t": "Chastise sounds like châtier because it is châtier. The twin of castigate."
+ },
+ {
+  "w": "commensurate",
+  "p": "adj.",
+  "m": "In proportion to; corresponding in size or degree.",
+  "e": "Late Latin <i>commensuratus</i>: <i>com-</i> (together) + <i>mensurare</i> (to measure), from <i>mensura</i> (measure).",
+  "f": "proportionné à, à la mesure de",
+  "t": "Com + mesure = measured together. “Salary commensurate with experience” = à la mesure de votre expérience."
+ },
+ {
+  "w": "demur",
+  "p": "v.",
+  "m": "To raise objections or show reluctance.",
+  "e": "Old French <i>demorer</i>, “to linger, delay” (modern <i>demeurer</i>), from Latin <i>demorari</i>, from <i>mora</i> (delay, as in moratorium). Lawyers turned “delay” into a formal objection, the demurrer.",
+  "f": "émettre des réserves, objecter, hésiter",
+  "t": "Demur = demeurer: you stay put instead of going along. Don’t confuse with demure (shy, modest).",
+  "x": "Look-alike"
+ },
+ {
+  "w": "disinterested",
+  "p": "adj.",
+  "m": "Impartial, with no personal stake (not “uninterested”).",
+  "e": "<i>dis-</i> (not) + interested, from Latin <i>interesse</i>, “to be between, to matter”: <i>inter</i> + <i>esse</i>. Here “interest” means a stake, as in conflict of interest.",
+  "f": "désintéressé, impartial",
+  "t": "Same as French « désintéressé »: a referee with nothing to gain. A disinterested judge is good; an uninterested judge is asleep.",
+  "x": "2nd meaning"
+ },
+ {
+  "w": "egregious",
+  "p": "adj.",
+  "m": "Outstandingly bad; shocking.",
+  "e": "Latin <i>egregius</i>, “standing out from the flock”: <i>e/ex</i> (out of) + <i>grex, gregis</i> (flock). It first meant “distinguished”; ironic use in the 1500s made the bad sense win.",
+  "f": "flagrant, énorme, grossier (« une erreur grossière »)",
+  "t": "Ex grege: the sheep that stands out of the flock, for the wrong reason. Same grex as gregarious and grégaire."
+ },
+ {
+  "w": "enervate",
+  "p": "v.",
+  "m": "To weaken; drain of energy (not “to annoy” or “energise”).",
+  "e": "Latin <i>enervare</i>, “to remove the sinews”: <i>e-</i> (out) + <i>nervus</i> (sinew, tendon). Old French <i>énerver</i> meant the same before it shifted to “irritate”.",
+  "f": "affaiblir, épuiser, amollir (≠ énerver)",
+  "t": "Remember « les Énervés de Jumièges », the two princes of legend whose tendons were cut: énervés in the old sense, drained of strength. That is the English meaning.",
+  "x": "Faux ami"
+ },
+ {
+  "w": "equivocal",
+  "p": "adj.",
+  "m": "Ambiguous, often deliberately; open to two readings.",
+  "e": "Late Latin <i>aequivocus</i>, “of identical sound”: <i>aequus</i> (equal) + <i>vox, vocis</i> (voice). Two meanings with an equal voice.",
+  "f": "équivoque",
+  "t": "Same as « équivoque »: two meanings speak equally loud, so you can’t tell which is meant. To equivocate = to dodge with double-meaning words."
+ },
+ {
+  "w": "extant",
+  "p": "adj.",
+  "m": "Still in existence; surviving.",
+  "e": "Latin <i>exstantem</i>, from <i>exstare</i>, “to stand out, be visible”: <i>ex</i> + <i>stare</i> (to stand).",
+  "f": "existant, qui subsiste, encore conservé",
+  "t": "Ex-stare = still standing. “The oldest extant manuscript” is the one still standing after the others were lost. Opposite: extinct."
+ },
+ {
+  "w": "frugal",
+  "p": "adj.",
+  "m": "Sparing and economical with money or food.",
+  "e": "Latin <i>frugalis</i>, from <i>frugi</i> (useful, thrifty), from <i>frux, frugis</i> (fruit, produce). A frugal man made good use of his harvest.",
+  "f": "frugal, économe (« un repas frugal »)",
+  "t": "Identical to « un repas frugal ». Frux = fruit: living on what your own trees give you."
+ },
+ {
+  "w": "galvanize",
+  "p": "v.",
+  "m": "To shock or excite someone into action.",
+  "e": "Named after Luigi Galvani (1737–1798), the Bologna physician whose dissected frog legs twitched when touched with metals: “animal electricity”. The zinc-coating sense came later, from galvanic cells.",
+  "f": "galvaniser",
+  "t": "Picture Galvani’s frog leg jumping when the current hits it. To galvanize a team = jolt it into motion. Same in French."
+ },
+ {
+  "w": "gregarious",
+  "p": "adj.",
+  "m": "Fond of company; sociable.",
+  "e": "Latin <i>gregarius</i>, “of the flock”, from <i>grex, gregis</i> (flock, herd).",
+  "f": "sociable, liant (« grégaire » is more pejorative)",
+  "t": "Grex = the flock: a gregarious person loves being in the herd. In English it’s a compliment, unlike « l’instinct grégaire »."
+ },
+ {
+  "w": "harangue",
+  "p": "n. / v.",
+  "m": "A long, aggressive or pompous speech; to lecture forcefully.",
+  "e": "Middle French <i>harangue</i>, from Old Italian <i>aringa</i> (public speech), from <i>aringo</i> (public square), from a Germanic word for a ring of people at an assembly (compare English <i>ring</i>).",
+  "f": "harangue, haranguer",
+  "t": "Same as « haranguer la foule ». Picture a Germanic chief in the middle of a ring of warriors, shouting at them."
+ },
+ {
+  "w": "iconoclast",
+  "p": "n.",
+  "m": "A person who attacks cherished beliefs or institutions.",
+  "e": "Greek <i>eikōn</i> (image) + <i>klastēs</i> (breaker), from <i>klan</i> (to break). First the Byzantine iconoclasts of the 8th–9th centuries, who smashed religious images.",
+  "f": "iconoclaste",
+  "t": "Icon-breaker: a monk smashing holy images. Today it’s someone smashing sacred ideas, like the founder who breaks every rule of an industry."
+ },
+ {
+  "w": "impertinent",
+  "p": "adj.",
+  "m": "Rude, disrespectful; also (older sense) not relevant.",
+  "e": "Latin <i>impertinentem</i>, “not belonging”: <i>in-</i> (not) + <i>pertinere</i> (to relate to). First “irrelevant”, then “meddling in what doesn’t concern you”, hence “rude”.",
+  "f": "impertinent, insolent; (ou) non pertinent",
+  "t": "Both meanings come from “not pertinent”: either irrelevant, or poking into things that are none of your business.",
+  "x": "2nd meaning"
+ },
+ {
+  "w": "ingenuous",
+  "p": "adj.",
+  "m": "Innocent, naive, candid (not “ingenious”).",
+  "e": "Latin <i>ingenuus</i>, “native, freeborn”, hence “noble, frank”: <i>in-</i> + <i>gignere</i> (to beget). A freeborn person had nothing to hide.",
+  "f": "ingénu, candide, naïf",
+  "t": "Ingenuous = ingénu, like Voltaire’s L’Ingénu. Ingenious (with an i) is clever; disingenuous is fake-innocent.",
+  "x": "Look-alike"
+ },
+ {
+  "w": "innocuous",
+  "p": "adj.",
+  "m": "Harmless; inoffensive.",
+  "e": "Latin <i>innocuus</i>: <i>in-</i> (not) + <i>nocuus</i> (harmful), from <i>nocere</i> (to harm). Same family as French <i>nuire</i>, <i>nocif</i> and <i>innocent</i>.",
+  "f": "inoffensif, anodin",
+  "t": "In + nocif = not nocif. An innocuous remark does no harm at all."
+ },
+ {
+  "w": "intimate",
+  "p": "v.",
+  "m": "To hint or suggest indirectly (the GRE verb sense).",
+  "e": "Late Latin <i>intimare</i>, “to make known, announce”, from <i>intimus</i> (inmost): putting an idea into someone’s innermost thoughts.",
+  "f": "laisser entendre, insinuer, suggérer (≠ intimer)",
+  "t": "The verb, said “inti-MATE”, slips an idea into someone’s mind without saying it. Not French « intimer un ordre », which is the opposite of subtle.",
+  "x": "2nd meaning"
+ },
+ {
+  "w": "involved",
+  "p": "adj.",
+  "m": "Complicated, intricate (the GRE sense).",
+  "e": "Latin <i>involvere</i>, “to roll into, wrap up”: <i>in-</i> + <i>volvere</i> (to roll). Something rolled in many layers is hard to unwrap.",
+  "f": "compliqué, alambiqué, complexe",
+  "t": "Picture a scroll rolled up on itself: an involved argument has to be unrolled layer by layer. Think « alambiqué ».",
+  "x": "2nd meaning"
+ },
+ {
+  "w": "laconic",
+  "p": "adj.",
+  "m": "Using very few words; terse.",
+  "e": "Greek <i>Lakōnikos</i>, “of Laconia”, the region around Sparta. Spartans were famous for blunt brevity.",
+  "f": "laconique",
+  "t": "Philip II of Macedon warned Sparta: “If I invade Laconia, I will destroy you.” The Spartans replied with one word: “If.”"
+ },
+ {
+  "w": "maintain",
+  "p": "v.",
+  "m": "To assert, claim firmly (the GRE sense).",
+  "e": "Old French <i>maintenir</i>, from Latin <i>manu tenere</i>, “to hold in the hand”.",
+  "f": "maintenir, affirmer, soutenir (« je maintiens que… »)",
+  "t": "Exactly French « je maintiens que c’est faux »: you hold your position in your hand and won’t let go.",
+  "x": "2nd meaning"
+ },
+ {
+  "w": "mercurial",
+  "p": "adj.",
+  "m": "Subject to sudden, unpredictable changes of mood.",
+  "e": "Latin <i>mercurialis</i>, “of Mercury”: the swift messenger god, the fast planet, and quicksilver, the liquid metal that never sits still. Astrologers said people born under Mercury were volatile.",
+  "f": "versatile, lunatique, d’humeur changeante",
+  "t": "Picture a drop of mercury (vif-argent) skittering across a table, impossible to pin down. A mercurial boss changes mood that fast."
+ },
+ {
+  "w": "parochial",
+  "p": "adj.",
+  "m": "Narrow in outlook; limited to local concerns.",
+  "e": "Late Latin <i>parochialis</i>, from <i>parochia</i> (parish), from Greek <i>paroikia</i>: <i>para</i> (beside) + <i>oikos</i> (house). Thinking that stops at the parish boundary.",
+  "f": "borné, provincial (« esprit de clocher »)",
+  "t": "Parochial = paroissial. « L’esprit de clocher »: someone who can’t see past their own village church tower."
+ },
+ {
+  "w": "parsimonious",
+  "p": "adj.",
+  "m": "Extremely unwilling to spend money; stingy.",
+  "e": "Latin <i>parsimonia</i> (thrift), from <i>parcere</i>, “to spare, save”.",
+  "f": "parcimonieux, pingre, radin",
+  "t": "« Avec parcimonie »: coins handed out one by one. Stronger than frugal: frugal is a virtue, parsimonious is stingy."
+ },
+ {
+  "w": "prevaricate",
+  "p": "v.",
+  "m": "To speak evasively; to dodge the truth.",
+  "e": "Latin <i>praevaricari</i>, “to walk crookedly, straddle”: <i>prae</i> + <i>varicare</i> (to straddle), from <i>varus</i> (bow-legged). In Roman law, a prosecutor secretly colluding with the defence.",
+  "f": "tergiverser, user de faux-fuyants (≠ prévariquer)",
+  "t": "Picture someone bow-legged, zig-zagging so they never walk straight to the truth. Tergiverser.",
+  "x": "Faux ami"
+ },
+ {
+  "w": "prodigal",
+  "p": "adj. / n.",
+  "m": "Wastefully extravagant; someone who squanders.",
+  "e": "Latin <i>prodigus</i> (wasteful), from <i>prodigere</i>, “to drive away, squander”: <i>pro-</i> (forth) + <i>agere</i> (to drive).",
+  "f": "prodigue (« l’enfant prodigue »)",
+  "t": "The prodigal son of the parable, « l’enfant prodigue », who blew his inheritance. Not to be confused with prodigy (a genius).",
+  "x": "Look-alike"
+ },
+ {
+  "w": "profligate",
+  "p": "adj.",
+  "m": "Recklessly wasteful; also dissolute, immoral.",
+  "e": "Latin <i>profligatus</i>, “ruined, dissolute”, from <i>profligare</i>, “to strike down”: <i>pro-</i> + <i>fligere</i> (to strike), as in inflict and conflict.",
+  "f": "dépensier, dissipateur, débauché",
+  "t": "Profligate = prodigal who also parties. Pro + fligere: knocking down your own fortune and morals blow by blow."
+ },
+ {
+  "w": "qualify",
+  "p": "v.",
+  "m": "To limit or modify a statement; add reservations (GRE sense).",
+  "e": "Medieval Latin <i>qualificare</i>, “to give a quality to”: <i>qualis</i> (of what kind) + <i>facere</i> (to make).",
+  "f": "nuancer, apporter une réserve, tempérer",
+  "t": "Think « nuancer son propos ». A qualified endorsement is a yes with an asterisk.",
+  "x": "2nd meaning"
+ },
+ {
+  "w": "restive",
+  "p": "adj.",
+  "m": "Restless, impatient, resisting control.",
+  "e": "Old French <i>restif</i> (now <i>rétif</i>), “stationary, balky”, from <i>rester</i>, Latin <i>restare</i> (to stay). Used first of horses that refused to go forward; their stamping and fidgeting took over the meaning.",
+  "f": "agité, nerveux, rétif",
+  "t": "Picture « un cheval rétif », refusing to move while stamping and pulling at the reins. A restive crowd is losing patience."
+ },
+ {
+  "w": "undermine",
+  "p": "v.",
+  "m": "To weaken gradually or secretly.",
+  "e": "Middle English <i>under</i> + <i>mine</i> (from Old French <i>miner</i>). Besiegers dug tunnels under castle walls, propped them with timber, then burned the props so the wall fell.",
+  "f": "saper, miner, ébranler",
+  "t": "Same image as French « saper le moral »: digging under the wall until it collapses."
+ },
+ {
+  "w": "upbraid",
+  "p": "v.",
+  "m": "To scold or reproach severely.",
+  "e": "Old English <i>upbregdan</i>, “to throw up against”: <i>up</i> + <i>bregdan</i> (to move quickly, weave; the source of braid). You throw someone’s faults back at them.",
+  "f": "réprimander, sermonner, faire des reproches",
+  "t": "Up + braid: you hurl the reproach up into their face. It sounds harsh because it is."
+ },
+ {
+  "w": "venality",
+  "p": "n.",
+  "m": "Openness to bribery; corruption.",
+  "e": "Latin <i>venalis</i>, “for sale”, from <i>venum</i> (sale), which also gave <i>vendere</i>, to sell (<i>venum dare</i>).",
+  "f": "vénalité, corruption",
+  "t": "Think « la vénalité des offices » under the Ancien Régime, when judges bought their posts. Venal = for sale. Venial is a small, forgivable sin.",
+  "x": "Look-alike"
+ },
+ {
+  "w": "venerate",
+  "p": "v.",
+  "m": "To regard with deep respect; revere.",
+  "e": "Latin <i>venerari</i>, “to worship, revere”, related to <i>Venus</i> (love, desire).",
+  "f": "vénérer",
+  "t": "Identical to « vénérer ». Picture bowing before a statue of Venus."
+ },
+ {
+  "w": "veracious",
+  "p": "adj.",
+  "m": "Truthful; accurate.",
+  "e": "Latin <i>verax, veracis</i> (truthful), from <i>verus</i> (true).",
+  "f": "véridique (« la véracité »)",
+  "t": "Véracité = truthfulness. Don’t confuse with voracious (hungry): veracious = vrai.",
+  "x": "Look-alike"
+ },
+ {
+  "w": "vindicate",
+  "p": "v.",
+  "m": "To clear of blame; to prove right.",
+  "e": "Latin <i>vindicare</i>, “to claim, avenge, set free”, from <i>vindex</i> (claimant, avenger). The same verb gave French <i>venger</i> and <i>revendiquer</i>.",
+  "f": "disculper, justifier, donner raison à",
+  "t": "Vindicate = venger: being proved right is your revenge. When the data vindicated her, she was avenged."
+ },
+ {
+  "w": "wanting",
+  "p": "adj.",
+  "m": "Lacking; not good enough.",
+  "e": "Old Norse <i>vanta</i>, “to lack”, brought by Viking settlers. “Want” meant “lack” long before it meant “desire”.",
+  "f": "insuffisant, déficient, qui fait défaut",
+  "t": "From the Book of Daniel: “weighed in the balances, and found wanting” (« pesé dans la balance et trouvé léger »).",
+  "x": "2nd meaning"
+ }
+]

@@ -1,0 +1,404 @@
+[
+ {
+  "w": "aesthete",
+  "p": "n.",
+  "m": "A person with a refined appreciation of art and beauty (sometimes excessive).",
+  "e": "Coined in 19th-century English from Greek <i>aisthētēs</i>, “one who perceives”, from <i>aisthanesthai</i> (to perceive, feel). Tied to Oscar Wilde’s Aesthetic movement and “art for art’s sake”.",
+  "f": "esthète",
+  "t": "Picture Oscar Wilde with a lily and a velvet jacket. Aesthete = the person; aesthetic = the quality."
+ },
+ {
+  "w": "aesthetic",
+  "p": "adj. / n.",
+  "m": "Concerned with beauty or artistic taste.",
+  "e": "Greek <i>aisthētikos</i>, “of sense perception”, from <i>aisthanesthai</i> (to perceive). The German philosopher Baumgarten gave it the meaning “theory of taste” in the 1700s.",
+  "f": "esthétique",
+  "t": "Anesthetic = no feeling. Aesthetic = what your senses feel, especially beauty."
+ },
+ {
+  "w": "apathetic",
+  "p": "adj.",
+  "m": "Showing no interest, enthusiasm or concern.",
+  "e": "Greek <i>apatheia</i>: <i>a-</i> (without) + <i>pathos</i> (feeling, suffering). For the Stoics apatheia was an ideal; in English it became indifference.",
+  "f": "apathique, indifférent",
+  "t": "A-pathos = no feeling, the opposite of sympathy and passion. Same as French apathique."
+ },
+ {
+  "w": "audacious",
+  "p": "adj.",
+  "m": "Bold and daring; sometimes shamelessly so.",
+  "e": "Latin <i>audax, audacis</i> (bold), from <i>audere</i> (to dare).",
+  "f": "audacieux",
+  "t": "Danton in 1792: « De l’audace, encore de l’audace, toujours de l’audace ! » Audacious can praise or condemn."
+ },
+ {
+  "w": "banal",
+  "p": "adj.",
+  "m": "Lacking originality; trite.",
+  "e": "French <i>banal</i>, from the feudal <i>ban</i> (the lord’s jurisdiction; a Frankish word). The <i>four banal</i> and <i>moulin banal</i> were the lord’s oven and mill every villager had to use: “common to all” became “commonplace”.",
+  "f": "banal",
+  "t": "Picture the village four banal: everyone bakes in the same oven, so every loaf looks the same."
+ },
+ {
+  "w": "bucolic",
+  "p": "adj.",
+  "m": "Relating to the pleasant side of country life; pastoral.",
+  "e": "Greek <i>boukolikos</i>, “of herdsmen”, from <i>boukolos</i> (cowherd): <i>bous</i> (ox) + <i>-kolos</i> (tending). Virgil’s <i>Bucolics</i> made it a literary genre.",
+  "f": "bucolique, champêtre",
+  "t": "Bous = ox. A cowherd lounging in a meadow, Virgil-style. Same as French bucolique."
+ },
+ {
+  "w": "chortle",
+  "p": "v. / n.",
+  "m": "To laugh in a gleeful, breathy way.",
+  "e": "Coined by Lewis Carroll in <i>Through the Looking-Glass</i> (1871) as a blend of chuckle + snort.",
+  "f": "glousser, rire de contentement",
+  "t": "Chuckle + snort = chortle. The satisfied, slightly smug laugh after winning an argument."
+ },
+ {
+  "w": "concede",
+  "p": "v.",
+  "m": "To admit something is true, often reluctantly; to yield.",
+  "e": "Latin <i>concedere</i>, “to give way”: <i>com-</i> + <i>cedere</i> (to go, yield).",
+  "f": "concéder, admettre, céder",
+  "t": "Concéder: same word. You concede a point in an argument, or concede defeat in an election."
+ },
+ {
+  "w": "conspicuous",
+  "p": "adj.",
+  "m": "Clearly visible; attracting attention.",
+  "e": "Latin <i>conspicuus</i> (visible), from <i>conspicere</i>, “to look at closely”: <i>com-</i> + <i>specere</i> (to look), the root of spectacle and perspicace.",
+  "f": "voyant, manifeste, ostensible",
+  "t": "Veblen’s “conspicuous consumption” (1899): the logo-covered handbag bought to be seen. Conspicuous = made to be looked at."
+ },
+ {
+  "w": "cryptic",
+  "p": "adj.",
+  "m": "Mysterious; obscure in meaning.",
+  "e": "Late Latin <i>crypticus</i>, from Greek <i>kryptikos</i>, from <i>kryptos</i> (hidden). Same root as crypt and cryptography.",
+  "f": "énigmatique, sibyllin",
+  "t": "Kryptos = hidden, like a crypt under a church. A cryptic message keeps its meaning underground."
+ },
+ {
+  "w": "culminate",
+  "p": "v.",
+  "m": "To reach the highest point or climax.",
+  "e": "Late Latin <i>culminare</i> (to crown), from <i>culmen</i> (summit). Astronomers used it for a star reaching its highest point in the sky.",
+  "f": "culminer, aboutir",
+  "t": "« Le point culminant » = the summit. A career that culminates in the CEO role reaches its peak there."
+ },
+ {
+  "w": "culpability",
+  "p": "n.",
+  "m": "Responsibility for a fault or wrong; blameworthiness.",
+  "e": "Latin <i>culpabilis</i> (blameworthy), from <i>culpa</i> (fault, blame).",
+  "f": "culpabilité",
+  "t": "Mea culpa = my fault. Culpability = culpabilité."
+ },
+ {
+  "w": "decorous",
+  "p": "adj.",
+  "m": "In keeping with good taste and propriety; polite.",
+  "e": "Latin <i>decorus</i> (becoming, proper), from <i>decor</i> (seemliness), from <i>decere</i> (to be fitting). Same root as decorum and décent.",
+  "f": "bienséant, convenable, digne",
+  "t": "Think « le décorum »: decorous behaviour respects decorum. Nothing to do with decorations."
+ },
+ {
+  "w": "deferential",
+  "p": "adj.",
+  "m": "Showing respect and humble submission.",
+  "e": "From deference, French <i>déférence</i>, from <i>déférer</i> (to yield to), Latin <i>deferre</i>: <i>de-</i> + <i>ferre</i> (to carry).",
+  "f": "déférent, respectueux",
+  "t": "Same as « par déférence ». A deferential junior defers to the partner’s judgment."
+ },
+ {
+  "w": "dictatorial",
+  "p": "adj.",
+  "m": "Domineering; imposing one’s will on others.",
+  "e": "Latin <i>dictator</i>, from <i>dictare</i> (to say repeatedly, prescribe). In Rome a dictator was a magistrate given absolute power for six months in an emergency.",
+  "f": "dictatorial, autoritaire, tyrannique",
+  "t": "The one who dictates. A dictatorial manager dictates and nobody else gets to speak."
+ },
+ {
+  "w": "didactic",
+  "p": "adj.",
+  "m": "Intended to teach, often in a preachy or moralising way.",
+  "e": "Greek <i>didaktikos</i>, “apt at teaching”, from <i>didaskein</i> (to teach).",
+  "f": "didactique; moralisateur",
+  "t": "Same as « didactique ». On the GRE it often stings a little: a didactic novel lectures you."
+ },
+ {
+  "w": "diffident",
+  "p": "adj.",
+  "m": "Shy; lacking self-confidence.",
+  "e": "Latin <i>diffidentem</i>, from <i>diffidere</i>, “to mistrust”: <i>dis-</i> (not) + <i>fidere</i> (to trust), as in fidèle and confiance. First it meant distrusting others; now, distrusting yourself.",
+  "f": "timide, qui manque d’assurance",
+  "t": "Dis + fidere = no trust. Défiance is mistrust of others; diffidence is mistrust of yourself. Opposite: confident (con + fidere)."
+ },
+ {
+  "w": "dogmatic",
+  "p": "adj.",
+  "m": "Asserting opinions as undeniably true; inflexible.",
+  "e": "Greek <i>dogmatikos</i>, from <i>dogma</i> (opinion, decree), from <i>dokein</i> (to seem, think).",
+  "f": "dogmatique",
+  "t": "Dogma = a decree that can’t be questioned. Same as French dogmatique."
+ },
+ {
+  "w": "engender",
+  "p": "v.",
+  "m": "To cause or give rise to.",
+  "e": "Old French <i>engendrer</i>, from Latin <i>ingenerare</i>: <i>in-</i> + <i>generare</i> (to beget), from <i>genus</i> (birth, kind).",
+  "f": "engendrer",
+  "t": "Same as « engendrer ». A policy engenders resentment the way parents engender children."
+ },
+ {
+  "w": "entrenched",
+  "p": "adj.",
+  "m": "Firmly established and hard to change.",
+  "e": "<i>en-</i> + trench, from Old French <i>trenche</i> (a cut, a ditch), from <i>trenchier</i> (now <i>trancher</i>), probably from Latin <i>truncare</i> (to cut off).",
+  "f": "ancré, enraciné, retranché",
+  "t": "Picture WWI soldiers dug into their tranchées for years. An entrenched belief is dug in and won’t move."
+ },
+ {
+  "w": "eschew",
+  "p": "v.",
+  "m": "To deliberately avoid; abstain from.",
+  "e": "Old French <i>eschiver</i> (later <i>esquiver</i>), from Frankish <i>skiuhan</i> (to fear, shun). A cousin of English shy and German <i>scheuen</i>.",
+  "f": "éviter, esquiver, s’abstenir de",
+  "t": "Eschew = esquiver. Say it “es-CHOO” and picture dodging a sneeze. To eschew meat = to avoid it on principle."
+ },
+ {
+  "w": "exacerbate",
+  "p": "v.",
+  "m": "To make a problem worse.",
+  "e": "Latin <i>exacerbare</i> (to irritate, make harsh): <i>ex-</i> + <i>acerbus</i> (harsh, bitter).",
+  "f": "exacerber, aggraver",
+  "t": "Acerbus = acerbe. Pouring something bitter on a wound: same as « exacerber »."
+ },
+ {
+  "w": "fortuitous",
+  "p": "adj.",
+  "m": "Happening by chance (not necessarily lucky).",
+  "e": "Latin <i>fortuitus</i> (happening by chance), from <i>fors</i> (chance), the root of Fortuna.",
+  "f": "fortuit (« une rencontre fortuite »)",
+  "t": "« Une rencontre fortuite » = a chance meeting. On the GRE, fortuitous means accidental, not fortunate.",
+  "x": "Look-alike"
+ },
+ {
+  "w": "frivolous",
+  "p": "adj.",
+  "m": "Not serious; silly, trivial.",
+  "e": "Latin <i>frivolus</i> (silly, empty, worthless), possibly from <i>friare</i> (to crumble).",
+  "f": "frivole",
+  "t": "Identical to frivole. Things that crumble into nothing: a frivolous lawsuit has no substance."
+ },
+ {
+  "w": "gainsay",
+  "p": "v.",
+  "m": "To deny or contradict.",
+  "e": "Middle English: <i>gain-</i>, “against” (Old English <i>gegn</i>, as in again and against) + say. Purely Germanic.",
+  "f": "contredire, nier",
+  "t": "Gain = against: to say against. “No one can gainsay her results” = no one can contradict them."
+ },
+ {
+  "w": "gall",
+  "p": "n.",
+  "m": "Bold, impudent behaviour; nerve. (Also bitterness, bile.)",
+  "e": "Old English <i>gealla</i> (bile), from an Indo-European root for yellow-green; related to Greek <i>cholē</i> (bile, as in cholera and mélancolie). Bitterness became audacity in 19th-century American slang.",
+  "f": "culot, toupet; fiel (la bile)",
+  "t": "The gall bladder holds bitter bile. Having the gall to ask = avoir le culot. To gall someone = to irritate them."
+ },
+ {
+  "w": "germane",
+  "p": "adj.",
+  "m": "Relevant to the subject at hand.",
+  "e": "A variant of <i>german</i>, “of the same parents”, from Latin <i>germanus</i> (full brother or sister). Closely related, hence relevant.",
+  "f": "pertinent, en rapport avec",
+  "t": "Cousin germain! A germane point is closely related to the topic, like a first cousin."
+ },
+ {
+  "w": "glut",
+  "p": "n. / v.",
+  "m": "An excessive supply; to oversupply.",
+  "e": "Middle English <i>glotten</i> (to swallow greedily), from Old French <i>gloutir</i>, from Latin <i>gluttire</i> (to swallow). Same root as glouton and engloutir.",
+  "f": "surabondance, excédent, saturation",
+  "t": "Glouton + engloutir: a market so stuffed it can’t swallow any more. A glut of oil = prices collapse."
+ },
+ {
+  "w": "gossamer",
+  "p": "n. / adj.",
+  "m": "Extremely light, thin and delicate; fine spider silk.",
+  "e": "Middle English <i>gossomer</i>, probably “goose summer”: the warm spell in late autumn (St Martin’s summer) when geese were eaten and fine cobwebs floated over the fields.",
+  "f": "fils de la Vierge; arachnéen, vaporeux",
+  "t": "« Les fils de la Vierge »: threads of spider silk drifting over a field in an Indian summer. Gossamer = that light."
+ },
+ {
+  "w": "impudent",
+  "p": "adj.",
+  "m": "Not showing due respect; shamelessly bold.",
+  "e": "Latin <i>impudentem</i> (shameless): <i>in-</i> (not) + <i>pudens</i> (modest), from <i>pudere</i> (to feel shame).",
+  "f": "impudent, effronté, insolent",
+  "t": "In + pudeur = no shame. Same as French impudent, and close to gall and impertinent."
+ },
+ {
+  "w": "incisive",
+  "p": "adj.",
+  "m": "Sharp and clear-thinking; going straight to the point.",
+  "e": "Medieval Latin <i>incisivus</i>, from <i>incidere</i>, “to cut into”: <i>in-</i> + <i>caedere</i> (to cut).",
+  "f": "incisif, tranchant, pénétrant",
+  "t": "Your incisives are the cutting teeth. An incisive question cuts straight to the core of the problem."
+ },
+ {
+  "w": "inexorable",
+  "p": "adj.",
+  "m": "Impossible to stop or prevent; relentless.",
+  "e": "Latin <i>inexorabilis</i>: <i>in-</i> (not) + <i>exorabilis</i> (moved by pleading), from <i>exorare</i>: <i>ex-</i> + <i>orare</i> (to pray, plead; cf. oraison).",
+  "f": "inexorable, implacable",
+  "t": "In-ex-orare = can’t be moved by prayer. Like death or the tide: beg all you want."
+ },
+ {
+  "w": "lambast",
+  "p": "v.",
+  "m": "To criticise harshly.",
+  "e": "1630s, probably <i>lam</i> (to beat, from Old Norse <i>lemja</i>) + <i>baste</i> (to thrash). Both halves mean hitting.",
+  "f": "éreinter, fustiger, descendre en flammes",
+  "t": "Lam + baste = beat + beat. A critic who lambasts a film gives it a double thrashing: « se faire éreinter par la critique »."
+ },
+ {
+  "w": "mawkish",
+  "p": "adj.",
+  "m": "Excessively, sickly sentimental.",
+  "e": "From <i>mawk</i> (maggot), Old Norse <i>maðkr</i>. In the 1660s it meant “sickly, nauseated”; by the 1700s, “sickly-sweet sentimental”.",
+  "f": "mièvre, à l’eau de rose, gnangnan",
+  "t": "Sentimentality so sweet it turns your stomach like maggots. A mawkish Christmas ad = mièvre."
+ },
+ {
+  "w": "meticulous",
+  "p": "adj.",
+  "m": "Showing great attention to detail; very careful.",
+  "e": "Latin <i>meticulosus</i> (fearful, timid), from <i>metus</i> (fear). In 19th-century French, <i>méticuleux</i> shifted to “afraid of making mistakes”, hence careful.",
+  "f": "méticuleux, minutieux",
+  "t": "Same as méticuleux. Metus = fear: a meticulous person is scared of making a single mistake."
+ },
+ {
+  "w": "mitigate",
+  "p": "v.",
+  "m": "To make less severe or painful.",
+  "e": "Latin <i>mitigare</i> (to soften): <i>mitis</i> (mild, gentle) + <i>agere</i> (to make).",
+  "f": "atténuer, adoucir, mitiger",
+  "t": "Mitigating circumstances = « circonstances atténuantes ». Mitis = soft: you soften the blow."
+ },
+ {
+  "w": "obscure",
+  "p": "adj. / v.",
+  "m": "Not well known, or unclear; to conceal.",
+  "e": "Latin <i>obscurus</i> (dark, dim, hidden).",
+  "f": "obscur; obscurcir",
+  "t": "Identical to obscur. Something in the dark is either unknown or hard to see clearly."
+ },
+ {
+  "w": "perfidy",
+  "p": "n.",
+  "m": "Deceitfulness; treachery.",
+  "e": "Latin <i>perfidia</i> (faithlessness): <i>per-</i> (away, to ruin) + <i>fides</i> (faith).",
+  "f": "perfidie",
+  "t": "« La perfide Albion »: the classic French jab at England’s supposed treachery. Per + fides = breaking faith."
+ },
+ {
+  "w": "platitude",
+  "p": "n.",
+  "m": "A remark used too often to be interesting; a cliché.",
+  "e": "French <i>platitude</i> (17th century), “flatness”, from <i>plat</i> (flat), from Vulgar Latin <i>plattus</i>, from Greek <i>platys</i> (broad, flat).",
+  "f": "platitude, banalité, lieu commun",
+  "t": "Same as « platitude »: a flat, dull remark. “Let’s think outside the box” is a corporate platitude."
+ },
+ {
+  "w": "preclude",
+  "p": "v.",
+  "m": "To prevent from happening; make impossible.",
+  "e": "Latin <i>praecludere</i> (to shut off in advance): <i>prae-</i> (before) + <i>claudere</i> (to close).",
+  "f": "empêcher, exclure, écarter",
+  "t": "Pre + close = closing the door in advance. Same root as exclude and clore."
+ },
+ {
+  "w": "predilection",
+  "p": "n.",
+  "m": "A preference or special liking.",
+  "e": "French <i>prédilection</i>, from Medieval Latin <i>praedilectio</i>: <i>prae-</i> (before) + <i>diligere</i> (to love, choose).",
+  "f": "prédilection",
+  "t": "Identical: « un sujet de prédilection ». A predilection for good coffee is a favourite habit."
+ },
+ {
+  "w": "prescience",
+  "p": "n.",
+  "m": "Knowledge of events before they happen; foresight.",
+  "e": "Latin <i>praescientia</i>: <i>prae-</i> (before) + <i>scire</i> (to know).",
+  "f": "prescience, clairvoyance",
+  "t": "Pre + science = knowing before. A prescient investor saw the crash coming."
+ },
+ {
+  "w": "querulous",
+  "p": "adj.",
+  "m": "Complaining in a whining, petulant way.",
+  "e": "Latin <i>querulus</i>, from <i>queri</i> (to complain). Same root as querelle and quarrel.",
+  "f": "plaintif, geignard, ronchon",
+  "t": "Queri → querelle. A querulous person picks small complaints all day long."
+ },
+ {
+  "w": "recondite",
+  "p": "adj.",
+  "m": "Little known; obscure; hard to understand.",
+  "e": "Latin <i>reconditus</i> (hidden, put away), from <i>recondere</i>: <i>re-</i> + <i>condere</i> (to put, store). Its cousin <i>abscondere</i> (to hide away) gave French <i>abscons</i>.",
+  "f": "abscons, ésotérique, obscur",
+  "t": "Recondite ≈ abscons: knowledge stored away where few can find it, like a footnote in a dusty archive."
+ },
+ {
+  "w": "reticent",
+  "p": "adj.",
+  "m": "Not revealing one’s thoughts readily; reserved.",
+  "e": "Latin <i>reticentem</i>, from <i>reticere</i> (to keep silent): <i>re-</i> + <i>tacere</i> (to be silent), as in taciturne.",
+  "f": "réservé, discret, taciturne (≠ réticent)",
+  "t": "Tacere = se taire: a reticent person holds back their words. Modern French réticent means reluctant; for the GRE, think taciturn.",
+  "x": "Faux ami"
+ },
+ {
+  "w": "rustic",
+  "p": "adj.",
+  "m": "Of the countryside; simple, unsophisticated.",
+  "e": "Latin <i>rusticus</i>, from <i>rus</i> (countryside), as in rural.",
+  "f": "rustique, campagnard",
+  "t": "Same as rustique. Rus = countryside: a rustic table is rough wood from the farm."
+ },
+ {
+  "w": "superfluous",
+  "p": "adj.",
+  "m": "Unnecessary; more than enough.",
+  "e": "Latin <i>superfluus</i> (overflowing): <i>super</i> (over) + <i>fluere</i> (to flow).",
+  "f": "superflu",
+  "t": "Superflu: water overflowing the glass. The extra words on a slide are superfluous."
+ },
+ {
+  "w": "torpor",
+  "p": "n.",
+  "m": "Physical or mental inactivity; lethargy.",
+  "e": "Latin <i>torpor</i> (numbness), from <i>torpere</i> (to be numb). The Latin <i>torpedo</i> was the electric ray, the fish that numbs its prey.",
+  "f": "torpeur, léthargie",
+  "t": "« La torpeur de l’après-midi ». Picture being zapped by a torpille fish: numb and sluggish."
+ },
+ {
+  "w": "vociferous",
+  "p": "adj.",
+  "m": "Loud and forceful in expressing opinions.",
+  "e": "Latin <i>vociferari</i> (to shout): <i>vox, vocis</i> (voice) + <i>ferre</i> (to carry).",
+  "f": "véhément, bruyant, vociférant",
+  "t": "« Vociférer » = to yell. A vociferous critic carries their voice far and loud."
+ },
+ {
+  "w": "volubility",
+  "p": "n.",
+  "m": "Fluent, ready, continuous speech; talkativeness.",
+  "e": "Latin <i>volubilis</i> (that turns, rolls easily), from <i>volvere</i> (to roll).",
+  "f": "volubilité, loquacité",
+  "t": "Words that keep rolling out (volvere). Same as « volubilité ». Opposite of laconic and reticent."
+ }
+]
