@@ -398,11 +398,12 @@
     document.getElementById("import").addEventListener("change", importBackup);
   }
   function skillsHTML(date) {
-    const ex = Object.assign({}, EXTRA[date]); if (QDATES.includes(date) && ex.q) ex.q += QSTD; const done = (store.days[date] && store.days[date].x) || {};
-    const rows = XKEYS.filter(([k]) => ex[k]).map(([k, label]) => `
-      <div class="xrow"><button type="button" class="xtick" data-date="${date}" data-k="${k}" aria-pressed="${!!done[k]}" aria-label="Mark ${label} done"><span>${icon.check}</span></button>
-      <div><div class="xlbl">${label}</div><div class="xtxt">${esc(ex[k])}</div></div></div>`).join("");
-    return `<div class="card xcard"><h3>Also today</h3>${rows}<p class="muted small" style="margin:0">Tick each one when it’s done.</p></div>`;
+    const ex = Object.assign({}, EXTRA[date]); if (QDATES.includes(date) && ex.q) ex.q += QSTD;
+    const done = (store.days[date] && store.days[date].x) || {};
+    const titles = { q: "Quant", v: "Verbal: TC & SE strategy (not vocab)", e: "Essay" };
+    return XKEYS.filter(([k]) => ex[k]).map(([k]) => `
+      <div class="card xcard"><div class="xrow"><button type="button" class="xtick" data-date="${date}" data-k="${k}" aria-pressed="${!!done[k]}" aria-label="Mark ${titles[k]} done"><span>${icon.check}</span></button>
+      <div><h3 style="margin:0 0 4px">${titles[k]}</h3><div class="xtxt">${esc(ex[k])}</div></div></div></div>`).join("");
   }
   function onXTick(e) {
     const b = e.target.closest(".xtick"); if (!b) return;
