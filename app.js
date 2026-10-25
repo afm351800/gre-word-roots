@@ -41,9 +41,9 @@
 
   /* ---------- storage ---------- */
   const KEY = "gre-roots-v1";
-  let store = { marks: {}, notes: {}, hidden: {}, rev: {}, days: {} };
+  let store = { marks: {}, notes: {}, hidden: {}, rev: {}, days: {}, ts: {} };
   try { const s = JSON.parse(localStorage.getItem(KEY)); if (s) store = Object.assign(store, s); } catch (e) {}
-  ["marks", "notes", "hidden", "rev", "days"].forEach(k => { store[k] = store[k] || {}; });
+  ["marks", "notes", "hidden", "rev", "days", "ts"].forEach(k => { store[k] = store[k] || {}; });
   if (!store.seed2) { // where Alexis already was in the flashcard app on 25 Oct
     BY_SLUG["common-words-i"].words.forEach(w => { if (!store.marks[w.w]) store.marks[w.w] = "green"; });
     ["apathetic", "banal", "dictatorial", "dogmatic", "eschew", "gainsay", "obscure", "rustic", "vociferous"].forEach(w => { if (!store.marks[w]) store.marks[w] = "green"; });
@@ -51,8 +51,28 @@
     store.seed2 = true;
   }
   delete store.status; delete store.seeded;
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) { toast("Couldn’t save on this device"); } }
-  save();
+  /* Change tracking: every word gets a timestamp when its mark, hidden flag or note changes,
+     so two devices can be merged without one overwriting the other. */
+  const sigOf = w => JSON.stringify([store.marks[w] || null, store.notes[w] || null, !!store.hidden[w]]);
+  const EMPTY_SIG = JSON.stringify([null, null, false]);
+  let sigs = {};
+  const wordsWithData = () => new Set([...Object.keys(store.marks), ...Object.keys(store.notes), ...Object.keys(store.hidden)]);
+  function snapAll() { sigs = {}; wordsWithData().forEach(w => { sigs[w] = sigOf(w); }); }
+  function stampChanges() {
+    const now = Date.now();
+    new Set([...Object.keys(sigs), ...wordsWithData()]).forEach(w => {
+      const cur = sigOf(w), prev = sigs[w] || EMPTY_SIG;
+      if (cur !== prev) store.ts[w] = now;
+      if (cur === EMPTY_SIG) delete sigs[w]; else sigs[w] = cur;
+    });
+  }
+  snapAll();
+  function save(opts) {
+    stampChanges();
+    try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) { toast("Couldn’t save on this device"); }
+    if (!opts || !opts.quiet) scheduleSync();
+  }
+  save({ quiet: true });
   if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
 
   /* ---------- dates ---------- */
@@ -131,7 +151,7 @@
     const pct = n => (total ? (n / total) * 100 : 0).toFixed(2) + "%";
     return `<div class="bar ${cls || ""}" aria-hidden="true"><span class="h" style="width:${pct(c.hidden)}"></span><span class="g" style="width:${pct(c.green)}"></span><span class="a" style="width:${pct(c.amber)}"></span><span class="r" style="width:${pct(c.red)}"></span><span class="b" style="width:${pct(c.blue)}"></span></div>`;
   }
-  const nav = active => `<nav class="mainnav" aria-label="Sections"><a href="#/" ${active === "plan" ? 'aria-current="page"' : ""}>Plan</a><a href="#/decks" ${active === "decks" ? 'aria-current="page"' : ""}>Decks</a><a href="#/all" ${active === "all" ? 'aria-current="page"' : ""}>All words</a></nav>`;
+  const nav = active => `<nav class="mainnav" aria-label="Sections"><a href="#/" ${active === "plan" ? 'aria-current="page"' : ""}>Plan</a><a href="#/decks" ${active === "decks" ? 'aria-current="page"' : ""}>Decks</a><a href="#/all" ${active === "all" ? 'aria-current="page"' : ""}>All words</a><a class="syncchip" href="#/sync" data-state="${syncState.state}" ${active === "sync" ? 'aria-current="page"' : ""}>${chipText()}</a></nav>`;
   const mins = n => { if (n <= 0) return ""; const m = Math.max(5, Math.round(n / 5) * 5); return m < 60 ? `≈ ${m} min` : `≈ ${Math.floor(m / 60)} h${m % 60 ? " " + (m % 60) : ""}`; };
 
   /* ---------- routing ---------- */
@@ -146,6 +166,7 @@
     if (query) { const p = new URLSearchParams(query); ui.q = p.get("q") || ""; }
     lastRoute = key;
     if (parts[0] === "deck" && BY_SLUG[parts[1]]) return renderList(BY_SLUG[parts[1]]);
+    if (parts[0] === "sync") return renderSync();
     if (parts[0] === "all") return renderList(null);
     if (parts[0] === "decks") return renderDecks();
     if (parts[0] === "session" && (parts[1] === "learn" || parts[1] === "review")) return renderSession(parts[1]);
@@ -218,7 +239,7 @@
 
     const sorted = total - c.none;
     app.innerHTML = `
-    <div class="wrap">
+    <div class="wrap plan">
       <header class="home-head">
         ${nav("plan")}
         <div class="countdown">
@@ -226,6 +247,7 @@
           <h1>${left > 1 ? `${left} days to go` : left === 1 ? "Tomorrow" : left === 0 ? "Today. You’re ready." : "Test done"}</h1></div>
         </div>
       </header>
+      <div class="plan-cols"><div class="plan-main">
       ${todayHTML}
       <section class="card progress" aria-label="Progress">
         <div class="row-between"><h3>Progress</h3><span class="muted small">${sorted.toLocaleString("en")} of ${total.toLocaleString("en")} sorted</span></div>
@@ -239,7 +261,17 @@
           <span><i class="c-none"></i>Not sorted ${c.none}</span>
         </div>
       </section>
-      <section class="card" aria-label="Plan">
+      <section class="card finals" aria-label="Last two days">
+        <h3>The final stretch</h3>
+        <p class="muted small" style="margin:0">Two hard days, then ease off. You go through every word one last time, then rest so it all sticks.</p>
+        <div class="final"><div class="fd">Wed 4 Nov</div><div><b>Sweep 1 · about 3 h.</b> Catch up on anything you haven’t sorted, then a fast pass through every Common and Basic word you haven’t hidden, Known ones included. Hesitate, and it goes back to Shaky. Then two timed Verbal sections.</div></div>
+        <div class="final"><div class="fd">Thu 5 Nov</div><div><b>Sweep 2 · about 3 h.</b> Every Advanced word you haven’t hidden, plus all Hard and Flag words and every trap word (faux ami, 2nd meaning, look-alike). Then two more timed Verbal sections. In bed on time.</div></div>
+        <div class="final"><div class="fd">Fri 6 Nov</div><div><b>Taper · 45 min max, morning.</b> Hard and Flag words only, once. No new words. Afternoon: check your test centre, route and arrival time, and put the valid passport you registered with in your bag. Something relaxing in the evening.</div></div>
+        <div class="final"><div class="fd">Sat 7 Nov</div><div><b>Test day · 15 min.</b> Your 30 hardest words over breakfast, once. Eat properly, arrive early, and trust the roots: when you don’t know a word, take it apart.</div></div>
+      </section>
+      </div>
+      <div class="plan-side">
+      <section class="card plan-card" aria-label="Plan">
         <h3>The plan</h3>
         <ol class="timeline">
           ${PLAN.map((q, i) => {
@@ -259,16 +291,9 @@
           }).join("")}
         </ol>
       </section>
-      <section class="card finals" aria-label="Last two days">
-        <h3>The final stretch</h3>
-        <p class="muted small" style="margin:0">Two hard days, then ease off. You go through every word one last time, then rest so it all sticks.</p>
-        <div class="final"><div class="fd">Wed 4 Nov</div><div><b>Sweep 1 · about 3 h.</b> Catch up on anything you haven’t sorted, then a fast pass through every Common and Basic word you haven’t hidden, Known ones included. Hesitate, and it goes back to Shaky. Then two timed Verbal sections.</div></div>
-        <div class="final"><div class="fd">Thu 5 Nov</div><div><b>Sweep 2 · about 3 h.</b> Every Advanced word you haven’t hidden, plus all Hard and Flag words and every trap word (faux ami, 2nd meaning, look-alike). Then two more timed Verbal sections. In bed on time.</div></div>
-        <div class="final"><div class="fd">Fri 6 Nov</div><div><b>Taper · 45 min max, morning.</b> Hard and Flag words only, once. No new words. Afternoon: check your test centre, route and arrival time, and put the valid passport you registered with in your bag. Something relaxing in the evening.</div></div>
-        <div class="final"><div class="fd">Sat 7 Nov</div><div><b>Test day · 15 min.</b> Your 30 hardest words over breakfast, once. Eat properly, arrive early, and trust the roots: when you don’t know a word, take it apart.</div></div>
-      </section>
+      </div></div>
       <section class="backup">
-        <div>Everything you mark is saved on this phone. Export a backup now and then.</div>
+        <div>Everything you mark is saved on this device. Turn on <a href="#/sync">Sync</a> to keep your laptop and phone identical and backed up online. You can also export a file.</div>
         <div class="row">
           <button class="btn" type="button" id="export">Export backup</button>
           <label class="btn" for="import">Import backup</label>
@@ -399,9 +424,9 @@
       </div>` : `<p class="flash-hint">${s.mode === "learn" ? "Do you already know this word for sure?" : "Say the meaning out loud, then reveal."}</p>`;
     const actions = !s.revealed
       ? (s.mode === "learn"
-        ? `<button class="act hide" data-act="hidden" type="button">Already know it<small>hide it</small></button><button class="act show" data-act="reveal" type="button">Not sure<small>show me</small></button>`
-        : `<button class="act show wide" data-act="reveal" type="button">Show answer</button>`)
-      : `<button class="act red" data-act="red" type="button">Hard</button><button class="act amber" data-act="amber" type="button">Shaky</button><button class="act green" data-act="green" type="button">${s.mode === "learn" ? "Knew it" : "Got it"}</button>`;
+        ? `<button class="act hide" data-act="hidden" type="button">Already know it<small>hide it <kbd>H</kbd></small></button><button class="act show" data-act="reveal" type="button">Not sure<small>show me <kbd>Space</kbd></small></button>`
+        : `<button class="act show wide" data-act="reveal" type="button">Show answer <kbd>Space</kbd></button>`)
+      : `<button class="act red" data-act="red" type="button">Hard<small class="k"><kbd>1</kbd></small></button><button class="act amber" data-act="amber" type="button">Shaky<small class="k"><kbd>2</kbd></small></button><button class="act green" data-act="green" type="button">${s.mode === "learn" ? "Knew it" : "Got it"}<small class="k"><kbd>3</kbd></small></button>`;
     app.innerHTML = top + `<main class="wrap flash-wrap"><article class="flash ${s.revealed ? "revealed" : ""}" id="card">${front}${back}</article></main>
       <div class="actions"><div class="wrap actions-in">${actions}</div></div>`;
     if (!s.revealed) document.getElementById("card").addEventListener("click", () => { s.revealed = true; drawCard(); });
@@ -522,7 +547,7 @@
         ${MARKS.map(m => `<button type="button" class="mk" data-mark="${m.id}" aria-pressed="${!hid && mark === m.id}"><i class="c-${m.id}"></i>${m.label}</button>`).join("")}
         <button type="button" class="mk" data-mark="hidden" aria-pressed="${hid}"><i class="c-hidden"></i>${hid ? "Hidden" : "Hide"}</button>
       </div></div>
-      <div class="block"><label class="lbl" for="${id}">My notes</label><div class="txt">
+      <div class="block full"><label class="lbl" for="${id}">My notes</label><div class="txt">
         <textarea class="note" id="${id}" placeholder="Your own example, link, mnemonic…">${esc(store.notes[x.w] || "")}</textarea>
         <div class="saved" aria-live="polite"></div>
       </div></div>
@@ -585,5 +610,175 @@
     }, 400);
   }
 
+  /* ---------- sync with a private GitHub data repo ---------- */
+  const SKEY = "gre-roots-sync";
+  const DATA_FILE = "progress.json";
+  let cfg = {}; try { cfg = JSON.parse(localStorage.getItem(SKEY)) || {}; } catch (e) {}
+  const syncState = { state: cfg.token ? "idle" : "off", last: cfg.last || 0, msg: "" };
+  let syncing = false, syncAgain = false, syncTimer = null;
+  const b64enc = str => btoa(unescape(encodeURIComponent(str)));
+  const b64dec = str => decodeURIComponent(escape(atob(str.replace(/\s/g, ""))));
+  const canon = o => JSON.stringify(o, (k, v) => (v && typeof v === "object" && !Array.isArray(v)) ? Object.keys(v).sort().reduce((a, key) => (a[key] = v[key], a), {}) : v);
+  const payload = () => ({ app: "gre-word-roots", version: 3, marks: store.marks, notes: store.notes, hidden: store.hidden, rev: store.rev, days: store.days, ts: store.ts });
+  function saveCfg() { try { localStorage.setItem(SKEY, JSON.stringify(cfg)); } catch (e) {} }
+  function ago(t) {
+    const m = Math.round((Date.now() - t) / 60000);
+    return m < 1 ? "just now" : m < 60 ? m + " min ago" : m < 1440 ? Math.round(m / 60) + " h ago" : Math.round(m / 1440) + " d ago";
+  }
+  function chipText() {
+    return ({ off: "Sync off", busy: "Syncing…", err: "Sync problem", idle: syncState.last ? "Synced " + ago(syncState.last) : "Sync on" })[syncState.state];
+  }
+  function paintSync() {
+    document.querySelectorAll(".syncchip").forEach(el => { el.textContent = chipText(); el.dataset.state = syncState.state; });
+    const st = document.getElementById("syncStatus");
+    if (st) st.textContent = syncState.state === "err" ? syncState.msg : chipText();
+  }
+  function mergeRemote(r) {
+    let changed = false;
+    const rt = r.ts || {}, rm = r.marks || {}, rn = r.notes || {}, rh = r.hidden || {}, rr = r.rev || {};
+    new Set([...Object.keys(rt), ...Object.keys(rm), ...Object.keys(rn), ...Object.keys(rh)]).forEach(w => {
+      const lt = store.ts[w] === undefined ? -1 : store.ts[w], t = rt[w] === undefined ? -1 : rt[w];
+      if (t > lt) {
+        if (rm[w]) store.marks[w] = rm[w]; else delete store.marks[w];
+        if (rn[w]) store.notes[w] = rn[w]; else delete store.notes[w];
+        if (rh[w]) store.hidden[w] = true; else delete store.hidden[w];
+        store.ts[w] = t; changed = true;
+      }
+    });
+    Object.keys(rr).forEach(w => { if (!store.rev[w] || rr[w] > store.rev[w]) { store.rev[w] = rr[w]; changed = true; } });
+    Object.keys(r.days || {}).forEach(d => {
+      const a = store.days[d] || {}, b = r.days[d] || {};
+      const m = { learn: !!(a.learn || b.learn), review: !!(a.review || b.review) };
+      if (m.learn !== !!a.learn || m.review !== !!a.review) { store.days[d] = m; changed = true; }
+    });
+    return changed;
+  }
+  async function gh(method, body) {
+    const res = await fetch(`https://api.github.com/repos/${cfg.repo}/contents/${DATA_FILE}` + (method === "GET" ? "?t=" + Date.now() : ""), {
+      method, cache: "no-store", body: body ? JSON.stringify(body) : undefined,
+      headers: { Authorization: "Bearer " + cfg.token, Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" },
+    });
+    return res;
+  }
+  async function syncNow(opts) {
+    if (!cfg.token || !cfg.repo) return;
+    if (syncing) { syncAgain = true; return; }
+    if (!navigator.onLine) { syncState.state = "idle"; paintSync(); return; }
+    syncing = true; syncState.state = "busy"; paintSync();
+    try {
+      for (let attempt = 0; attempt < 3; attempt++) {
+        const res = await gh("GET");
+        let sha = null, remote = null;
+        if (res.status === 200) { const j = await res.json(); sha = j.sha; remote = JSON.parse(b64dec(j.content)); }
+        else if (res.status !== 404) {
+          throw new Error(res.status === 401 ? "GitHub rejected the token. Make a new one and reconnect." : res.status === 403 ? "GitHub refused (token lacks access, or rate limit)." : res.status === 404 ? "" : "GitHub error " + res.status);
+        }
+        const pulled = remote ? mergeRemote(remote) : false;
+        if (pulled) { snapAll(); save({ quiet: true }); }
+        const body = canon(payload());
+        if (remote && canon(Object.assign({}, remote, { version: 3 })) === body) { syncState.last = Date.now(); if (pulled) onPulled(); break; }
+        const put = await gh("PUT", { message: "sync " + new Date().toISOString(), content: b64enc(JSON.stringify(payload())), sha: sha || undefined });
+        if (put.status === 200 || put.status === 201) { syncState.last = Date.now(); if (pulled) onPulled(); break; }
+        if (put.status === 409 || put.status === 422) continue; // someone else wrote in between: pull again and retry
+        throw new Error(put.status === 404 ? "Repo not found, or the token has no access to it." : put.status === 403 ? "The token needs Contents: Read and write on that repo." : "GitHub error " + put.status);
+      }
+      if (syncState.last) { cfg.last = syncState.last; saveCfg(); }
+      syncState.state = "idle";
+    } catch (err) {
+      syncState.state = (err instanceof TypeError) ? "idle" : "err"; // TypeError = offline / network
+      syncState.msg = err.message || "Sync failed";
+    }
+    syncing = false; paintSync();
+    if (syncAgain) { syncAgain = false; syncNow(); }
+  }
+  function onPulled() {
+    const h = location.hash;
+    if (h.startsWith("#/session") || (document.activeElement && document.activeElement.tagName === "TEXTAREA")) return;
+    route(); toast("Updated from your other device");
+  }
+  function scheduleSync() { if (!cfg.token) return; clearTimeout(syncTimer); syncTimer = setTimeout(syncNow, 2500); }
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") syncNow(); });
+  window.addEventListener("online", () => syncNow());
+  setInterval(() => { if (document.visibilityState === "visible") { syncNow(); paintSync(); } }, 90000);
+
+  function renderSync() {
+    document.title = "Sync · GRE Word Roots";
+    const on = !!cfg.token;
+    app.innerHTML = `
+    <div class="wrap narrow">
+      <header class="home-head">${nav("sync")}
+        <h1>Sync</h1>
+        <p class="sub">Keeps your marks, notes and hidden words identical on every device, and backed up in a private GitHub repo of your own.</p></header>
+      <section class="card">
+        <div class="row-between"><h3>Status</h3><span class="syncchip big" data-state="${syncState.state}"></span></div>
+        <div class="muted small" id="syncStatus"></div>
+        ${on ? `<div class="muted small">Repo: <b>${esc(cfg.repo)}</b></div>` : ""}
+        <form id="syncForm" class="form" autocomplete="off">
+          <label>Data repo<input id="sRepo" name="repo" placeholder="afm351800/gre-progress" value="${esc(cfg.repo || "afm351800/gre-progress")}" spellcheck="false" autocapitalize="off"></label>
+          <label>Access token<input id="sTok" name="tok" type="password" placeholder="${on ? "•••••• saved on this device" : "github_pat_…"}" spellcheck="false" autocapitalize="off"></label>
+          <div class="btnrow">
+            <button class="btn primary" type="submit">${on ? "Update & sync" : "Connect & sync"}</button>
+            ${on ? `<button class="btn" type="button" id="sNow">Sync now</button><button class="btn" type="button" id="sOff">Disconnect this device</button>` : ""}
+          </div>
+        </form>
+      </section>
+      <section class="card">
+        <h3>Set up, once (about 5 minutes, on your laptop)</h3>
+        <ol class="steps">
+          <li><b>Create the data repo.</b> <a href="https://github.com/new" target="_blank" rel="noopener">github.com/new</a> → name it <code>gre-progress</code> → choose <b>Private</b> → tick “Add a README” → Create. It stays empty apart from one file, <code>progress.json</code>, which the app writes for you.</li>
+          <li><b>Create the key.</b> <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a> → name <code>word-roots</code> → expiration 90 days → <b>Only select repositories</b> → pick <code>gre-progress</code> → <b>Repository permissions → Contents → Read and write</b> → Generate token. Copy it now: GitHub shows it only once.</li>
+          <li><b>Connect the laptop.</b> Paste the repo name and the token above → Connect & sync.</li>
+          <li><b>Connect the phone.</b> Open this page on the phone, paste the same token. On a Mac and iPhone with the same Apple ID, copy on the Mac and paste on the iPhone directly (Universal Clipboard). Both devices then merge automatically.</li>
+        </ol>
+        <p class="muted small" style="margin:0">The token can only touch that one repo. It is stored on each device in this app’s own storage, never in the code. If you lose it or suspect a leak, delete it in GitHub settings and make a new one.</p>
+      </section>
+      <section class="card">
+        <h3>How it behaves</h3>
+        <ul class="steps plain">
+          <li>Syncs when you open the app, after each change (a couple of seconds later), when you come back to the tab, and every 90 seconds.</li>
+          <li>Merging is per word: if you mark the same word on both devices, the most recent change wins. Nothing else is overwritten.</li>
+          <li>Works offline: changes are kept on the device and pushed when you’re back online.</li>
+          <li>Every sync is a commit in your data repo, so GitHub also keeps the full history.</li>
+        </ul>
+      </section>
+    </div>`;
+    paintSync();
+    document.getElementById("syncForm").addEventListener("submit", async e => {
+      e.preventDefault();
+      const repo = document.getElementById("sRepo").value.trim().replace(/^https?:\/\/github\.com\//, "").replace(/\.git$/, "").replace(/\/$/, "");
+      const tok = document.getElementById("sTok").value.trim() || cfg.token;
+      if (!/^[\w.-]+\/[\w.-]+$/.test(repo)) return toast("Repo should look like owner/name");
+      if (!tok) return toast("Paste the access token");
+      cfg = { repo, token: tok, last: cfg.last || 0 }; saveCfg();
+      await syncNow(); renderSync();
+      if (syncState.state !== "err") toast("Connected");
+    });
+    const n = document.getElementById("sNow"); if (n) n.addEventListener("click", async () => { await syncNow(); paintSync(); });
+    const o = document.getElementById("sOff"); if (o) o.addEventListener("click", () => { cfg = {}; saveCfg(); syncState.state = "off"; syncState.last = 0; renderSync(); toast("Sync turned off on this device"); });
+  }
+
+  /* ---------- keyboard (laptop) ---------- */
+  document.addEventListener("keydown", e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const t = e.target, typing = t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable);
+    if (location.hash.startsWith("#/session") && sess && !sess.finished && !typing) {
+      const k = e.key.toLowerCase();
+      if (sess.i >= sess.queue.length) return;
+      if (!sess.revealed) {
+        if (k === " " || k === "enter" || k === "arrowright") { e.preventDefault(); act("reveal"); }
+        else if (k === "h" && sess.mode === "learn") act("hidden");
+      } else {
+        if (k === "1") act("red"); else if (k === "2") act("amber"); else if (k === "3") act("green");
+      }
+      if (k === "backspace" || k === "u") { const u = document.getElementById("undo"); if (u && !u.hidden) u.click(); }
+      return;
+    }
+    if (e.key === "/" && !typing) {
+      const q = document.getElementById("q") || document.getElementById("hq");
+      if (q) { e.preventDefault(); q.focus(); q.select(); }
+    }
+  });
+
+  syncNow();
   route();
 })();

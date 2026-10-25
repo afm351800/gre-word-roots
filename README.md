@@ -18,3 +18,13 @@ Open the GitHub Pages URL in Safari, tap Share → Add to Home Screen.
 Each deck is a JSON file in `data/` (`w` word, `p` part of speech, `m` meaning, `e` etymology,
 `f` French, `t` memory hook, optional `x` warning label). After editing, run `node build.js`
 to regenerate `words.js`, then commit.
+
+## Sync between devices (laptop + phone)
+
+Progress (colour marks, notes, hidden words, review dates) is stored in the browser, and can be synced to a **separate private GitHub repo** (e.g. `gre-progress`) through the GitHub contents API. Open `#/sync` in the app for the setup steps. The repo holds one file, `progress.json`; each device holds a fine-grained token limited to that repo (Contents: read and write), stored in that browser's localStorage only.
+
+Merge rule: every word carries a timestamp of its last change; the newest change per word wins, review dates keep the latest, day ticks are OR-ed. Syncs on open, 2.5 s after a change, on tab focus, and every 90 s. Offline changes are pushed later.
+
+## Desktop
+
+At ≥1000 px wide the layout switches to a laptop view: plan and timeline side by side, words in a 2–3 column card grid, centred flashcards. Keyboard: `/` search, in sessions Space = reveal, `1/2/3` = Hard/Shaky/Got it, `H` = already know (Learn), Backspace = undo.
