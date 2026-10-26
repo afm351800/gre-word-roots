@@ -11,6 +11,8 @@ and a Review session (spaced: decks learned 1, 3 and 7 days ago that aren't Know
 Hard and Flag word). The last days switch to review only. Open any date with `?date=YYYY-MM-DD`
 to preview it.
 
+Practice tab: pick decks and colours (default Common Words I–VII, Hard), then guess each word's meaning from three choices, three words per screen. Scores (right +1, wrong −2, 6 = memorised) are stored apart from the colour marks, which never change; Hard words show a small red→green marker in the lists. Keys: 1–3 answer, Space = next.
+
 ## Use on your phone
 Open the GitHub Pages URL in Safari, tap Share → Add to Home Screen.
 

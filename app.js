@@ -125,9 +125,9 @@
 
   /* ---------- storage ---------- */
   const KEY = "gre-roots-v1";
-  let store = { marks: {}, notes: {}, hidden: {}, rev: {}, days: {}, ts: {} };
+  let store = { marks: {}, notes: {}, hidden: {}, rev: {}, days: {}, ts: {}, prac: {} };
   try { const s = JSON.parse(localStorage.getItem(KEY)); if (s) store = Object.assign(store, s); } catch (e) {}
-  ["marks", "notes", "hidden", "rev", "days", "ts"].forEach(k => { store[k] = store[k] || {}; });
+  ["marks", "notes", "hidden", "rev", "days", "ts", "prac"].forEach(k => { store[k] = store[k] || {}; });
   if (!store.seed2) { // where Alexis already was in the flashcard app on 25 Oct
     BY_SLUG["common-words-i"].words.forEach(w => { if (!store.marks[w.w]) store.marks[w.w] = "green"; });
     ["apathetic", "banal", "dictatorial", "dogmatic", "eschew", "gainsay", "obscure", "rustic", "vociferous"].forEach(w => { if (!store.marks[w]) store.marks[w] = "green"; });
@@ -243,6 +243,7 @@
     back: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>',
     note: '<svg class="has-note" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Has a note"><path d="M4 20h4L19 9l-4-4L4 16v4z"/></svg>',
     check: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>',
+    caret: '<svg class="caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>',
     close: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
   };
   function toast(msg) {
@@ -253,7 +254,7 @@
     const pct = n => (total ? (n / total) * 100 : 0).toFixed(2) + "%";
     return `<div class="bar ${cls || ""}" aria-hidden="true"><span class="h" style="width:${pct(c.hidden)}"></span><span class="g" style="width:${pct(c.green)}"></span><span class="a" style="width:${pct(c.amber)}"></span><span class="r" style="width:${pct(c.red)}"></span><span class="b" style="width:${pct(c.blue)}"></span></div>`;
   }
-  const nav = active => `<nav class="mainnav" aria-label="Sections"><a href="#/" ${active === "plan" ? 'aria-current="page"' : ""}>Plan</a><a href="#/decks" ${active === "decks" ? 'aria-current="page"' : ""}>Decks</a><a href="#/all" ${active === "all" ? 'aria-current="page"' : ""}>All words</a><a class="syncchip" href="#/sync" data-state="${syncState.state}" ${active === "sync" ? 'aria-current="page"' : ""}>${chipText()}</a></nav>`;
+  const nav = active => `<nav class="mainnav" aria-label="Sections"><a href="#/" ${active === "plan" ? 'aria-current="page"' : ""}>Plan</a><a href="#/decks" ${active === "decks" ? 'aria-current="page"' : ""}>Decks</a><a href="#/practice" ${active === "practice" ? 'aria-current="page"' : ""}>Practice</a><a href="#/all" ${active === "all" ? 'aria-current="page"' : ""}>All words</a><a class="syncchip" href="#/sync" data-state="${syncState.state}" ${active === "sync" ? 'aria-current="page"' : ""}>${chipText()}</a></nav>`;
   const mins = n => { if (n <= 0) return ""; const m = Math.max(5, Math.round(n / 5) * 5); return m < 60 ? `≈ ${m} min` : `≈ ${Math.floor(m / 60)} h${m % 60 ? " " + (m % 60) : ""}`; };
 
   /* ---------- routing ---------- */
@@ -269,6 +270,7 @@
     lastRoute = key;
     if (parts[0] === "deck" && BY_SLUG[parts[1]]) return renderList(BY_SLUG[parts[1]]);
     if (parts[0] === "sync") return renderSync();
+    if (parts[0] === "practice") return renderPractice();
     if (parts[0] === "all") return renderList(null);
     if (parts[0] === "decks") return renderDecks();
     if (parts[0] === "session" && (parts[1] === "learn" || parts[1] === "review")) return renderSession(parts[1]);
@@ -474,7 +476,7 @@
   }
 
   function exportBackup() {
-    const data = JSON.stringify({ app: "gre-word-roots", version: 2, exported: new Date().toISOString(), marks: store.marks, notes: store.notes, hidden: store.hidden, rev: store.rev, days: store.days }, null, 1);
+    const data = JSON.stringify({ app: "gre-word-roots", version: 2, exported: new Date().toISOString(), marks: store.marks, notes: store.notes, hidden: store.hidden, rev: store.rev, days: store.days, prac: store.prac }, null, 1);
     const blob = new Blob([data], { type: "application/json" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
@@ -489,7 +491,7 @@
       try {
         const d = JSON.parse(r.result);
         if (d.app !== "gre-word-roots") throw new Error("wrong file");
-        ["marks", "notes", "hidden", "rev", "days"].forEach(k => Object.assign(store[k], d[k] || {}));
+        ["marks", "notes", "hidden", "rev", "days", "prac"].forEach(k => Object.assign(store[k], d[k] || {}));
         save(); route(); toast("Backup imported");
       } catch (err) { toast("That file isn’t a Word Roots backup"); }
     };
@@ -582,6 +584,230 @@
     window.scrollTo(0, 0); drawCard();
   }
 
+  /* ---------- practice: pick decks + colours, guess the meaning from three choices ---------- */
+  /* Scores live in store.prac only. They never touch the Hard / Shaky / Known marks. */
+  const PMAX = 6;                          // 6 = memorised. Right answer +1, wrong answer −2 (guessing at random drifts down).
+  const PSEL = "gre-roots-prac-sel";
+  const COMMON = DECKS.filter(d => d.series === "Common Words").map(d => d.slug);
+  let psel = { decks: COMMON.slice(), marks: ["red"], order: "weak" };
+  try { const s = JSON.parse(localStorage.getItem(PSEL)); if (s && Array.isArray(s.decks) && Array.isArray(s.marks)) psel = Object.assign(psel, s); } catch (e) {}
+  psel.decks = psel.decks.filter(s => BY_SLUG[s]);
+  const psave = () => { try { localStorage.setItem(PSEL, JSON.stringify(psel)); } catch (e) {} };
+  const PSTAT = [["red", "Hard"], ["amber", "Shaky"], ["green", "Known"], ["blue", "Flag"], ["none", "Not sorted"], ["hidden", "Hidden"]];
+  const pracStatus = w => isHidden(w) ? "hidden" : (markOf(w) || "none");
+  const poolWords = () => { const d = new Set(psel.decks), m = new Set(psel.marks); return ALL.filter(x => d.has(x.slug) && m.has(pracStatus(x.w))); };
+  const pscore = w => (store.prac[w] ? store.prac[w].s : 0);
+  const showMeter = w => !isHidden(w) && (markOf(w) === "red" || !!store.prac[w]);
+  const numeral = d => d.name.slice(d.series.length + 1);
+  const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  let pr = { run: null };
+
+  /* the small red → green marker: how close a word is to memorised */
+  function meterHTML(w) {
+    const p = store.prac[w]; const s = p ? p.s : 0; const pct = (s / PMAX) * 100;
+    const tip = p ? `Practice ${s} of ${PMAX} · ${p.n} ${p.n === 1 ? "try" : "tries"}` : "Not practised yet";
+    return `<span class="meter${p ? "" : " fresh"}" role="img" aria-label="${tip}" title="${tip}"><b style="width:${pct.toFixed(1)}%"></b><i style="left:${pct.toFixed(1)}%;border-color:hsl(${Math.round(pct * 1.2)} 65% 45%)"></i></span>`;
+  }
+
+  function deckSummary() {
+    const sel = new Set(psel.decks); if (!sel.size) return "No decks";
+    const parts = [];
+    const groups = {}; DECKS.forEach(d => (groups[d.series] = groups[d.series] || []).push(d));
+    Object.keys(groups).forEach(sn => {
+      const ds = groups[sn]; const idx = ds.map((d, i) => sel.has(d.slug) ? i : -1).filter(i => i >= 0);
+      if (!idx.length) return;
+      if (idx.length === ds.length) { parts.push(sn + " (all)"); return; }
+      const runs = []; let a = idx[0], b = idx[0];
+      for (let k = 1; k < idx.length; k++) { if (idx[k] === b + 1) b = idx[k]; else { runs.push([a, b]); a = b = idx[k]; } }
+      runs.push([a, b]);
+      parts.push(sn + " " + runs.map(([x, y]) => x === y ? numeral(ds[x]) : numeral(ds[x]) + "–" + numeral(ds[y])).join(", "));
+    });
+    const txt = parts.join(" · ");
+    return parts.length > 2 || txt.length > 34 ? `${sel.size} decks` : txt;
+  }
+  function markSummary() {
+    const sel = PSTAT.filter(([id]) => psel.marks.includes(id)).map(([, l]) => l);
+    return !sel.length ? "None" : sel.length === PSTAT.length ? "Everything" : sel.join(", ");
+  }
+
+  function renderPractice() {
+    document.title = "Practice · GRE Word Roots";
+    if (pr.run) return drawRun();
+    const series = [];
+    DECKS.forEach(d => { let s = series.find(x => x.name === d.series); if (!s) series.push(s = { name: d.series, decks: [] }); s.decks.push(d); });
+    const picker = (id, label) => `<div class="picker"><div class="plabel" id="pl-${id}">${label}</div>
+      <button type="button" class="pbtn" id="pb-${id}" aria-expanded="false" aria-controls="pp-${id}" aria-labelledby="pl-${id} pv-${id}"><span class="pval" id="pv-${id}"></span>${icon.caret}</button></div>`;
+    app.innerHTML = `
+    <div class="wrap">
+      <header class="home-head">${nav("practice")}<h1>Practice</h1>
+        <p class="sub">Choose what to drill, then guess each word’s meaning from three choices. Your Hard, Shaky and Known stickers never change here; each word just gets a small marker showing how close it is to memorised.</p></header>
+      <section class="card pracsetup">
+        <div class="pickers" id="pickers">
+          ${picker("decks", "Decks")}${picker("marks", "Difficulty")}
+          <div class="ppanel" id="pp-decks" hidden>
+            <div class="ptools"><button type="button" class="link" data-act="all">Select all</button><button type="button" class="link" data-act="none">Clear</button><button type="button" class="link pdone" data-act="close">Done</button></div>
+            ${series.map(s => `<div class="pseries"><label class="pchip head" data-series="${esc(s.name)}"><input type="checkbox" data-series="${esc(s.name)}"><span>${esc(s.name)}</span></label>
+              <div class="pdecks">${s.decks.map(d => `<label class="pchip pdeck" data-slug="${d.slug}"><input type="checkbox" data-slug="${d.slug}"><span class="pn">${esc(numeral(d))}</span><small></small></label>`).join("")}</div></div>`).join("")}
+          </div>
+          <div class="ppanel" id="pp-marks" hidden>
+            <div class="ptools"><button type="button" class="link" data-act="mall">Select all</button><button type="button" class="link" data-act="mnone">Clear</button><button type="button" class="link pdone" data-act="close">Done</button></div>
+            <div class="pmarks">${PSTAT.map(([id, l]) => `<label class="pchip pmark" data-mark="${id}"><input type="checkbox" data-mark="${id}"><i class="c-${id}"></i><span>${l}</span><small></small></label>`).join("")}</div>
+          </div>
+        </div>
+        <div class="porder"><span class="plabel">Order</span>
+          <button type="button" class="chip" data-order="weak">Weakest first</button><button type="button" class="chip" data-order="random">Random</button></div>
+        <div class="pinfo" id="pinfo" aria-live="polite"></div>
+        <button class="btn primary pstart" id="pstart" type="button">Start practice</button>
+        <p class="muted small" style="margin:0">Right answer: marker moves one step towards green. Wrong answer: it drops two. At ${PMAX} the word counts as memorised. Nothing else changes.</p>
+      </section>
+      <footer>Practice progress syncs with the rest of your marks.</footer>
+    </div>`;
+    paintPractice();
+    const pk = document.getElementById("pickers");
+    pk.addEventListener("click", e => {
+      const b = e.target.closest(".pbtn"); const act = e.target.closest("[data-act]");
+      if (b) { const id = b.id.slice(3); const open = b.getAttribute("aria-expanded") !== "true"; closePanels(); if (open) { b.setAttribute("aria-expanded", "true"); document.getElementById("pp-" + id).hidden = false; } return; }
+      if (act) {
+        const a = act.dataset.act;
+        if (a === "close") closePanels();
+        else if (a === "all") psel.decks = DECKS.map(d => d.slug);
+        else if (a === "none") psel.decks = [];
+        else if (a === "mall") psel.marks = PSTAT.map(([id]) => id);
+        else if (a === "mnone") psel.marks = [];
+        if (a !== "close") { psave(); paintPractice(); }
+      }
+    });
+    pk.addEventListener("change", e => {
+      const t = e.target; if (t.type !== "checkbox") return;
+      if (t.dataset.slug) { const s = new Set(psel.decks); t.checked ? s.add(t.dataset.slug) : s.delete(t.dataset.slug); psel.decks = DECKS.filter(d => s.has(d.slug)).map(d => d.slug); }
+      else if (t.dataset.series) { const s = new Set(psel.decks); DECKS.filter(d => d.series === t.dataset.series).forEach(d => t.checked ? s.add(d.slug) : s.delete(d.slug)); psel.decks = DECKS.filter(d => s.has(d.slug)).map(d => d.slug); }
+      else if (t.dataset.mark) { const s = new Set(psel.marks); t.checked ? s.add(t.dataset.mark) : s.delete(t.dataset.mark); psel.marks = PSTAT.filter(([id]) => s.has(id)).map(([id]) => id); }
+      psave(); paintPractice();
+    });
+    app.querySelector(".porder").addEventListener("click", e => { const b = e.target.closest("[data-order]"); if (!b) return; psel.order = b.dataset.order; psave(); paintPractice(); });
+    document.getElementById("pstart").addEventListener("click", () => { const p = poolWords(); if (p.length) startRun(p.map(x => x.w)); });
+  }
+  function closePanels() {
+    document.querySelectorAll(".ppanel").forEach(p => { p.hidden = true; });
+    document.querySelectorAll(".pbtn").forEach(b => b.setAttribute("aria-expanded", "false"));
+  }
+  document.addEventListener("click", e => { const pk = document.getElementById("pickers"); if (pk && !pk.contains(e.target)) closePanels(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closePanels(); });
+
+  function paintPractice() {
+    const dsel = new Set(psel.decks), msel = new Set(psel.marks);
+    document.getElementById("pv-decks").textContent = deckSummary();
+    document.getElementById("pv-marks").textContent = markSummary();
+    document.getElementById("pb-decks").title = psel.decks.length + " decks selected";
+    DECKS.forEach(d => {
+      const el = app.querySelector(`.pdeck[data-slug="${d.slug}"]`); if (!el) return;
+      const n = d.words.filter(w => msel.has(pracStatus(w.w))).length;
+      el.querySelector("small").textContent = n; el.classList.toggle("on", dsel.has(d.slug)); el.classList.toggle("zero", !n);
+      el.querySelector("input").checked = dsel.has(d.slug);
+    });
+    app.querySelectorAll(".pchip.head").forEach(l => {
+      const ds = DECKS.filter(d => d.series === l.dataset.series); const k = ds.filter(d => dsel.has(d.slug)).length;
+      const inp = l.querySelector("input"); inp.checked = k === ds.length; inp.indeterminate = k > 0 && k < ds.length;
+      l.classList.toggle("on", k === ds.length); l.classList.toggle("some", k > 0 && k < ds.length);
+    });
+    PSTAT.forEach(([id]) => {
+      const el = app.querySelector(`.pmark[data-mark="${id}"]`);
+      const n = ALL.filter(x => dsel.has(x.slug) && pracStatus(x.w) === id).length;
+      el.querySelector("small").textContent = n; el.classList.toggle("on", msel.has(id)); el.querySelector("input").checked = msel.has(id);
+    });
+    app.querySelectorAll(".porder .chip").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.order === psel.order)));
+    const pool = poolWords(); const n = pool.length;
+    const full = pool.filter(x => pscore(x.w) >= PMAX).length, fresh = pool.filter(x => !store.prac[x.w]).length;
+    document.getElementById("pinfo").innerHTML = n
+      ? `<b>${n} word${n === 1 ? "" : "s"}</b> · ${Math.ceil(n / 3)} round${Math.ceil(n / 3) === 1 ? "" : "s"} of 3<span class="muted"> · ${full} memorised · ${fresh} not practised yet</span>`
+      : `<span class="muted">No words match. Pick other decks or difficulties.</span>`;
+    document.getElementById("pstart").disabled = !n;
+  }
+
+  /* ---------- a run: three words per screen, three definitions each ---------- */
+  const posKey = p => (p || "").toLowerCase().split(/[^a-z]+/)[0] || "x";
+  const POS_POOL = {}; ALL.forEach(x => (POS_POOL[posKey(x.p)] = POS_POOL[posKey(x.p)] || []).push(x));
+  function makeQuestion(w) {
+    const x = LOOKUP.get(w); const pool = (POS_POOL[posKey(x.p)] || []).length > 8 ? POS_POOL[posKey(x.p)] : ALL;
+    const used = new Set([x.m]); const ds = []; let guard = 0;
+    while (ds.length < 2 && guard++ < 400) { const c = pool[Math.floor(Math.random() * pool.length)]; if (c.w === x.w || used.has(c.m)) continue; used.add(c.m); ds.push(c); }
+    return { w, picked: null, opts: shuffle([{ t: x.m, ok: true }].concat(ds.map(c => ({ t: c.m, ok: false })))) };
+  }
+  function startRun(words) {
+    let q = shuffle(words);
+    if (psel.order === "weak") q = q.map((w, i) => [w, i]).sort((a, b) => pscore(a[0]) - pscore(b[0]) || a[1] - b[1]).map(a => a[0]);
+    pr.run = { queue: q, page: 0, cur: null, right: 0, missed: [], total: q.length };
+    window.scrollTo(0, 0); drawRun();
+  }
+  function qHTML(q, i) {
+    const x = LOOKUP.get(q.w); const mk = isHidden(q.w) ? "hidden" : (markOf(q.w) || "");
+    const done = q.picked !== null; const right = done && q.opts[q.picked].ok;
+    return `<article class="q${done ? " answered" : ""}" data-i="${i}">
+      <div class="qhead"><div class="qwordline"><span class="qword">${esc(x.w)}</span><span class="pos">${esc(x.p)}</span></div>
+        <div class="qmeta"><span class="decktag">${esc(x.deck)}</span>${meterHTML(x.w)}<span class="mark ${mk}" title="Your sticker, unchanged"></span></div></div>
+      <div class="qopts" role="group" aria-label="Meaning of ${esc(x.w)}">${q.opts.map((o, j) =>
+        `<button type="button" class="opt${done ? (o.ok ? " ok" : q.picked === j ? " bad" : " dim") : ""}" data-o="${j}" aria-pressed="${q.picked === j}"><span class="ol">${j + 1}</span><span class="ot">${o.t}</span></button>`).join("")}</div>
+      ${done ? `<div class="qfb ${right ? "good" : "miss"}"><b>${right ? "Correct" : "Not quite"}</b> · <span class="fr">${x.f}</span><br>${x.t}</div>` : ""}
+    </article>`;
+  }
+  function drawRun() {
+    const r = pr.run;
+    if (r.page * 3 >= r.total) return drawResults();
+    if (!r.cur) r.cur = r.queue.slice(r.page * 3, r.page * 3 + 3).map(makeQuestion);
+    const from = r.page * 3 + 1, to = Math.min(r.total, r.page * 3 + 3);
+    app.innerHTML = `
+      <div class="sess-bar"><div class="wrap sess-bar-in">
+        <button class="iconbtn" id="pquit" type="button" aria-label="End practice">${icon.close}</button>
+        <div class="sess-title">Practice <span class="muted">${from}${to > from ? "–" + to : ""} / ${r.total}</span></div>
+        <span class="muted small" id="pright"></span>
+      </div><div class="pbar"><span style="width:${((r.page * 3) / r.total * 100).toFixed(1)}%"></span></div></div>
+      <main class="wrap prun" id="prun">${r.cur.map(qHTML).join("")}</main>
+      <div class="actions"><div class="wrap actions-in"><button class="act show wide" id="pnext" type="button"></button></div></div>`;
+    paintRunChrome();
+    document.getElementById("pquit").addEventListener("click", () => { pr.run = null; renderPractice(); window.scrollTo(0, 0); });
+    document.getElementById("pnext").addEventListener("click", nextPage);
+    document.getElementById("prun").addEventListener("click", e => {
+      const b = e.target.closest(".opt"); if (!b) return;
+      answer(+b.closest(".q").dataset.i, +b.dataset.o);
+    });
+  }
+  function paintRunChrome() {
+    const r = pr.run; const done = r.cur.every(q => q.picked !== null); const last = (r.page + 1) * 3 >= r.total;
+    document.getElementById("pright").textContent = `${r.right} right`;
+    const n = document.getElementById("pnext"); n.disabled = !done;
+    n.innerHTML = done ? `${last ? "See results" : "Next"} <kbd>Space</kbd>` : "Answer all to continue";
+  }
+  function answer(qi, oi) {
+    const r = pr.run; const q = r.cur[qi]; if (!q || q.picked !== null) return;
+    q.picked = oi; const ok = q.opts[oi].ok;
+    const p = store.prac[q.w] || { s: 0, n: 0 };
+    store.prac[q.w] = { s: ok ? Math.min(PMAX, p.s + 1) : Math.max(0, p.s - 2), n: p.n + 1, t: Date.now() };
+    if (ok) r.right++; else if (!r.missed.includes(q.w)) r.missed.push(q.w);
+    save();
+    const el = document.querySelector(`.q[data-i="${qi}"]`); if (el) el.outerHTML = qHTML(q, qi);
+    paintRunChrome();
+  }
+  function nextPage() {
+    const r = pr.run; if (!r || !r.cur || !r.cur.every(q => q.picked !== null)) return;
+    r.page++; r.cur = null; window.scrollTo(0, 0); drawRun();
+  }
+  function drawResults() {
+    const r = pr.run; const miss = r.missed.length;
+    app.innerHTML = `
+      <div class="sess-bar"><div class="wrap sess-bar-in"><button class="iconbtn" id="pquit" type="button" aria-label="Close">${icon.close}</button><div class="sess-title">Practice done</div></div><div class="pbar"><span style="width:100%"></span></div></div>
+      <main class="wrap done-screen">
+        <h1>${r.right} of ${r.total}</h1>
+        <p class="muted" style="margin:0">${miss ? `${miss} word${miss === 1 ? "" : "s"} to look at again. Their markers moved back; your stickers did not change.` : "Clean sweep. Every marker moved towards green."}</p>
+        ${miss ? `<ul class="tally missed">${r.missed.map(w => `<li><b class="mw">${esc(w)}</b><span class="md">${LOOKUP.get(w).m}</span>${meterHTML(w)}</li>`).join("")}</ul>` : ""}
+        <div class="row"><button class="btn primary" id="pagain" type="button">Practice again</button>${miss ? `<button class="btn" id="pmiss" type="button">Only the ${miss} I missed</button>` : ""}<button class="btn" id="pback" type="button">Change selection</button></div>
+      </main>`;
+    const back = () => { pr.run = null; renderPractice(); window.scrollTo(0, 0); };
+    document.getElementById("pquit").addEventListener("click", back);
+    document.getElementById("pback").addEventListener("click", back);
+    document.getElementById("pagain").addEventListener("click", () => { const p = poolWords(); if (p.length) startRun(p.map(x => x.w)); else back(); });
+    const m = document.getElementById("pmiss"); if (m) m.addEventListener("click", () => startRun(r.missed.slice()));
+  }
+
   /* ---------- deck / all list ---------- */
   let listDeck = null;
   function filtered() {
@@ -655,6 +881,7 @@
       <button class="row" type="button" aria-expanded="${open}">
         <span class="word">${esc(x.w)}</span>
         ${!listDeck ? `<span class="decktag">${esc(x.deck)}</span>` : ""}
+        ${showMeter(x.w) ? meterHTML(x.w) : ""}
         ${store.notes[x.w] ? icon.note : ""}
         <span class="mark ${hid ? "hidden" : mark || ""}"></span>
         ${icon.chev}
@@ -670,6 +897,7 @@
       <div class="block"><div class="lbl">Etymology</div><div class="txt">${x.e}</div></div>
       <div class="block"><div class="lbl">French</div><div class="txt fr">${x.f}</div></div>
       ${hookBlock(x)}
+      ${store.prac[x.w] ? `<div class="block"><div class="lbl">Practice</div><div class="txt pracline">${meterHTML(x.w)}<span>${store.prac[x.w].s} of ${PMAX} · ${store.prac[x.w].n} ${store.prac[x.w].n === 1 ? "try" : "tries"}</span></div></div>` : ""}
       <div class="block"><div class="lbl">Colour</div><div class="txt marks">
         ${MARKS.map(m => `<button type="button" class="mk" data-mark="${m.id}" aria-pressed="${!hid && mark === m.id}"><i class="c-${m.id}"></i>${m.label}</button>`).join("")}
         <button type="button" class="mk" data-mark="hidden" aria-pressed="${hid}"><i class="c-hidden"></i>${hid ? "Hidden" : "Hide"}</button>
@@ -746,7 +974,7 @@
   const b64enc = str => btoa(unescape(encodeURIComponent(str)));
   const b64dec = str => decodeURIComponent(escape(atob(str.replace(/\s/g, ""))));
   const canon = o => JSON.stringify(o, (k, v) => (v && typeof v === "object" && !Array.isArray(v)) ? Object.keys(v).sort().reduce((a, key) => (a[key] = v[key], a), {}) : v);
-  const payload = () => ({ app: "gre-word-roots", version: 3, marks: store.marks, notes: store.notes, hidden: store.hidden, rev: store.rev, days: store.days, ts: store.ts });
+  const payload = () => ({ app: "gre-word-roots", version: 3, marks: store.marks, notes: store.notes, hidden: store.hidden, rev: store.rev, days: store.days, ts: store.ts, prac: store.prac });
   function saveCfg() { try { localStorage.setItem(SKEY, JSON.stringify(cfg)); } catch (e) {} }
   function ago(t) {
     const m = Math.round((Date.now() - t) / 60000);
@@ -773,6 +1001,8 @@
       }
     });
     Object.keys(rr).forEach(w => { if (!store.rev[w] || rr[w] > store.rev[w]) { store.rev[w] = rr[w]; changed = true; } });
+    const rp = r.prac || {}; // practice scores: newest attempt per word wins
+    Object.keys(rp).forEach(w => { const l = store.prac[w]; if (rp[w] && (!l || (rp[w].t || 0) > (l.t || 0))) { store.prac[w] = rp[w]; changed = true; } });
     Object.keys(r.days || {}).forEach(d => {
       const a = store.days[d] || {}, b = r.days[d] || {};
       const m = { learn: !!(a.learn || b.learn), review: !!(a.review || b.review) };
@@ -821,7 +1051,7 @@
   }
   function onPulled() {
     const h = location.hash;
-    if (h.startsWith("#/session") || (document.activeElement && document.activeElement.tagName === "TEXTAREA")) return;
+    if (h.startsWith("#/session") || (h.startsWith("#/practice") && pr.run) || (document.activeElement && document.activeElement.tagName === "TEXTAREA")) return;
     route(); toast("Updated from your other device");
   }
   function scheduleSync() { if (!cfg.token) return; clearTimeout(syncTimer); syncTimer = setTimeout(syncNow, 2500); }
@@ -899,6 +1129,12 @@
         if (k === "1") act("red"); else if (k === "2") act("amber"); else if (k === "3") act("green");
       }
       if (k === "backspace" || k === "u") { const u = document.getElementById("undo"); if (u && !u.hidden) u.click(); }
+      return;
+    }
+    if (location.hash.startsWith("#/practice") && pr.run && pr.run.cur && !typing) {
+      const r = pr.run, k = e.key;
+      if (/^[1-3]$/.test(k)) { const qi = r.cur.findIndex(q => q.picked === null); if (qi >= 0) { e.preventDefault(); answer(qi, +k - 1); } }
+      else if ((k === " " || k === "Enter" || k === "ArrowRight") && r.cur.every(q => q.picked !== null)) { e.preventDefault(); nextPage(); }
       return;
     }
     if (e.key === "/" && !typing) {
