@@ -13,6 +13,19 @@ to preview it.
 
 Practice tab: pick decks and colours (default Common Words I–VII, Hard), then guess each word's meaning from three choices, three words per screen. Scores (right +1, wrong −2, 6 = memorised) are stored apart from the colour marks, which never change; Hard words show a small red→green marker in the lists. Keys: 1–3 answer, Space = next.
 
+## Voice: say the word out loud
+
+Speaking a word gives it a sound memory on top of the visual one, so voice is built into the daily loop:
+
+- **Learn and Review cards**: each new card starts listening on its own. Say the word; the mic checks it (✓ Said it, or "close enough" for rare words the recogniser mangles), then the app plays the correct US pronunciation so you can compare. A miss plays the pronunciation and listens once more. The done screen counts how many words you said.
+- **Practice → Say the word**: you see only the meaning (no French, no root, they give it away) and say the word. Hint = first letter and length, then more letters (a right answer after a hint leaves the marker unchanged). Show answer counts as missed; if the mic misheard you, "I said it right" fixes it. A synonym from the decks with the same meaning counts too. Typing works as a quiet fallback.
+- **Speaker buttons** on every opened word and in Pick the meaning.
+- **Quiet mode**: the mic button in the session bar (or `V`) turns voice off on that device, e.g. on the Métro.
+
+Keys: `M` = listen, `P` = play pronunciation, `V` = voice on/off; in Say the word `Space`/`M` = listen, `H` = hint, `S` = show answer, `T` = type, `Enter` = next.
+
+Uses the browser's own speech engines (Web Speech API), so no account or server. Recognition works in Safari (Mac and iPhone) and Chrome; the first time, allow the microphone for the site. If it was refused: Safari → Settings → Websites → Microphone.
+
 ## Use on your phone
 Open the GitHub Pages URL in Safari, tap Share → Add to Home Screen.
 

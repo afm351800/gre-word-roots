@@ -257,6 +257,137 @@
   const nav = active => `<nav class="mainnav" aria-label="Sections"><a href="#/" ${active === "plan" ? 'aria-current="page"' : ""}>Plan</a><a href="#/decks" ${active === "decks" ? 'aria-current="page"' : ""}>Decks</a><a href="#/practice" ${active === "practice" ? 'aria-current="page"' : ""}>Practice</a><a href="#/all" ${active === "all" ? 'aria-current="page"' : ""}>All words</a><a class="syncchip" href="#/sync" data-state="${syncState.state}" ${active === "sync" ? 'aria-current="page"' : ""}>${chipText()}</a></nav>`;
   const mins = n => { if (n <= 0) return ""; const m = Math.max(5, Math.round(n / 5) * 5); return m < 60 ? `≈ ${m} min` : `≈ ${Math.floor(m / 60)} h${m % 60 ? " " + (m % 60) : ""}`; };
 
+  /* ---------- voice: say the word out loud, the mic checks it, then hear it pronounced ----------
+     Speaking a word (the "production effect") gives it a second, sound-based memory trace on top of
+     the written one. Recognition and speech both use the browser's built-in engines (no server, no key). */
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const synth = window.speechSynthesis || null;
+  const VKEY = "gre-roots-voice";
+  let vcfg = { on: true };
+  try { const v = JSON.parse(localStorage.getItem(VKEY)); if (v && typeof v.on === "boolean") vcfg = Object.assign(vcfg, v); } catch (e) {}
+  const vsave = () => { try { localStorage.setItem(VKEY, JSON.stringify(vcfg)); } catch (e) {} };
+  const voice = { blocked: false, rec: null, gen: 0 };
+  const canListen = () => !!SR && !voice.blocked;
+  const MIC = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>';
+  const MIC_OFF = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M4 4l16 16"/></svg>';
+  const MIC_SM = MIC.replace('width="22" height="22"', 'width="18" height="18"');
+  const SPK = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>';
+  const spkBtn = (w, cls) => synth ? `<button type="button" class="spk${cls ? " " + cls : ""}" data-say="${esc(w)}" aria-label="Hear “${esc(w)}” pronounced" title="Hear it (P)">${SPK}</button>` : "";
+  const vtoggleBtn = () => `<button class="iconbtn vtoggle" id="vtog" type="button" aria-pressed="${vcfg.on}" aria-label="Voice practice ${vcfg.on ? "on" : "off"}" title="Voice ${vcfg.on ? "on" : "off"} (V)">${vcfg.on ? MIC_SM : MIC_OFF}</button>`;
+
+  /* matching what the recogniser heard against the word: exact, or close enough (rare words get mangled) */
+  const lettersOf = s => norm(s).replace(/[^a-z]/g, "");
+  const LKEY = new Map(); ALL.forEach(x => { const k = lettersOf(x.w); if (!LKEY.has(k)) LKEY.set(k, x); });
+  function phon(s) { // rough sound key: "fizzical" ≈ "physical", "obsekwius" ≈ "obsequious"
+    return lettersOf(s).replace(/^(kn|gn|pn|ps|wr)/, m => m[1]).replace(/(...)e$/, "$1").replace(/ph/g, "f").replace(/ck/g, "k").replace(/qu/g, "kw")
+      .replace(/x/g, "ks").replace(/c(?=[eiy])/g, "s").replace(/c/g, "k").replace(/z/g, "s").replace(/dg/g, "j")
+      .replace(/(t|s)i(?=[aou])/g, "sh").replace(/y/g, "i").replace(/(.)\1+/g, "$1").replace(/([aeiou])[aeiou]+/g, "$1");
+  }
+  function lev(a, b) {
+    if (a === b) return 0; if (!a.length) return b.length; if (!b.length) return a.length;
+    let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+    for (let i = 1; i <= a.length; i++) {
+      const cur = [i];
+      for (let j = 1; j <= b.length; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      prev = cur;
+    }
+    return prev[b.length];
+  }
+  const simil = (a, b) => 1 - lev(a, b) / Math.max(a.length, b.length, 1);
+  function candidates(alts) { // every transcript, and every run of 1–3 adjacent words inside it, as plain letters
+    const out = new Set();
+    alts.forEach(t => {
+      const toks = norm(t).split(/[^a-z]+/).filter(Boolean);
+      if (toks.length) out.add(toks.join(""));
+      for (let i = 0; i < toks.length; i++) for (let n = 1; n <= 3 && i + n <= toks.length; n++) out.add(toks.slice(i, i + n).join(""));
+    });
+    return [...out];
+  }
+  function matchWord(word, alts, strict) { // strict: another real GRE word (venial for venal) never counts
+    const k = lettersOf(word), pk = phon(word), cs = candidates(alts);
+    if (cs.includes(k)) return { exact: true };
+    for (const c of cs) {
+      if (strict && LKEY.has(c)) continue;
+      const pc = phon(c);
+      if (pc === pk && pk.length >= 2) return { exact: false, heard: c };
+      if (k.length >= 5 && simil(c, k) >= (strict ? 0.85 : k.length >= 7 ? 0.75 : 0.8)) return { exact: false, heard: c };
+      if (pk.length >= 5 && simil(pc, pk) >= (strict ? 0.88 : 0.8)) return { exact: false, heard: c };
+    }
+    return null;
+  }
+  const heardText = alts => (alts[0] || "").trim();
+
+  /* one recognition at a time; a newer listen() or stopListening() silences any older one */
+  function stopListening() { voice.gen++; if (voice.rec) { const r = voice.rec; voice.rec = null; try { r.abort(); } catch (e) {} } }
+  function listen(matcher, cb) { // cb(state, info): listening | match | miss | nothing | error
+    stopListening();
+    if (!SR) return cb("error", { msg: "This browser can’t listen. Say it out loud anyway." });
+    if (voice.blocked) return cb("error", { msg: "Microphone blocked. Allow it for this site in your browser settings, then reload." });
+    if (synth) synth.cancel();
+    const my = ++voice.gen; let r;
+    try { r = new SR(); } catch (e) { return cb("error", { msg: "Couldn’t start the microphone." }); }
+    voice.rec = r;
+    r.lang = "en-US"; r.interimResults = true; r.maxAlternatives = 5; r.continuous = false;
+    let heard = "", done = false;
+    const finish = (st, info) => {
+      if (done) return; done = true; clearTimeout(timer);
+      if (voice.rec === r) { voice.rec = null; try { r.abort(); } catch (e) {} }
+      if (my === voice.gen) cb(st, info || {});
+    };
+    const timer = setTimeout(() => finish(heard ? "miss" : "nothing", { heard }), 8000);
+    r.onstart = () => { if (!done && my === voice.gen) cb("listening", {}); };
+    r.onresult = e => {
+      const alts = [], tops = [];
+      for (let i = 0; i < e.results.length; i++) {
+        for (let j = 0; j < e.results[i].length; j++) alts.push(e.results[i][j].transcript);
+        if (e.results[i][0]) tops.push(e.results[i][0].transcript);
+      }
+      alts.unshift(tops.join(" "));
+      const m = matcher(alts);
+      if (m) return finish("match", Object.assign({}, m, { heard: heardText(alts), via: m.heard }));
+      heard = heardText(alts) || heard;
+    };
+    r.onerror = e => {
+      if (e.error === "aborted") return;
+      if (e.error === "not-allowed" || e.error === "service-not-allowed") { voice.blocked = true; return finish("error", { msg: "Microphone blocked. Allow it for this site in your browser settings, then reload." }); }
+      if (e.error === "no-speech") return finish("nothing");
+      if (e.error === "network") return finish("error", { msg: "Speech service unreachable (offline?). Say it out loud anyway." });
+      if (e.error === "audio-capture") return finish("error", { msg: "No microphone found." });
+      finish(heard ? "miss" : "nothing", { heard });
+    };
+    r.onend = () => finish(heard ? "miss" : "nothing", { heard });
+    try { r.start(); } catch (e) { finish("error", { msg: "Couldn’t start the microphone. Tap it to try again." }); }
+  }
+
+  /* the model pronunciation, from the device's best US English voice */
+  let vvoice = null;
+  function pickVoice() {
+    if (!synth) return null;
+    const all = synth.getVoices(); const us = all.filter(v => /^en[-_]US/i.test(v.lang));
+    const pool = us.length ? us : all.filter(v => /^en/i.test(v.lang));
+    const silly = /(albert|bad news|bahh|bells|boing|bubbles|cellos|fred|good news|jester|junior|kathy|organ|ralph|superstar|trinoids|whisper|wobble|zarvox|hysterical|grandma|grandpa|eddy|flo|reed|rocko|sandy|shelley)/i;
+    const score = v => (/(premium|enhanced|siri)/i.test(v.name) ? 4 : 0) + (/^(samantha|ava|allison|susan|zoe|evan|nathan|tom|google us english|microsoft (aria|jenny|guy))/i.test(v.name) ? 2 : 0) + (v.localService ? 1 : 0) - (silly.test(v.name) ? 10 : 0);
+    return pool.slice().sort((a, b) => score(b) - score(a))[0] || null;
+  }
+  if (synth) { vvoice = pickVoice(); try { synth.onvoiceschanged = () => { vvoice = pickVoice(); }; } catch (e) {} }
+  function pronounce(text, onend) {
+    if (!synth) { if (onend) onend(); return; }
+    try {
+      synth.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      if (!vvoice) vvoice = pickVoice();
+      if (vvoice) u.voice = vvoice;
+      u.lang = "en-US"; u.rate = 0.85;
+      if (onend) { let fired = false; const f = () => { if (!fired) { fired = true; onend(); } }; u.onend = f; u.onerror = f; setTimeout(f, 4000); }
+      synth.speak(u);
+    } catch (e) { if (onend) onend(); }
+  }
+  document.addEventListener("click", e => {
+    const b = e.target.closest(".spk"); if (!b) return;
+    e.stopPropagation(); e.preventDefault();
+    stopListening(); pronounce(b.dataset.say);
+  }, true);
+
   /* ---------- routing ---------- */
   const ui = { q: "", mark: null, open: new Set() };
   let lastRoute = "";
@@ -268,6 +399,7 @@
     if (key !== lastRoute) { ui.mark = null; ui.open.clear(); if (!query) ui.q = ""; window.scrollTo(0, 0); }
     if (query) { const p = new URLSearchParams(query); ui.q = p.get("q") || ""; }
     lastRoute = key;
+    stopListening();
     if (parts[0] === "deck" && BY_SLUG[parts[1]]) return renderList(BY_SLUG[parts[1]]);
     if (parts[0] === "sync") return renderSync();
     if (parts[0] === "practice") return renderPractice();
@@ -510,7 +642,7 @@
     const day = Math.min(Math.max(DAY, 1), PLAN.length);
     if (!sess || sess.mode !== mode || sess.finished) {
       const q = mode === "learn" ? learnQueue(day) : seededShuffle(reviewQueue(day), TODAY);
-      sess = { mode, queue: q, i: 0, revealed: false, history: [], tally: { hidden: 0, green: 0, amber: 0, red: 0, blue: 0 } };
+      sess = { mode, queue: q, i: 0, revealed: false, history: [], said: {}, tally: { hidden: 0, green: 0, amber: 0, red: 0, blue: 0 } };
     }
     document.title = (mode === "learn" ? "Learn" : "Review") + " · GRE Word Roots";
     drawCard();
@@ -524,13 +656,16 @@
         <a class="iconbtn" href="#/" aria-label="End session">${icon.close}</a>
         <div class="sess-title">${s.mode === "learn" ? "Learn" : "Review"} <span class="muted">${Math.min(s.i + 1, total)} / ${total}</span></div>
         <button class="link" id="undo" type="button" ${s.history.length ? "" : "hidden"}>Undo</button>
+        ${s.i < total ? vtoggleBtn() : ""}
       </div><div class="pbar"><span style="width:${pct.toFixed(1)}%"></span></div></div>`;
     if (s.i >= total) {
       const t = s.tally;
       const lines = [["hidden", "Already knew (hidden)"], ["green", "Known"], ["amber", "Shaky"], ["red", "Hard"], ["blue", "Flag"]].filter(([k]) => t[k]);
+      const nSaid = Object.values(s.said).filter(v => v === "match").length;
+      stopListening();
       app.innerHTML = top + `<main class="wrap done-screen">
         <h1>${total ? "Session done" : "Nothing to do here"}</h1>
-        ${total ? `<ul class="tally">${lines.map(([k, l]) => `<li><i class="c-${k}"></i>${l}<b>${t[k]}</b></li>`).join("")}</ul>` : `<p class="muted">You’re up to date.</p>`}
+        ${total ? `<ul class="tally">${lines.map(([k, l]) => `<li><i class="c-${k}"></i>${l}<b>${t[k]}</b></li>`).join("")}${nSaid ? `<li><span class="saidico">${MIC_SM}</span>Said out loud, checked by the mic<b>${nSaid}</b></li>` : ""}</ul>` : `<p class="muted">You’re up to date.</p>`}
         ${s.mode === "learn" && total ? `<p class="hint">Now drill today’s decks in your flashcard app. Come back this evening for Review.</p>` : ""}
         <div class="row"><a class="btn primary" href="#/">Back to plan</a>${s.mode === "learn" ? `<a class="btn" href="#/session/review">Start review</a>` : ""}</div>
       </main>`;
@@ -540,9 +675,11 @@
     }
     const w = s.queue[s.i]; const x = LOOKUP.get(w);
     const mark = markOf(w);
+    stopListening();
     const front = `
       <div class="flash-top"><span class="decktag">${esc(x.deck)}</span>${mark ? `<span class="mark ${mark}"></span>` : ""}</div>
-      <div class="flash-word">${esc(x.w)}</div>`;
+      <div class="flash-word">${esc(x.w)}</div>
+      ${sayRowHTML(x.w, s.said[s.i])}`;
     const back = s.revealed ? `
       <div class="flash-back">
         <div class="def"><span class="pos">${esc(x.p)}</span><p>${x.m}</p>${x.x ? `<span class="flag">${esc(x.x)}</span>` : ""}</div>
@@ -550,7 +687,9 @@
         <div class="block"><div class="lbl">French</div><div class="txt fr">${x.f}</div></div>
         ${hookBlock(x)}
         ${store.notes[w] ? `<div class="block"><div class="lbl">My notes</div><div class="txt">${esc(store.notes[w])}</div></div>` : ""}
-      </div>` : `<p class="flash-hint">${s.mode === "learn" ? "Do you already know this word for sure?" : "Say the meaning out loud, then reveal."}</p>`;
+      </div>` : `<p class="flash-hint">${vcfg.on
+        ? (s.mode === "learn" ? "Say the word out loud. Then: do you already know it for sure?" : "Say the word out loud, then its meaning. Then reveal.")
+        : (s.mode === "learn" ? "Do you already know this word for sure?" : "Say the meaning out loud, then reveal.")}</p>`;
     const actions = !s.revealed
       ? (s.mode === "learn"
         ? `<button class="act hide" data-act="hidden" type="button">Already know it<small>hide it <kbd>H</kbd></small></button><button class="act show" data-act="reveal" type="button">Not sure<small>show me <kbd>Space</kbd></small></button>`
@@ -558,10 +697,53 @@
       : `<button class="act red" data-act="red" type="button">Hard<small class="k"><kbd>1</kbd></small></button><button class="act amber" data-act="amber" type="button">Shaky<small class="k"><kbd>2</kbd></small></button><button class="act green" data-act="green" type="button">${s.mode === "learn" ? "Knew it" : "Got it"}<small class="k"><kbd>3</kbd></small></button>`;
     app.innerHTML = top + `<main class="wrap flash-wrap"><article class="flash ${s.revealed ? "revealed" : ""}" id="card">${front}${back}</article></main>
       <div class="actions"><div class="wrap actions-in">${actions}</div></div>`;
-    if (!s.revealed) document.getElementById("card").addEventListener("click", () => { s.revealed = true; drawCard(); });
+    if (!s.revealed) document.getElementById("card").addEventListener("click", e => { if (e.target.closest(".sayrow")) return; s.revealed = true; drawCard(); });
     app.querySelectorAll(".act").forEach(b => b.addEventListener("click", () => act(b.dataset.act)));
+    const mic = document.getElementById("mic");
+    if (mic) mic.addEventListener("click", e => { e.stopPropagation(); if (voice.rec) { stopListening(); sayState("idle", "Tap the mic and say it"); } else flashListen(false); });
     bindUndo();
+    // Hands-free: every new card starts listening on its own, so the routine is just "see it, say it".
+    if (vcfg.on && !s.revealed && s.said[s.i] !== "match" && canListen() && document.visibilityState === "visible") flashListen(true);
   }
+
+  /* ---------- the "say it" step on a Learn / Review card ---------- */
+  function sayRowHTML(w, st) {
+    if (!vcfg.on) return `<div class="sayrow quiet">${spkBtn(w)}</div>`;
+    const ok = st === "match", listenable = canListen();
+    const status = ok ? `${icon.check} Said it` : !SR ? "Say it out loud, then tap the speaker to check yourself" : voice.blocked ? "Microphone blocked. Say it out loud anyway" : "Say it out loud";
+    return `<div class="sayrow" id="sayrow" data-state="${ok ? "match" : listenable ? "idle" : "off"}">
+      ${listenable || ok ? `<button type="button" class="micbtn" id="mic" aria-label="Say the word (M)" title="Say it (M)" ${listenable ? "" : "disabled"}>${MIC}</button>` : ""}
+      <span class="saystatus" aria-live="polite">${status}</span>${spkBtn(w)}</div>`;
+  }
+  function sayState(st, html) {
+    const r = document.getElementById("sayrow"); if (!r) return;
+    r.dataset.state = st; const t = r.querySelector(".saystatus"); if (t) t.innerHTML = html;
+  }
+  function flashListen(auto) {
+    const s = sess; if (!s) return; const i = s.i; const w = s.queue[i]; if (!w) return;
+    const here = () => sess === s && s.i === i && document.getElementById("sayrow");
+    listen(alts => matchWord(w, alts), (st, info) => {
+      if (!here()) return;
+      if (st === "listening") sayState("listening", "Listening… say it");
+      else if (st === "match") {
+        s.said[i] = "match";
+        sayState("match", info.exact ? `${icon.check} Said it` : `${icon.check} Close enough <span class="heard">heard “${esc(info.heard)}”</span>`);
+        pronounce(w);
+      } else if (st === "miss") {
+        if (s.said[i] !== "match") s.said[i] = "miss";
+        sayState("miss", `Heard “${esc(info.heard)}”. Listen${auto ? ", then say it again" : ", then tap the mic"}`);
+        pronounce(w, () => { if (auto && here() && !s.revealed && s.said[i] !== "match") flashListen(false); });
+      } else if (st === "nothing") sayState("idle", "Didn’t hear you. Tap the mic and say it");
+      else sayState("off", esc(info.msg));
+    });
+  }
+  function toggleVoice() {
+    vcfg.on = !vcfg.on; vsave(); stopListening(); if (synth) synth.cancel();
+    toast(vcfg.on ? "Voice on: say each word out loud" : "Voice off (quiet mode)");
+    if (location.hash.startsWith("#/session") && sess && !sess.finished) drawCard();
+    else if (location.hash.startsWith("#/practice") && pr.run) drawRun();
+  }
+  document.addEventListener("click", e => { if (e.target.closest("#vtog")) { e.preventDefault(); toggleVoice(); } });
   function bindUndo() {
     const u = document.getElementById("undo"); if (!u) return;
     u.addEventListener("click", () => {
@@ -589,9 +771,10 @@
   const PMAX = 6;                          // 6 = memorised. Right answer +1, wrong answer −2 (guessing at random drifts down).
   const PSEL = "gre-roots-prac-sel";
   const COMMON = DECKS.filter(d => d.series === "Common Words").map(d => d.slug);
-  let psel = { decks: COMMON.slice(), marks: ["red"], order: "weak" };
+  let psel = { decks: COMMON.slice(), marks: ["red"], order: "weak", mode: "meaning" };
   try { const s = JSON.parse(localStorage.getItem(PSEL)); if (s && Array.isArray(s.decks) && Array.isArray(s.marks)) psel = Object.assign(psel, s); } catch (e) {}
   psel.decks = psel.decks.filter(s => BY_SLUG[s]);
+  if (psel.mode !== "say") psel.mode = "meaning";
   const psave = () => { try { localStorage.setItem(PSEL, JSON.stringify(psel)); } catch (e) {} };
   const PSTAT = [["red", "Hard"], ["amber", "Shaky"], ["green", "Known"], ["blue", "Flag"], ["none", "Not sorted"], ["hidden", "Hidden"]];
   const pracStatus = w => isHidden(w) ? "hidden" : (markOf(w) || "none");
@@ -640,7 +823,7 @@
     app.innerHTML = `
     <div class="wrap">
       <header class="home-head">${nav("practice")}<h1>Practice</h1>
-        <p class="sub">Choose what to drill, then guess each word’s meaning from three choices. Your Hard, Shaky and Known stickers never change here; each word just gets a small marker showing how close it is to memorised.</p></header>
+        <p class="sub">Choose what to drill and how: guess each word’s meaning from three choices, or see the meaning and say the word out loud. Your Hard, Shaky and Known stickers never change here; each word just gets a small marker showing how close it is to memorised.</p></header>
       <section class="card pracsetup">
         <div class="pickers" id="pickers">
           ${picker("decks", "Decks")}${picker("marks", "Difficulty")}
@@ -654,6 +837,9 @@
             <div class="pmarks">${PSTAT.map(([id, l]) => `<label class="pchip pmark" data-mark="${id}"><input type="checkbox" data-mark="${id}"><i class="c-${id}"></i><span>${l}</span><small></small></label>`).join("")}</div>
           </div>
         </div>
+        <div class="porder pmode"><span class="plabel">Mode</span>
+          <button type="button" class="chip" data-mode="meaning">Pick the meaning</button><button type="button" class="chip" data-mode="say">${MIC_SM} Say the word</button></div>
+        <p class="muted small pmodehint" id="pmodehint" style="margin:0"></p>
         <div class="porder"><span class="plabel">Order</span>
           <button type="button" class="chip" data-order="weak">Weakest first</button><button type="button" class="chip" data-order="random">Random</button></div>
         <div class="pinfo" id="pinfo" aria-live="polite"></div>
@@ -684,7 +870,11 @@
       else if (t.dataset.mark) { const s = new Set(psel.marks); t.checked ? s.add(t.dataset.mark) : s.delete(t.dataset.mark); psel.marks = PSTAT.filter(([id]) => s.has(id)).map(([id]) => id); }
       psave(); paintPractice();
     });
-    app.querySelector(".porder").addEventListener("click", e => { const b = e.target.closest("[data-order]"); if (!b) return; psel.order = b.dataset.order; psave(); paintPractice(); });
+    app.querySelectorAll(".porder").forEach(el => el.addEventListener("click", e => {
+      const b = e.target.closest("[data-order]"), m = e.target.closest("[data-mode]");
+      if (b) psel.order = b.dataset.order; else if (m) psel.mode = m.dataset.mode; else return;
+      psave(); paintPractice();
+    }));
     document.getElementById("pstart").addEventListener("click", () => { const p = poolWords(); if (p.length) startRun(p.map(x => x.w)); });
   }
   function closePanels() {
@@ -715,11 +905,16 @@
       const n = ALL.filter(x => dsel.has(x.slug) && pracStatus(x.w) === id).length;
       el.querySelector("small").textContent = n; el.classList.toggle("on", msel.has(id)); el.querySelector("input").checked = msel.has(id);
     });
-    app.querySelectorAll(".porder .chip").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.order === psel.order)));
+    app.querySelectorAll(".porder .chip[data-order]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.order === psel.order)));
+    app.querySelectorAll(".porder .chip[data-mode]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mode === psel.mode)));
+    document.getElementById("pmodehint").textContent = psel.mode === "say"
+      ? (SR ? "You see the meaning; say the word out loud. The mic checks it, then you hear it pronounced. No mic around? Type it instead."
+            : "You see the meaning and type the word (this browser can’t listen; Safari and Chrome can). Say it out loud as you type.")
+      : "Three words per screen, three meanings each.";
     const pool = poolWords(); const n = pool.length;
     const full = pool.filter(x => pscore(x.w) >= PMAX).length, fresh = pool.filter(x => !store.prac[x.w]).length;
     document.getElementById("pinfo").innerHTML = n
-      ? `<b>${n} word${n === 1 ? "" : "s"}</b> · ${Math.ceil(n / 3)} round${Math.ceil(n / 3) === 1 ? "" : "s"} of 3<span class="muted"> · ${full} memorised · ${fresh} not practised yet</span>`
+      ? `<b>${n} word${n === 1 ? "" : "s"}</b> · ${psel.mode === "say" ? "one at a time" : `${Math.ceil(n / 3)} round${Math.ceil(n / 3) === 1 ? "" : "s"} of 3`}<span class="muted"> · ${full} memorised · ${fresh} not practised yet</span>`
       : `<span class="muted">No words match. Pick other decks or difficulties.</span>`;
     document.getElementById("pstart").disabled = !n;
   }
@@ -736,14 +931,14 @@
   function startRun(words) {
     let q = shuffle(words);
     if (psel.order === "weak") q = q.map((w, i) => [w, i]).sort((a, b) => pscore(a[0]) - pscore(b[0]) || a[1] - b[1]).map(a => a[0]);
-    pr.run = { queue: q, page: 0, cur: null, right: 0, missed: [], total: q.length };
+    pr.run = { mode: psel.mode, queue: q, page: 0, idx: 0, cur: null, right: 0, missed: [], total: q.length };
     window.scrollTo(0, 0); drawRun();
   }
   function qHTML(q, i) {
     const x = LOOKUP.get(q.w); const mk = isHidden(q.w) ? "hidden" : (markOf(q.w) || "");
     const done = q.picked !== null; const right = done && q.opts[q.picked].ok;
     return `<article class="q${done ? " answered" : ""}" data-i="${i}">
-      <div class="qhead"><div class="qwordline"><span class="qword">${esc(x.w)}</span><span class="pos">${esc(x.p)}</span></div>
+      <div class="qhead"><div class="qwordline"><span class="qword">${esc(x.w)}</span>${spkBtn(x.w, "sm")}<span class="pos">${esc(x.p)}</span></div>
         <div class="qmeta"><span class="decktag">${esc(x.deck)}</span>${meterHTML(x.w)}<span class="mark ${mk}" title="Your sticker, unchanged"></span></div></div>
       <div class="qopts" role="group" aria-label="Meaning of ${esc(x.w)}">${q.opts.map((o, j) =>
         `<button type="button" class="opt${done ? (o.ok ? " ok" : q.picked === j ? " bad" : " dim") : ""}" data-o="${j}" aria-pressed="${q.picked === j}"><span class="ol">${j + 1}</span><span class="ot">${o.t}</span></button>`).join("")}</div>
@@ -752,6 +947,7 @@
   }
   function drawRun() {
     const r = pr.run;
+    if (r.mode === "say") return drawSay();
     if (r.page * 3 >= r.total) return drawResults();
     if (!r.cur) r.cur = r.queue.slice(r.page * 3, r.page * 3 + 3).map(makeQuestion);
     const from = r.page * 3 + 1, to = Math.min(r.total, r.page * 3 + 3);
@@ -791,6 +987,112 @@
     const r = pr.run; if (!r || !r.cur || !r.cur.every(q => q.picked !== null)) return;
     r.page++; r.cur = null; window.scrollTo(0, 0); drawRun();
   }
+  /* ---------- practice, "Say the word": see the meaning, say the word, hear it ---------- */
+  /* Production recall (meaning → word, spoken) is harder than recognition, and the spoken form
+     sticks as a sound memory. Scores use the same red → green marker as the other mode. */
+  function hintText(w, level) {
+    const n = level >= 2 ? Math.max(2, Math.ceil(lettersOf(w).length / 3)) : 1; let shown = 0;
+    return [...w].map(ch => /[a-z]/i.test(ch) ? (shown++ < n ? ch : "_") : ch === " " ? " " : ch).join(" ");
+  }
+  function sayMatcher(w) {
+    const x = LOOKUP.get(w);
+    return alts => {
+      const m = matchWord(w, alts, true); if (m) return m;
+      for (const c of candidates(alts)) { const y = LKEY.get(c); if (y && y.w !== w && norm(y.m) === norm(x.m)) return { exact: true, syn: y.w }; }
+      return null;
+    };
+  }
+  function drawSay() {
+    const r = pr.run;
+    if (r.idx >= r.total) return drawResults();
+    if (!r.cur) r.cur = { w: r.queue[r.idx], done: false, ok: false, hint: 0, heard: "", tries: 0, typing: !vcfg.on || !canListen() };
+    const q = r.cur, x = LOOKUP.get(q.w);
+    stopListening();
+    const other = q.heard ? LKEY.get(candidates([q.heard]).find(c => LKEY.has(c) && c !== lettersOf(q.w)) || "") : null;
+    const ask = `
+      ${q.hint ? `<div class="sayhint" aria-label="Hint">${esc(hintText(x.w, q.hint))}</div>` : ""}
+      ${q.typing ? `<form class="saytype" id="saytype" autocomplete="off">
+          <input id="saytxt" type="text" placeholder="Type the word" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-label="The word">
+          <button class="btn primary" type="submit">Check</button></form>
+          <div class="saystatus small" id="saymsg" aria-live="polite">${q.heard ? `Not it: “${esc(q.heard)}”${other ? ` <span class="muted">(that’s <i>${esc(other.w)}</i>: ${other.m})</span>` : ""}` : "Say it out loud as you type."}</div>
+          ${vcfg.on && canListen() ? `<button type="button" class="link" id="usemic">Use the mic instead</button>` : ""}`
+        : `<div class="sayrow big" id="sayrow" data-state="idle">
+          <button type="button" class="micbtn" id="mic" aria-label="Say the word (M or Space)" title="Say it (M)">${MIC}</button>
+          <span class="saystatus" aria-live="polite">${q.heard ? `Heard “${esc(q.heard)}”: not it${other ? ` <span class="muted">(that’s <i>${esc(other.w)}</i>: ${other.m})</span>` : ""}. Tap to try again` : "Say the word out loud"}</span></div>
+          <button type="button" class="link" id="usetype">Can’t talk right now? Type it</button>`}`;
+    const answerHTML = `
+      <div class="sayans ${q.ok ? "good" : "miss"}">
+        <div class="saylabel">${q.ok ? (q.syn ? `Also right: “${esc(q.syn)}” means the same. This card’s word:` : q.hint ? "Correct, with a hint (marker unchanged)" : "Correct") : "The word was"}</div>
+        <div class="qwordline"><span class="qword">${esc(x.w)}</span>${spkBtn(x.w)}</div>
+        <div class="sayfb"><span class="fr">${x.f}</span><br>${x.t}</div>
+        ${!q.ok && q.heard ? `<button type="button" class="link" id="override">I said it right, the mic misheard. Count it</button>` : ""}
+      </div>`;
+    app.innerHTML = `
+      <div class="sess-bar"><div class="wrap sess-bar-in">
+        <button class="iconbtn" id="pquit" type="button" aria-label="End practice">${icon.close}</button>
+        <div class="sess-title">Say the word <span class="muted">${r.idx + 1} / ${r.total}</span></div>
+        <span class="muted small">${r.right} right</span>
+        ${vtoggleBtn()}
+      </div><div class="pbar"><span style="width:${(r.idx / r.total * 100).toFixed(1)}%"></span></div></div>
+      <main class="wrap prun" id="prun">
+        <article class="q sayq">
+          <div class="qhead"><span class="eyebrow">Which word means…</span><div class="qmeta"><span class="decktag">${esc(x.deck)}</span>${meterHTML(x.w)}</div></div>
+          <div class="saydef"><span class="pos">${esc(x.p)}</span> ${x.m}</div>
+          ${q.done ? answerHTML : ask}
+        </article>
+      </main>
+      <div class="actions"><div class="wrap actions-in">${q.done
+        ? `<button class="act show wide" id="snext" type="button">${r.idx + 1 >= r.total ? "See results" : "Next"} <kbd>Enter</kbd></button>`
+        : `<button class="act" id="shint" type="button" ${q.hint >= 2 ? "disabled" : ""}>${q.hint ? "More letters" : "Hint"}<small>first letter${q.hint ? "s" : ""} <kbd>H</kbd></small></button><button class="act show" id="sshow" type="button">Show answer<small>counts as missed <kbd>S</kbd></small></button>`}</div></div>`;
+    document.getElementById("pquit").addEventListener("click", () => { stopListening(); pr.run = null; renderPractice(); window.scrollTo(0, 0); });
+    const on = (id, f) => { const el = document.getElementById(id); if (el) el.addEventListener("click", f); };
+    on("snext", () => { r.idx++; r.cur = null; window.scrollTo(0, 0); drawSay(); });
+    on("shint", () => { q.hint = Math.min(2, q.hint + 1); drawSay(); });
+    on("sshow", () => resolveSay(false));
+    on("override", () => { const p = q.prev; if (p) store.prac[q.w] = p; else delete store.prac[q.w]; r.missed = r.missed.filter(w => w !== q.w); resolveSay(true, true); });
+    on("usetype", () => { q.typing = true; drawSay(); });
+    on("usemic", () => { q.typing = false; drawSay(); });
+    on("mic", () => { if (voice.rec) { stopListening(); sayState("idle", "Tap the mic and say it"); } else sayListen(); });
+    const form = document.getElementById("saytype");
+    if (form) {
+      const inp = document.getElementById("saytxt");
+      form.addEventListener("submit", e => {
+        e.preventDefault(); const v = inp.value.trim(); if (!v) return;
+        q.tries++;
+        const m = sayMatcher(q.w)([v]);
+        if (m && (m.syn || lettersOf(v) === lettersOf(q.w) || (lettersOf(q.w).length >= 6 && simil(lettersOf(v), lettersOf(q.w)) >= 0.85))) { if (m.syn) q.syn = m.syn; resolveSay(true); }
+        else { q.heard = v; drawSay(); }
+      });
+      if (window.matchMedia("(hover:hover)").matches) inp.focus();
+    }
+    if (q.done) { const n = document.getElementById("snext"); if (n) n.focus({ preventScroll: true }); }
+    else if (!q.typing && !q.heard && document.visibilityState === "visible") sayListen();
+  }
+  function sayListen() {
+    const r = pr.run; if (!r || !r.cur) return; const q = r.cur;
+    const here = () => pr.run === r && r.cur === q && !q.done && document.getElementById("sayrow");
+    listen(sayMatcher(q.w), (st, info) => {
+      if (!here()) return;
+      if (st === "listening") sayState("listening", "Listening… say the word");
+      else if (st === "match") { q.tries++; if (info.syn) q.syn = info.syn; resolveSay(true); }
+      else if (st === "miss") { q.tries++; q.heard = info.heard; drawSay(); }
+      else if (st === "nothing") sayState("idle", "Didn’t hear you. Tap the mic and say it");
+      else { q.typing = true; drawSay(); toast(info.msg); }
+    });
+  }
+  function resolveSay(ok, override) {
+    const r = pr.run; const q = r.cur; if (!q || (q.done && !override)) return;
+    stopListening();
+    if (!override) q.prev = store.prac[q.w] ? Object.assign({}, store.prac[q.w]) : null;
+    const p = q.prev || { s: 0, n: 0 };
+    const s2 = ok ? (q.hint ? p.s : Math.min(PMAX, p.s + 1)) : Math.max(0, p.s - 2);
+    store.prac[q.w] = { s: s2, n: p.n + 1, t: Date.now() };
+    if (ok) r.right++; else if (!r.missed.includes(q.w)) r.missed.push(q.w);
+    q.done = true; q.ok = ok; save();
+    drawSay();
+    pronounce(q.w); // hear the right pronunciation every time, after your own attempt
+  }
+
   function drawResults() {
     const r = pr.run; const miss = r.missed.length;
     app.innerHTML = `
@@ -893,7 +1195,7 @@
     const mark = markOf(x.w); const hid = isHidden(x.w);
     const id = "n-" + x.w.replace(/[^a-z0-9]/gi, "_");
     return `<div class="panel">
-      <div class="def"><span class="pos">${esc(x.p)}</span><p>${x.m}</p>${x.x ? `<span class="flag">${esc(x.x)}</span>` : ""}</div>
+      <div class="def">${spkBtn(x.w, "sm")}<span class="pos">${esc(x.p)}</span><p>${x.m}</p>${x.x ? `<span class="flag">${esc(x.x)}</span>` : ""}</div>
       <div class="block"><div class="lbl">Etymology</div><div class="txt">${x.e}</div></div>
       <div class="block"><div class="lbl">French</div><div class="txt fr">${x.f}</div></div>
       ${hookBlock(x)}
@@ -1122,6 +1424,9 @@
     if (location.hash.startsWith("#/session") && sess && !sess.finished && !typing) {
       const k = e.key.toLowerCase();
       if (sess.i >= sess.queue.length) return;
+      if (k === "v") { toggleVoice(); return; }
+      if (k === "p") { stopListening(); pronounce(sess.queue[sess.i]); return; }
+      if (k === "m") { const m = document.getElementById("mic"); if (m && !m.disabled) m.click(); return; }
       if (!sess.revealed) {
         if (k === " " || k === "enter" || k === "arrowright") { e.preventDefault(); act("reveal"); }
         else if (k === "h" && sess.mode === "learn") act("hidden");
@@ -1131,7 +1436,15 @@
       if (k === "backspace" || k === "u") { const u = document.getElementById("undo"); if (u && !u.hidden) u.click(); }
       return;
     }
-    if (location.hash.startsWith("#/practice") && pr.run && pr.run.cur && !typing) {
+    if (location.hash.startsWith("#/practice") && pr.run && pr.run.mode === "say" && pr.run.cur && !typing) {
+      const q = pr.run.cur, k = e.key.toLowerCase(); const click = id => { const b = document.getElementById(id); if (b && !b.disabled) { e.preventDefault(); b.click(); } };
+      if (k === "v") { toggleVoice(); return; }
+      if (k === "p" && q.done) { pronounce(q.w); return; }
+      if (q.done) { if (k === "enter" || k === " " || k === "arrowright") click("snext"); return; }
+      if (k === "m" || k === " ") click("mic"); else if (k === "h") click("shint"); else if (k === "s") click("sshow"); else if (k === "t") click("usetype");
+      return;
+    }
+    if (location.hash.startsWith("#/practice") && pr.run && pr.run.mode !== "say" && pr.run.cur && !typing) {
       const r = pr.run, k = e.key;
       if (/^[1-3]$/.test(k)) { const qi = r.cur.findIndex(q => q.picked === null); if (qi >= 0) { e.preventDefault(); answer(qi, +k - 1); } }
       else if ((k === " " || k === "Enter" || k === "ArrowRight") && r.cur.every(q => q.picked !== null)) { e.preventDefault(); nextPage(); }

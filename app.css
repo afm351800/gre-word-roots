@@ -387,3 +387,58 @@ kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;bor
   .row .decktag{min-width:0;overflow:hidden;text-overflow:ellipsis;flex:0 1 auto}
   .row > .meter{width:36px}
 }
+
+/* ---------- voice: say it, hear it ---------- */
+.sayrow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;min-height:44px;cursor:default}
+.flash.revealed .sayrow{justify-content:flex-start}
+.sayrow.quiet{min-height:0}
+.flash:not(.revealed) .sayrow.quiet{margin-top:-4px}
+.micbtn{position:relative;width:54px;height:54px;flex:none;border-radius:50%;border:1.5px solid var(--ink);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent;transition:background .15s,border-color .15s,color .15s}
+.micbtn:hover{background:var(--hover)}
+.micbtn:disabled{opacity:.4;cursor:not-allowed}
+.sayrow[data-state="listening"] .micbtn{background:var(--red);border-color:var(--red);color:#fff}
+.sayrow[data-state="listening"] .micbtn::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--red);animation:micpulse 1.2s ease-out infinite}
+@keyframes micpulse{from{transform:scale(.92);opacity:.85}to{transform:scale(1.35);opacity:0}}
+.sayrow[data-state="match"] .micbtn{background:var(--green);border-color:var(--green);color:#fff}
+.sayrow[data-state="miss"] .micbtn{border-color:var(--amber);color:var(--amber)}
+.saystatus{order:3;flex-basis:100%;font-size:13px;color:var(--muted);min-width:0;line-height:1.4;text-align:center}
+.flash.revealed .saystatus,.sayrow.big .saystatus{text-align:left}
+.flash.revealed .micbtn{width:42px;height:42px}
+.flash.revealed .micbtn svg{width:18px;height:18px}
+.flash.revealed .sayrow{row-gap:6px}
+.saystatus svg{vertical-align:-2px}
+.sayrow[data-state="match"] .saystatus{color:var(--green);font-weight:600}
+.sayrow[data-state="miss"] .saystatus{color:var(--amber)}
+.saystatus .heard{font-weight:400;color:var(--muted);margin-left:4px}
+.spk{width:38px;height:38px;flex:none;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:inline-grid;place-items:center;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent}
+.spk:hover{border-color:var(--ink)}
+.spk.sm{width:28px;height:28px}
+.spk.sm svg{width:14px;height:14px}
+.def .spk{align-self:center}
+.qwordline .spk{align-self:center}
+.vtoggle{cursor:pointer;padding:0}
+.vtoggle[aria-pressed="false"]{color:var(--muted)}
+.vtoggle[aria-pressed="true"]{color:var(--red);border-color:var(--red)}
+.saidico{display:inline-grid;place-items:center;width:10px;color:var(--green)}
+.saidico svg{width:14px;height:14px}
+.pmode .chip svg{width:14px;height:14px}
+
+/* practice: say the word */
+.sayq{gap:14px;padding:16px}
+.saydef{font-size:17px;line-height:1.5}
+.saydef .pos{margin-right:4px}
+.sayhint{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:20px;letter-spacing:.06em;text-align:center;color:var(--ink);background:var(--paper);border-radius:10px;padding:10px;overflow-wrap:anywhere}
+.sayrow.big{justify-content:flex-start;padding:4px 0}
+.sayrow.big .micbtn{width:64px;height:64px}
+.sayq .link{font-size:13px;justify-self:start}
+.saytype{display:flex;gap:8px}
+.saytype input{flex:1;min-width:0;font:inherit;font-size:17px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.saytype input:focus{outline:2px solid var(--ink);outline-offset:1px;border-color:transparent}
+#saymsg{max-width:none}
+.sayans{display:grid;gap:8px;border-top:1px dashed var(--line);padding-top:12px}
+.saylabel{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.sayans.good .saylabel{color:var(--green)} .sayans.miss .saylabel{color:var(--red)}
+.sayans .qwordline{align-items:center;gap:10px}
+.sayfb{font-size:13px;line-height:1.5;color:var(--muted)}
+.sayfb .fr{font-size:16px;color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.sayrow[data-state="listening"] .micbtn::after{animation:none}}
