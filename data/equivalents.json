@@ -99,6 +99,7 @@
 "approbation",
 "encomium",
 "eulogy",
+"paean",
 "panegyric"
 ],
 "accord": [
@@ -1458,7 +1459,8 @@
 "petulant",
 "splenetic",
 "sullen",
-"surly"
+"surly",
+"waspish"
 ],
 "chortle": [
 "guffaw"
@@ -2033,6 +2035,7 @@
 "debilitating": [],
 "debonair": [
 "cosmopolitan",
+"jaunty",
 "raffish",
 "rakish",
 "sophisticated",
@@ -2939,6 +2942,7 @@
 "encomium": [
 "accolade",
 "eulogy",
+"paean",
 "panegyric"
 ],
 "encroach": [],
@@ -3136,6 +3140,7 @@
 "eulogy": [
 "accolade",
 "encomium",
+"paean",
 "panegyric"
 ],
 "euphemism": [],
@@ -4926,7 +4931,8 @@
 "choleric",
 "peevish",
 "petulant",
-"splenetic"
+"splenetic",
+"waspish"
 ],
 "ire": [],
 "irk": [
@@ -4976,6 +4982,10 @@
 "jaundiced": [
 "disaffected",
 "estranged"
+],
+"jaunty": [
+"debonair",
+"rakish"
 ],
 "jejune": [
 "callow",
@@ -5186,6 +5196,7 @@
 "negligent",
 "remiss"
 ],
+"lay": [],
 "leery": [
 "chary",
 "circumspect",
@@ -5972,6 +5983,12 @@
 "propitiate",
 "reconcile"
 ],
+"paean": [
+"accolade",
+"encomium",
+"eulogy",
+"panegyric"
+],
 "painstaking": [
 "assiduous",
 "diligent",
@@ -6026,6 +6043,7 @@
 "encomium",
 "eulogy",
 "euphoria",
+"paean",
 "rhapsody"
 ],
 "paradigmatic": [],
@@ -6138,7 +6156,8 @@
 "refractory",
 "restive",
 "splenetic",
-"unruly"
+"unruly",
+"waspish"
 ],
 "pejorative": [
 "derogative"
@@ -6294,7 +6313,8 @@
 "refractory",
 "restive",
 "splenetic",
-"unruly"
+"unruly",
+"waspish"
 ],
 "phantasmagorical": [],
 "philistine": [],
@@ -6956,6 +6976,7 @@
 "raillery": [],
 "rakish": [
 "debonair",
+"jaunty",
 "raffish"
 ],
 "ramble": [
@@ -7788,7 +7809,8 @@
 "peevish",
 "petulant",
 "sullen",
-"surly"
+"surly",
+"waspish"
 ],
 "sporadic": [
 "desultory",
@@ -8946,6 +8968,13 @@
 "politic",
 "prudent",
 "vigilant"
+],
+"waspish": [
+"choleric",
+"irascible",
+"peevish",
+"petulant",
+"splenetic"
 ],
 "watershed": [],
 "wax": [],
