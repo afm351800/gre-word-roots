@@ -442,3 +442,16 @@ kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;bor
 .sayfb{font-size:13px;line-height:1.5;color:var(--muted)}
 .sayfb .fr{font-size:16px;color:var(--ink)}
 @media (prefers-reduced-motion:reduce){.sayrow[data-state="listening"] .micbtn::after{animation:none}}
+/* Lock it in */
+.lockword{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;justify-content:center;padding:18px 0 8px}
+.lockword .qword{font-size:40px}
+.lockprompt{margin:0;font-size:15px;line-height:1.5;color:var(--muted)}
+.lockprompt b{color:var(--ink)}
+.myimg{font-style:italic}
+.limg{min-height:96px;font-size:16px}
+.pairopts{grid-template-columns:1fr 1fr}
+.pairopts .opt{font-size:15px;align-items:center}
+.pairopts .opt .ot b{font-weight:600}
+.opt.sel{border-color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.opt.ok.missed{background:var(--paper);border-style:dashed}
+.pairopts .opt .muted{font-size:12px;line-height:1.35}

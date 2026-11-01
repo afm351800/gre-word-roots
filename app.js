@@ -125,9 +125,9 @@
 
   /* ---------- storage ---------- */
   const KEY = "gre-roots-v1";
-  let store = { marks: {}, notes: {}, hidden: {}, rev: {}, days: {}, ts: {}, prac: {} };
+  let store = { marks: {}, notes: {}, hidden: {}, rev: {}, days: {}, ts: {}, prac: {}, img: {} };
   try { const s = JSON.parse(localStorage.getItem(KEY)); if (s) store = Object.assign(store, s); } catch (e) {}
-  ["marks", "notes", "hidden", "rev", "days", "ts", "prac"].forEach(k => { store[k] = store[k] || {}; });
+  ["marks", "notes", "hidden", "rev", "days", "ts", "prac", "img"].forEach(k => { store[k] = store[k] || {}; });
   if (!store.seed2) { // where Alexis already was in the flashcard app on 25 Oct
     BY_SLUG["common-words-i"].words.forEach(w => { if (!store.marks[w.w]) store.marks[w.w] = "green"; });
     ["apathetic", "banal", "dictatorial", "dogmatic", "eschew", "gainsay", "obscure", "rustic", "vociferous"].forEach(w => { if (!store.marks[w]) store.marks[w] = "green"; });
@@ -225,6 +225,8 @@
     const hs = hooksOf(x); const i = (hkLoad()[x.w] || 0) % hs.length;
     return `<div class="block hkblock" data-w="${esc(x.w)}"><div class="lbl">Memory hook${hs.length > 1 ? ` <button type="button" class="hkbtn" aria-label="Show another memory hook">↻ Another <span>${i + 1}/${hs.length}</span></button>` : ""}</div><div class="txt">${hs[i]}</div></div>`;
   }
+  const imgOf = w => (store.img[w] && store.img[w].v) || "";
+  const imgBlock = w => imgOf(w) ? `<div class="block"><div class="lbl">My image</div><div class="txt myimg">${esc(imgOf(w))}</div></div>` : "";
   document.addEventListener("click", e => {
     const b = e.target.closest(".hkbtn"); if (!b) return;
     e.stopPropagation();
@@ -608,7 +610,7 @@
   }
 
   function exportBackup() {
-    const data = JSON.stringify({ app: "gre-word-roots", version: 2, exported: new Date().toISOString(), marks: store.marks, notes: store.notes, hidden: store.hidden, rev: store.rev, days: store.days, prac: store.prac }, null, 1);
+    const data = JSON.stringify({ app: "gre-word-roots", version: 2, exported: new Date().toISOString(), marks: store.marks, notes: store.notes, hidden: store.hidden, rev: store.rev, days: store.days, prac: store.prac, img: store.img }, null, 1);
     const blob = new Blob([data], { type: "application/json" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
@@ -623,7 +625,7 @@
       try {
         const d = JSON.parse(r.result);
         if (d.app !== "gre-word-roots") throw new Error("wrong file");
-        ["marks", "notes", "hidden", "rev", "days", "prac"].forEach(k => Object.assign(store[k], d[k] || {}));
+        ["marks", "notes", "hidden", "rev", "days", "prac", "img"].forEach(k => Object.assign(store[k], d[k] || {}));
         save(); route(); toast("Backup imported");
       } catch (err) { toast("That file isn’t a Word Roots backup"); }
     };
@@ -686,6 +688,7 @@
         <div class="block"><div class="lbl">Etymology</div><div class="txt">${x.e}</div></div>
         <div class="block"><div class="lbl">French</div><div class="txt fr">${x.f}</div></div>
         ${hookBlock(x)}
+        ${imgBlock(w)}
         ${store.notes[w] ? `<div class="block"><div class="lbl">My notes</div><div class="txt">${esc(store.notes[w])}</div></div>` : ""}
         ${eqBlock(x)}
       </div>` : `<p class="flash-hint">${vcfg.on
@@ -775,7 +778,7 @@
   let psel = { decks: COMMON.slice(), marks: ["red"], order: "weak", mode: "meaning" };
   try { const s = JSON.parse(localStorage.getItem(PSEL)); if (s && Array.isArray(s.decks) && Array.isArray(s.marks)) psel = Object.assign(psel, s); } catch (e) {}
   psel.decks = psel.decks.filter(s => BY_SLUG[s]);
-  if (psel.mode !== "say") psel.mode = "meaning";
+  if (psel.mode !== "say" && psel.mode !== "lock") psel.mode = "meaning";
   const psave = () => { try { localStorage.setItem(PSEL, JSON.stringify(psel)); } catch (e) {} };
   const PSTAT = [["red", "Hard"], ["amber", "Shaky"], ["green", "Known"], ["blue", "Flag"], ["none", "Not sorted"], ["hidden", "Hidden"]];
   const pracStatus = w => isHidden(w) ? "hidden" : (markOf(w) || "none");
@@ -824,7 +827,7 @@
     app.innerHTML = `
     <div class="wrap">
       <header class="home-head">${nav("practice")}<h1>Practice</h1>
-        <p class="sub">Choose what to drill and how: guess each word’s meaning from three choices, or see the meaning and say the word out loud. Your Hard, Shaky and Known stickers never change here; each word just gets a small marker showing how close it is to memorised.</p></header>
+        <p class="sub">Choose what to drill and how: guess each word’s meaning from three choices, see the meaning and say the word out loud, or lock a word in: recall it cold, build your own image, then find its GRE pairs. Your Hard, Shaky and Known stickers never change here; each word just gets a small marker showing how close it is to memorised.</p></header>
       <section class="card pracsetup">
         <div class="pickers" id="pickers">
           ${picker("decks", "Decks")}${picker("marks", "Difficulty")}
@@ -839,7 +842,7 @@
           </div>
         </div>
         <div class="porder pmode"><span class="plabel">Mode</span>
-          <button type="button" class="chip" data-mode="meaning">Pick the meaning</button><button type="button" class="chip" data-mode="say">${MIC_SM} Say the word</button></div>
+          <button type="button" class="chip" data-mode="meaning">Pick the meaning</button><button type="button" class="chip" data-mode="say">${MIC_SM} Say the word</button><button type="button" class="chip" data-mode="lock">Lock it in</button></div>
         <p class="muted small pmodehint" id="pmodehint" style="margin:0"></p>
         <div class="porder"><span class="plabel">Order</span>
           <button type="button" class="chip" data-order="weak">Weakest first</button><button type="button" class="chip" data-order="random">Random</button></div>
@@ -908,14 +911,16 @@
     });
     app.querySelectorAll(".porder .chip[data-order]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.order === psel.order)));
     app.querySelectorAll(".porder .chip[data-mode]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mode === psel.mode)));
-    document.getElementById("pmodehint").textContent = psel.mode === "say"
+    document.getElementById("pmodehint").textContent = psel.mode === "lock"
+      ? "One word at a time, no options. Say its meaning out loud, reveal, and be honest. Then write your own crazy image for it, and pick its pairs from six words."
+      : psel.mode === "say"
       ? (SR ? "You see the meaning; say the word out loud. The mic checks it, then you hear it pronounced. No mic around? Type it instead."
             : "You see the meaning and type the word (this browser can’t listen; Safari and Chrome can). Say it out loud as you type.")
       : "Three words per screen, three meanings each.";
     const pool = poolWords(); const n = pool.length;
     const full = pool.filter(x => pscore(x.w) >= PMAX).length, fresh = pool.filter(x => !store.prac[x.w]).length;
     document.getElementById("pinfo").innerHTML = n
-      ? `<b>${n} word${n === 1 ? "" : "s"}</b> · ${psel.mode === "say" ? "one at a time" : `${Math.ceil(n / 3)} round${Math.ceil(n / 3) === 1 ? "" : "s"} of 3`}<span class="muted"> · ${full} memorised · ${fresh} not practised yet</span>`
+      ? `<b>${n} word${n === 1 ? "" : "s"}</b> · ${psel.mode !== "meaning" ? "one at a time" : `${Math.ceil(n / 3)} round${Math.ceil(n / 3) === 1 ? "" : "s"} of 3`}<span class="muted"> · ${full} memorised · ${fresh} not practised yet</span>`
       : `<span class="muted">No words match. Pick other decks or difficulties.</span>`;
     document.getElementById("pstart").disabled = !n;
   }
@@ -932,7 +937,7 @@
   function startRun(words) {
     let q = shuffle(words);
     if (psel.order === "weak") q = q.map((w, i) => [w, i]).sort((a, b) => pscore(a[0]) - pscore(b[0]) || a[1] - b[1]).map(a => a[0]);
-    pr.run = { mode: psel.mode, queue: q, page: 0, idx: 0, cur: null, right: 0, missed: [], total: q.length };
+    pr.run = { mode: psel.mode, queue: q, page: 0, idx: 0, cur: null, right: 0, missed: [], total: q.length, pairHit: 0, pairAll: 0 };
     window.scrollTo(0, 0); drawRun();
   }
   function qHTML(q, i) {
@@ -949,6 +954,7 @@
   function drawRun() {
     const r = pr.run;
     if (r.mode === "say") return drawSay();
+    if (r.mode === "lock") return drawLock();
     if (r.page * 3 >= r.total) return drawResults();
     if (!r.cur) r.cur = r.queue.slice(r.page * 3, r.page * 3 + 3).map(makeQuestion);
     const from = r.page * 3 + 1, to = Math.min(r.total, r.page * 3 + 3);
@@ -1094,12 +1100,111 @@
     pronounce(q.w); // hear the right pronunciation every time, after your own attempt
   }
 
+  /* ---------- practice, "Lock it in": word alone → recall → your own image → find its pairs ---------- */
+  /* Free recall (no options to lean on) is what makes words stick; a self-made, vivid image is the
+     strongest hook; picking the two pairs is the Sentence Equivalence skill. Only the recall step
+     moves the red → green marker, with the same rules as the other modes. */
+  function pairQuestion(x) {
+    const eq = shuffle(x.s || []); if (!eq.length) return null;
+    const right = eq.slice(0, Math.min(2, eq.length));
+    const ban = new Set([x.w, ...(x.s || [])]); right.forEach(w => (LOOKUP.get(w).s || []).forEach(y => ban.add(y)));
+    const pool = (POS_POOL[posKey(x.p)] || []).length > 20 ? POS_POOL[posKey(x.p)] : ALL;
+    const wrong = []; let guard = 0;
+    while (wrong.length < 6 - right.length && guard++ < 500) { const c = pool[Math.floor(Math.random() * pool.length)]; if (ban.has(c.w)) continue; ban.add(c.w); wrong.push(c.w); }
+    return { need: right.length, opts: shuffle(right.map(w => ({ w, ok: true })).concat(wrong.map(w => ({ w, ok: false })))), picked: [], done: false };
+  }
+  function drawLock() {
+    const r = pr.run;
+    if (r.idx >= r.total) return drawResults();
+    if (!r.cur) r.cur = { w: r.queue[r.idx], stage: "recall", peek: false, ok: null, pq: null };
+    const q = r.cur, x = LOOKUP.get(q.w), mine = imgOf(q.w);
+    const head = `<div class="qhead"><span class="eyebrow">${{ recall: "What does it mean?", reveal: "How did you do?", image: "Make it stick", pairs: "Find its pairs" }[q.stage]}</span><div class="qmeta"><span class="decktag">${esc(x.deck)}</span>${meterHTML(x.w)}</div></div>
+      <div class="lockword"><span class="qword">${esc(x.w)}</span>${spkBtn(x.w)}<span class="pos">${esc(x.p)}</span></div>`;
+    const defHTML = `<div class="saydef"><span class="pos">${esc(x.p)}</span> ${x.m}</div>
+      <div class="sayfb"><span class="fr">${x.f}</span></div>`;
+    let body = "", acts = "";
+    if (q.stage === "recall") {
+      body = `<p class="lockprompt">Say out loud what it means, in your own words. Then reveal and be honest.</p>
+        ${q.peek ? `<div class="block"><div class="lbl">My image</div><div class="txt myimg">${esc(mine)}</div></div>` : ""}`;
+      acts = `${mine && !q.peek ? `<button class="act" id="lpeek" type="button">My image<small>hint, marker won’t move <kbd>I</kbd></small></button>` : ""}<button class="act show" id="lreveal" type="button">Reveal<small>meaning <kbd>Space</kbd></small></button>`;
+    } else if (q.stage === "reveal") {
+      body = `${defHTML}${mine ? `<div class="block"><div class="lbl">My image</div><div class="txt myimg">${esc(mine)}</div></div>` : ""}${hookBlock(x)}`;
+      acts = `<button class="act red" id="lmiss" type="button">Missed it<small><kbd>1</kbd></small></button><button class="act green" id="lgot" type="button">Got it${q.peek ? " (with hint)" : ""}<small><kbd>3</kbd></small></button>`;
+    } else if (q.stage === "image") {
+      body = `${defHTML}
+        <div class="block"><div class="lbl">Root</div><div class="txt">${x.e}</div></div>${hookBlock(x)}
+        <label class="lbl" for="limg">${mine ? "Your image. Make it crazier?" : "Your own crazy image"}</label>
+        <textarea class="note limg" id="limg" maxlength="300" placeholder="One absurd, vivid scene that links the sound of “${esc(x.w)}” to its meaning. Exaggerate it, make it move, put yourself in it. (ascetic → a gaunt Greek priest preaching on a bare rock, refusing even water)">${esc(mine)}</textarea>`;
+      acts = `<button class="act" id="lskip" type="button">Skip<small>no image now</small></button><button class="act show" id="lsave" type="button">Save image<small>syncs like notes</small></button>`;
+    } else {
+      const p = q.pq;
+      body = `<p class="lockprompt">${p.need === 2 ? "Which <b>two</b> words mean the same as" : "Which word means the same as"} <b>${esc(x.w)}</b>? <span class="muted">(${x.m})</span></p>
+        <div class="qopts pairopts" role="group" aria-label="Pairs of ${esc(x.w)}">${p.opts.map((o, j) => {
+          const sel = p.picked.includes(j);
+          const cls = p.done ? (o.ok ? (sel ? " ok" : " ok missed") : sel ? " bad" : " dim") : sel ? " sel" : "";
+          const lx = LOOKUP.get(o.w);
+          return `<button type="button" class="opt${cls}" data-o="${j}" aria-pressed="${sel}"><span class="ol">${j + 1}</span><span class="ot"><b>${esc(o.w)}</b>${p.done ? `<br><span class="muted">${lx.m}</span>` : ""}</span></button>`; }).join("")}</div>
+        ${p.done ? `<div class="qfb ${p.hit === p.need ? "good" : "miss"}"><b>${p.hit === p.need ? "Both found" : p.hit ? "One of two" : "Not this time"}</b> · All its pairs in the bank: ${(x.s || []).map(esc).join(", ")}</div>` : ""}`;
+      acts = p.done ? `<button class="act show wide" id="lnext" type="button">${r.idx + 1 >= r.total ? "See results" : "Next word"} <kbd>Enter</kbd></button>`
+        : `<button class="act" id="lnext" type="button">Skip pairs<small>next word</small></button>`;
+    }
+    app.innerHTML = `
+      <div class="sess-bar"><div class="wrap sess-bar-in">
+        <button class="iconbtn" id="pquit" type="button" aria-label="End practice">${icon.close}</button>
+        <div class="sess-title">Lock it in <span class="muted">${r.idx + 1} / ${r.total}</span></div>
+        <span class="muted small">${r.right} right</span>
+      </div><div class="pbar"><span style="width:${(r.idx / r.total * 100).toFixed(1)}%"></span></div></div>
+      <main class="wrap prun" id="prun"><article class="q sayq lockq">${head}${body}</article></main>
+      <div class="actions"><div class="wrap actions-in">${acts}</div></div>`;
+    const on = (id, f) => { const el = document.getElementById(id); if (el) el.addEventListener("click", f); };
+    on("pquit", () => { pr.run = null; renderPractice(); window.scrollTo(0, 0); });
+    on("lpeek", () => { q.peek = true; drawLock(); });
+    on("lreveal", () => { q.stage = "reveal"; drawLock(); });
+    on("lmiss", () => gradeLock(false));
+    on("lgot", () => gradeLock(true));
+    on("lskip", () => afterImage());
+    on("lsave", () => {
+      const v = document.getElementById("limg").value.trim();
+      if (v !== mine) { store.img[q.w] = { v, t: Date.now() }; save(); }
+      afterImage();
+    });
+    on("lnext", () => { r.idx++; r.cur = null; window.scrollTo(0, 0); drawLock(); });
+    const po = document.querySelector(".pairopts");
+    if (po && !q.pq.done) po.addEventListener("click", e => { const b = e.target.closest(".opt"); if (b) pickPair(+b.dataset.o); });
+    if (q.stage === "image") { const t = document.getElementById("limg"); if (t && window.matchMedia("(hover:hover)").matches) t.focus(); }
+  }
+  function gradeLock(ok) {
+    const r = pr.run, q = r.cur; if (!q || q.stage !== "reveal") return;
+    const p = store.prac[q.w] || { s: 0, n: 0 };
+    store.prac[q.w] = { s: ok ? (q.peek ? p.s : Math.min(PMAX, p.s + 1)) : Math.max(0, p.s - 2), n: p.n + 1, t: Date.now() };
+    if (ok) r.right++; else if (!r.missed.includes(q.w)) r.missed.push(q.w);
+    q.ok = ok; save();
+    if (!ok || !imgOf(q.w)) q.stage = "image"; else return afterImage();
+    window.scrollTo(0, 0); drawLock();
+  }
+  function afterImage() {
+    const r = pr.run, q = r.cur;
+    q.pq = pairQuestion(LOOKUP.get(q.w));
+    if (q.pq) { q.stage = "pairs"; window.scrollTo(0, 0); drawLock(); }
+    else { r.idx++; r.cur = null; window.scrollTo(0, 0); drawLock(); }
+  }
+  function pickPair(j) {
+    const r = pr.run, p = r.cur && r.cur.pq; if (!p || p.done) return;
+    const i = p.picked.indexOf(j); if (i >= 0) p.picked.splice(i, 1); else p.picked.push(j);
+    if (p.picked.length >= p.need) {
+      p.done = true; p.hit = p.picked.filter(k => p.opts[k].ok).length;
+      r.pairHit += p.hit; r.pairAll += p.need;
+    }
+    drawLock();
+  }
+
   function drawResults() {
     const r = pr.run; const miss = r.missed.length;
     app.innerHTML = `
       <div class="sess-bar"><div class="wrap sess-bar-in"><button class="iconbtn" id="pquit" type="button" aria-label="Close">${icon.close}</button><div class="sess-title">Practice done</div></div><div class="pbar"><span style="width:100%"></span></div></div>
       <main class="wrap done-screen">
         <h1>${r.right} of ${r.total}</h1>
+        ${r.mode === "lock" && r.pairAll ? `<p style="margin:0">Pairs found: <b>${r.pairHit} of ${r.pairAll}</b></p>` : ""}
         <p class="muted" style="margin:0">${miss ? `${miss} word${miss === 1 ? "" : "s"} to look at again. Their markers moved back; your stickers did not change.` : "Clean sweep. Every marker moved towards green."}</p>
         ${miss ? `<ul class="tally missed">${r.missed.map(w => `<li><b class="mw">${esc(w)}</b><span class="md">${LOOKUP.get(w).m}</span>${meterHTML(w)}</li>`).join("")}</ul>` : ""}
         <div class="row"><button class="btn primary" id="pagain" type="button">Practice again</button>${miss ? `<button class="btn" id="pmiss" type="button">Only the ${miss} I missed</button>` : ""}<button class="btn" id="pback" type="button">Change selection</button></div>
@@ -1200,6 +1305,7 @@
       <div class="block"><div class="lbl">Etymology</div><div class="txt">${x.e}</div></div>
       <div class="block"><div class="lbl">French</div><div class="txt fr">${x.f}</div></div>
       ${hookBlock(x)}
+      ${imgBlock(x.w)}
       ${store.prac[x.w] ? `<div class="block"><div class="lbl">Practice</div><div class="txt pracline">${meterHTML(x.w)}<span>${store.prac[x.w].s} of ${PMAX} · ${store.prac[x.w].n} ${store.prac[x.w].n === 1 ? "try" : "tries"}</span></div></div>` : ""}
       <div class="block"><div class="lbl">Colour</div><div class="txt marks">
         ${MARKS.map(m => `<button type="button" class="mk" data-mark="${m.id}" aria-pressed="${!hid && mark === m.id}"><i class="c-${m.id}"></i>${m.label}</button>`).join("")}
@@ -1282,7 +1388,7 @@
   const b64enc = str => btoa(unescape(encodeURIComponent(str)));
   const b64dec = str => decodeURIComponent(escape(atob(str.replace(/\s/g, ""))));
   const canon = o => JSON.stringify(o, (k, v) => (v && typeof v === "object" && !Array.isArray(v)) ? Object.keys(v).sort().reduce((a, key) => (a[key] = v[key], a), {}) : v);
-  const payload = () => ({ app: "gre-word-roots", version: 3, marks: store.marks, notes: store.notes, hidden: store.hidden, rev: store.rev, days: store.days, ts: store.ts, prac: store.prac });
+  const payload = () => ({ app: "gre-word-roots", version: 3, marks: store.marks, notes: store.notes, hidden: store.hidden, rev: store.rev, days: store.days, ts: store.ts, prac: store.prac, img: store.img });
   function saveCfg() { try { localStorage.setItem(SKEY, JSON.stringify(cfg)); } catch (e) {} }
   function ago(t) {
     const m = Math.round((Date.now() - t) / 60000);
@@ -1311,6 +1417,8 @@
     Object.keys(rr).forEach(w => { if (!store.rev[w] || rr[w] > store.rev[w]) { store.rev[w] = rr[w]; changed = true; } });
     const rp = r.prac || {}; // practice scores: newest attempt per word wins
     Object.keys(rp).forEach(w => { const l = store.prac[w]; if (rp[w] && (!l || (rp[w].t || 0) > (l.t || 0))) { store.prac[w] = rp[w]; changed = true; } });
+    const ri = r.img || {}; // your own images: newest edit per word wins (an empty text is a deletion)
+    Object.keys(ri).forEach(w => { const l = store.img[w]; if (ri[w] && (!l || (ri[w].t || 0) > (l.t || 0))) { store.img[w] = ri[w]; changed = true; } });
     Object.keys(r.days || {}).forEach(d => {
       const a = store.days[d] || {}, b = r.days[d] || {};
       const m = { learn: !!(a.learn || b.learn), review: !!(a.review || b.review) };
@@ -1450,7 +1558,15 @@
       if (k === "m" || k === " ") click("mic"); else if (k === "h") click("shint"); else if (k === "s") click("sshow"); else if (k === "t") click("usetype");
       return;
     }
-    if (location.hash.startsWith("#/practice") && pr.run && pr.run.mode !== "say" && pr.run.cur && !typing) {
+    if (location.hash.startsWith("#/practice") && pr.run && pr.run.mode === "lock" && pr.run.cur && !typing) {
+      const q = pr.run.cur, k = e.key.toLowerCase(); const click = id => { const b = document.getElementById(id); if (b && !b.disabled) { e.preventDefault(); b.click(); } };
+      if (k === "p") { pronounce(q.w); return; }
+      if (q.stage === "recall") { if (k === " " || k === "enter" || k === "arrowright") click("lreveal"); else if (k === "i") click("lpeek"); }
+      else if (q.stage === "reveal") { if (k === "1") click("lmiss"); else if (k === "3") click("lgot"); }
+      else if (q.stage === "pairs") { if (/^[1-6]$/.test(k) && !q.pq.done) { e.preventDefault(); pickPair(+k - 1); } else if (k === "enter" || (k === " " && q.pq.done)) click("lnext"); }
+      return;
+    }
+    if (location.hash.startsWith("#/practice") && pr.run && pr.run.mode === "meaning" && pr.run.cur && !typing) {
       const r = pr.run, k = e.key;
       if (/^[1-3]$/.test(k)) { const qi = r.cur.findIndex(q => q.picked === null); if (qi >= 0) { e.preventDefault(); answer(qi, +k - 1); } }
       else if ((k === " " || k === "Enter" || k === "ArrowRight") && r.cur.every(q => q.picked !== null)) { e.preventDefault(); nextPage(); }
