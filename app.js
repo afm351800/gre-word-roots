@@ -1118,6 +1118,7 @@
     if (r.idx >= r.total) return drawResults();
     if (!r.cur) r.cur = { w: r.queue[r.idx], stage: "recall", peek: false, ok: null, pq: null };
     const q = r.cur, x = LOOKUP.get(q.w), mine = imgOf(q.w);
+    const myNotes = store.notes[q.w] ? `<div class="block"><div class="lbl">My notes</div><div class="txt">${esc(store.notes[q.w])}</div></div>` : "";
     const head = `<div class="qhead"><span class="eyebrow">${{ recall: "What does it mean?", reveal: "How did you do?", image: "Make it stick", pairs: "Find its pairs" }[q.stage]}</span><div class="qmeta"><span class="decktag">${esc(x.deck)}</span>${meterHTML(x.w)}</div></div>
       <div class="lockword"><span class="qword">${esc(x.w)}</span>${spkBtn(x.w)}<span class="pos">${esc(x.p)}</span></div>`;
     const defHTML = `<div class="saydef"><span class="pos">${esc(x.p)}</span> ${x.m}</div>
@@ -1128,11 +1129,11 @@
         ${q.peek ? `<div class="block"><div class="lbl">My image</div><div class="txt myimg">${esc(mine)}</div></div>` : ""}`;
       acts = `${mine && !q.peek ? `<button class="act" id="lpeek" type="button">My image<small>hint, marker won’t move <kbd>I</kbd></small></button>` : ""}<button class="act show" id="lreveal" type="button">Reveal<small>meaning <kbd>Space</kbd></small></button>`;
     } else if (q.stage === "reveal") {
-      body = `${defHTML}${mine ? `<div class="block"><div class="lbl">My image</div><div class="txt myimg">${esc(mine)}</div></div>` : ""}${hookBlock(x)}`;
+      body = `${defHTML}${mine ? `<div class="block"><div class="lbl">My image</div><div class="txt myimg">${esc(mine)}</div></div>` : ""}${hookBlock(x)}${myNotes}`;
       acts = `<button class="act red" id="lmiss" type="button">Missed it<small><kbd>1</kbd></small></button><button class="act green" id="lgot" type="button">Got it${q.peek ? " (with hint)" : ""}<small><kbd>3</kbd></small></button>`;
     } else if (q.stage === "image") {
       body = `${defHTML}
-        <div class="block"><div class="lbl">Root</div><div class="txt">${x.e}</div></div>${hookBlock(x)}
+        <div class="block"><div class="lbl">Root</div><div class="txt">${x.e}</div></div>${hookBlock(x)}${myNotes}
         <label class="lbl" for="limg">${mine ? "Your image. Make it crazier?" : "Your own crazy image"}</label>
         <textarea class="note limg" id="limg" maxlength="300" placeholder="One absurd, vivid scene that links the sound of “${esc(x.w)}” to its meaning. Exaggerate it, make it move, put yourself in it. (ascetic → a gaunt Greek priest preaching on a bare rock, refusing even water)">${esc(mine)}</textarea>`;
       acts = `<button class="act" id="lskip" type="button">Skip<small>no image now</small></button><button class="act show" id="lsave" type="button">Save image<small>syncs like notes</small></button>`;
