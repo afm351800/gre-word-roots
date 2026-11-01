@@ -10,6 +10,7 @@ const DECKS = [
   ["GregMat", ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"]],
 ];
 
+const EQ = JSON.parse(fs.readFileSync(path.join(__dirname, "data", "equivalents.json"), "utf8"));
 const out = [];
 const seen = new Map();
 for (const [series, numerals] of DECKS) {
@@ -31,6 +32,7 @@ for (const [series, numerals] of DECKS) {
       if (h) { if (!Array.isArray(h) || h.length < 2 || h.some(t => !t || typeof t !== "string")) throw new Error(`${name}: bad hooks for ${w.w}`); w.h = h; }
       else console.warn(`no alternate hooks: ${w.w} (${name})`);
     }
+    for (const w of words) w.s = EQ[w.w] || [];
     words.sort((a, b) => a.w.localeCompare(b.w, "en", { sensitivity: "base" }));
     out.push({ name, slug, series, words });
   }

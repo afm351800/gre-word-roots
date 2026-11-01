@@ -687,6 +687,7 @@
         <div class="block"><div class="lbl">French</div><div class="txt fr">${x.f}</div></div>
         ${hookBlock(x)}
         ${store.notes[w] ? `<div class="block"><div class="lbl">My notes</div><div class="txt">${esc(store.notes[w])}</div></div>` : ""}
+        ${eqBlock(x)}
       </div>` : `<p class="flash-hint">${vcfg.on
         ? (s.mode === "learn" ? "Say the word out loud. Then: do you already know it for sure?" : "Say the word out loud, then its meaning. Then reveal.")
         : (s.mode === "learn" ? "Do you already know this word for sure?" : "Say the meaning out loud, then reveal.")}</p>`;
@@ -1208,7 +1209,12 @@
         <textarea class="note" id="${id}" placeholder="Your own example, link, mnemonic…">${esc(store.notes[x.w] || "")}</textarea>
         <div class="saved" aria-live="polite"></div>
       </div></div>
+      ${eqBlock(x)}
     </div>`;
+  }
+  function eqBlock(x) {
+    const s = x.s || [];
+    return `<div class="block"><div class="lbl">Pairs in bank</div><div class="txt eqs">${s.length ? s.map(esc).join(", ") : "–"}</div></div>`;
   }
   function drawList() {
     const items = filtered();
